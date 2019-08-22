@@ -15,7 +15,7 @@ class PatientRecordController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        patientRecordTableView.register(UINib(nibName: "PatientRecordTableViewCell", bundle: nil), forCellReuseIdentifier: "PatientRecordTableViewCell")
         // Do any additional setup after loading the view.
     }
 
