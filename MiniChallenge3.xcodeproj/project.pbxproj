@@ -14,6 +14,10 @@
 		B06A9C72230E69EB007D38B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B06A9C71230E69EB007D38B5 /* Assets.xcassets */; };
 		B06A9C75230E69EB007D38B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B06A9C73230E69EB007D38B5 /* LaunchScreen.storyboard */; };
 		B06A9C87230E7173007D38B5 /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C86230E7173007D38B5 /* DashboardController.swift */; };
+		BE9BECFA230E892F00640A93 /* HistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9BECF9230E892F00640A93 /* HistoryController.swift */; };
+		BE9BECFC230E897900640A93 /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE9BECFB230E897900640A93 /* History.storyboard */; };
+		BE9BECFE230E8DAD00640A93 /* CalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9BECFD230E8DAD00640A93 /* CalenderView.swift */; };
+		BE9BED02230E944D00640A93 /* DateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9BED01230E944D00640A93 /* DateCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		B06A9C74230E69EB007D38B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B06A9C76230E69EB007D38B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B06A9C86230E7173007D38B5 /* DashboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
+		BE9BECF9230E892F00640A93 /* HistoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryController.swift; sourceTree = "<group>"; };
+		BE9BECFB230E897900640A93 /* History.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = History.storyboard; path = MiniChallenge3/Controller/History.storyboard; sourceTree = SOURCE_ROOT; };
+		BE9BECFD230E8DAD00640A93 /* CalenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalenderView.swift; path = MiniChallenge3/Controller/CalenderView.swift; sourceTree = SOURCE_ROOT; };
+		BE9BED01230E944D00640A93 /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DateCollectionViewCell.swift; path = MiniChallenge3/Controller/DateCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +90,9 @@
 		B06A9C84230E6F3F007D38B5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BE9BECFB230E897900640A93 /* History.storyboard */,
+				BE9BED01230E944D00640A93 /* DateCollectionViewCell.swift */,
+				BE9BECFD230E8DAD00640A93 /* CalenderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -90,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				B06A9C86230E7173007D38B5 /* DashboardController.swift */,
+				BE9BECF9230E892F00640A93 /* HistoryController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -155,6 +167,7 @@
 				B06A9C75230E69EB007D38B5 /* LaunchScreen.storyboard in Resources */,
 				B06A9C72230E69EB007D38B5 /* Assets.xcassets in Resources */,
 				B06A9C6D230E69E9007D38B5 /* Main.storyboard in Resources */,
+				BE9BECFC230E897900640A93 /* History.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,10 +178,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE9BECFA230E892F00640A93 /* HistoryController.swift in Sources */,
 				B06A9C87230E7173007D38B5 /* DashboardController.swift in Sources */,
+				BE9BECFE230E8DAD00640A93 /* CalenderView.swift in Sources */,
 				B06A9C6A230E69E9007D38B5 /* ViewController.swift in Sources */,
 				B06A9C68230E69E9007D38B5 /* AppDelegate.swift in Sources */,
 				B06A9C70230E69E9007D38B5 /* MiniChallenge3.xcdatamodeld in Sources */,
+				BE9BED02230E944D00640A93 /* DateCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
