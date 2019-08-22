@@ -1,5 +1,5 @@
 //
-//  DashboardController.swift
+//  HistoryController.swift
 //  MiniChallenge3
 //
 //  Created by Steven on 8/22/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DashboardController: UIViewController {
+class HistoryController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
