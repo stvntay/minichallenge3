@@ -15,6 +15,8 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         ProfileTableView.layer.cornerRadius = 40
+        ProfileTableView.register(UINib(nibName: "ProfileTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileTableViewCell")
+
         //        TO DO: Add background image when it is available
         //        profileTableView.backgroundView = UIImageView(image: UIImage(named: <#T##String#>))
     }
