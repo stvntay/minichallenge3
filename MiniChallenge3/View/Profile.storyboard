@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KVk-GK-jb7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Profile View Controller-->
+        <!--Profile-->
         <scene sceneID="60i-3E-05M">
             <objects>
-                <viewController id="KVk-GK-jb7" customClass="ProfileViewController" customModule="MiniChallenge3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Profile" id="KVk-GK-jb7" customClass="ProfileViewController" customModule="MiniChallenge3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Omi-2f-7bC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -42,7 +42,7 @@
                         <viewLayoutGuide key="safeArea" id="Bv1-uW-hcx"/>
                     </view>
                     <connections>
-                        <outlet property="profileTableView" destination="v9T-L1-6Sl" id="YLJ-rF-ypO"/>
+                        <outlet property="ProfileTableView" destination="v9T-L1-6Sl" id="I8M-94-fN7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xbi-Bq-Z94" userLabel="First Responder" sceneMemberID="firstResponder"/>

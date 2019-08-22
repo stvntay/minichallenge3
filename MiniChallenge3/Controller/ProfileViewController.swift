@@ -25,9 +25,10 @@ var mockProfile = [
     ["Nama", "Bambang Sanusi"],
     ["Umur", 43]
 ]
+
 extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let selectedCell = tableView.cellForRow(at: indexPath) as! ProfileTableViewCell
+        let selectedCell = tableView.dequeueReusableCell(withIdentifier: "ProfileTableViewCell", for: indexPath) as! ProfileTableViewCell
         selectedCell.cellTitle.text = (mockProfile[indexPath.row][0] as! String)
         selectedCell.cellDescription.text = mockProfile[indexPath.row][1] as? String
         return selectedCell
