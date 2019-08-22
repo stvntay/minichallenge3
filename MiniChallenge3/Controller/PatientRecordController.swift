@@ -19,8 +19,20 @@ class PatientRecordController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        let selectedCell = tableView.cellForRow(at: indexPath) as! PatientRecordTableViewCell
+    
+}
+
+extension PatientRecordController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // Configure number of row
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PatientRecordTableViewCell", for: indexPath) as! PatientRecordTableViewCell
+        
+        // Configure the cell’s contents here
+        
+        return cell
     }
 }
