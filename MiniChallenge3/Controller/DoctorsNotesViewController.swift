@@ -12,7 +12,6 @@ class DoctorsNotesViewController: UIViewController {
 
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var textView: UITextView!
-    @IBOutlet weak var doctorsNoteTitle: UINavigationItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()

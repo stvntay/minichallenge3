@@ -40,7 +40,6 @@
                     <connections>
                         <outlet property="navigationBar" destination="fzK-AW-G07" id="FZi-vA-LGV"/>
                         <outlet property="textView" destination="cm3-BS-wee" id="qGd-Ii-Gb0"/>
-                        <outlet property="title" destination="9No-6h-8lh" id="RFa-FM-bNc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G5y-HK-8KL" userLabel="First Responder" sceneMemberID="firstResponder"/>
