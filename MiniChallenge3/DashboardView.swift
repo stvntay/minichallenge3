@@ -19,6 +19,8 @@ class DashboardView: UIView {
         medicineList.dataSource = self
         medicineList.delegate = self
         
+        let nib = UINib.init(nibName: "DashboardCell", bundle: nil)
+        self.medicineList.register(nib, forCellReuseIdentifier: "DashboardCell")
     }
     /*
     // Only override draw() if you perform custom drawing.
@@ -27,16 +29,20 @@ class DashboardView: UIView {
         // Drawing code
     }
     */
+    
+    func getData(data: [DashboardData]){
+        self.data = data
+    }
 
 }
 
 extension DashboardView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        data.count
+        return data.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! DashboardCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DashboardCell", for: indexPath) as! DashboardCell
         
         return cell
     }

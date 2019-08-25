@@ -10,6 +10,7 @@ import UIKit
 
 class DashboardCell: UITableViewCell {
 
+    @IBOutlet weak var medicineName: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

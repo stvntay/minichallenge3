@@ -11,9 +11,11 @@ import UIKit
 class DashboardController: UIViewController {
 
     @IBOutlet var dashboardView: DashboardView!
+    var data = [DashboardData]()
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        dashboardView.getData(data: data)
         // Do any additional setup after loading the view.
     }
     
