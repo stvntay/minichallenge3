@@ -14,6 +14,11 @@
 		B06A9C72230E69EB007D38B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B06A9C71230E69EB007D38B5 /* Assets.xcassets */; };
 		B06A9C75230E69EB007D38B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B06A9C73230E69EB007D38B5 /* LaunchScreen.storyboard */; };
 		B06A9C87230E7173007D38B5 /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C86230E7173007D38B5 /* DashboardController.swift */; };
+		B075077A2312D75A00DCB227 /* dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B07507792312D75A00DCB227 /* dashboard.storyboard */; };
+		B075077C2312D7F800DCB227 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B075077B2312D7F800DCB227 /* DashboardView.swift */; };
+		B075077F2312D90600DCB227 /* DashboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B075077D2312D90600DCB227 /* DashboardCell.swift */; };
+		B07507802312D90600DCB227 /* DashboardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B075077E2312D90600DCB227 /* DashboardCell.xib */; };
+		B07507842312D9DF00DCB227 /* DashboardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07507832312D9DF00DCB227 /* DashboardData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,11 @@
 		B06A9C74230E69EB007D38B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B06A9C76230E69EB007D38B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B06A9C86230E7173007D38B5 /* DashboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
+		B07507792312D75A00DCB227 /* dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = dashboard.storyboard; sourceTree = "<group>"; };
+		B075077B2312D7F800DCB227 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DashboardView.swift; path = MiniChallenge3/DashboardView.swift; sourceTree = SOURCE_ROOT; };
+		B075077D2312D90600DCB227 /* DashboardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DashboardCell.swift; path = MiniChallenge3/DashboardCell.swift; sourceTree = SOURCE_ROOT; };
+		B075077E2312D90600DCB227 /* DashboardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = DashboardCell.xib; path = MiniChallenge3/DashboardCell.xib; sourceTree = SOURCE_ROOT; };
+		B07507832312D9DF00DCB227 /* DashboardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DashboardData.swift; path = MiniChallenge3/DashboardData.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +75,7 @@
 				B06A9C69230E69E9007D38B5 /* ViewController.swift */,
 				B06A9C6B230E69E9007D38B5 /* Main.storyboard */,
 				B06A9C71230E69EB007D38B5 /* Assets.xcassets */,
+				B07507792312D75A00DCB227 /* dashboard.storyboard */,
 				B06A9C73230E69EB007D38B5 /* LaunchScreen.storyboard */,
 				B06A9C76230E69EB007D38B5 /* Info.plist */,
 				B06A9C6E230E69E9007D38B5 /* MiniChallenge3.xcdatamodeld */,
@@ -75,6 +86,7 @@
 		B06A9C83230E6F17007D38B5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B07507832312D9DF00DCB227 /* DashboardData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -82,6 +94,9 @@
 		B06A9C84230E6F3F007D38B5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B075077B2312D7F800DCB227 /* DashboardView.swift */,
+				B075077D2312D90600DCB227 /* DashboardCell.swift */,
+				B075077E2312D90600DCB227 /* DashboardCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -152,9 +167,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B07507802312D90600DCB227 /* DashboardCell.xib in Resources */,
 				B06A9C75230E69EB007D38B5 /* LaunchScreen.storyboard in Resources */,
 				B06A9C72230E69EB007D38B5 /* Assets.xcassets in Resources */,
 				B06A9C6D230E69E9007D38B5 /* Main.storyboard in Resources */,
+				B075077A2312D75A00DCB227 /* dashboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,7 +184,10 @@
 			files = (
 				B06A9C87230E7173007D38B5 /* DashboardController.swift in Sources */,
 				B06A9C6A230E69E9007D38B5 /* ViewController.swift in Sources */,
+				B075077C2312D7F800DCB227 /* DashboardView.swift in Sources */,
 				B06A9C68230E69E9007D38B5 /* AppDelegate.swift in Sources */,
+				B07507842312D9DF00DCB227 /* DashboardData.swift in Sources */,
+				B075077F2312D90600DCB227 /* DashboardCell.swift in Sources */,
 				B06A9C70230E69E9007D38B5 /* MiniChallenge3.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

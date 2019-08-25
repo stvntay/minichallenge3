@@ -10,6 +10,7 @@ import UIKit
 
 class DashboardController: UIViewController {
 
+    @IBOutlet var dashboardView: DashboardView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
