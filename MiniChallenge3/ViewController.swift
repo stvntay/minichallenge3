@@ -10,9 +10,18 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let storyboard = UIStoryboard(name: "Onboard", bundle: nil)
+        let firstVC = storyboard.instantiateViewController(withIdentifier: "doctorView")
+        self.present(firstVC, animated: true, completion: nil)
     }
 
 

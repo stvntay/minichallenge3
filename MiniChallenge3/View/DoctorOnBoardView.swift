@@ -17,6 +17,7 @@ class DoctorOnBoardView: UIView {
     
     
     override func awakeFromNib() {
+        
         doctorNameInput.clearButtonMode = UITextField.ViewMode.whileEditing
         hospitalNameInput.clearButtonMode = UITextField.ViewMode.whileEditing
         verifCodeInput.clearButtonMode = UITextField.ViewMode.whileEditing

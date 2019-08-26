@@ -9,13 +9,49 @@
 import UIKit
 
 class PatientOnBoardViewController: UIViewController {
-
+    @IBOutlet var patientView: PatientOnBoardView!
+    var datepicker = UIDatePicker()
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         // Do any additional setup after loading the view.
+        initialization()
     }
     
+    func initialization(){
+        patientView.releaseDateInput.addTarget(self, action: #selector(getDateRelease), for: .touchDown)
+    }
+    
+    @objc func getDateRelease(sender: UITextField){
+        print("date selected")
+        
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneDatePicker))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker))
+        
+        toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
+        
+        datepicker.datePickerMode = .date
+        patientView.releaseDateInput.inputAccessoryView = toolbar
+        patientView.releaseDateInput.inputView = datepicker
+//        datepicker.addTarget(self, action: #selector(DatePickerView), for: .touchUpInside)
+    }
+    
+    @objc func doneDatePicker(){
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd MMM yyyy"
+        patientView.releaseDateInput.text = dateFormatter.string(from: datepicker.date)
+        self.view.endEditing(true)
+    }
+    
+    @objc func cancelDatePicker(){
+        self.view.endEditing(true)
+    }
+    
+
 
     /*
     // MARK: - Navigation
