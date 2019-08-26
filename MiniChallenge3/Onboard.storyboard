@@ -13,7 +13,7 @@
         <!--Doctor On Board Controller-->
         <scene sceneID="fRx-UP-1EV">
             <objects>
-                <viewController id="Qxo-WO-esM" customClass="DoctorOnBoardController" customModule="MiniChallenge3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="doctorView" id="Qxo-WO-esM" customClass="DoctorOnBoardController" customModule="MiniChallenge3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MYa-14-x44" customClass="DoctorOnBoardView" customModule="MiniChallenge3" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -64,6 +64,9 @@
                             <outlet property="verifCodeInput" destination="kuN-5m-Gg2" id="hyc-1B-hhH"/>
                         </connections>
                     </view>
+                    <connections>
+                        <outlet property="onBoardDoctor" destination="MYa-14-x44" id="jFq-et-yzv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GsA-nb-wve" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -72,7 +75,7 @@
         <!--Patient On Board View Controller-->
         <scene sceneID="S8m-u1-3Fn">
             <objects>
-                <viewController id="cAx-g7-dKR" customClass="PatientOnBoardViewController" customModule="MiniChallenge3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="patientView" id="cAx-g7-dKR" customClass="PatientOnBoardViewController" customModule="MiniChallenge3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pEZ-pK-X9f" customClass="PatientOnBoardView" customModule="MiniChallenge3" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -126,10 +129,14 @@
                         <connections>
                             <outlet property="addressPatientInput" destination="gCz-cf-SVU" id="yk2-ny-Bhi"/>
                             <outlet property="agePatientInput" destination="lcd-Pa-rqj" id="ogE-Vr-79f"/>
+                            <outlet property="doneBtn" destination="ixl-85-hlS" id="ifj-Fz-fu5"/>
                             <outlet property="namePatientInput" destination="T3n-rb-U3w" id="EgH-Q3-BUs"/>
                             <outlet property="releaseDateInput" destination="95U-J9-rgX" id="Z6E-Yj-dpr"/>
                         </connections>
                     </view>
+                    <connections>
+                        <outlet property="patientView" destination="pEZ-pK-X9f" id="fNW-0U-Y3K"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZDV-Q9-RgH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
