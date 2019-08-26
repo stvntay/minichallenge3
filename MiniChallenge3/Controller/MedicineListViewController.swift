@@ -26,6 +26,8 @@ class MedicineListViewController: UIViewController, UITableViewDelegate, UITable
         super.viewDidLoad()
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(red:0.94, green:0.45, blue:0.37, alpha:1.0)]
         
+        medicineList.delegate = self
+        medicineList.dataSource = self
         medicineList.register(UINib(nibName: "MedicineListableViewCell", bundle: nil), forCellReuseIdentifier: "medicineList")
         navBar.rightBarButtonItem = UIBarButtonItem(
             image: UIImage(named: "add-icon")?.withRenderingMode(.alwaysOriginal),
