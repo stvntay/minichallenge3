@@ -1,5 +1,5 @@
 //
-//  OnboardController.swift
+//  PatientOnBoardViewController.swift
 //  MiniChallenge3
 //
 //  Created by Steven on 8/26/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OnboardController: UIViewController {
+class PatientOnBoardViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

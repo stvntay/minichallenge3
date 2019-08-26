@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B05BB1E323139BEB00B80F13 /* OnboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05BB1E223139BEB00B80F13 /* OnboardController.swift */; };
-		B05BB1E523139BFE00B80F13 /* OnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05BB1E423139BFE00B80F13 /* OnboardView.swift */; };
-		B05BB1E723139C0C00B80F13 /* OnboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05BB1E623139C0C00B80F13 /* OnboardModel.swift */; };
 		B05BB1E923139C1700B80F13 /* Onboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B05BB1E823139C1700B80F13 /* Onboard.storyboard */; };
+		B05BB1ED23139FB500B80F13 /* DoctorOnBoardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05BB1EC23139FB500B80F13 /* DoctorOnBoardController.swift */; };
+		B05BB1EF23139FD800B80F13 /* PatientOnBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05BB1EE23139FD800B80F13 /* PatientOnBoardViewController.swift */; };
+		B05BB1F12313A33400B80F13 /* DoctorOnBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05BB1F02313A33400B80F13 /* DoctorOnBoardView.swift */; };
+		B05BB1F32313A34500B80F13 /* PatientOnBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05BB1F22313A34500B80F13 /* PatientOnBoardView.swift */; };
 		B06A9C68230E69E9007D38B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C67230E69E9007D38B5 /* AppDelegate.swift */; };
 		B06A9C6A230E69E9007D38B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C69230E69E9007D38B5 /* ViewController.swift */; };
 		B06A9C6D230E69E9007D38B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B06A9C6B230E69E9007D38B5 /* Main.storyboard */; };
@@ -26,10 +27,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B05BB1E223139BEB00B80F13 /* OnboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardController.swift; sourceTree = "<group>"; };
-		B05BB1E423139BFE00B80F13 /* OnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardView.swift; sourceTree = "<group>"; };
-		B05BB1E623139C0C00B80F13 /* OnboardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardModel.swift; sourceTree = "<group>"; };
 		B05BB1E823139C1700B80F13 /* Onboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboard.storyboard; sourceTree = "<group>"; };
+		B05BB1EC23139FB500B80F13 /* DoctorOnBoardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorOnBoardController.swift; sourceTree = "<group>"; };
+		B05BB1EE23139FD800B80F13 /* PatientOnBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientOnBoardViewController.swift; sourceTree = "<group>"; };
+		B05BB1F02313A33400B80F13 /* DoctorOnBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorOnBoardView.swift; sourceTree = "<group>"; };
+		B05BB1F22313A34500B80F13 /* PatientOnBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientOnBoardView.swift; sourceTree = "<group>"; };
 		B06A9C64230E69E9007D38B5 /* MiniChallenge3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniChallenge3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B06A9C67230E69E9007D38B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B06A9C69230E69E9007D38B5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -96,7 +98,6 @@
 			children = (
 				B06A9C88230E73C8007D38B5 /* DashboardModel.swift */,
 				B06A9C96230E7D31007D38B5 /* HistoryModel.swift */,
-				B05BB1E623139C0C00B80F13 /* OnboardModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -106,7 +107,8 @@
 			children = (
 				B06A9C8A230E73D7007D38B5 /* DashboardView.swift */,
 				B06A9C98230E7D54007D38B5 /* HistoryView.swift */,
-				B05BB1E423139BFE00B80F13 /* OnboardView.swift */,
+				B05BB1F02313A33400B80F13 /* DoctorOnBoardView.swift */,
+				B05BB1F22313A34500B80F13 /* PatientOnBoardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -116,7 +118,8 @@
 			children = (
 				B06A9C8C230E7ABD007D38B5 /* DashboardController.swift */,
 				B06A9C90230E7CF8007D38B5 /* HistoryController.swift */,
-				B05BB1E223139BEB00B80F13 /* OnboardController.swift */,
+				B05BB1EC23139FB500B80F13 /* DoctorOnBoardController.swift */,
+				B05BB1EE23139FD800B80F13 /* PatientOnBoardViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -194,17 +197,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				B06A9C89230E73C8007D38B5 /* DashboardModel.swift in Sources */,
+				B05BB1F12313A33400B80F13 /* DoctorOnBoardView.swift in Sources */,
 				B06A9C97230E7D31007D38B5 /* HistoryModel.swift in Sources */,
 				B06A9C8B230E73D7007D38B5 /* DashboardView.swift in Sources */,
 				B06A9C6A230E69E9007D38B5 /* ViewController.swift in Sources */,
 				B06A9C92230E7CF8007D38B5 /* HistoryController.swift in Sources */,
 				B06A9C68230E69E9007D38B5 /* AppDelegate.swift in Sources */,
+				B05BB1ED23139FB500B80F13 /* DoctorOnBoardController.swift in Sources */,
 				B06A9C8E230E7ABD007D38B5 /* DashboardController.swift in Sources */,
-				B05BB1E723139C0C00B80F13 /* OnboardModel.swift in Sources */,
+				B05BB1F32313A34500B80F13 /* PatientOnBoardView.swift in Sources */,
 				B06A9C99230E7D54007D38B5 /* HistoryView.swift in Sources */,
+				B05BB1EF23139FD800B80F13 /* PatientOnBoardViewController.swift in Sources */,
 				B06A9C70230E69E9007D38B5 /* MiniChallenge3.xcdatamodeld in Sources */,
-				B05BB1E523139BFE00B80F13 /* OnboardView.swift in Sources */,
-				B05BB1E323139BEB00B80F13 /* OnboardController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
