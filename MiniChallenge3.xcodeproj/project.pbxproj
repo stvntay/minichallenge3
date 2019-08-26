@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4D1DCDEA230E8CF900E6B230 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D1DCDE9230E8CF900E6B230 /* CloudKit.framework */; };
-		4D1DCDF6230FCA3F00E6B230 /* CloudData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1DCDF5230FCA3F00E6B230 /* CloudData.swift */; };
-		4D1DCDF8230FDF8300E6B230 /* DashboardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1DCDF7230FDF8300E6B230 /* DashboardData.swift */; };
+		B05BB1E323139BEB00B80F13 /* OnboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05BB1E223139BEB00B80F13 /* OnboardController.swift */; };
+		B05BB1E523139BFE00B80F13 /* OnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05BB1E423139BFE00B80F13 /* OnboardView.swift */; };
+		B05BB1E723139C0C00B80F13 /* OnboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05BB1E623139C0C00B80F13 /* OnboardModel.swift */; };
+		B05BB1E923139C1700B80F13 /* Onboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B05BB1E823139C1700B80F13 /* Onboard.storyboard */; };
 		B06A9C68230E69E9007D38B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C67230E69E9007D38B5 /* AppDelegate.swift */; };
 		B06A9C6A230E69E9007D38B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C69230E69E9007D38B5 /* ViewController.swift */; };
 		B06A9C6D230E69E9007D38B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B06A9C6B230E69E9007D38B5 /* Main.storyboard */; };
@@ -25,10 +26,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4D1DCDE7230E8CEA00E6B230 /* MiniChallenge3.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MiniChallenge3.entitlements; sourceTree = "<group>"; };
-		4D1DCDE9230E8CF900E6B230 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
-		4D1DCDF5230FCA3F00E6B230 /* CloudData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudData.swift; sourceTree = "<group>"; };
-		4D1DCDF7230FDF8300E6B230 /* DashboardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardData.swift; sourceTree = "<group>"; };
+		B05BB1E223139BEB00B80F13 /* OnboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardController.swift; sourceTree = "<group>"; };
+		B05BB1E423139BFE00B80F13 /* OnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardView.swift; sourceTree = "<group>"; };
+		B05BB1E623139C0C00B80F13 /* OnboardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardModel.swift; sourceTree = "<group>"; };
+		B05BB1E823139C1700B80F13 /* Onboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboard.storyboard; sourceTree = "<group>"; };
 		B06A9C64230E69E9007D38B5 /* MiniChallenge3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniChallenge3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B06A9C67230E69E9007D38B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B06A9C69230E69E9007D38B5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +106,7 @@
 				B06A9C73230E69EB007D38B5 /* LaunchScreen.storyboard */,
 				B06A9C76230E69EB007D38B5 /* Info.plist */,
 				B06A9C6E230E69E9007D38B5 /* MiniChallenge3.xcdatamodeld */,
+				B05BB1E823139C1700B80F13 /* Onboard.storyboard */,
 			);
 			path = MiniChallenge3;
 			sourceTree = "<group>";
@@ -114,6 +116,7 @@
 			children = (
 				B06A9C88230E73C8007D38B5 /* DashboardModel.swift */,
 				B06A9C96230E7D31007D38B5 /* HistoryModel.swift */,
+				B05BB1E623139C0C00B80F13 /* OnboardModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -123,6 +126,7 @@
 			children = (
 				B06A9C8A230E73D7007D38B5 /* DashboardView.swift */,
 				B06A9C98230E7D54007D38B5 /* HistoryView.swift */,
+				B05BB1E423139BFE00B80F13 /* OnboardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -132,6 +136,7 @@
 			children = (
 				B06A9C8C230E7ABD007D38B5 /* DashboardController.swift */,
 				B06A9C90230E7CF8007D38B5 /* HistoryController.swift */,
+				B05BB1E223139BEB00B80F13 /* OnboardController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -204,6 +209,7 @@
 			files = (
 				B06A9C75230E69EB007D38B5 /* LaunchScreen.storyboard in Resources */,
 				B06A9C72230E69EB007D38B5 /* Assets.xcassets in Resources */,
+				B05BB1E923139C1700B80F13 /* Onboard.storyboard in Resources */,
 				B06A9C6D230E69E9007D38B5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -225,8 +231,11 @@
 				B06A9C92230E7CF8007D38B5 /* HistoryController.swift in Sources */,
 				B06A9C68230E69E9007D38B5 /* AppDelegate.swift in Sources */,
 				B06A9C8E230E7ABD007D38B5 /* DashboardController.swift in Sources */,
+				B05BB1E723139C0C00B80F13 /* OnboardModel.swift in Sources */,
 				B06A9C99230E7D54007D38B5 /* HistoryView.swift in Sources */,
 				B06A9C70230E69E9007D38B5 /* MiniChallenge3.xcdatamodeld in Sources */,
+				B05BB1E523139BFE00B80F13 /* OnboardView.swift in Sources */,
+				B05BB1E323139BEB00B80F13 /* OnboardController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
