@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add MedicineVC-->
+        <scene sceneID="zu4-y4-bmw">
+            <objects>
+                <viewController id="pzb-0H-09B" customClass="AddMedicineVC" customModule="MiniChallenge3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="prV-Ad-Znb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rTA-k9-EKz">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Title" id="pOC-9D-XiW"/>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Bx-Fv-Ymr">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Masukkan Data Obat Pasien" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQT-XW-Evg">
+                                        <rect key="frame" x="40" y="44" width="337.5" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                        <color key="textColor" red="0.90980392160000001" green="0.90980392160000001" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nama Obat" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4ww-vh-OIs">
+                                        <rect key="frame" x="40" y="108" width="337.5" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dosis Obat" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Egs-1V-RmS">
+                                        <rect key="frame" x="40" y="175" width="337.5" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Minum berapa kali sehari" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wTd-ub-aa9">
+                                        <rect key="frame" x="39" y="234" width="337.5" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Waktu minum (sebelum/sesudah makan)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zTi-Gu-fCZ">
+                                        <rect key="frame" x="39" y="299" width="337.5" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Atur Waktu Minum Obat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gaD-eu-L4S">
+                                        <rect key="frame" x="39" y="370" width="337.5" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                        <color key="textColor" red="0.90980392160000001" green="0.90980392160000001" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <pickerView tag="2" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pIr-I8-HTw">
+                                        <rect key="frame" x="208.5" y="444" width="169" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="169" id="AiY-gu-PVX"/>
+                                            <constraint firstAttribute="width" constant="169" id="PAD-77-Nmd"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="dataSource" destination="pzb-0H-09B" id="9oB-Oz-Tbh"/>
+                                            <outlet property="delegate" destination="pzb-0H-09B" id="iAa-dc-Tfn"/>
+                                        </connections>
+                                    </pickerView>
+                                    <pickerView tag="1" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c05-FE-aUv">
+                                        <rect key="frame" x="40" y="444" width="169" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="169" id="8lt-hN-NSA"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="dataSource" destination="pzb-0H-09B" id="MiH-JY-MdQ"/>
+                                            <outlet property="delegate" destination="pzb-0H-09B" id="a0b-lp-mmV"/>
+                                        </connections>
+                                    </pickerView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Pagi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBq-qB-Rr6">
+                                        <rect key="frame" x="40" y="412" width="38" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" red="0.90980392160000001" green="0.90980392160000001" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <pickerView tag="4" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ioB-Ry-Aq4">
+                                        <rect key="frame" x="207" y="532" width="169" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="169" id="Ih7-ei-d8C"/>
+                                            <constraint firstAttribute="width" constant="169" id="OZA-vX-C0l"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="dataSource" destination="pzb-0H-09B" id="eIg-rY-hOF"/>
+                                            <outlet property="delegate" destination="pzb-0H-09B" id="fHZ-Cf-hyX"/>
+                                        </connections>
+                                    </pickerView>
+                                    <pickerView tag="3" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nOj-zc-win">
+                                        <rect key="frame" x="39" y="532" width="169" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="169" id="B4F-8m-6FP"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="dataSource" destination="pzb-0H-09B" id="icP-8n-hIx"/>
+                                            <outlet property="delegate" destination="pzb-0H-09B" id="NCJ-PZ-fRn"/>
+                                        </connections>
+                                    </pickerView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Siang" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WBt-Kv-s4g">
+                                        <rect key="frame" x="39" y="500" width="50" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" red="0.90980392160000001" green="0.90980392160000001" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <pickerView tag="6" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dTH-87-QG5">
+                                        <rect key="frame" x="207" y="633" width="169" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="169" id="VJR-fy-FeM"/>
+                                            <constraint firstAttribute="width" constant="169" id="reG-It-hMD"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="dataSource" destination="pzb-0H-09B" id="oNu-nQ-cyc"/>
+                                            <outlet property="delegate" destination="pzb-0H-09B" id="ogt-jx-7u4"/>
+                                        </connections>
+                                    </pickerView>
+                                    <pickerView tag="5" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yk8-Ye-fuw">
+                                        <rect key="frame" x="39" y="633" width="169" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="169" id="C73-4E-FmA"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="dataSource" destination="pzb-0H-09B" id="ATS-jw-fzk"/>
+                                            <outlet property="delegate" destination="pzb-0H-09B" id="LFR-6V-ZEw"/>
+                                        </connections>
+                                    </pickerView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Malam" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5pu-pH-x3M">
+                                        <rect key="frame" x="39" y="601" width="59" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" red="0.90980392160000001" green="0.90980392160000001" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.4549019608" blue="0.37254901959999998" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="gaD-eu-L4S" firstAttribute="top" secondItem="zTi-Gu-fCZ" secondAttribute="bottom" constant="56" id="0Ae-Oy-oTU"/>
+                                    <constraint firstItem="WBt-Kv-s4g" firstAttribute="top" secondItem="c05-FE-aUv" secondAttribute="bottom" constant="-4" id="2KF-Uh-dyD"/>
+                                    <constraint firstItem="Egs-1V-RmS" firstAttribute="leading" secondItem="9Bx-Fv-Ymr" secondAttribute="leading" constant="40" id="6RT-Sx-6Sp"/>
+                                    <constraint firstItem="ioB-Ry-Aq4" firstAttribute="top" secondItem="WBt-Kv-s4g" secondAttribute="bottom" constant="8" id="BSq-Vc-jBr"/>
+                                    <constraint firstItem="c05-FE-aUv" firstAttribute="top" secondItem="jBq-qB-Rr6" secondAttribute="bottom" constant="11" id="GEf-dl-hgs"/>
+                                    <constraint firstItem="JQT-XW-Evg" firstAttribute="leading" secondItem="9Bx-Fv-Ymr" secondAttribute="leading" constant="40" id="JDS-YK-LGF"/>
+                                    <constraint firstAttribute="trailing" secondItem="Egs-1V-RmS" secondAttribute="trailing" constant="40" id="MzL-s8-IWd"/>
+                                    <constraint firstItem="c05-FE-aUv" firstAttribute="leading" secondItem="9Bx-Fv-Ymr" secondAttribute="leading" constant="40" id="Pjc-5L-v6s"/>
+                                    <constraint firstItem="Egs-1V-RmS" firstAttribute="top" secondItem="4ww-vh-OIs" secondAttribute="bottom" constant="26" id="XYT-9f-mmE"/>
+                                    <constraint firstItem="dTH-87-QG5" firstAttribute="top" secondItem="5pu-pH-x3M" secondAttribute="bottom" constant="8" id="apd-aD-x5J"/>
+                                    <constraint firstAttribute="trailing" secondItem="4ww-vh-OIs" secondAttribute="trailing" constant="40" id="atY-VD-c4u"/>
+                                    <constraint firstItem="nOj-zc-win" firstAttribute="top" secondItem="WBt-Kv-s4g" secondAttribute="bottom" constant="11" id="bPL-1O-cY8"/>
+                                    <constraint firstItem="jBq-qB-Rr6" firstAttribute="top" secondItem="gaD-eu-L4S" secondAttribute="bottom" constant="15" id="g6f-1w-ExN"/>
+                                    <constraint firstItem="Yk8-Ye-fuw" firstAttribute="top" secondItem="5pu-pH-x3M" secondAttribute="bottom" constant="11" id="kZj-w0-M93"/>
+                                    <constraint firstAttribute="trailing" secondItem="JQT-XW-Evg" secondAttribute="trailing" constant="40" id="l2A-YX-jaE"/>
+                                    <constraint firstItem="pIr-I8-HTw" firstAttribute="top" secondItem="jBq-qB-Rr6" secondAttribute="bottom" constant="8" id="lN8-2D-GVo"/>
+                                    <constraint firstItem="jBq-qB-Rr6" firstAttribute="leading" secondItem="9Bx-Fv-Ymr" secondAttribute="leading" constant="40" id="qSE-rc-lMg"/>
+                                    <constraint firstAttribute="trailing" secondItem="pIr-I8-HTw" secondAttribute="trailing" constant="40" id="qec-vu-Fsb"/>
+                                    <constraint firstItem="5pu-pH-x3M" firstAttribute="top" secondItem="nOj-zc-win" secondAttribute="bottom" constant="26" id="tHc-I9-dKb"/>
+                                    <constraint firstItem="4ww-vh-OIs" firstAttribute="leading" secondItem="9Bx-Fv-Ymr" secondAttribute="leading" constant="40" id="tp4-ls-xEJ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="MRc-DV-epi"/>
+                    </view>
+                    <connections>
+                        <outlet property="afternoonReminderHourPicker" destination="nOj-zc-win" id="reo-3y-xBk"/>
+                        <outlet property="afternoonReminderLabel" destination="WBt-Kv-s4g" id="aWy-7a-7HA"/>
+                        <outlet property="afternoonReminderMinutePicker" destination="ioB-Ry-Aq4" id="aR9-Vt-yE7"/>
+                        <outlet property="eveningReminderHourPicker" destination="Yk8-Ye-fuw" id="8Gg-WK-FdM"/>
+                        <outlet property="eveningReminderLabel" destination="5pu-pH-x3M" id="twv-H0-Nqu"/>
+                        <outlet property="eveningReminderMinutePicker" destination="dTH-87-QG5" id="qnC-lt-I2m"/>
+                        <outlet property="medicineBeforeAfterMealLabel" destination="zTi-Gu-fCZ" id="MjX-eQ-WlV"/>
+                        <outlet property="medicineDataSectionTitle" destination="gaD-eu-L4S" id="pzB-Wy-blk"/>
+                        <outlet property="medicineDosage" destination="Egs-1V-RmS" id="x98-O7-8JB"/>
+                        <outlet property="medicineFrequency" destination="wTd-ub-aa9" id="Hp0-wu-LpR"/>
+                        <outlet property="medicineName" destination="4ww-vh-OIs" id="KAA-4h-DSh"/>
+                        <outlet property="morningReminderHourPicker" destination="c05-FE-aUv" id="R6E-I7-GtT"/>
+                        <outlet property="morningReminderLabel" destination="jBq-qB-Rr6" id="Uxi-Kp-tTz"/>
+                        <outlet property="morningReminderMinutePicker" destination="pIr-I8-HTw" id="luD-Os-qCB"/>
+                        <outlet property="navBar" destination="pOC-9D-XiW" id="ICS-tO-vOe"/>
+                        <outlet property="patientDataSectionTitle" destination="JQT-XW-Evg" id="Q9v-JR-4LD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2ll-YW-qbq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-152" y="119"/>
+        </scene>
+    </scenes>
+</document>
