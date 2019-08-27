@@ -37,6 +37,11 @@ class CreateRecordVC: UIViewController, UICollectionViewDataSource, UICollection
 
         questionBox.text = questions[selector]
         
+        if questions.count >= selector {
+            self.nextButton.alpha = 0
+//            navBar.rightBarButtonItem = UIBarButtonItem(title: "Selesai", style: .plain, target: self, action: #selector(onDoneTapped))
+        }
+        
         self.optionsCollectionView.dataSource = self
         self.optionsCollectionView.delegate = self
         optionsCollectionView.register(UINib(nibName: "CreateRecordOptionCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "optionCell")
@@ -71,6 +76,10 @@ class CreateRecordVC: UIViewController, UICollectionViewDataSource, UICollection
     
     @IBAction func onNextTapped(_ sender: Any) {
         selector += 1
+    }
+    
+    func onDoneTapped(_ sender: Any) {
+        // perform / unwind segue here
     }
     
     // MARK: - Navigation
