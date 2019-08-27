@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		B06A9C68230E69E9007D38B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C67230E69E9007D38B5 /* AppDelegate.swift */; };
 		B06A9C6A230E69E9007D38B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C69230E69E9007D38B5 /* ViewController.swift */; };
+		95AA21B02314B730008BD509 /* CreateRecord.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95AA21AF2314B730008BD509 /* CreateRecord.storyboard */; };
+		95AA21B22314B9BF008BD509 /* CreateRecordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AA21B12314B9BF008BD509 /* CreateRecordVC.swift */; };
+		95AA21B52314BA7E008BD509 /* CreateRecordOptionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AA21B32314BA7E008BD509 /* CreateRecordOptionCollectionViewCell.swift */; };
+		95AA21B62314BA7E008BD509 /* CreateRecordOptionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95AA21B42314BA7E008BD509 /* CreateRecordOptionCollectionViewCell.xib */; };
 		B06A9C6D230E69E9007D38B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B06A9C6B230E69E9007D38B5 /* Main.storyboard */; };
 		B06A9C70230E69E9007D38B5 /* MiniChallenge3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C6E230E69E9007D38B5 /* MiniChallenge3.xcdatamodeld */; };
 		B06A9C72230E69EB007D38B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B06A9C71230E69EB007D38B5 /* Assets.xcassets */; };
