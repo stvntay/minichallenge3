@@ -28,7 +28,7 @@ class MedicineListViewController: UIViewController, UITableViewDelegate, UITable
         
         medicineList.delegate = self
         medicineList.dataSource = self
-        medicineList.register(UINib(nibName: "MedicineListableViewCell", bundle: nil), forCellReuseIdentifier: "medicineList")
+        medicineList.register(UINib(nibName: "MedicineListTableViewCell", bundle: nil), forCellReuseIdentifier: "medicineList")
         navBar.rightBarButtonItem = UIBarButtonItem(
             image: UIImage(named: "add-icon")?.withRenderingMode(.alwaysOriginal),
             landscapeImagePhone: UIImage(named: "add-icon"),
