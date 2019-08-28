@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B02D868B23166BA400482C4D /* DoctorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02D868A23166BA400482C4D /* DoctorData.swift */; };
+		B02D86902316797700482C4D /* OnBoardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02D868F2316797700482C4D /* OnBoardData.swift */; };
 		B05BB1E923139C1700B80F13 /* Onboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B05BB1E823139C1700B80F13 /* Onboard.storyboard */; };
 		B05BB1ED23139FB500B80F13 /* DoctorOnBoardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05BB1EC23139FB500B80F13 /* DoctorOnBoardController.swift */; };
 		B05BB1EF23139FD800B80F13 /* PatientOnBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05BB1EE23139FD800B80F13 /* PatientOnBoardViewController.swift */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		B02D868A23166BA400482C4D /* DoctorData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorData.swift; sourceTree = "<group>"; };
+		B02D868F2316797700482C4D /* OnBoardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardData.swift; sourceTree = "<group>"; };
 		B05BB1E823139C1700B80F13 /* Onboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboard.storyboard; sourceTree = "<group>"; };
 		B05BB1EC23139FB500B80F13 /* DoctorOnBoardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorOnBoardController.swift; sourceTree = "<group>"; };
 		B05BB1EE23139FD800B80F13 /* PatientOnBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientOnBoardViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				B06A9C88230E73C8007D38B5 /* DashboardModel.swift */,
 				B06A9C96230E7D31007D38B5 /* HistoryModel.swift */,
 				B02D868A23166BA400482C4D /* DoctorData.swift */,
+				B02D868F2316797700482C4D /* OnBoardData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 				B05BB1ED23139FB500B80F13 /* DoctorOnBoardController.swift in Sources */,
 				B06A9C8E230E7ABD007D38B5 /* DashboardController.swift in Sources */,
 				B05BB1F32313A34500B80F13 /* PatientOnBoardView.swift in Sources */,
+				B02D86902316797700482C4D /* OnBoardData.swift in Sources */,
 				B06A9C99230E7D54007D38B5 /* HistoryView.swift in Sources */,
 				B05BB1EF23139FD800B80F13 /* PatientOnBoardViewController.swift in Sources */,
 				B06A9C70230E69E9007D38B5 /* MiniChallenge3.xcdatamodeld in Sources */,

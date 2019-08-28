@@ -14,6 +14,7 @@ class PatientOnBoardView: UIView {
     @IBOutlet weak var agePatientInput: UITextField!
     @IBOutlet weak var releaseDateInput: UITextField!
     @IBOutlet weak var addressPatientInput: UITextField!
+    @IBOutlet weak var hospitalInput: UITextField!
     @IBOutlet weak var doneBtn: UIButton!
     
     override func awakeFromNib() {
@@ -21,7 +22,7 @@ class PatientOnBoardView: UIView {
         agePatientInput.clearButtonMode = UITextField.ViewMode.whileEditing
         releaseDateInput.clearButtonMode = UITextField.ViewMode.whileEditing
         addressPatientInput.clearButtonMode = UITextField.ViewMode.whileEditing
-        
+        hospitalInput.clearButtonMode = UITextField.ViewMode.whileEditing
     }
     /*
     // Only override draw() if you perform custom drawing.
