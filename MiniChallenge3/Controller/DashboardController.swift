@@ -19,6 +19,15 @@ class DashboardController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        setNavigation()
+    }
+    
+    func setNavigation(){
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.topItem?.title = "Dashboard"
+    }
+    
 
     /*
     // MARK: - Navigation

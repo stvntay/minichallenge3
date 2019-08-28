@@ -21,6 +21,10 @@ class DashboardView: UIView {
         
         let nib = UINib.init(nibName: "DashboardCell", bundle: nil)
         self.medicineList.register(nib, forCellReuseIdentifier: "DashboardCell")
+        
+        addReport.layer.cornerRadius = 20
+        addReport.clipsToBounds = true
+        
     }
     /*
     // Only override draw() if you perform custom drawing.
