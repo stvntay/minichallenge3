@@ -11,16 +11,15 @@ import UIKit
 class DoctorOnBoardView: UIView {
 
     @IBOutlet weak var doctorNameInput: UITextField!
-    @IBOutlet weak var hospitalNameInput: UITextField!
-    @IBOutlet weak var verifCodeInput: UITextField!
+    
+    @IBOutlet weak var telephoneDoctor: UITextField!
     @IBOutlet weak var nextPageBtn: UIButton!
     
     
     override func awakeFromNib() {
         
         doctorNameInput.clearButtonMode = UITextField.ViewMode.whileEditing
-        hospitalNameInput.clearButtonMode = UITextField.ViewMode.whileEditing
-        verifCodeInput.clearButtonMode = UITextField.ViewMode.whileEditing
+        telephoneDoctor.clearButtonMode = UITextField.ViewMode.whileEditing
     }
     /*
     // Only override draw() if you perform custom drawing.

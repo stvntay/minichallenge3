@@ -20,8 +20,11 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         let storyboard = UIStoryboard(name: "Onboard", bundle: nil)
-        let firstVC = storyboard.instantiateViewController(withIdentifier: "doctorView")
+        let firstVC = storyboard.instantiateViewController(withIdentifier: "doctorView") 
         self.present(firstVC, animated: true, completion: nil)
+//        let vc = DoctorOnBoardController()
+//        navigationController?.pushViewController(vc, animated: true)
+        
     }
 
 

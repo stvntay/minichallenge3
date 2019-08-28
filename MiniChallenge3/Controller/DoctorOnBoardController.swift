@@ -8,45 +8,51 @@
 
 import UIKit
 
-struct DoctorData {
-    var doctorName: String
-    var doctorHospital: String
-    var verificationCode: String
-}
 
 class DoctorOnBoardController: UIViewController {
     
 
     @IBOutlet var onBoardDoctor: DoctorOnBoardView!
     
-    var data: DoctorData?
+    var data : DoctorData?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getData()
         
         
+        moveToPatientPage()
         // Do any additional setup after loading the view.
     }
     
     
     func getData() {
-        let doctorName = onBoardDoctor.doctorNameInput.text
-        let doctorHospital = onBoardDoctor.hospitalNameInput.text
-        let verificationCode = onBoardDoctor.verifCodeInput.text
         
-        data = DoctorData(doctorName: doctorName!, doctorHospital: doctorHospital!, verificationCode: verificationCode!)
-        moveToPatientPage()
+        guard let doctorName = onBoardDoctor.doctorNameInput.text else{
+            return
+        }
+        guard let doctorNumber = onBoardDoctor.telephoneDoctor.text else {
+            return
+        }
+        
+        data = DoctorData(doctorName: doctorName, doctorNumber: doctorNumber)
+//        data = DoctorData(doctorName: doctorName!, doctorHospital: doctorHospital!, verificationCode: verificationCode!)
+        
     }
     
     func moveToPatientPage(){
+        
         onBoardDoctor.nextPageBtn.addTarget(self, action: #selector(moveAction), for: .touchUpInside)
     }
 
     @objc func moveAction(sender:UIButton){
+        getData()
         let storyboard = UIStoryboard(name: "Onboard", bundle: nil)
-        let page = storyboard.instantiateViewController(withIdentifier: "patientView") as! PatientOnBoardViewController
+//        let vc = PatientOnBoardViewController()
+//        vc.data = data
+//        navigationController?.pushViewController(vc, animated: true)
+         let page = storyboard.instantiateViewController(withIdentifier: "patientView") as! PatientOnBoardViewController
+        page.data = data
         self.present(page, animated: true, completion: nil)
         
     }
