@@ -19,7 +19,7 @@ class DoctorOnBoardController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        navigationController?.navigationBar.isHidden = true
         
         moveToPatientPage()
         // Do any additional setup after loading the view.
