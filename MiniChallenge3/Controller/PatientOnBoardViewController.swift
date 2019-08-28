@@ -22,11 +22,11 @@ class PatientOnBoardViewController: UIViewController {
 //        }
         
         // Do any additional setup after loading the view.
-        initialization()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
-       
+       //initialization()
     }
     
     func initialization(){
