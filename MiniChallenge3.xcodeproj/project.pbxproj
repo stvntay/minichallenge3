@@ -11,6 +11,7 @@
 		95A8CD6B231687A1003721DB /* CreateRecord.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95A8CD68231687A0003721DB /* CreateRecord.storyboard */; };
 		95A8CD6C231687A1003721DB /* CreateRecordOptionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95A8CD69231687A0003721DB /* CreateRecordOptionCollectionViewCell.xib */; };
 		95A8CD6E23168838003721DB /* CreateRecordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A8CD6D23168838003721DB /* CreateRecordVC.swift */; };
+		95A8CD70231688BB003721DB /* CreateRecordGuide.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95A8CD6F231688BB003721DB /* CreateRecordGuide.storyboard */; };
 		B06A9C68230E69E9007D38B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C67230E69E9007D38B5 /* AppDelegate.swift */; };
 		B06A9C6A230E69E9007D38B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C69230E69E9007D38B5 /* ViewController.swift */; };
 		B06A9C6D230E69E9007D38B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B06A9C6B230E69E9007D38B5 /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 		95A8CD68231687A0003721DB /* CreateRecord.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateRecord.storyboard; sourceTree = "<group>"; };
 		95A8CD69231687A0003721DB /* CreateRecordOptionCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateRecordOptionCollectionViewCell.xib; sourceTree = "<group>"; };
 		95A8CD6D23168838003721DB /* CreateRecordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateRecordVC.swift; sourceTree = "<group>"; };
+		95A8CD6F231688BB003721DB /* CreateRecordGuide.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateRecordGuide.storyboard; sourceTree = "<group>"; };
 		B06A9C64230E69E9007D38B5 /* MiniChallenge3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniChallenge3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B06A9C67230E69E9007D38B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B06A9C69230E69E9007D38B5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				95A8CD68231687A0003721DB /* CreateRecord.storyboard */,
+				95A8CD6F231688BB003721DB /* CreateRecordGuide.storyboard */,
 				95A8CD67231687A0003721DB /* CreateRecordOptionCollectionViewCell.swift */,
 				95A8CD69231687A0003721DB /* CreateRecordOptionCollectionViewCell.xib */,
 				B06A9C8A230E73D7007D38B5 /* DashboardView.swift */,
@@ -181,6 +184,7 @@
 			files = (
 				95A8CD6C231687A1003721DB /* CreateRecordOptionCollectionViewCell.xib in Resources */,
 				B06A9C75230E69EB007D38B5 /* LaunchScreen.storyboard in Resources */,
+				95A8CD70231688BB003721DB /* CreateRecordGuide.storyboard in Resources */,
 				95A8CD6B231687A1003721DB /* CreateRecord.storyboard in Resources */,
 				B06A9C72230E69EB007D38B5 /* Assets.xcassets in Resources */,
 				B06A9C6D230E69E9007D38B5 /* Main.storyboard in Resources */,
