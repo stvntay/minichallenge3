@@ -9,14 +9,23 @@
 import UIKit
 
 class PatientOnBoardViewController: UIViewController {
+    
+    
     @IBOutlet var patientView: PatientOnBoardView!
     var datepicker = UIDatePicker()
+    var data : DoctorData?
     override func viewDidLoad() {
         super.viewDidLoad()
-
+//        guard let getData = data else{
+//            return
+//        }
         
         // Do any additional setup after loading the view.
         initialization()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+       
     }
     
     func initialization(){
@@ -24,7 +33,6 @@ class PatientOnBoardViewController: UIViewController {
     }
     
     @objc func getDateRelease(sender: UITextField){
-        print("date selected")
         
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
