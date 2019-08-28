@@ -16,6 +16,7 @@ class DoctorOnBoardController: UIViewController {
     
     var data : DoctorData?
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
