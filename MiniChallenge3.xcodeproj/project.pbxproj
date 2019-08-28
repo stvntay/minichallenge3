@@ -18,6 +18,7 @@
 		BE9BECFC230E897900640A93 /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE9BECFB230E897900640A93 /* History.storyboard */; };
 		BE9BECFE230E8DAD00640A93 /* CalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9BECFD230E8DAD00640A93 /* CalenderView.swift */; };
 		BE9BED02230E944D00640A93 /* DateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9BED01230E944D00640A93 /* DateCollectionViewCell.swift */; };
+		BE9BED0423167E5300640A93 /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9BED0323167E5300640A93 /* CustomButtonStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		BE9BECFB230E897900640A93 /* History.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = History.storyboard; path = MiniChallenge3/Controller/History.storyboard; sourceTree = SOURCE_ROOT; };
 		BE9BECFD230E8DAD00640A93 /* CalenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalenderView.swift; path = MiniChallenge3/Controller/CalenderView.swift; sourceTree = SOURCE_ROOT; };
 		BE9BED01230E944D00640A93 /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DateCollectionViewCell.swift; path = MiniChallenge3/Controller/DateCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		BE9BED0323167E5300640A93 /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 		B06A9C84230E6F3F007D38B5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BE9BED0323167E5300640A93 /* CustomButtonStyle.swift */,
 				BE9BECFB230E897900640A93 /* History.storyboard */,
 				BE9BED01230E944D00640A93 /* DateCollectionViewCell.swift */,
 				BE9BECFD230E8DAD00640A93 /* CalenderView.swift */,
@@ -180,6 +183,7 @@
 			files = (
 				BE9BECFA230E892F00640A93 /* HistoryController.swift in Sources */,
 				B06A9C87230E7173007D38B5 /* DashboardController.swift in Sources */,
+				BE9BED0423167E5300640A93 /* CustomButtonStyle.swift in Sources */,
 				BE9BECFE230E8DAD00640A93 /* CalenderView.swift in Sources */,
 				B06A9C6A230E69E9007D38B5 /* ViewController.swift in Sources */,
 				B06A9C68230E69E9007D38B5 /* AppDelegate.swift in Sources */,
