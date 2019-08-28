@@ -22,45 +22,59 @@ class CreateRecordVC: UIViewController, UICollectionViewDataSource, UICollection
             "Tiga"
         ],
         [
-            "A",
-            "B",
-            "C"
+            "Uno",
+            "Dos",
+            "Tres"
         ]
     ]
-    var questions = ["Kenapa?", "Mengapa"]
+    var questions = [
+        "Kenapa kaki manusia ada 2? Sebetulnya, apa itu definisi sebuah kaki?",
+        "Mengapa simpanse tidak memiliki 4 tangan? Apa perbedaan tangan dan kaki?"
+    ]
     var selector = 0
-    
-    var cellSize = CGSize(width: UIScreen.main.bounds.width * 0.8, height: 55)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: makeBackButton())
 
         questionBox.text = questions[selector]
-        
-        if questions.count >= selector {
-            self.nextButton.alpha = 0
-//            navBar.rightBarButtonItem = UIBarButtonItem(title: "Selesai", style: .plain, target: self, action: #selector(onDoneTapped))
-        }
         
         self.optionsCollectionView.dataSource = self
         self.optionsCollectionView.delegate = self
         optionsCollectionView.register(UINib(nibName: "CreateRecordOptionCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "optionCell")
     }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return cellSize
+    
+    func makeBackButton() -> UIButton {
+        let backButtonImage = UIImage(named: "backbutton")?.withRenderingMode(.alwaysTemplate)
+        let backButton = UIButton(type: .custom)
+        backButton.setImage(backButtonImage, for: .normal)
+        backButton.tintColor = .blue
+        backButton.setTitle("  Back", for: .normal)
+        backButton.setTitleColor(.blue, for: .normal)
+        backButton.addTarget(self, action: #selector(self.backButtonPressed), for: .touchUpInside)
+        return backButton
     }
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
-        
-        let totalCellWidth = Int(UIScreen.main.bounds.width * 0.8) * options[selector].count // width ngasal
-        let totalSpacingWidth = 5 * (options[selector].count - 1)
-        
-        let leftInset = ((self.view.frame.width * 0.8) - CGFloat(totalCellWidth + totalSpacingWidth)) / 2
-        let rightInset = leftInset
-        
-        return UIEdgeInsets(top: 0, left: leftInset, bottom: 0, right: rightInset)
+    @objc func backButtonPressed() {
+        dismiss(animated: true, completion: nil)
     }
+    
+//  these codes doesn't seem to work
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return CGSize(width: collectionView.bounds.size.width, height: CGFloat(50))
+//    }
+    
+//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+//
+//        let totalCellWidth = Int(UIScreen.main.bounds.width * 0.8) * options[selector].count // width ngasal
+//        let totalSpacingWidth = 5 * (options[selector].count - 1)
+//
+//        let leftInset = ((self.view.frame.width * 0.8) - CGFloat(totalCellWidth + totalSpacingWidth)) / 2
+//        let rightInset = leftInset
+//
+//        return UIEdgeInsets(top: 0, left: leftInset, bottom: 0, right: rightInset)
+//    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return options[selector].count
@@ -75,10 +89,18 @@ class CreateRecordVC: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     @IBAction func onNextTapped(_ sender: Any) {
-        selector += 1
+        if selector < (questions.count - 1) {
+            selector += 1
+        } else {
+            self.nextButton.alpha = 0
+            let doneButton = UIBarButtonItem(title: "Selesai", style: .plain, target: self, action: #selector(onDoneTapped))
+            navigationItem.rightBarButtonItem = doneButton
+        }
+        optionsCollectionView.reloadData()
+        questionBox.text = questions[selector]
     }
     
-    func onDoneTapped(_ sender: Any) {
+    @objc func onDoneTapped(_ sender: Any) {
         // perform / unwind segue here
     }
     
