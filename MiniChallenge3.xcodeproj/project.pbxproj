@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4D1DCDEA230E8CF900E6B230 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D1DCDE9230E8CF900E6B230 /* CloudKit.framework */; };
-		4D1DCDEC230EA05B00E6B230 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1DCDEB230EA05B00E6B230 /* DataModel.swift */; };
-		4D1DCDEE230EA07400E6B230 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1DCDED230EA07400E6B230 /* DataModel.swift */; };
+		4D1DCDF6230FCA3F00E6B230 /* CloudData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1DCDF5230FCA3F00E6B230 /* CloudData.swift */; };
+		4D1DCDF8230FDF8300E6B230 /* DashboardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1DCDF7230FDF8300E6B230 /* DashboardData.swift */; };
 		B06A9C68230E69E9007D38B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C67230E69E9007D38B5 /* AppDelegate.swift */; };
 		B06A9C6A230E69E9007D38B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C69230E69E9007D38B5 /* ViewController.swift */; };
 		B06A9C6D230E69E9007D38B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B06A9C6B230E69E9007D38B5 /* Main.storyboard */; };
@@ -22,8 +22,8 @@
 /* Begin PBXFileReference section */
 		4D1DCDE7230E8CEA00E6B230 /* MiniChallenge3.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MiniChallenge3.entitlements; sourceTree = "<group>"; };
 		4D1DCDE9230E8CF900E6B230 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
-		4D1DCDEB230EA05B00E6B230 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DataModel.swift; path = ../../../../ThreadingNetworking/ThreadingNetworking/DataModel.swift; sourceTree = "<group>"; };
-		4D1DCDED230EA07400E6B230 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DataModel.swift; path = ../../../../ThreadingNetworking/ThreadingNetworking/DataModel.swift; sourceTree = "<group>"; };
+		4D1DCDF5230FCA3F00E6B230 /* CloudData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudData.swift; sourceTree = "<group>"; };
+		4D1DCDF7230FDF8300E6B230 /* DashboardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardData.swift; sourceTree = "<group>"; };
 		B06A9C64230E69E9007D38B5 /* MiniChallenge3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniChallenge3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B06A9C67230E69E9007D38B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B06A9C69230E69E9007D38B5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +55,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4D1DCDF4230FCA2100E6B230 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4D1DCDF5230FCA3F00E6B230 /* CloudData.swift */,
+				4D1DCDF7230FDF8300E6B230 /* DashboardData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		B06A9C5B230E69E9007D38B5 = {
 			isa = PBXGroup;
 			children = (
@@ -75,10 +84,10 @@
 		B06A9C66230E69E9007D38B5 /* MiniChallenge3 */ = {
 			isa = PBXGroup;
 			children = (
+				4D1DCDF4230FCA2100E6B230 /* Model */,
 				4D1DCDE7230E8CEA00E6B230 /* MiniChallenge3.entitlements */,
 				B06A9C85230E6F44007D38B5 /* Controller */,
 				B06A9C84230E6F3F007D38B5 /* View */,
-				B06A9C83230E6F17007D38B5 /* Model */,
 				B06A9C67230E69E9007D38B5 /* AppDelegate.swift */,
 				B06A9C69230E69E9007D38B5 /* ViewController.swift */,
 				B06A9C6B230E69E9007D38B5 /* Main.storyboard */,
@@ -88,15 +97,6 @@
 				B06A9C6E230E69E9007D38B5 /* MiniChallenge3.xcdatamodeld */,
 			);
 			path = MiniChallenge3;
-			sourceTree = "<group>";
-		};
-		B06A9C83230E6F17007D38B5 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				4D1DCDEB230EA05B00E6B230 /* DataModel.swift */,
-				4D1DCDED230EA07400E6B230 /* DataModel.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		B06A9C84230E6F3F007D38B5 /* View */ = {
@@ -193,12 +193,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D1DCDEC230EA05B00E6B230 /* DataModel.swift in Sources */,
+				4D1DCDF8230FDF8300E6B230 /* DashboardData.swift in Sources */,
 				B06A9C87230E7173007D38B5 /* DashboardController.swift in Sources */,
+				4D1DCDF6230FCA3F00E6B230 /* CloudData.swift in Sources */,
 				B06A9C6A230E69E9007D38B5 /* ViewController.swift in Sources */,
 				B06A9C68230E69E9007D38B5 /* AppDelegate.swift in Sources */,
 				B06A9C70230E69E9007D38B5 /* MiniChallenge3.xcdatamodeld in Sources */,
-				4D1DCDEE230EA07400E6B230 /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
