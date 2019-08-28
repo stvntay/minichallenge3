@@ -14,6 +14,7 @@ class CreateRecordVC: UIViewController, UICollectionViewDataSource, UICollection
     @IBOutlet weak var questionBox: UITextView!
     @IBOutlet weak var optionsCollectionView: UICollectionView!
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var textField: UITextView!
     
     var options = [
         [
@@ -38,6 +39,8 @@ class CreateRecordVC: UIViewController, UICollectionViewDataSource, UICollection
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: makeBackButton())
 
+        // re-enable textfield depending on question type
+        textField.alpha = 0
         questionBox.text = questions[selector]
         
         self.optionsCollectionView.dataSource = self
