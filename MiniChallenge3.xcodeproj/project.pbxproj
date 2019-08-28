@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		95A8CD6223168299003721DB /* MedicineList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95A8CD5F23168299003721DB /* MedicineList.storyboard */; };
+		95A8CD6323168299003721DB /* MedicineListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A8CD6023168299003721DB /* MedicineListTableViewCell.swift */; };
+		95A8CD6423168299003721DB /* MedicineListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95A8CD6123168299003721DB /* MedicineListTableViewCell.xib */; };
+		95A8CD66231682C5003721DB /* MedicineListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A8CD65231682C5003721DB /* MedicineListViewController.swift */; };
 		95AA21AC23140202008BD509 /* AddMedicine.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95AA21AB23140202008BD509 /* AddMedicine.storyboard */; };
 		95AA21AE23140229008BD509 /* AddMedicineVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AA21AD23140229008BD509 /* AddMedicineVC.swift */; };
 		B06A9C68230E69E9007D38B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C67230E69E9007D38B5 /* AppDelegate.swift */; };
@@ -24,6 +28,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		95A8CD5F23168299003721DB /* MedicineList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MedicineList.storyboard; sourceTree = "<group>"; };
+		95A8CD6023168299003721DB /* MedicineListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicineListTableViewCell.swift; sourceTree = "<group>"; };
+		95A8CD6123168299003721DB /* MedicineListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MedicineListTableViewCell.xib; sourceTree = "<group>"; };
+		95A8CD65231682C5003721DB /* MedicineListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicineListViewController.swift; sourceTree = "<group>"; };
 		95AA21AB23140202008BD509 /* AddMedicine.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddMedicine.storyboard; sourceTree = "<group>"; };
 		95AA21AD23140229008BD509 /* AddMedicineVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMedicineVC.swift; sourceTree = "<group>"; };
 		B06A9C64230E69E9007D38B5 /* MiniChallenge3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniChallenge3.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,6 +108,9 @@
 			children = (
 				B06A9C8A230E73D7007D38B5 /* DashboardView.swift */,
 				95AA21AB23140202008BD509 /* AddMedicine.storyboard */,
+				95A8CD5F23168299003721DB /* MedicineList.storyboard */,
+				95A8CD6023168299003721DB /* MedicineListTableViewCell.swift */,
+				95A8CD6123168299003721DB /* MedicineListTableViewCell.xib */,
 				B06A9C98230E7D54007D38B5 /* HistoryView.swift */,
 			);
 			path = View;
@@ -111,6 +122,7 @@
 				B06A9C8C230E7ABD007D38B5 /* DashboardController.swift */,
 				B06A9C90230E7CF8007D38B5 /* HistoryController.swift */,
 				95AA21AD23140229008BD509 /* AddMedicineVC.swift */,
+				95A8CD65231682C5003721DB /* MedicineListViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -173,10 +185,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95A8CD6223168299003721DB /* MedicineList.storyboard in Resources */,
 				95AA21AC23140202008BD509 /* AddMedicine.storyboard in Resources */,
 				B06A9C75230E69EB007D38B5 /* LaunchScreen.storyboard in Resources */,
 				B06A9C72230E69EB007D38B5 /* Assets.xcassets in Resources */,
 				B06A9C6D230E69E9007D38B5 /* Main.storyboard in Resources */,
+				95A8CD6423168299003721DB /* MedicineListTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,8 +202,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B06A9C89230E73C8007D38B5 /* DashboardModel.swift in Sources */,
+				95A8CD6323168299003721DB /* MedicineListTableViewCell.swift in Sources */,
 				B06A9C97230E7D31007D38B5 /* HistoryModel.swift in Sources */,
 				B06A9C8B230E73D7007D38B5 /* DashboardView.swift in Sources */,
+				95A8CD66231682C5003721DB /* MedicineListViewController.swift in Sources */,
 				B06A9C6A230E69E9007D38B5 /* ViewController.swift in Sources */,
 				B06A9C92230E7CF8007D38B5 /* HistoryController.swift in Sources */,
 				B06A9C68230E69E9007D38B5 /* AppDelegate.swift in Sources */,
