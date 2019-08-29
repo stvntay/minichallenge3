@@ -25,17 +25,17 @@ class MedicineListViewController: UIViewController, UITableViewDelegate, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(red:0.94, green:0.45, blue:0.37, alpha:1.0)]
-        
+        self.medicineList.rowHeight = 210
         medicineList.delegate = self
         medicineList.dataSource = self
         medicineList.register(UINib(nibName: "MedicineListTableViewCell", bundle: nil), forCellReuseIdentifier: "medicineList")
-        navBar.rightBarButtonItem = UIBarButtonItem(
-            image: UIImage(named: "add-icon")?.withRenderingMode(.alwaysOriginal),
-            landscapeImagePhone: UIImage(named: "add-icon"),
-            style: .plain,
-            target: self,
-            action: #selector(onCreateMedicineTapped)
-        )
+//        navBar.rightBarButtonItem = UIBarButtonItem(
+//            image: UIImage(named: "add-icon")?.withRenderingMode(.alwaysOriginal),
+//            landscapeImagePhone: UIImage(named: "add-icon"),
+//            style: .plain,
+//            target: self,
+//            action: #selector(onCreateMedicineTapped)
+//        )
         // Do any additional setup after loading the view.
     }
 

@@ -8,86 +8,64 @@
 
 import UIKit
 
-class AddMedicineVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class AddMedicineVC: UIViewController {
 
-    @IBOutlet weak var patientDataSectionTitle: UILabel!
-    
+    @IBOutlet weak var addMedicineTitle: UILabel!
+    @IBOutlet weak var medicineCategory: UITextField!
     @IBOutlet weak var medicineName: UITextField!
+    @IBOutlet weak var medicineDescription: UITextField!
     @IBOutlet weak var medicineDosage: UITextField!
-    @IBOutlet weak var medicineFrequency: UITextField!
-    @IBOutlet weak var medicineBeforeAfterMealLabel: UITextField!
-    
-    @IBOutlet weak var medicineDataSectionTitle: UILabel!
-    
-    @IBOutlet weak var morningReminderLabel: UILabel!
-    @IBOutlet weak var morningReminderHourPicker: UIPickerView!
-    @IBOutlet weak var morningReminderMinutePicker: UIPickerView!
-    
-    @IBOutlet weak var afternoonReminderLabel: UILabel!
-    @IBOutlet weak var afternoonReminderHourPicker: UIPickerView!
-    @IBOutlet weak var afternoonReminderMinutePicker: UIPickerView!
-    
-    @IBOutlet weak var eveningReminderLabel: UILabel!
-    @IBOutlet weak var eveningReminderHourPicker: UIPickerView!
-    @IBOutlet weak var eveningReminderMinutePicker: UIPickerView!
+    @IBOutlet weak var medicineTime: UITextField!
     
     @IBOutlet weak var navBar: UINavigationItem!
-    
-    var hourOptions: [String] = []
-    var minuteOptions: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        for hour in 0...23 {
-            hourOptions.append("\(hour)")
-        }
-        
-        for minute in 0...59 {
-            minuteOptions.append("\(minute)")
-        }
+        medicineCategory.addLine(position: .LINE_POSITION_BOTTOM, color: UIColor(red:0.94, green:0.45, blue:0.37, alpha:1.0), width: 1)
+        medicineName.addLine(position: .LINE_POSITION_BOTTOM, color: UIColor(red:0.94, green:0.45, blue:0.37, alpha:1.0), width: 1)
+        medicineTime.addLine(position: .LINE_POSITION_BOTTOM, color: UIColor(red:0.94, green:0.45, blue:0.37, alpha:1.0), width: 1)
+        medicineDescription.addLine(position: .LINE_POSITION_BOTTOM, color: UIColor(red:0.94, green:0.45, blue:0.37, alpha:1.0), width: 1)
+        medicineDosage.addLine(position: .LINE_POSITION_BOTTOM, color: UIColor(red:0.94, green:0.45, blue:0.37, alpha:1.0), width: 1)
         
         navBar.rightBarButtonItem = UIBarButtonItem(title: "Selesai", style: .done, target: self, action: #selector(onFinishTapped))
     }
     
     @objc func onFinishTapped() {
-        let alertController = UIAlertController(title: "Verifikasi", message: "Masukkan kode verifikasi dari dokter", preferredStyle: .alert)
-        let tombolPositif = UIAlertAction(title: "OK", style: .default) { (_) in
-            self.performSegue(withIdentifier: "medicineList", sender: self)
-        }
-        let tombolNegatif = UIAlertAction(title: "Batalkan", style: .cancel) { (_) in }
-        
-        alertController.addTextField { (textField) in
-            textField.placeholder = "Kode Verifikasi"
-        }
-        alertController.addAction(tombolPositif)
-        alertController.addAction(tombolNegatif)
-        self.present(alertController, animated: true, completion: nil)
+        // do something
     }
     
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if (pickerView.tag % 2) != 0 {
-            return hourOptions.count
-        }
-        return minuteOptions.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if (pickerView.tag % 2) != 0 {
-            return "\(hourOptions[row])"
-        }
-        return "\(minuteOptions[row])"
-    }
-
     // MARK: - Navigation
-
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //         Get the new view controller using segue.destination.
 //         Pass the selected object to the new view controller.
+    }
+}
+
+enum LINE_POSITION {
+    case LINE_POSITION_TOP
+    case LINE_POSITION_BOTTOM
+}
+
+extension UITextField {
+    func addLine(position : LINE_POSITION, color: UIColor, width: Double) {
+        let lineView = UIView()
+        lineView.backgroundColor = color
+        lineView.translatesAutoresizingMaskIntoConstraints = false // This is important!
+        self.addSubview(lineView)
+        
+        let metrics = ["width" : NSNumber(value: width)]
+        let views = ["lineView" : lineView]
+        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[lineView]|", options:NSLayoutConstraint.FormatOptions(rawValue: 0), metrics:metrics, views:views))
+        
+        switch position {
+        case .LINE_POSITION_TOP:
+            self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[lineView(width)]", options:NSLayoutConstraint.FormatOptions(rawValue: 0), metrics:metrics, views:views))
+            break
+        case .LINE_POSITION_BOTTOM:
+            self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[lineView(width)]|", options:NSLayoutConstraint.FormatOptions(rawValue: 0), metrics:metrics, views:views))
+            break
+        }
     }
 }
