@@ -109,7 +109,6 @@
 			path = MiniChallenge3;
 			sourceTree = "<group>";
 		};
-<<<<<<< HEAD
 		B06A9C83230E6F17007D38B5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,8 +118,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-=======
->>>>>>> cloudkit
 		B06A9C84230E6F3F007D38B5 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,15 +215,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
 				B06A9C89230E73C8007D38B5 /* DashboardModel.swift in Sources */,
 				B06A9C97230E7D31007D38B5 /* HistoryModel.swift in Sources */,
 				B06A9C8B230E73D7007D38B5 /* DashboardView.swift in Sources */,
-=======
 				4D1DCDF8230FDF8300E6B230 /* DashboardData.swift in Sources */,
 				B06A9C87230E7173007D38B5 /* DashboardController.swift in Sources */,
 				4D1DCDF6230FCA3F00E6B230 /* CloudData.swift in Sources */,
->>>>>>> cloudkit
 				B06A9C6A230E69E9007D38B5 /* ViewController.swift in Sources */,
 				B06A9C92230E7CF8007D38B5 /* HistoryController.swift in Sources */,
 				B06A9C68230E69E9007D38B5 /* AppDelegate.swift in Sources */,

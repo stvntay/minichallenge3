@@ -222,4 +222,21 @@ final class CloudData {
         
     }
     
+    func loadRareMedicalRecord(userID: CKRecord.ID, completion: @escaping (_ recID: [CKRecord]) -> Void) {
+        let pred = NSPredicate(format: "pasienID = %@", userID)
+        let query = CKQuery(recordType: "MedicalRecord", predicate: pred)
+        
+        CKContainer.default().publicCloudDatabase.perform(query, inZoneWith: nil) { (records, error) in
+            DispatchQueue.main.async {
+                guard let records = records else {
+                    print(error?.localizedDescription as Any)
+                    return
+                }
+                print(records)
+                completion(records)
+            }
+        }
+        
+    }
+    
 }
