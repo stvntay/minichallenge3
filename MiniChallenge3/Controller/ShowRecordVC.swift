@@ -1,5 +1,5 @@
 //
-//  CreateRecordVC.swift
+//  ShowRecordVC.swift
 //  MiniChallenge3
 //
 //  Created by Yosia on 27/08/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreateRecordVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class ShowRecordVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var questionBox: UITextView!
@@ -45,7 +45,7 @@ class CreateRecordVC: UIViewController, UICollectionViewDataSource, UICollection
         
         self.optionsCollectionView.dataSource = self
         self.optionsCollectionView.delegate = self
-        optionsCollectionView.register(UINib(nibName: "CreateRecordOptionCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "optionCell")
+        optionsCollectionView.register(UINib(nibName: "ShowRecordOptionCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "optionCell")
     }
     
     func makeBackButton() -> UIButton {
@@ -85,7 +85,7 @@ class CreateRecordVC: UIViewController, UICollectionViewDataSource, UICollection
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "optionCell", for: indexPath) as! CreateRecordOptionCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "optionCell", for: indexPath) as! ShowRecordOptionCollectionViewCell
         cell.optionLabel.text = options[selector][indexPath.row]
         cell.layer.cornerRadius = 24
         return cell

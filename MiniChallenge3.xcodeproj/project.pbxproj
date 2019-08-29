@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		95A8CD6A231687A1003721DB /* CreateRecordOptionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A8CD67231687A0003721DB /* CreateRecordOptionCollectionViewCell.swift */; };
-		95A8CD6B231687A1003721DB /* CreateRecord.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95A8CD68231687A0003721DB /* CreateRecord.storyboard */; };
-		95A8CD6C231687A1003721DB /* CreateRecordOptionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95A8CD69231687A0003721DB /* CreateRecordOptionCollectionViewCell.xib */; };
-		95A8CD6E23168838003721DB /* CreateRecordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A8CD6D23168838003721DB /* CreateRecordVC.swift */; };
+		95A8CD6A231687A1003721DB /* ShowRecordOptionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A8CD67231687A0003721DB /* ShowRecordOptionCollectionViewCell.swift */; };
+		95A8CD6B231687A1003721DB /* ShowRecord.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95A8CD68231687A0003721DB /* ShowRecord.storyboard */; };
+		95A8CD6C231687A1003721DB /* ShowRecordOptionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95A8CD69231687A0003721DB /* ShowRecordOptionCollectionViewCell.xib */; };
+		95A8CD6E23168838003721DB /* ShowRecordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A8CD6D23168838003721DB /* ShowRecordVC.swift */; };
 		95A8CD70231688BB003721DB /* CreateRecordGuide.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95A8CD6F231688BB003721DB /* CreateRecordGuide.storyboard */; };
 		B06A9C68230E69E9007D38B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C67230E69E9007D38B5 /* AppDelegate.swift */; };
 		B06A9C6A230E69E9007D38B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C69230E69E9007D38B5 /* ViewController.swift */; };
@@ -27,10 +27,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		95A8CD67231687A0003721DB /* CreateRecordOptionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateRecordOptionCollectionViewCell.swift; sourceTree = "<group>"; };
-		95A8CD68231687A0003721DB /* CreateRecord.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateRecord.storyboard; sourceTree = "<group>"; };
-		95A8CD69231687A0003721DB /* CreateRecordOptionCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateRecordOptionCollectionViewCell.xib; sourceTree = "<group>"; };
-		95A8CD6D23168838003721DB /* CreateRecordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateRecordVC.swift; sourceTree = "<group>"; };
+		95A8CD67231687A0003721DB /* ShowRecordOptionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowRecordOptionCollectionViewCell.swift; sourceTree = "<group>"; };
+		95A8CD68231687A0003721DB /* ShowRecord.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ShowRecord.storyboard; sourceTree = "<group>"; };
+		95A8CD69231687A0003721DB /* ShowRecordOptionCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShowRecordOptionCollectionViewCell.xib; sourceTree = "<group>"; };
+		95A8CD6D23168838003721DB /* ShowRecordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowRecordVC.swift; sourceTree = "<group>"; };
 		95A8CD6F231688BB003721DB /* CreateRecordGuide.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateRecordGuide.storyboard; sourceTree = "<group>"; };
 		B06A9C64230E69E9007D38B5 /* MiniChallenge3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniChallenge3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B06A9C67230E69E9007D38B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -104,10 +104,10 @@
 		B06A9C84230E6F3F007D38B5 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				95A8CD68231687A0003721DB /* CreateRecord.storyboard */,
+				95A8CD68231687A0003721DB /* ShowRecord.storyboard */,
 				95A8CD6F231688BB003721DB /* CreateRecordGuide.storyboard */,
-				95A8CD67231687A0003721DB /* CreateRecordOptionCollectionViewCell.swift */,
-				95A8CD69231687A0003721DB /* CreateRecordOptionCollectionViewCell.xib */,
+				95A8CD67231687A0003721DB /* ShowRecordOptionCollectionViewCell.swift */,
+				95A8CD69231687A0003721DB /* ShowRecordOptionCollectionViewCell.xib */,
 				B06A9C8A230E73D7007D38B5 /* DashboardView.swift */,
 				B06A9C98230E7D54007D38B5 /* HistoryView.swift */,
 			);
@@ -118,7 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				B06A9C8C230E7ABD007D38B5 /* DashboardController.swift */,
-				95A8CD6D23168838003721DB /* CreateRecordVC.swift */,
+				95A8CD6D23168838003721DB /* ShowRecordVC.swift */,
 				B06A9C90230E7CF8007D38B5 /* HistoryController.swift */,
 			);
 			path = Controller;
@@ -182,10 +182,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95A8CD6C231687A1003721DB /* CreateRecordOptionCollectionViewCell.xib in Resources */,
+				95A8CD6C231687A1003721DB /* ShowRecordOptionCollectionViewCell.xib in Resources */,
 				B06A9C75230E69EB007D38B5 /* LaunchScreen.storyboard in Resources */,
 				95A8CD70231688BB003721DB /* CreateRecordGuide.storyboard in Resources */,
-				95A8CD6B231687A1003721DB /* CreateRecord.storyboard in Resources */,
+				95A8CD6B231687A1003721DB /* ShowRecord.storyboard in Resources */,
 				B06A9C72230E69EB007D38B5 /* Assets.xcassets in Resources */,
 				B06A9C6D230E69E9007D38B5 /* Main.storyboard in Resources */,
 			);
@@ -200,8 +200,8 @@
 			files = (
 				B06A9C89230E73C8007D38B5 /* DashboardModel.swift in Sources */,
 				B06A9C97230E7D31007D38B5 /* HistoryModel.swift in Sources */,
-				95A8CD6A231687A1003721DB /* CreateRecordOptionCollectionViewCell.swift in Sources */,
-				95A8CD6E23168838003721DB /* CreateRecordVC.swift in Sources */,
+				95A8CD6A231687A1003721DB /* ShowRecordOptionCollectionViewCell.swift in Sources */,
+				95A8CD6E23168838003721DB /* ShowRecordVC.swift in Sources */,
 				B06A9C8B230E73D7007D38B5 /* DashboardView.swift in Sources */,
 				B06A9C6A230E69E9007D38B5 /* ViewController.swift in Sources */,
 				B06A9C92230E7CF8007D38B5 /* HistoryController.swift in Sources */,
