@@ -14,10 +14,7 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
     @IBOutlet weak var monthLabel: UILabel!
     @IBOutlet weak var calendarView: UICollectionView!
     
-    @IBOutlet weak var medicineBtn: UIButton!
-    @IBOutlet weak var activityBtn: UIButton!
-    @IBOutlet weak var reportBtn: UIButton!
-    @IBOutlet weak var sleepBtn: UIButton!
+    @IBOutlet weak var addRecordBtn: UIBarButtonItem!
     
     let Months = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"]
     var DayAmouthInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
@@ -40,6 +37,11 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
         monthLabel.text = "\(currentMonth) \(year)"
 
         self.dateLabel.text = "\(Days[day % 7]), \(day) \(currentMonth) \(year)"
+        
+        calendarView.isPagingEnabled = true
+        
+        calendarView.delegate = self
+        calendarView.dataSource = self
     }
     
     @IBAction func previousMonth(_ sender: Any) {
@@ -217,8 +219,6 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
         monthLabel.text = "\(currentMonth) \(year)"
         calendarView.reloadData()
     }
-    
-    
 }
 
 
