@@ -18,8 +18,8 @@ final class CloudData {
     
     // MARK: - Save data to CloudKit
     
-    func saveDoctorData(nama: String, nomorTelepon: String, completion: @escaping (_ recID: CKRecord.ID) -> Void) {
-        let newData = CKRecord(recordType: "DoctorData")
+    func savePsikiaterData(nama: String, nomorTelepon: String, completion: @escaping (_ recID: CKRecord.ID) -> Void) {
+        let newData = CKRecord(recordType: "PsikiaterData")
         var recordID = CKRecord.ID()
         
         newData.setValue(nama, forKey: "nama")
@@ -86,7 +86,7 @@ final class CloudData {
         
     }
     
-    func saveRareMedicalData(namaObat: String, deskripsiObat: String, dosisObat:String, setelahSebelumMakan: String, pasienID: CKRecord.ID) {
+    func saveRareMedichineData(namaObat: String, deskripsiObat: String, dosisObat:String, setelahSebelumMakan: String, pasienID: CKRecord.ID) {
         let newData = CKRecord(recordType: "RareMedicineData")
         let reference = CKRecord.Reference(recordID: pasienID, action: .deleteSelf)
         
@@ -107,12 +107,19 @@ final class CloudData {
     }
     
     //function yang ini belum di update datanya, belum bisa dipake
-    func saveMedicineRecord(namaObat: String, tanggalWaktu: Date, pasienID: CKRecord.ID) {
-        let newData = CKRecord(recordType: "MedicineRecord")
+    func saveMedicalRecord(obatA: String, obatB: String, membersihkanDiri: String, makanDenganRapi: String, membersihkanPakaian: String, membersihkanRumah: String, berkomunikasiDenganLingkungan: String, tidurHariIni: String, catatan: String, pasienID: CKRecord.ID) {
+        let newData = CKRecord(recordType: "MedicalRecord")
         let reference = CKRecord.Reference(recordID: pasienID, action: .deleteSelf)
         
-        newData.setValue(namaObat, forKey: "namaObat")
-        newData.setValue(tanggalWaktu, forKey: "tanggalWaktu")
+        newData.setValue(obatA, forKey: "obatA")
+        newData.setValue(obatB, forKey: "obatB")
+        newData.setValue(membersihkanDiri, forKey: "membersihkanDiri")
+        newData.setValue(makanDenganRapi, forKey: "makanDenganRapi")
+        newData.setValue(membersihkanPakaian, forKey: "membersihkanPakaian")
+        newData.setValue(membersihkanRumah, forKey: "membersihkanRumah")
+        newData.setValue(berkomunikasiDenganLingkungan, forKey: "berkomunikasiDenganLingkungan")
+        newData.setValue(tidurHariIni, forKey: "tidurHariIni")
+        newData.setValue(catatan, forKey: "catatan")
         newData.setValue(reference, forKey: "pasienID")
         
         CKContainer.default().publicCloudDatabase.save(newData) { (record, error) in
@@ -147,9 +154,9 @@ final class CloudData {
     
     // MARK: - Load data to CloudKit
     
-    func loadDoctorData(doctorID: CKRecord.ID, completion: @escaping (_ recID: [CKRecord]) -> Void) {
+    func loadPsikiaterData(doctorID: CKRecord.ID, completion: @escaping (_ recID: [CKRecord]) -> Void) {
         let pred = NSPredicate(format: "recordID = %@", doctorID)
-        let query = CKQuery(recordType: "DoctorData", predicate: pred)
+        let query = CKQuery(recordType: "PsikiaterData", predicate: pred)
         
         CKContainer.default().publicCloudDatabase.perform(query, inZoneWith: nil) { (records, error) in
             DispatchQueue.main.async {
