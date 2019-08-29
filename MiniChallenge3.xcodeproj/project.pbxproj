@@ -28,6 +28,22 @@
 		B06A9C70230E69E9007D38B5 /* MiniChallenge3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C6E230E69E9007D38B5 /* MiniChallenge3.xcdatamodeld */; };
 		B06A9C72230E69EB007D38B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B06A9C71230E69EB007D38B5 /* Assets.xcassets */; };
 		B06A9C75230E69EB007D38B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B06A9C73230E69EB007D38B5 /* LaunchScreen.storyboard */; };
+		B0E253AB2317D66400874561 /* OnBoardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E253A72317D66400874561 /* OnBoardData.swift */; };
+		B0E253AC2317D66400874561 /* DashboardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E253A82317D66400874561 /* DashboardData.swift */; };
+		B0E253AD2317D66400874561 /* DoctorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E253A92317D66400874561 /* DoctorData.swift */; };
+		B0E253AE2317D66400874561 /* CloudData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E253AA2317D66400874561 /* CloudData.swift */; };
+		B0E253B82317D68500874561 /* set~.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0E253B02317D68400874561 /* set~.storyboard */; };
+		B0E253B92317D68500874561 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0E253B22317D68400874561 /* LaunchScreen.storyboard */; };
+		B0E253BA2317D68500874561 /* set.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0E253B42317D68400874561 /* set.storyboard */; };
+		B0E253BB2317D68500874561 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0E253B62317D68400874561 /* Main.storyboard */; };
+		B0E253C52317D68D00874561 /* Signika-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B0E253BD2317D68D00874561 /* Signika-Light.ttf */; };
+		B0E253C62317D68D00874561 /* SignikaNegative-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B0E253BE2317D68D00874561 /* SignikaNegative-Bold.ttf */; };
+		B0E253C72317D68D00874561 /* Signika-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B0E253BF2317D68D00874561 /* Signika-Regular.ttf */; };
+		B0E253C82317D68D00874561 /* SignikaNegative-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B0E253C02317D68D00874561 /* SignikaNegative-Semibold.ttf */; };
+		B0E253C92317D68D00874561 /* Signika-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B0E253C12317D68D00874561 /* Signika-Semibold.ttf */; };
+		B0E253CA2317D68D00874561 /* SignikaNegative-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B0E253C22317D68D00874561 /* SignikaNegative-Regular.ttf */; };
+		B0E253CB2317D68D00874561 /* Signika-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B0E253C32317D68D00874561 /* Signika-Bold.ttf */; };
+		B0E253CC2317D68D00874561 /* SignikaNegative-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B0E253C42317D68D00874561 /* SignikaNegative-Light.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +70,23 @@
 		B06A9C71230E69EB007D38B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B06A9C74230E69EB007D38B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B06A9C76230E69EB007D38B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0E253A72317D66400874561 /* OnBoardData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoardData.swift; sourceTree = "<group>"; };
+		B0E253A82317D66400874561 /* DashboardData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardData.swift; sourceTree = "<group>"; };
+		B0E253A92317D66400874561 /* DoctorData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorData.swift; sourceTree = "<group>"; };
+		B0E253AA2317D66400874561 /* CloudData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudData.swift; sourceTree = "<group>"; };
+		B0E253B12317D68400874561 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "set~.storyboard"; sourceTree = "<group>"; };
+		B0E253B32317D68400874561 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B0E253B52317D68400874561 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = set.storyboard; sourceTree = "<group>"; };
+		B0E253B72317D68400874561 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
+		B0E253BD2317D68D00874561 /* Signika-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Signika-Light.ttf"; sourceTree = "<group>"; };
+		B0E253BE2317D68D00874561 /* SignikaNegative-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SignikaNegative-Bold.ttf"; sourceTree = "<group>"; };
+		B0E253BF2317D68D00874561 /* Signika-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Signika-Regular.ttf"; sourceTree = "<group>"; };
+		B0E253C02317D68D00874561 /* SignikaNegative-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SignikaNegative-Semibold.ttf"; sourceTree = "<group>"; };
+		B0E253C12317D68D00874561 /* Signika-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Signika-Semibold.ttf"; sourceTree = "<group>"; };
+		B0E253C22317D68D00874561 /* SignikaNegative-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SignikaNegative-Regular.ttf"; sourceTree = "<group>"; };
+		B0E253C32317D68D00874561 /* Signika-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Signika-Bold.ttf"; sourceTree = "<group>"; };
+		B0E253C42317D68D00874561 /* SignikaNegative-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SignikaNegative-Light.ttf"; sourceTree = "<group>"; };
+		B0E253CD2317D6D500874561 /* MiniChallenge3.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MiniChallenge3.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,34 +94,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D1DCDEA230E8CF900E6B230 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B02D8691231689F900482C4D /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				B00893662317AB0100D8B0DB /* Signika-Bold.ttf */,
-				B008936D2317AB0300D8B0DB /* Signika-Light.ttf */,
-				B00893682317AB0200D8B0DB /* Signika-Regular.ttf */,
-				B008936B2317AB0200D8B0DB /* Signika-Semibold.ttf */,
-				B00893672317AB0100D8B0DB /* SignikaNegative-Bold.ttf */,
-				B008936C2317AB0200D8B0DB /* SignikaNegative-Light.ttf */,
-				B00893692317AB0200D8B0DB /* SignikaNegative-Regular.ttf */,
-				B008936A2317AB0200D8B0DB /* SignikaNegative-Semibold.ttf */,
-			);
-			path = Fonts;
-			sourceTree = "<group>";
-		};
 		B06A9C5B230E69E9007D38B5 = {
 			isa = PBXGroup;
 			children = (
 				B06A9C66230E69E9007D38B5 /* MiniChallenge3 */,
 				B06A9C65230E69E9007D38B5 /* Products */,
-				4D1DCDE8230E8CF900E6B230 /* Frameworks */,
+				B0E253A52317D5EA00874561 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +120,10 @@
 		B06A9C66230E69E9007D38B5 /* MiniChallenge3 */ = {
 			isa = PBXGroup;
 			children = (
+				B0E253CD2317D6D500874561 /* MiniChallenge3.entitlements */,
+				B0E253BC2317D68D00874561 /* Fonts */,
+				B0E253AF2317D68400874561 /* Base.lproj */,
+				B0E253A62317D66400874561 /* Model */,
 				B06A9C85230E6F44007D38B5 /* Controller */,
 				B06A9C84230E6F3F007D38B5 /* View */,
 				B06A9C67230E69E9007D38B5 /* AppDelegate.swift */,
@@ -115,15 +136,6 @@
 				B05BB1E823139C1700B80F13 /* Onboard.storyboard */,
 			);
 			path = MiniChallenge3;
-			sourceTree = "<group>";
-		};
-		B06A9C83230E6F17007D38B5 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				B02D868A23166BA400482C4D /* DoctorData.swift */,
-				B02D868F2316797700482C4D /* OnBoardData.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		B06A9C84230E6F3F007D38B5 /* View */ = {
@@ -142,6 +154,60 @@
 				B05BB1EE23139FD800B80F13 /* PatientOnBoardViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		B0E253A52317D5EA00874561 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				B02D868A23166BA400482C4D /* DoctorData.swift */,
+				B02D868F2316797700482C4D /* OnBoardData.swift */,
+				B008936C2317AB0200D8B0DB /* SignikaNegative-Light.ttf */,
+				B00893672317AB0100D8B0DB /* SignikaNegative-Bold.ttf */,
+				B00893682317AB0200D8B0DB /* Signika-Regular.ttf */,
+				B008936A2317AB0200D8B0DB /* SignikaNegative-Semibold.ttf */,
+				B00893662317AB0100D8B0DB /* Signika-Bold.ttf */,
+				B008936D2317AB0300D8B0DB /* Signika-Light.ttf */,
+				B008936B2317AB0200D8B0DB /* Signika-Semibold.ttf */,
+				B00893692317AB0200D8B0DB /* SignikaNegative-Regular.ttf */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		B0E253A62317D66400874561 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B0E253A72317D66400874561 /* OnBoardData.swift */,
+				B0E253A82317D66400874561 /* DashboardData.swift */,
+				B0E253A92317D66400874561 /* DoctorData.swift */,
+				B0E253AA2317D66400874561 /* CloudData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B0E253AF2317D68400874561 /* Base.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				B0E253B02317D68400874561 /* set~.storyboard */,
+				B0E253B22317D68400874561 /* LaunchScreen.storyboard */,
+				B0E253B42317D68400874561 /* set.storyboard */,
+				B0E253B62317D68400874561 /* Main.storyboard */,
+			);
+			path = Base.lproj;
+			sourceTree = "<group>";
+		};
+		B0E253BC2317D68D00874561 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B0E253BD2317D68D00874561 /* Signika-Light.ttf */,
+				B0E253BE2317D68D00874561 /* SignikaNegative-Bold.ttf */,
+				B0E253BF2317D68D00874561 /* Signika-Regular.ttf */,
+				B0E253C02317D68D00874561 /* SignikaNegative-Semibold.ttf */,
+				B0E253C12317D68D00874561 /* Signika-Semibold.ttf */,
+				B0E253C22317D68D00874561 /* SignikaNegative-Regular.ttf */,
+				B0E253C32317D68D00874561 /* Signika-Bold.ttf */,
+				B0E253C42317D68D00874561 /* SignikaNegative-Light.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,14 +280,26 @@
 				B06A9C75230E69EB007D38B5 /* LaunchScreen.storyboard in Resources */,
 				B06A9C72230E69EB007D38B5 /* Assets.xcassets in Resources */,
 				B05BB1E923139C1700B80F13 /* Onboard.storyboard in Resources */,
+				B0E253B82317D68500874561 /* set~.storyboard in Resources */,
 				B008936F2317AB0300D8B0DB /* SignikaNegative-Bold.ttf in Resources */,
 				B00893702317AB0300D8B0DB /* Signika-Regular.ttf in Resources */,
+				B0E253CA2317D68D00874561 /* SignikaNegative-Regular.ttf in Resources */,
 				B00893722317AB0300D8B0DB /* SignikaNegative-Semibold.ttf in Resources */,
+				B0E253C72317D68D00874561 /* Signika-Regular.ttf in Resources */,
+				B0E253C82317D68D00874561 /* SignikaNegative-Semibold.ttf in Resources */,
 				B008936E2317AB0300D8B0DB /* Signika-Bold.ttf in Resources */,
+				B0E253C92317D68D00874561 /* Signika-Semibold.ttf in Resources */,
+				B0E253C62317D68D00874561 /* SignikaNegative-Bold.ttf in Resources */,
 				B00893752317AB0300D8B0DB /* Signika-Light.ttf in Resources */,
 				B06A9C6D230E69E9007D38B5 /* Main.storyboard in Resources */,
+				B0E253BB2317D68500874561 /* Main.storyboard in Resources */,
+				B0E253B92317D68500874561 /* LaunchScreen.storyboard in Resources */,
+				B0E253BA2317D68500874561 /* set.storyboard in Resources */,
+				B0E253CC2317D68D00874561 /* SignikaNegative-Light.ttf in Resources */,
 				B00893732317AB0300D8B0DB /* Signika-Semibold.ttf in Resources */,
 				B00893712317AB0300D8B0DB /* SignikaNegative-Regular.ttf in Resources */,
+				B0E253CB2317D68D00874561 /* Signika-Bold.ttf in Resources */,
+				B0E253C52317D68D00874561 /* Signika-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,14 +310,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0E253AD2317D66400874561 /* DoctorData.swift in Sources */,
 				B02D868B23166BA400482C4D /* DoctorData.swift in Sources */,
+				B0E253AB2317D66400874561 /* OnBoardData.swift in Sources */,
 				B05BB1F12313A33400B80F13 /* DoctorOnBoardView.swift in Sources */,
 				B06A9C6A230E69E9007D38B5 /* ViewController.swift in Sources */,
+				B0E253AC2317D66400874561 /* DashboardData.swift in Sources */,
 				B06A9C68230E69E9007D38B5 /* AppDelegate.swift in Sources */,
 				B05BB1ED23139FB500B80F13 /* DoctorOnBoardController.swift in Sources */,
 				B05BB1F32313A34500B80F13 /* PatientOnBoardView.swift in Sources */,
 				B02D86902316797700482C4D /* OnBoardData.swift in Sources */,
 				B05BB1EF23139FD800B80F13 /* PatientOnBoardViewController.swift in Sources */,
+				B0E253AE2317D66400874561 /* CloudData.swift in Sources */,
 				B06A9C70230E69E9007D38B5 /* MiniChallenge3.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,6 +343,38 @@
 				B06A9C74230E69EB007D38B5 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		B0E253B02317D68400874561 /* set~.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B0E253B12317D68400874561 /* Base */,
+			);
+			name = "set~.storyboard";
+			sourceTree = "<group>";
+		};
+		B0E253B22317D68400874561 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B0E253B32317D68400874561 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		B0E253B42317D68400874561 /* set.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B0E253B52317D68400874561 /* Base */,
+			);
+			name = set.storyboard;
+			sourceTree = "<group>";
+		};
+		B0E253B62317D68400874561 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B0E253B72317D68400874561 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
