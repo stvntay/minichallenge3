@@ -9,6 +9,14 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Signika-Bold.ttf">
+            <string>Signika-Bold</string>
+        </array>
+        <array key="Signika-Regular.ttf">
+            <string>Signika-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Doctor On Board Controller-->
         <scene sceneID="fRx-UP-1EV">
@@ -19,32 +27,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nama Dokter" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ByK-zS-aAk">
-                                <rect key="frame" x="20" y="197" width="374" height="30"/>
+                                <rect key="frame" x="20" y="203" width="374" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="No. Telepon Psikiater" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lhi-M9-Jz5">
-                                <rect key="frame" x="20" y="267" width="374" height="30"/>
+                                <rect key="frame" x="20" y="273" width="374" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Masukan Data Psikiater" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2HS-fW-kLU">
-                                <rect key="frame" x="20" y="104" width="374" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="20" y="104" width="374" height="42"/>
+                                <fontDescription key="fontDescription" name="Signika-Bold" family="Signika" pointSize="34"/>
+                                <color key="textColor" red="0.87782937288284302" green="0.47886115312576294" blue="0.39995849132537842" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="57N-CA-JTk">
-                                <rect key="frame" x="20" y="776" width="374" height="42"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <rect key="frame" x="20" y="775" width="374" height="43"/>
+                                <fontDescription key="fontDescription" name="Signika-Regular" family="Signika" pointSize="25"/>
                                 <state key="normal" title="Selanjutnya">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" red="0.87782937288284302" green="0.47886115312576294" blue="0.39995849132537842" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.87782937288284302" green="0.47886115312576294" blue="0.39995849132537842" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="2HS-fW-kLU" firstAttribute="top" secondItem="vwd-VX-aW6" secondAttribute="top" constant="60" id="2kG-kH-day"/>
                             <constraint firstItem="lhi-M9-Jz5" firstAttribute="top" secondItem="ByK-zS-aAk" secondAttribute="bottom" constant="40" id="4fG-0k-bdb"/>
@@ -84,20 +92,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Masukan Data Pasien" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yk0-Vk-VNT">
-                                <rect key="frame" x="20" y="78" width="374" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="20" y="104" width="374" height="42"/>
+                                <fontDescription key="fontDescription" name="Signika-Bold" family="Signika" pointSize="34"/>
+                                <color key="textColor" red="0.87782937288284302" green="0.47886115312576294" blue="0.39995849132537842" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ixl-85-hlS">
-                                <rect key="frame" x="20" y="766" width="374" height="42"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <rect key="frame" x="20" y="765" width="374" height="43"/>
+                                <fontDescription key="fontDescription" name="Signika-Regular" family="Signika" pointSize="25"/>
                                 <state key="normal" title="Selesai">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" red="0.87782937288284302" green="0.47886115312576294" blue="0.39995849132537842" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="Mwj-so-LjV">
-                                <rect key="frame" x="20" y="210" width="374" height="250"/>
+                                <rect key="frame" x="20" y="203" width="374" height="250"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nama Pasien" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T3n-rb-U3w">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
@@ -132,17 +140,17 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.87782937288284302" green="0.47886115312576294" blue="0.39995849132537842" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="OVK-yL-PtO" firstAttribute="bottom" secondItem="ixl-85-hlS" secondAttribute="bottom" constant="54" id="1C4-59-IaL"/>
                             <constraint firstItem="OVK-yL-PtO" firstAttribute="trailing" secondItem="ixl-85-hlS" secondAttribute="trailing" constant="20" id="C7b-Vf-OAI"/>
                             <constraint firstItem="ixl-85-hlS" firstAttribute="leading" secondItem="OVK-yL-PtO" secondAttribute="leading" constant="20" id="FJP-ZH-xMc"/>
-                            <constraint firstItem="Mwj-so-LjV" firstAttribute="top" secondItem="Yk0-Vk-VNT" secondAttribute="bottom" constant="96" id="T6E-PR-aog"/>
+                            <constraint firstItem="Yk0-Vk-VNT" firstAttribute="leading" secondItem="OVK-yL-PtO" secondAttribute="leading" constant="20" id="R9e-97-Vcy"/>
                             <constraint firstItem="OVK-yL-PtO" firstAttribute="trailing" secondItem="Mwj-so-LjV" secondAttribute="trailing" constant="20" id="Z5w-oO-R78"/>
-                            <constraint firstItem="Yk0-Vk-VNT" firstAttribute="leading" secondItem="OVK-yL-PtO" secondAttribute="leading" constant="20" id="a06-x9-PeQ"/>
-                            <constraint firstItem="OVK-yL-PtO" firstAttribute="trailing" secondItem="Yk0-Vk-VNT" secondAttribute="trailing" constant="20" id="qnm-EF-7js"/>
-                            <constraint firstItem="Yk0-Vk-VNT" firstAttribute="top" secondItem="OVK-yL-PtO" secondAttribute="top" constant="34" id="v2F-3k-v3C"/>
+                            <constraint firstItem="OVK-yL-PtO" firstAttribute="trailing" secondItem="Yk0-Vk-VNT" secondAttribute="trailing" constant="20" id="eCY-w1-avL"/>
+                            <constraint firstItem="Mwj-so-LjV" firstAttribute="top" secondItem="Yk0-Vk-VNT" secondAttribute="bottom" constant="57" id="fKF-xi-he9"/>
                             <constraint firstItem="Mwj-so-LjV" firstAttribute="leading" secondItem="OVK-yL-PtO" secondAttribute="leading" constant="20" id="v9V-3U-XP0"/>
+                            <constraint firstItem="Yk0-Vk-VNT" firstAttribute="top" secondItem="OVK-yL-PtO" secondAttribute="top" constant="60" id="xpE-mm-fK9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OVK-yL-PtO"/>
                         <connections>
