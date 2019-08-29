@@ -20,12 +20,6 @@
 		B06A9C70230E69E9007D38B5 /* MiniChallenge3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C6E230E69E9007D38B5 /* MiniChallenge3.xcdatamodeld */; };
 		B06A9C72230E69EB007D38B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B06A9C71230E69EB007D38B5 /* Assets.xcassets */; };
 		B06A9C75230E69EB007D38B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B06A9C73230E69EB007D38B5 /* LaunchScreen.storyboard */; };
-		B06A9C89230E73C8007D38B5 /* DashboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C88230E73C8007D38B5 /* DashboardModel.swift */; };
-		B06A9C8B230E73D7007D38B5 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C8A230E73D7007D38B5 /* DashboardView.swift */; };
-		B06A9C8E230E7ABD007D38B5 /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C8C230E7ABD007D38B5 /* DashboardController.swift */; };
-		B06A9C92230E7CF8007D38B5 /* HistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C90230E7CF8007D38B5 /* HistoryController.swift */; };
-		B06A9C97230E7D31007D38B5 /* HistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C96230E7D31007D38B5 /* HistoryModel.swift */; };
-		B06A9C99230E7D54007D38B5 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C98230E7D54007D38B5 /* HistoryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,12 +38,6 @@
 		B06A9C71230E69EB007D38B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B06A9C74230E69EB007D38B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B06A9C76230E69EB007D38B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B06A9C88230E73C8007D38B5 /* DashboardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardModel.swift; sourceTree = "<group>"; };
-		B06A9C8A230E73D7007D38B5 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
-		B06A9C8C230E7ABD007D38B5 /* DashboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
-		B06A9C90230E7CF8007D38B5 /* HistoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryController.swift; sourceTree = "<group>"; };
-		B06A9C96230E7D31007D38B5 /* HistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryModel.swift; sourceTree = "<group>"; };
-		B06A9C98230E7D54007D38B5 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,8 +108,6 @@
 		B06A9C83230E6F17007D38B5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B06A9C88230E73C8007D38B5 /* DashboardModel.swift */,
-				B06A9C96230E7D31007D38B5 /* HistoryModel.swift */,
 				B02D868A23166BA400482C4D /* DoctorData.swift */,
 				B02D868F2316797700482C4D /* OnBoardData.swift */,
 			);
@@ -131,8 +117,6 @@
 		B06A9C84230E6F3F007D38B5 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B06A9C8A230E73D7007D38B5 /* DashboardView.swift */,
-				B06A9C98230E7D54007D38B5 /* HistoryView.swift */,
 				B05BB1F02313A33400B80F13 /* DoctorOnBoardView.swift */,
 				B05BB1F22313A34500B80F13 /* PatientOnBoardView.swift */,
 			);
@@ -142,8 +126,6 @@
 		B06A9C85230E6F44007D38B5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B06A9C8C230E7ABD007D38B5 /* DashboardController.swift */,
-				B06A9C90230E7CF8007D38B5 /* HistoryController.swift */,
 				B05BB1EC23139FB500B80F13 /* DoctorOnBoardController.swift */,
 				B05BB1EE23139FD800B80F13 /* PatientOnBoardViewController.swift */,
 			);
@@ -231,21 +213,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B02D868B23166BA400482C4D /* DoctorData.swift in Sources */,
-				B06A9C89230E73C8007D38B5 /* DashboardModel.swift in Sources */,
 				B05BB1F12313A33400B80F13 /* DoctorOnBoardView.swift in Sources */,
-				B06A9C97230E7D31007D38B5 /* HistoryModel.swift in Sources */,
-				B06A9C8B230E73D7007D38B5 /* DashboardView.swift in Sources */,
-				4D1DCDF8230FDF8300E6B230 /* DashboardData.swift in Sources */,
-				B06A9C87230E7173007D38B5 /* DashboardController.swift in Sources */,
-				4D1DCDF6230FCA3F00E6B230 /* CloudData.swift in Sources */,
 				B06A9C6A230E69E9007D38B5 /* ViewController.swift in Sources */,
-				B06A9C92230E7CF8007D38B5 /* HistoryController.swift in Sources */,
 				B06A9C68230E69E9007D38B5 /* AppDelegate.swift in Sources */,
 				B05BB1ED23139FB500B80F13 /* DoctorOnBoardController.swift in Sources */,
-				B06A9C8E230E7ABD007D38B5 /* DashboardController.swift in Sources */,
 				B05BB1F32313A34500B80F13 /* PatientOnBoardView.swift in Sources */,
 				B02D86902316797700482C4D /* OnBoardData.swift in Sources */,
-				B06A9C99230E7D54007D38B5 /* HistoryView.swift in Sources */,
 				B05BB1EF23139FD800B80F13 /* PatientOnBoardViewController.swift in Sources */,
 				B06A9C70230E69E9007D38B5 /* MiniChallenge3.xcdatamodeld in Sources */,
 			);
