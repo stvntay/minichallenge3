@@ -29,6 +29,11 @@ class AddMedicineVC: UIViewController {
         medicineDosage.addLine(position: .LINE_POSITION_BOTTOM, color: UIColor(red:0.94, green:0.45, blue:0.37, alpha:1.0), width: 1)
         
         navBar.rightBarButtonItem = UIBarButtonItem(title: "Selesai", style: .done, target: self, action: #selector(onFinishTapped))
+        medicineCategory.addTarget(self, action: #selector(chooseCategory), for: .touchDown)
+    }
+    
+    @objc func chooseCategory(sender: UITextField){
+        
     }
     
     @objc func onFinishTapped() {

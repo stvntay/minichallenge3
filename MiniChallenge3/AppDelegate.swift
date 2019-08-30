@@ -19,14 +19,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Override point for customization after application launch.
         
-        window = UIWindow(frame: UIScreen.main.bounds)
-        if UserDefaults.standard.value(forKey: "userID") != nil {
-            let storyboard = UIStoryboard(name: "DashBoard", bundle: nil)
-            let dashBoard = storyboard.instantiateViewController(withIdentifier: "dashboardView")
-            
-            window?.rootViewController = dashBoard
-            window?.makeKeyAndVisible()
-        }
+//        window = UIWindow(frame: UIScreen.main.bounds)
+//        if UserDefaults.standard.value(forKey: "userID") as! String != "" {
+//            let storyboard = UIStoryboard(name: "TabMenu", bundle: nil)
+//            let dashBoard = storyboard.instantiateViewController(withIdentifier: "menuTab")
+//
+//            window?.rootViewController = dashBoard
+//            window?.makeKeyAndVisible()
+//        }
         
         
         return true

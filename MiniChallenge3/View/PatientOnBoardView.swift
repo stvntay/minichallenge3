@@ -23,6 +23,7 @@ class PatientOnBoardView: UIView {
         releaseDateInput.clearButtonMode = UITextField.ViewMode.whileEditing
         addressPatientInput.clearButtonMode = UITextField.ViewMode.whileEditing
         hospitalInput.clearButtonMode = UITextField.ViewMode.whileEditing
+        releaseDateInput.isEnabled = false
     }
     /*
     // Only override draw() if you perform custom drawing.

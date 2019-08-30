@@ -24,6 +24,7 @@
 		B0974FA7231926FE00EC9101 /* MedicineListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0974FA3231926FE00EC9101 /* MedicineListTableViewCell.xib */; };
 		B0974FAA2319270D00EC9101 /* AddMedicineVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0974FA82319270D00EC9101 /* AddMedicineVC.swift */; };
 		B0974FAB2319270D00EC9101 /* MedicineListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0974FA92319270D00EC9101 /* MedicineListViewController.swift */; };
+		B0974FAD2319298C00EC9101 /* TabMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0974FAC2319298C00EC9101 /* TabMenu.storyboard */; };
 		B0E253AC2317D66400874561 /* DashboardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E253A82317D66400874561 /* DashboardData.swift */; };
 		B0E253AE2317D66400874561 /* CloudData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E253AA2317D66400874561 /* CloudData.swift */; };
 		B0E253B82317D68500874561 /* set~.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0E253B02317D68400874561 /* set~.storyboard */; };
@@ -70,6 +71,7 @@
 		B0974FA3231926FE00EC9101 /* MedicineListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MedicineListTableViewCell.xib; sourceTree = "<group>"; };
 		B0974FA82319270D00EC9101 /* AddMedicineVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMedicineVC.swift; sourceTree = "<group>"; };
 		B0974FA92319270D00EC9101 /* MedicineListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicineListViewController.swift; sourceTree = "<group>"; };
+		B0974FAC2319298C00EC9101 /* TabMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabMenu.storyboard; sourceTree = "<group>"; };
 		B0E253A82317D66400874561 /* DashboardData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardData.swift; sourceTree = "<group>"; };
 		B0E253AA2317D66400874561 /* CloudData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudData.swift; sourceTree = "<group>"; };
 		B0E253B12317D68400874561 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "set~.storyboard"; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				B06A9C76230E69EB007D38B5 /* Info.plist */,
 				B06A9C6E230E69E9007D38B5 /* MiniChallenge3.xcdatamodeld */,
 				B05BB1E823139C1700B80F13 /* Onboard.storyboard */,
+				B0974FAC2319298C00EC9101 /* TabMenu.storyboard */,
 			);
 			path = MiniChallenge3;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				B0E253B92317D68500874561 /* LaunchScreen.storyboard in Resources */,
 				B0E253BA2317D68500874561 /* set.storyboard in Resources */,
 				B0E253CC2317D68D00874561 /* SignikaNegative-Light.ttf in Resources */,
+				B0974FAD2319298C00EC9101 /* TabMenu.storyboard in Resources */,
 				B0E253CB2317D68D00874561 /* Signika-Bold.ttf in Resources */,
 				B0E253C52317D68D00874561 /* Signika-Light.ttf in Resources */,
 			);
