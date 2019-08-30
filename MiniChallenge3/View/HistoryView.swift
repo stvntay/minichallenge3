@@ -15,6 +15,8 @@ class HistoryView: UIView {
     @IBOutlet weak var monthLabel: UILabel!
     @IBOutlet weak var calendarView: UICollectionView!
     @IBOutlet weak var currentDateLabel: UILabel!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var infoTableView: UITableView!
     
     override func awakeFromNib() {
         

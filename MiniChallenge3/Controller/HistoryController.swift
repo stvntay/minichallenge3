@@ -8,7 +8,9 @@
 
 import UIKit
 
-class HistoryController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class HistoryController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITableViewDelegate, UITableViewDataSource {
+    
+    
     
     @IBOutlet var historyView: HistoryView!
     
@@ -24,6 +26,9 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
     var direction = 0
     var positionIndex = 0
     var leapYearCounter = 3
+    var selectedSegment = 0
+    
+    lazy var selectedData = Months
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,8 +44,16 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
         historyView.calendarView.delegate = self
         historyView.calendarView.dataSource = self
         
+        historyView.infoTableView.delegate = self
+        historyView.infoTableView.dataSource = self
+        
         historyView.previousBtn.addTarget(self, action: #selector(previousMonth), for: .touchUpInside)
         historyView.nextBtn.addTarget(self, action: #selector(nextMonth), for: .touchUpInside)
+        
+        historyView.segmentedControl.addTarget(self, action: #selector(handleSegmentedChange), for: .valueChanged)
+        
+        historyView.infoTableView.register(UINib(nibName: "MedicineTableViewCell", bundle: nil), forCellReuseIdentifier: "Medicine")
+        historyView.infoTableView.register(UINib(nibName: "ActivityTableViewCell", bundle: nil), forCellReuseIdentifier: "ActivityID")
         
     }
     
@@ -227,6 +240,56 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
         
         historyView.monthLabel.text = "\(currentMonth) \(year)"
         historyView.calendarView.reloadData()
+    }
+    
+    // Segmented control configuration
+    @objc func handleSegmentedChange() {
+        selectedSegment = historyView.segmentedControl.selectedSegmentIndex
+        print(selectedSegment)
+        
+        if selectedSegment == 0 {
+            selectedData = Months
+        } else if selectedSegment == 1 {
+            selectedData = Days
+        } else if selectedSegment == 2 {
+            selectedData = Months
+        } else if selectedSegment == 3 {
+            selectedData = Days
+        }
+        historyView.infoTableView.reloadData()
+    }
+    
+    // Table View configuration
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return selectedData.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch selectedSegment {
+        case 0:
+            let cell = (tableView.dequeueReusableCell(withIdentifier: "Medicine") as? MedicineTableViewCell)!
+            cell.medicineNameLabel.text = selectedData[indexPath.row]
+            cell.doseLabel.text = selectedData[indexPath.row]
+            return cell
+        case 1:
+            let cell = (tableView.dequeueReusableCell(withIdentifier: "ActivityID") as? ActivityTableViewCell)!
+            cell.activityLabel.text = selectedData[indexPath.row]
+            return cell
+        case 2:
+            let cell = (tableView.dequeueReusableCell(withIdentifier: "Medicine") as? MedicineTableViewCell)!
+            cell.medicineNameLabel.text = selectedData[indexPath.row]
+            cell.doseLabel.text = selectedData[indexPath.row]
+            return cell
+        case 3:
+            let cell = (tableView.dequeueReusableCell(withIdentifier: "ActivityID") as? ActivityTableViewCell)!
+            cell.activityLabel.text = selectedData[indexPath.row]
+            return cell
+        default:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Medicine") as! MedicineTableViewCell
+            cell.medicineNameLabel.text = selectedData[indexPath.row]
+            cell.doseLabel.text = selectedData[indexPath.row]
+            return cell
+        }
     }
     
 }

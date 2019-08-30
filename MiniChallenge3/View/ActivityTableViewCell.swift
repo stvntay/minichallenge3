@@ -9,7 +9,7 @@
 import UIKit
 
 class ActivityTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var activityLabel: UILabel!
     
     

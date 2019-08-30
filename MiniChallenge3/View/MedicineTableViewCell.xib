@@ -37,8 +37,8 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="doseLabel" destination="wq7-2B-jnz" id="djF-UP-PkM"/>
-                <outlet property="medicineNameLabel" destination="g9L-8h-xKo" id="3gq-Uj-hLj"/>
+                <outlet property="doseLabel" destination="wq7-2B-jnz" id="SKr-eA-XfW"/>
+                <outlet property="medicineNameLabel" destination="g9L-8h-xKo" id="dCp-44-k4L"/>
             </connections>
             <point key="canvasLocation" x="47.826086956521742" y="34.821428571428569"/>
         </tableViewCell>
