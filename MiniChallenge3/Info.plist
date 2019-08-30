@@ -28,6 +28,15 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Signika-Bold.ttf</string>
+		<string>Signika-Light.ttf</string>
+		<string>Signika-Regular.ttf</string>
+		<string>SignikaNegative-Bold.ttf</string>
+		<string>SignikaNegative-Light.ttf</string>
+		<string>SignikaNegative-Regular.ttf</string>
+	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
