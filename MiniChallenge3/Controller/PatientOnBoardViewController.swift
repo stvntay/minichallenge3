@@ -109,8 +109,7 @@ class PatientOnBoardViewController: UIViewController {
 //            guard let idUser = self.userID else{
 //                return
 //            }
-            print("dokter: ", self.doctorID as Any)
-            print("user: ", self.userID as Any)
+            
             })
         
     }

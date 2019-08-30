@@ -49,7 +49,7 @@ final class CloudData {
         doctorData.setValue(namaPsikiater, forKey: "nama")
         doctorData.setValue(nomorTelepon, forKey: "nomorTelepon")
         
-        CKContainer.default().publicCloudDatabase.save(doctorData) { (recordDoctor, error) in
+        CKContainer.default().publicCloudDatabase.save(doctorData) { (recordDoctor, doctorError) in
             if recordDoctor != nil {
                 DispatchQueue.main.async {
                     recordDoctorID = recordDoctor!.recordID
@@ -64,19 +64,19 @@ final class CloudData {
                     userData.setValue(umur, forKey: "umur")
                     userData.setValue(puskesmas, forKey: "puskesmas")
                     
-                    CKContainer.default().publicCloudDatabase.save(userData) { (recordUser, error) in
+                    CKContainer.default().publicCloudDatabase.save(userData) { (recordUser, userError) in
                         if recordUser != nil {
                             DispatchQueue.main.async {
                                 recordUserID = recordUser!.recordID
                                 completion(recordDoctorID, recordUserID)
                             }
                         } else {
-                            print(error.debugDescription)
+                            print(userError.debugDescription)
                         }
                     }
                 }
             } else {
-                print(error.debugDescription)
+                print(doctorError.debugDescription)
             }
         }
         
