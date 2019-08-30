@@ -39,7 +39,7 @@ final class CloudData {
         
     }
     
-    func savePsikiaterAndUserData(namaPsikiater: String, nomorTelepon: String, alamat: String, namaUser: String, tanggalLepasPasung: Date, umur: Int, dokterID: CKRecord.ID, puskesmas: String, completion: @escaping (_ doctorID: CKRecord.ID, _ userID: CKRecord.ID) -> Void) {
+    func savePsikiaterAndUserData(namaPsikiater: String, nomorTelepon: String, alamat: String, namaUser: String, tanggalLepasPasung: Date, umur: Int, puskesmas: String, completion: @escaping (_ doctorID: CKRecord.ID, _ userID: CKRecord.ID) -> Void) {
         let doctorData = CKRecord(recordType: "PsikiaterData")
         let userData = CKRecord(recordType: "MedicalID")
         var recordDoctorID = CKRecord.ID()
@@ -52,9 +52,9 @@ final class CloudData {
             if recordDoctor != nil {
                 DispatchQueue.main.async {
                     recordDoctorID = recordDoctor!.recordID
-                    print(recordDoctorID)
+                    //                    print(recordDoctorID)
                     
-                    let reference = CKRecord.Reference(recordID: dokterID, action: .deleteSelf)
+                    let reference = CKRecord.Reference(recordID: recordDoctorID, action: .deleteSelf)
                     
                     userData.setValue(alamat, forKey: "alamat")
                     userData.setValue(namaUser, forKey: "nama")
