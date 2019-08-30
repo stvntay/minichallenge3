@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D0DC5D92319341F00912E65 /* OnboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0DC5D82319341F00912E65 /* OnboardModel.swift */; };
+		4D0DC5DB231934E900912E65 /* HistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0DC5DA231934E900912E65 /* HistoryModel.swift */; };
+		4D0DC5DD23193A2500912E65 /* RecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0DC5DC23193A2500912E65 /* RecordModel.swift */; };
+		4D0DC5DF23193AFD00912E65 /* MedicineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0DC5DE23193AFD00912E65 /* MedicineModel.swift */; };
+		4D0DC5E123193CAB00912E65 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0DC5E023193CAB00912E65 /* ProfileModel.swift */; };
 		B05BB1E923139C1700B80F13 /* Onboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B05BB1E823139C1700B80F13 /* Onboard.storyboard */; };
 		B05BB1ED23139FB500B80F13 /* DoctorOnBoardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05BB1EC23139FB500B80F13 /* DoctorOnBoardController.swift */; };
 		B05BB1EF23139FD800B80F13 /* PatientOnBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05BB1EE23139FD800B80F13 /* PatientOnBoardViewController.swift */; };
@@ -37,6 +42,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D0DC5D82319341F00912E65 /* OnboardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardModel.swift; sourceTree = "<group>"; };
+		4D0DC5DA231934E900912E65 /* HistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryModel.swift; sourceTree = "<group>"; };
+		4D0DC5DC23193A2500912E65 /* RecordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordModel.swift; sourceTree = "<group>"; };
+		4D0DC5DE23193AFD00912E65 /* MedicineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineModel.swift; sourceTree = "<group>"; };
+		4D0DC5E023193CAB00912E65 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		B00893662317AB0100D8B0DB /* Signika-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Signika-Bold.ttf"; sourceTree = "<group>"; };
 		B00893672317AB0100D8B0DB /* SignikaNegative-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SignikaNegative-Bold.ttf"; sourceTree = "<group>"; };
 		B00893682317AB0200D8B0DB /* Signika-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Signika-Regular.ttf"; sourceTree = "<group>"; };
@@ -147,8 +157,6 @@
 		B0E253A52317D5EA00874561 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
-				B02D868A23166BA400482C4D /* DoctorData.swift */,
-				B02D868F2316797700482C4D /* OnBoardData.swift */,
 				B008936C2317AB0200D8B0DB /* SignikaNegative-Light.ttf */,
 				B00893672317AB0100D8B0DB /* SignikaNegative-Bold.ttf */,
 				B00893682317AB0200D8B0DB /* Signika-Regular.ttf */,
@@ -168,6 +176,11 @@
 				B0E253AA2317D66400874561 /* CloudData.swift */,
 				B0E253D12317DE0800874561 /* OnBoardData.swift */,
 				B0E253D32317DE1300874561 /* DoctorData.swift */,
+				4D0DC5D82319341F00912E65 /* OnboardModel.swift */,
+				4D0DC5DA231934E900912E65 /* HistoryModel.swift */,
+				4D0DC5DC23193A2500912E65 /* RecordModel.swift */,
+				4D0DC5DE23193AFD00912E65 /* MedicineModel.swift */,
+				4D0DC5E023193CAB00912E65 /* ProfileModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -290,19 +303,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B02D868B23166BA400482C4D /* DoctorData.swift in Sources */,
 				B05BB1F12313A33400B80F13 /* DoctorOnBoardView.swift in Sources */,
 				B06A9C6A230E69E9007D38B5 /* ViewController.swift in Sources */,
 				B0E253AC2317D66400874561 /* DashboardData.swift in Sources */,
 				B06A9C68230E69E9007D38B5 /* AppDelegate.swift in Sources */,
+				4D0DC5DD23193A2500912E65 /* RecordModel.swift in Sources */,
 				B05BB1ED23139FB500B80F13 /* DoctorOnBoardController.swift in Sources */,
 				B05BB1F32313A34500B80F13 /* PatientOnBoardView.swift in Sources */,
-				B02D86902316797700482C4D /* OnBoardData.swift in Sources */,
+				4D0DC5DF23193AFD00912E65 /* MedicineModel.swift in Sources */,
+				4D0DC5DB231934E900912E65 /* HistoryModel.swift in Sources */,
 				B05BB1EF23139FD800B80F13 /* PatientOnBoardViewController.swift in Sources */,
+				4D0DC5D92319341F00912E65 /* OnboardModel.swift in Sources */,
 				B0E253AE2317D66400874561 /* CloudData.swift in Sources */,
 				B0E253D42317DE1300874561 /* DoctorData.swift in Sources */,
 				B06A9C70230E69E9007D38B5 /* MiniChallenge3.xcdatamodeld in Sources */,
 				B0E253D22317DE0800874561 /* OnBoardData.swift in Sources */,
+				4D0DC5E123193CAB00912E65 /* ProfileModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
