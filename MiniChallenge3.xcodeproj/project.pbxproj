@@ -24,30 +24,11 @@
 		B06A9C72230E69EB007D38B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B06A9C71230E69EB007D38B5 /* Assets.xcassets */; };
 		B06A9C75230E69EB007D38B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B06A9C73230E69EB007D38B5 /* LaunchScreen.storyboard */; };
 		B06A9C87230E7173007D38B5 /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C86230E7173007D38B5 /* DashboardController.swift */; };
-		BE9BECFA230E892F00640A93 /* HistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9BECF9230E892F00640A93 /* HistoryController.swift */; };
-		BE9BECFC230E897900640A93 /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE9BECFB230E897900640A93 /* History.storyboard */; };
-		BE9BECFE230E8DAD00640A93 /* CalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9BECFD230E8DAD00640A93 /* CalenderView.swift */; };
-		BE9BED02230E944D00640A93 /* DateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9BED01230E944D00640A93 /* DateCollectionViewCell.swift */; };
-		BE9BED0423167E5300640A93 /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9BED0323167E5300640A93 /* CustomButtonStyle.swift */; };
-		BE9BED122317D4EB00640A93 /* MedicineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9BED112317D4EB00640A93 /* MedicineData.swift */; };
-		BE9BED152317D67700640A93 /* MedicineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9BED132317D67700640A93 /* MedicineTableViewCell.swift */; };
-		BE9BED162317D67700640A93 /* MedicineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE9BED142317D67700640A93 /* MedicineTableViewCell.xib */; };
-		BE9BED182317D92D00640A93 /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9BED172317D92D00640A93 /* ActivityModel.swift */; };
-		BE9BED1B2317E45A00640A93 /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9BED192317E45A00640A93 /* ActivityTableViewCell.swift */; };
-		BE9BED1C2317E45A00640A93 /* ActivityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE9BED1A2317E45A00640A93 /* ActivityTableViewCell.xib */; };
-		BEB583122318FECA000153DC /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB583112318FECA000153DC /* HistoryView.swift */; };
-		B06A9C89230E73C8007D38B5 /* DashboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C88230E73C8007D38B5 /* DashboardModel.swift */; };
-		B06A9C8B230E73D7007D38B5 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C8A230E73D7007D38B5 /* DashboardView.swift */; };
-		B06A9C8E230E7ABD007D38B5 /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C8C230E7ABD007D38B5 /* DashboardController.swift */; };
-		B06A9C92230E7CF8007D38B5 /* HistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C90230E7CF8007D38B5 /* HistoryController.swift */; };
-		B06A9C97230E7D31007D38B5 /* HistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C96230E7D31007D38B5 /* HistoryModel.swift */; };
-		B06A9C99230E7D54007D38B5 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C98230E7D54007D38B5 /* HistoryView.swift */; };
 		B0E253AC2317D66400874561 /* DashboardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E253A82317D66400874561 /* DashboardData.swift */; };
 		B0E253AE2317D66400874561 /* CloudData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E253AA2317D66400874561 /* CloudData.swift */; };
 		B0E253B82317D68500874561 /* set~.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0E253B02317D68400874561 /* set~.storyboard */; };
 		B0E253B92317D68500874561 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0E253B22317D68400874561 /* LaunchScreen.storyboard */; };
 		B0E253BA2317D68500874561 /* set.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0E253B42317D68400874561 /* set.storyboard */; };
-		B0E253BB2317D68500874561 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0E253B62317D68400874561 /* Main.storyboard */; };
 		B0E253C52317D68D00874561 /* Signika-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B0E253BD2317D68D00874561 /* Signika-Light.ttf */; };
 		B0E253C62317D68D00874561 /* SignikaNegative-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B0E253BE2317D68D00874561 /* SignikaNegative-Bold.ttf */; };
 		B0E253C72317D68D00874561 /* Signika-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B0E253BF2317D68D00874561 /* Signika-Regular.ttf */; };
@@ -58,6 +39,18 @@
 		B0E253CC2317D68D00874561 /* SignikaNegative-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B0E253C42317D68D00874561 /* SignikaNegative-Light.ttf */; };
 		B0E253D22317DE0800874561 /* OnBoardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E253D12317DE0800874561 /* OnBoardData.swift */; };
 		B0E253D42317DE1300874561 /* DoctorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E253D32317DE1300874561 /* DoctorData.swift */; };
+		BE6492B923194EAB001E27A7 /* CalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6492B823194EAB001E27A7 /* CalenderView.swift */; };
+		BE6492BB23194EFB001E27A7 /* DateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6492BA23194EFA001E27A7 /* DateCollectionViewCell.swift */; };
+		BE6492BD23194F20001E27A7 /* HistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6492BC23194F20001E27A7 /* HistoryController.swift */; };
+		BE6492BF23194F92001E27A7 /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6492BE23194F92001E27A7 /* ActivityTableViewCell.swift */; };
+		BE6492C123194FB0001E27A7 /* ActivityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE6492C023194FB0001E27A7 /* ActivityTableViewCell.xib */; };
+		BE6492C523194FEB001E27A7 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6492C423194FEB001E27A7 /* HistoryView.swift */; };
+		BE6492C92319501B001E27A7 /* MedicineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6492C82319501B001E27A7 /* MedicineTableViewCell.swift */; };
+		BE6492CB23195025001E27A7 /* MedicineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE6492CA23195025001E27A7 /* MedicineTableViewCell.xib */; };
+		BE6492CF2319509D001E27A7 /* MedicineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6492CE2319509D001E27A7 /* MedicineData.swift */; };
+		BE6492D223195151001E27A7 /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE6492D023195151001E27A7 /* History.storyboard */; };
+		BE9BECFA230E892F00640A93 /* HistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9BECF9230E892F00640A93 /* HistoryController.swift */; };
+		BE9BED182317D92D00640A93 /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9BED172317D92D00640A93 /* ActivityModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,30 +81,13 @@
 		B06A9C74230E69EB007D38B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B06A9C76230E69EB007D38B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B06A9C86230E7173007D38B5 /* DashboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
-		BE9BECF9230E892F00640A93 /* HistoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryController.swift; sourceTree = "<group>"; };
-		BE9BECFB230E897900640A93 /* History.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = History.storyboard; path = MiniChallenge3/Controller/History.storyboard; sourceTree = SOURCE_ROOT; };
-		BE9BECFD230E8DAD00640A93 /* CalenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalenderView.swift; path = MiniChallenge3/Controller/CalenderView.swift; sourceTree = SOURCE_ROOT; };
-		BE9BED01230E944D00640A93 /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DateCollectionViewCell.swift; path = MiniChallenge3/Controller/DateCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
-		BE9BED0323167E5300640A93 /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
-		BE9BED112317D4EB00640A93 /* MedicineData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MedicineData.swift; path = MiniChallenge3/View/MedicineData.swift; sourceTree = SOURCE_ROOT; };
-		BE9BED132317D67700640A93 /* MedicineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineTableViewCell.swift; sourceTree = "<group>"; };
-		BE9BED142317D67700640A93 /* MedicineTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicineTableViewCell.xib; sourceTree = "<group>"; };
-		BE9BED172317D92D00640A93 /* ActivityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ActivityModel.swift; path = MiniChallenge3/View/ActivityModel.swift; sourceTree = SOURCE_ROOT; };
-		BE9BED192317E45A00640A93 /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
-		BE9BED1A2317E45A00640A93 /* ActivityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityTableViewCell.xib; sourceTree = "<group>"; };
-		BEB583112318FECA000153DC /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
-		B06A9C88230E73C8007D38B5 /* DashboardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardModel.swift; sourceTree = "<group>"; };
-		B06A9C8A230E73D7007D38B5 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		B06A9C8C230E7ABD007D38B5 /* DashboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
 		B06A9C90230E7CF8007D38B5 /* HistoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryController.swift; sourceTree = "<group>"; };
-		B06A9C96230E7D31007D38B5 /* HistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryModel.swift; sourceTree = "<group>"; };
-		B06A9C98230E7D54007D38B5 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		B0E253A82317D66400874561 /* DashboardData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardData.swift; sourceTree = "<group>"; };
 		B0E253AA2317D66400874561 /* CloudData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudData.swift; sourceTree = "<group>"; };
 		B0E253B12317D68400874561 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "set~.storyboard"; sourceTree = "<group>"; };
 		B0E253B32317D68400874561 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B0E253B52317D68400874561 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = set.storyboard; sourceTree = "<group>"; };
-		B0E253B72317D68400874561 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
 		B0E253BD2317D68D00874561 /* Signika-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Signika-Light.ttf"; sourceTree = "<group>"; };
 		B0E253BE2317D68D00874561 /* SignikaNegative-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SignikaNegative-Bold.ttf"; sourceTree = "<group>"; };
 		B0E253BF2317D68D00874561 /* Signika-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Signika-Regular.ttf"; sourceTree = "<group>"; };
@@ -123,6 +99,18 @@
 		B0E253CD2317D6D500874561 /* MiniChallenge3.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MiniChallenge3.entitlements; sourceTree = "<group>"; };
 		B0E253D12317DE0800874561 /* OnBoardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardData.swift; sourceTree = "<group>"; };
 		B0E253D32317DE1300874561 /* DoctorData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorData.swift; sourceTree = "<group>"; };
+		BE6492B823194EAB001E27A7 /* CalenderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalenderView.swift; sourceTree = "<group>"; };
+		BE6492BA23194EFA001E27A7 /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateCollectionViewCell.swift; sourceTree = "<group>"; };
+		BE6492BC23194F20001E27A7 /* HistoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryController.swift; sourceTree = "<group>"; };
+		BE6492BE23194F92001E27A7 /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
+		BE6492C023194FB0001E27A7 /* ActivityTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityTableViewCell.xib; sourceTree = "<group>"; };
+		BE6492C423194FEB001E27A7 /* HistoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		BE6492C82319501B001E27A7 /* MedicineTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicineTableViewCell.swift; sourceTree = "<group>"; };
+		BE6492CA23195025001E27A7 /* MedicineTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MedicineTableViewCell.xib; sourceTree = "<group>"; };
+		BE6492CE2319509D001E27A7 /* MedicineData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicineData.swift; sourceTree = "<group>"; };
+		BE6492D123195151001E27A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = History.storyboard; sourceTree = "<group>"; };
+		BE9BECF9230E892F00640A93 /* HistoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryController.swift; sourceTree = "<group>"; };
+		BE9BED172317D92D00640A93 /* ActivityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ActivityModel.swift; path = MiniChallenge3/View/ActivityModel.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +165,14 @@
 		B06A9C84230E6F3F007D38B5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BE6492D023195151001E27A7 /* History.storyboard */,
+				BE6492CE2319509D001E27A7 /* MedicineData.swift */,
+				BE6492C423194FEB001E27A7 /* HistoryView.swift */,
+				BE6492C82319501B001E27A7 /* MedicineTableViewCell.swift */,
+				BE6492CA23195025001E27A7 /* MedicineTableViewCell.xib */,
+				BE6492C023194FB0001E27A7 /* ActivityTableViewCell.xib */,
+				BE6492BE23194F92001E27A7 /* ActivityTableViewCell.swift */,
+				BE9BED172317D92D00640A93 /* ActivityModel.swift */,
 				B05BB1F02313A33400B80F13 /* DoctorOnBoardView.swift */,
 				B05BB1F22313A34500B80F13 /* PatientOnBoardView.swift */,
 			);
@@ -186,10 +182,9 @@
 		B06A9C85230E6F44007D38B5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				BE9BED112317D4EB00640A93 /* MedicineData.swift */,
-				BE9BED172317D92D00640A93 /* ActivityModel.swift */,
-				B06A9C88230E73C8007D38B5 /* DashboardModel.swift */,
-				B06A9C96230E7D31007D38B5 /* HistoryModel.swift */,
+				BE6492BC23194F20001E27A7 /* HistoryController.swift */,
+				BE6492BA23194EFA001E27A7 /* DateCollectionViewCell.swift */,
+				BE6492B823194EAB001E27A7 /* CalenderView.swift */,
 				B05BB1EC23139FB500B80F13 /* DoctorOnBoardController.swift */,
 				B05BB1EE23139FD800B80F13 /* PatientOnBoardViewController.swift */,
 			);
@@ -230,21 +225,9 @@
 		B0E253AF2317D68400874561 /* Base.lproj */ = {
 			isa = PBXGroup;
 			children = (
-				BE9BED0323167E5300640A93 /* CustomButtonStyle.swift */,
-				BE9BECFB230E897900640A93 /* History.storyboard */,
-				BEB583112318FECA000153DC /* HistoryView.swift */,
-				BE9BED132317D67700640A93 /* MedicineTableViewCell.swift */,
-				BE9BED142317D67700640A93 /* MedicineTableViewCell.xib */,
-				BE9BED192317E45A00640A93 /* ActivityTableViewCell.swift */,
-				BE9BED1A2317E45A00640A93 /* ActivityTableViewCell.xib */,
-				BE9BED01230E944D00640A93 /* DateCollectionViewCell.swift */,
-				BE9BECFD230E8DAD00640A93 /* CalenderView.swift */,
-				B06A9C8A230E73D7007D38B5 /* DashboardView.swift */,
-				B06A9C98230E7D54007D38B5 /* HistoryView.swift */,
 				B0E253B02317D68400874561 /* set~.storyboard */,
 				B0E253B22317D68400874561 /* LaunchScreen.storyboard */,
 				B0E253B42317D68400874561 /* set.storyboard */,
-				B0E253B62317D68400874561 /* Main.storyboard */,
 			);
 			path = Base.lproj;
 			sourceTree = "<group>";
@@ -335,7 +318,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B06A9C75230E69EB007D38B5 /* LaunchScreen.storyboard in Resources */,
-				BE9BED162317D67700640A93 /* MedicineTableViewCell.xib in Resources */,
 				B06A9C72230E69EB007D38B5 /* Assets.xcassets in Resources */,
 				B05BB1E923139C1700B80F13 /* Onboard.storyboard in Resources */,
 				B0E253B82317D68500874561 /* set~.storyboard in Resources */,
@@ -345,14 +327,14 @@
 				B0E253C92317D68D00874561 /* Signika-Semibold.ttf in Resources */,
 				B0E253C62317D68D00874561 /* SignikaNegative-Bold.ttf in Resources */,
 				B06A9C6D230E69E9007D38B5 /* Main.storyboard in Resources */,
-				BE9BED1C2317E45A00640A93 /* ActivityTableViewCell.xib in Resources */,
-				BE9BECFC230E897900640A93 /* History.storyboard in Resources */,
-				B0E253BB2317D68500874561 /* Main.storyboard in Resources */,
+				BE6492CB23195025001E27A7 /* MedicineTableViewCell.xib in Resources */,
+				BE6492C123194FB0001E27A7 /* ActivityTableViewCell.xib in Resources */,
 				B0E253B92317D68500874561 /* LaunchScreen.storyboard in Resources */,
 				B0E253BA2317D68500874561 /* set.storyboard in Resources */,
 				B0E253CC2317D68D00874561 /* SignikaNegative-Light.ttf in Resources */,
 				B0E253CB2317D68D00874561 /* Signika-Bold.ttf in Resources */,
 				B0E253C52317D68D00874561 /* Signika-Light.ttf in Resources */,
+				BE6492D223195151001E27A7 /* History.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,33 +345,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE9BED122317D4EB00640A93 /* MedicineData.swift in Sources */,
 				BE9BECFA230E892F00640A93 /* HistoryController.swift in Sources */,
-				BE9BED1B2317E45A00640A93 /* ActivityTableViewCell.swift in Sources */,
 				BE9BED182317D92D00640A93 /* ActivityModel.swift in Sources */,
+				BE6492B923194EAB001E27A7 /* CalenderView.swift in Sources */,
 				B06A9C87230E7173007D38B5 /* DashboardController.swift in Sources */,
-				BE9BED0423167E5300640A93 /* CustomButtonStyle.swift in Sources */,
-				BE9BECFE230E8DAD00640A93 /* CalenderView.swift in Sources */,
-				BEB583122318FECA000153DC /* HistoryView.swift in Sources */,
-				B06A9C89230E73C8007D38B5 /* DashboardModel.swift in Sources */,
-				B06A9C97230E7D31007D38B5 /* HistoryModel.swift in Sources */,
-				B06A9C8B230E73D7007D38B5 /* DashboardView.swift in Sources */,
 				B05BB1F12313A33400B80F13 /* DoctorOnBoardView.swift in Sources */,
 				B06A9C6A230E69E9007D38B5 /* ViewController.swift in Sources */,
 				B0E253AC2317D66400874561 /* DashboardData.swift in Sources */,
 				B06A9C68230E69E9007D38B5 /* AppDelegate.swift in Sources */,
+				BE6492CF2319509D001E27A7 /* MedicineData.swift in Sources */,
 				4D0DC5DD23193A2500912E65 /* RecordModel.swift in Sources */,
+				BE6492BF23194F92001E27A7 /* ActivityTableViewCell.swift in Sources */,
 				B05BB1ED23139FB500B80F13 /* DoctorOnBoardController.swift in Sources */,
+				BE6492BB23194EFB001E27A7 /* DateCollectionViewCell.swift in Sources */,
 				B05BB1F32313A34500B80F13 /* PatientOnBoardView.swift in Sources */,
 				4D0DC5DF23193AFD00912E65 /* MedicineModel.swift in Sources */,
 				4D0DC5DB231934E900912E65 /* HistoryModel.swift in Sources */,
 				B05BB1EF23139FD800B80F13 /* PatientOnBoardViewController.swift in Sources */,
+				BE6492C523194FEB001E27A7 /* HistoryView.swift in Sources */,
 				4D0DC5D92319341F00912E65 /* OnboardModel.swift in Sources */,
 				B0E253AE2317D66400874561 /* CloudData.swift in Sources */,
+				BE6492BD23194F20001E27A7 /* HistoryController.swift in Sources */,
+				BE6492C92319501B001E27A7 /* MedicineTableViewCell.swift in Sources */,
 				B0E253D42317DE1300874561 /* DoctorData.swift in Sources */,
 				B06A9C70230E69E9007D38B5 /* MiniChallenge3.xcdatamodeld in Sources */,
-				BE9BED02230E944D00640A93 /* DateCollectionViewCell.swift in Sources */,
-				BE9BED152317D67700640A93 /* MedicineTableViewCell.swift in Sources */,
 				B0E253D22317DE0800874561 /* OnBoardData.swift in Sources */,
 				4D0DC5E123193CAB00912E65 /* ProfileModel.swift in Sources */,
 			);
@@ -438,12 +417,12 @@
 			name = set.storyboard;
 			sourceTree = "<group>";
 		};
-		B0E253B62317D68400874561 /* Main.storyboard */ = {
+		BE6492D023195151001E27A7 /* History.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				B0E253B72317D68400874561 /* Base */,
+				BE6492D123195151001E27A7 /* Base */,
 			);
-			name = Main.storyboard;
+			name = History.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

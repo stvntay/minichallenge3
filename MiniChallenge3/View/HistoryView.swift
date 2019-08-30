@@ -2,11 +2,9 @@
 //  HistoryView.swift
 //  MiniChallenge3
 //
-<<<<<<< HEAD
+
 //  Created by Finley Khouwira on 30/08/19.
-=======
-//  Created by Steven on 8/22/19.
->>>>>>> master
+
 //  Copyright © 2019 Steven. All rights reserved.
 //
 
@@ -14,7 +12,6 @@ import UIKit
 
 class HistoryView: UIView {
 
-<<<<<<< HEAD
     @IBOutlet weak var previousBtn: UIButton!
     @IBOutlet weak var nextBtn: UIButton!
     @IBOutlet weak var monthLabel: UILabel!
@@ -26,8 +23,7 @@ class HistoryView: UIView {
     override func awakeFromNib() {
         
     }
-    
-=======
+
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -36,5 +32,5 @@ class HistoryView: UIView {
     }
     */
 
->>>>>>> master
+
 }
