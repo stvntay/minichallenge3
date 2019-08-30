@@ -10,13 +10,13 @@ import Foundation
 import UIKit
 import CloudKit
 
-final class HistoryModel {
+final class RecordModel {
     
-    static var shared = HistoryModel()
+    static var shared = RecordModel()
     
     private init() {}
     
-    // MARK: - Load history data to CloudKit
+    // MARK: - Load medicine name data from cloudkit
     
     func parseMedicineName(common: [CKRecord], rare: [CKRecord]) -> [String] {
         var dataNama = [String]()
@@ -68,20 +68,28 @@ final class HistoryModel {
         
     }
     
-    func loadMedicalRecord(userID: CKRecord.ID, completion: @escaping (_ recID: [CKRecord]) -> Void) {
-        let pred = NSPredicate(format: "pasienID = %@", userID)
-        let query = CKQuery(recordType: "MedicalRecord", predicate: pred)
-        let sort = NSSortDescriptor(key: "creationDate", ascending: true)
-        query.sortDescriptors = [sort]
+    // MARK: - Save record data to CloudKit
+    
+    func saveMedicalRecord(obatRutin: [String], obatSewaktu: [String], membersihkanDiri: String, makanDenganRapi: String, membersihkanPakaian: String, membersihkanRumah: String, berkomunikasiDenganLingkungan: String, tidurHariIni: String, catatan: String, pasienID: CKRecord.ID) {
+        let newData = CKRecord(recordType: "MedicalRecord")
+        let reference = CKRecord.Reference(recordID: pasienID, action: .deleteSelf)
         
-        CKContainer.default().publicCloudDatabase.perform(query, inZoneWith: nil) { (records, error) in
-            DispatchQueue.main.async {
-                guard let records = records else {
-                    print(error?.localizedDescription as Any)
-                    return
-                }
-                print(records)
-                completion(records)
+        newData.setValue(obatRutin, forKey: "obatRutin")
+        newData.setValue(obatSewaktu, forKey: "obatSewaktu")
+        newData.setValue(membersihkanDiri, forKey: "membersihkanDiri")
+        newData.setValue(makanDenganRapi, forKey: "makanDenganRapi")
+        newData.setValue(membersihkanPakaian, forKey: "membersihkanPakaian")
+        newData.setValue(membersihkanRumah, forKey: "membersihkanRumah")
+        newData.setValue(berkomunikasiDenganLingkungan, forKey: "berkomunikasiDenganLingkungan")
+        newData.setValue(tidurHariIni, forKey: "tidurHariIni")
+        newData.setValue(catatan, forKey: "catatan")
+        newData.setValue(reference, forKey: "pasienID")
+        
+        CKContainer.default().publicCloudDatabase.save(newData) { (record, error) in
+            if record != nil {
+                print("save data success")
+            } else {
+                print(error.debugDescription)
             }
         }
         

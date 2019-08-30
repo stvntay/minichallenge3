@@ -7,13 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D0DC5D92319341F00912E65 /* OnboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0DC5D82319341F00912E65 /* OnboardModel.swift */; };
+		4D0DC5DB231934E900912E65 /* HistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0DC5DA231934E900912E65 /* HistoryModel.swift */; };
+		4D0DC5DD23193A2500912E65 /* RecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0DC5DC23193A2500912E65 /* RecordModel.swift */; };
+		4D0DC5DF23193AFD00912E65 /* MedicineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0DC5DE23193AFD00912E65 /* MedicineModel.swift */; };
+		4D0DC5E123193CAB00912E65 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0DC5E023193CAB00912E65 /* ProfileModel.swift */; };
+		B05BB1E923139C1700B80F13 /* Onboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B05BB1E823139C1700B80F13 /* Onboard.storyboard */; };
+		B05BB1ED23139FB500B80F13 /* DoctorOnBoardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05BB1EC23139FB500B80F13 /* DoctorOnBoardController.swift */; };
+		B05BB1EF23139FD800B80F13 /* PatientOnBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05BB1EE23139FD800B80F13 /* PatientOnBoardViewController.swift */; };
+		B05BB1F12313A33400B80F13 /* DoctorOnBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05BB1F02313A33400B80F13 /* DoctorOnBoardView.swift */; };
+		B05BB1F32313A34500B80F13 /* PatientOnBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05BB1F22313A34500B80F13 /* PatientOnBoardView.swift */; };
 		B06A9C68230E69E9007D38B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C67230E69E9007D38B5 /* AppDelegate.swift */; };
 		B06A9C6A230E69E9007D38B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C69230E69E9007D38B5 /* ViewController.swift */; };
 		B06A9C6D230E69E9007D38B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B06A9C6B230E69E9007D38B5 /* Main.storyboard */; };
 		B06A9C70230E69E9007D38B5 /* MiniChallenge3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C6E230E69E9007D38B5 /* MiniChallenge3.xcdatamodeld */; };
 		B06A9C72230E69EB007D38B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B06A9C71230E69EB007D38B5 /* Assets.xcassets */; };
 		B06A9C75230E69EB007D38B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B06A9C73230E69EB007D38B5 /* LaunchScreen.storyboard */; };
-<<<<<<< HEAD
 		B06A9C87230E7173007D38B5 /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C86230E7173007D38B5 /* DashboardController.swift */; };
 		BE9BECFA230E892F00640A93 /* HistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9BECF9230E892F00640A93 /* HistoryController.swift */; };
 		BE9BECFC230E897900640A93 /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE9BECFB230E897900640A93 /* History.storyboard */; };
@@ -27,17 +36,49 @@
 		BE9BED1B2317E45A00640A93 /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9BED192317E45A00640A93 /* ActivityTableViewCell.swift */; };
 		BE9BED1C2317E45A00640A93 /* ActivityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE9BED1A2317E45A00640A93 /* ActivityTableViewCell.xib */; };
 		BEB583122318FECA000153DC /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB583112318FECA000153DC /* HistoryView.swift */; };
-=======
 		B06A9C89230E73C8007D38B5 /* DashboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C88230E73C8007D38B5 /* DashboardModel.swift */; };
 		B06A9C8B230E73D7007D38B5 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C8A230E73D7007D38B5 /* DashboardView.swift */; };
 		B06A9C8E230E7ABD007D38B5 /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C8C230E7ABD007D38B5 /* DashboardController.swift */; };
 		B06A9C92230E7CF8007D38B5 /* HistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C90230E7CF8007D38B5 /* HistoryController.swift */; };
 		B06A9C97230E7D31007D38B5 /* HistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C96230E7D31007D38B5 /* HistoryModel.swift */; };
 		B06A9C99230E7D54007D38B5 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C98230E7D54007D38B5 /* HistoryView.swift */; };
->>>>>>> master
+		B0E253AC2317D66400874561 /* DashboardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E253A82317D66400874561 /* DashboardData.swift */; };
+		B0E253AE2317D66400874561 /* CloudData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E253AA2317D66400874561 /* CloudData.swift */; };
+		B0E253B82317D68500874561 /* set~.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0E253B02317D68400874561 /* set~.storyboard */; };
+		B0E253B92317D68500874561 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0E253B22317D68400874561 /* LaunchScreen.storyboard */; };
+		B0E253BA2317D68500874561 /* set.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0E253B42317D68400874561 /* set.storyboard */; };
+		B0E253BB2317D68500874561 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0E253B62317D68400874561 /* Main.storyboard */; };
+		B0E253C52317D68D00874561 /* Signika-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B0E253BD2317D68D00874561 /* Signika-Light.ttf */; };
+		B0E253C62317D68D00874561 /* SignikaNegative-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B0E253BE2317D68D00874561 /* SignikaNegative-Bold.ttf */; };
+		B0E253C72317D68D00874561 /* Signika-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B0E253BF2317D68D00874561 /* Signika-Regular.ttf */; };
+		B0E253C82317D68D00874561 /* SignikaNegative-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B0E253C02317D68D00874561 /* SignikaNegative-Semibold.ttf */; };
+		B0E253C92317D68D00874561 /* Signika-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B0E253C12317D68D00874561 /* Signika-Semibold.ttf */; };
+		B0E253CA2317D68D00874561 /* SignikaNegative-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B0E253C22317D68D00874561 /* SignikaNegative-Regular.ttf */; };
+		B0E253CB2317D68D00874561 /* Signika-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B0E253C32317D68D00874561 /* Signika-Bold.ttf */; };
+		B0E253CC2317D68D00874561 /* SignikaNegative-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B0E253C42317D68D00874561 /* SignikaNegative-Light.ttf */; };
+		B0E253D22317DE0800874561 /* OnBoardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E253D12317DE0800874561 /* OnBoardData.swift */; };
+		B0E253D42317DE1300874561 /* DoctorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E253D32317DE1300874561 /* DoctorData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D0DC5D82319341F00912E65 /* OnboardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardModel.swift; sourceTree = "<group>"; };
+		4D0DC5DA231934E900912E65 /* HistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryModel.swift; sourceTree = "<group>"; };
+		4D0DC5DC23193A2500912E65 /* RecordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordModel.swift; sourceTree = "<group>"; };
+		4D0DC5DE23193AFD00912E65 /* MedicineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineModel.swift; sourceTree = "<group>"; };
+		4D0DC5E023193CAB00912E65 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		B00893662317AB0100D8B0DB /* Signika-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Signika-Bold.ttf"; sourceTree = "<group>"; };
+		B00893672317AB0100D8B0DB /* SignikaNegative-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SignikaNegative-Bold.ttf"; sourceTree = "<group>"; };
+		B00893682317AB0200D8B0DB /* Signika-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Signika-Regular.ttf"; sourceTree = "<group>"; };
+		B00893692317AB0200D8B0DB /* SignikaNegative-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SignikaNegative-Regular.ttf"; sourceTree = "<group>"; };
+		B008936A2317AB0200D8B0DB /* SignikaNegative-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SignikaNegative-Semibold.ttf"; sourceTree = "<group>"; };
+		B008936B2317AB0200D8B0DB /* Signika-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Signika-Semibold.ttf"; sourceTree = "<group>"; };
+		B008936C2317AB0200D8B0DB /* SignikaNegative-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SignikaNegative-Light.ttf"; sourceTree = "<group>"; };
+		B008936D2317AB0300D8B0DB /* Signika-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Signika-Light.ttf"; sourceTree = "<group>"; };
+		B05BB1E823139C1700B80F13 /* Onboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboard.storyboard; sourceTree = "<group>"; };
+		B05BB1EC23139FB500B80F13 /* DoctorOnBoardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorOnBoardController.swift; sourceTree = "<group>"; };
+		B05BB1EE23139FD800B80F13 /* PatientOnBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientOnBoardViewController.swift; sourceTree = "<group>"; };
+		B05BB1F02313A33400B80F13 /* DoctorOnBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorOnBoardView.swift; sourceTree = "<group>"; };
+		B05BB1F22313A34500B80F13 /* PatientOnBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientOnBoardView.swift; sourceTree = "<group>"; };
 		B06A9C64230E69E9007D38B5 /* MiniChallenge3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniChallenge3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B06A9C67230E69E9007D38B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B06A9C69230E69E9007D38B5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -46,7 +87,6 @@
 		B06A9C71230E69EB007D38B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B06A9C74230E69EB007D38B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B06A9C76230E69EB007D38B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-<<<<<<< HEAD
 		B06A9C86230E7173007D38B5 /* DashboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
 		BE9BECF9230E892F00640A93 /* HistoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryController.swift; sourceTree = "<group>"; };
 		BE9BECFB230E897900640A93 /* History.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = History.storyboard; path = MiniChallenge3/Controller/History.storyboard; sourceTree = SOURCE_ROOT; };
@@ -60,14 +100,29 @@
 		BE9BED192317E45A00640A93 /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
 		BE9BED1A2317E45A00640A93 /* ActivityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityTableViewCell.xib; sourceTree = "<group>"; };
 		BEB583112318FECA000153DC /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
-=======
 		B06A9C88230E73C8007D38B5 /* DashboardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardModel.swift; sourceTree = "<group>"; };
 		B06A9C8A230E73D7007D38B5 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		B06A9C8C230E7ABD007D38B5 /* DashboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
 		B06A9C90230E7CF8007D38B5 /* HistoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryController.swift; sourceTree = "<group>"; };
 		B06A9C96230E7D31007D38B5 /* HistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryModel.swift; sourceTree = "<group>"; };
 		B06A9C98230E7D54007D38B5 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
->>>>>>> master
+		B0E253A82317D66400874561 /* DashboardData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardData.swift; sourceTree = "<group>"; };
+		B0E253AA2317D66400874561 /* CloudData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudData.swift; sourceTree = "<group>"; };
+		B0E253B12317D68400874561 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "set~.storyboard"; sourceTree = "<group>"; };
+		B0E253B32317D68400874561 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B0E253B52317D68400874561 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = set.storyboard; sourceTree = "<group>"; };
+		B0E253B72317D68400874561 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
+		B0E253BD2317D68D00874561 /* Signika-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Signika-Light.ttf"; sourceTree = "<group>"; };
+		B0E253BE2317D68D00874561 /* SignikaNegative-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SignikaNegative-Bold.ttf"; sourceTree = "<group>"; };
+		B0E253BF2317D68D00874561 /* Signika-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Signika-Regular.ttf"; sourceTree = "<group>"; };
+		B0E253C02317D68D00874561 /* SignikaNegative-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SignikaNegative-Semibold.ttf"; sourceTree = "<group>"; };
+		B0E253C12317D68D00874561 /* Signika-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Signika-Semibold.ttf"; sourceTree = "<group>"; };
+		B0E253C22317D68D00874561 /* SignikaNegative-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SignikaNegative-Regular.ttf"; sourceTree = "<group>"; };
+		B0E253C32317D68D00874561 /* Signika-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Signika-Bold.ttf"; sourceTree = "<group>"; };
+		B0E253C42317D68D00874561 /* SignikaNegative-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SignikaNegative-Light.ttf"; sourceTree = "<group>"; };
+		B0E253CD2317D6D500874561 /* MiniChallenge3.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MiniChallenge3.entitlements; sourceTree = "<group>"; };
+		B0E253D12317DE0800874561 /* OnBoardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardData.swift; sourceTree = "<group>"; };
+		B0E253D32317DE1300874561 /* DoctorData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +141,7 @@
 			children = (
 				B06A9C66230E69E9007D38B5 /* MiniChallenge3 */,
 				B06A9C65230E69E9007D38B5 /* Products */,
+				B0E253A52317D5EA00874561 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,9 +156,12 @@
 		B06A9C66230E69E9007D38B5 /* MiniChallenge3 */ = {
 			isa = PBXGroup;
 			children = (
+				B0E253CD2317D6D500874561 /* MiniChallenge3.entitlements */,
+				B0E253BC2317D68D00874561 /* Fonts */,
+				B0E253AF2317D68400874561 /* Base.lproj */,
+				B0E253A62317D66400874561 /* Model */,
 				B06A9C85230E6F44007D38B5 /* Controller */,
 				B06A9C84230E6F3F007D38B5 /* View */,
-				B06A9C83230E6F17007D38B5 /* Model */,
 				B06A9C67230E69E9007D38B5 /* AppDelegate.swift */,
 				B06A9C69230E69E9007D38B5 /* ViewController.swift */,
 				B06A9C6B230E69E9007D38B5 /* Main.storyboard */,
@@ -110,28 +169,67 @@
 				B06A9C73230E69EB007D38B5 /* LaunchScreen.storyboard */,
 				B06A9C76230E69EB007D38B5 /* Info.plist */,
 				B06A9C6E230E69E9007D38B5 /* MiniChallenge3.xcdatamodeld */,
+				B05BB1E823139C1700B80F13 /* Onboard.storyboard */,
 			);
 			path = MiniChallenge3;
-			sourceTree = "<group>";
-		};
-		B06A9C83230E6F17007D38B5 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-<<<<<<< HEAD
-				BE9BED112317D4EB00640A93 /* MedicineData.swift */,
-				BE9BED172317D92D00640A93 /* ActivityModel.swift */,
-=======
-				B06A9C88230E73C8007D38B5 /* DashboardModel.swift */,
-				B06A9C96230E7D31007D38B5 /* HistoryModel.swift */,
->>>>>>> master
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		B06A9C84230E6F3F007D38B5 /* View */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
+				B05BB1F02313A33400B80F13 /* DoctorOnBoardView.swift */,
+				B05BB1F22313A34500B80F13 /* PatientOnBoardView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B06A9C85230E6F44007D38B5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BE9BED112317D4EB00640A93 /* MedicineData.swift */,
+				BE9BED172317D92D00640A93 /* ActivityModel.swift */,
+				B06A9C88230E73C8007D38B5 /* DashboardModel.swift */,
+				B06A9C96230E7D31007D38B5 /* HistoryModel.swift */,
+				B05BB1EC23139FB500B80F13 /* DoctorOnBoardController.swift */,
+				B05BB1EE23139FD800B80F13 /* PatientOnBoardViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B0E253A52317D5EA00874561 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				B008936C2317AB0200D8B0DB /* SignikaNegative-Light.ttf */,
+				B00893672317AB0100D8B0DB /* SignikaNegative-Bold.ttf */,
+				B00893682317AB0200D8B0DB /* Signika-Regular.ttf */,
+				B008936A2317AB0200D8B0DB /* SignikaNegative-Semibold.ttf */,
+				B00893662317AB0100D8B0DB /* Signika-Bold.ttf */,
+				B008936D2317AB0300D8B0DB /* Signika-Light.ttf */,
+				B008936B2317AB0200D8B0DB /* Signika-Semibold.ttf */,
+				B00893692317AB0200D8B0DB /* SignikaNegative-Regular.ttf */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		B0E253A62317D66400874561 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B0E253A82317D66400874561 /* DashboardData.swift */,
+				B0E253AA2317D66400874561 /* CloudData.swift */,
+				B0E253D12317DE0800874561 /* OnBoardData.swift */,
+				B0E253D32317DE1300874561 /* DoctorData.swift */,
+				4D0DC5D82319341F00912E65 /* OnboardModel.swift */,
+				4D0DC5DA231934E900912E65 /* HistoryModel.swift */,
+				4D0DC5DC23193A2500912E65 /* RecordModel.swift */,
+				4D0DC5DE23193AFD00912E65 /* MedicineModel.swift */,
+				4D0DC5E023193CAB00912E65 /* ProfileModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B0E253AF2317D68400874561 /* Base.lproj */ = {
+			isa = PBXGroup;
+			children = (
 				BE9BED0323167E5300640A93 /* CustomButtonStyle.swift */,
 				BE9BECFB230E897900640A93 /* History.storyboard */,
 				BEB583112318FECA000153DC /* HistoryView.swift */,
@@ -141,26 +239,33 @@
 				BE9BED1A2317E45A00640A93 /* ActivityTableViewCell.xib */,
 				BE9BED01230E944D00640A93 /* DateCollectionViewCell.swift */,
 				BE9BECFD230E8DAD00640A93 /* CalenderView.swift */,
-=======
 				B06A9C8A230E73D7007D38B5 /* DashboardView.swift */,
 				B06A9C98230E7D54007D38B5 /* HistoryView.swift */,
->>>>>>> master
+				B0E253B02317D68400874561 /* set~.storyboard */,
+				B0E253B22317D68400874561 /* LaunchScreen.storyboard */,
+				B0E253B42317D68400874561 /* set.storyboard */,
+				B0E253B62317D68400874561 /* Main.storyboard */,
 			);
-			path = View;
+			path = Base.lproj;
 			sourceTree = "<group>";
 		};
-		B06A9C85230E6F44007D38B5 /* Controller */ = {
+		B0E253BC2317D68D00874561 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
 				B06A9C86230E7173007D38B5 /* DashboardController.swift */,
 				BE9BECF9230E892F00640A93 /* HistoryController.swift */,
-=======
 				B06A9C8C230E7ABD007D38B5 /* DashboardController.swift */,
 				B06A9C90230E7CF8007D38B5 /* HistoryController.swift */,
->>>>>>> master
+				B0E253BD2317D68D00874561 /* Signika-Light.ttf */,
+				B0E253BE2317D68D00874561 /* SignikaNegative-Bold.ttf */,
+				B0E253BF2317D68D00874561 /* Signika-Regular.ttf */,
+				B0E253C02317D68D00874561 /* SignikaNegative-Semibold.ttf */,
+				B0E253C12317D68D00874561 /* Signika-Semibold.ttf */,
+				B0E253C22317D68D00874561 /* SignikaNegative-Regular.ttf */,
+				B0E253C32317D68D00874561 /* Signika-Bold.ttf */,
+				B0E253C42317D68D00874561 /* SignikaNegative-Light.ttf */,
 			);
-			path = Controller;
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +300,14 @@
 				TargetAttributes = {
 					B06A9C63230E69E9007D38B5 = {
 						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -224,9 +337,22 @@
 				B06A9C75230E69EB007D38B5 /* LaunchScreen.storyboard in Resources */,
 				BE9BED162317D67700640A93 /* MedicineTableViewCell.xib in Resources */,
 				B06A9C72230E69EB007D38B5 /* Assets.xcassets in Resources */,
+				B05BB1E923139C1700B80F13 /* Onboard.storyboard in Resources */,
+				B0E253B82317D68500874561 /* set~.storyboard in Resources */,
+				B0E253CA2317D68D00874561 /* SignikaNegative-Regular.ttf in Resources */,
+				B0E253C72317D68D00874561 /* Signika-Regular.ttf in Resources */,
+				B0E253C82317D68D00874561 /* SignikaNegative-Semibold.ttf in Resources */,
+				B0E253C92317D68D00874561 /* Signika-Semibold.ttf in Resources */,
+				B0E253C62317D68D00874561 /* SignikaNegative-Bold.ttf in Resources */,
 				B06A9C6D230E69E9007D38B5 /* Main.storyboard in Resources */,
 				BE9BED1C2317E45A00640A93 /* ActivityTableViewCell.xib in Resources */,
 				BE9BECFC230E897900640A93 /* History.storyboard in Resources */,
+				B0E253BB2317D68500874561 /* Main.storyboard in Resources */,
+				B0E253B92317D68500874561 /* LaunchScreen.storyboard in Resources */,
+				B0E253BA2317D68500874561 /* set.storyboard in Resources */,
+				B0E253CC2317D68D00874561 /* SignikaNegative-Light.ttf in Resources */,
+				B0E253CB2317D68D00874561 /* Signika-Bold.ttf in Resources */,
+				B0E253C52317D68D00874561 /* Signika-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,7 +363,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
 				BE9BED122317D4EB00640A93 /* MedicineData.swift in Sources */,
 				BE9BECFA230E892F00640A93 /* HistoryController.swift in Sources */,
 				BE9BED1B2317E45A00640A93 /* ActivityTableViewCell.swift in Sources */,
@@ -246,19 +371,27 @@
 				BE9BED0423167E5300640A93 /* CustomButtonStyle.swift in Sources */,
 				BE9BECFE230E8DAD00640A93 /* CalenderView.swift in Sources */,
 				BEB583122318FECA000153DC /* HistoryView.swift in Sources */,
-=======
 				B06A9C89230E73C8007D38B5 /* DashboardModel.swift in Sources */,
 				B06A9C97230E7D31007D38B5 /* HistoryModel.swift in Sources */,
 				B06A9C8B230E73D7007D38B5 /* DashboardView.swift in Sources */,
->>>>>>> master
+				B05BB1F12313A33400B80F13 /* DoctorOnBoardView.swift in Sources */,
 				B06A9C6A230E69E9007D38B5 /* ViewController.swift in Sources */,
-				B06A9C92230E7CF8007D38B5 /* HistoryController.swift in Sources */,
+				B0E253AC2317D66400874561 /* DashboardData.swift in Sources */,
 				B06A9C68230E69E9007D38B5 /* AppDelegate.swift in Sources */,
-				B06A9C8E230E7ABD007D38B5 /* DashboardController.swift in Sources */,
-				B06A9C99230E7D54007D38B5 /* HistoryView.swift in Sources */,
+				4D0DC5DD23193A2500912E65 /* RecordModel.swift in Sources */,
+				B05BB1ED23139FB500B80F13 /* DoctorOnBoardController.swift in Sources */,
+				B05BB1F32313A34500B80F13 /* PatientOnBoardView.swift in Sources */,
+				4D0DC5DF23193AFD00912E65 /* MedicineModel.swift in Sources */,
+				4D0DC5DB231934E900912E65 /* HistoryModel.swift in Sources */,
+				B05BB1EF23139FD800B80F13 /* PatientOnBoardViewController.swift in Sources */,
+				4D0DC5D92319341F00912E65 /* OnboardModel.swift in Sources */,
+				B0E253AE2317D66400874561 /* CloudData.swift in Sources */,
+				B0E253D42317DE1300874561 /* DoctorData.swift in Sources */,
 				B06A9C70230E69E9007D38B5 /* MiniChallenge3.xcdatamodeld in Sources */,
 				BE9BED02230E944D00640A93 /* DateCollectionViewCell.swift in Sources */,
 				BE9BED152317D67700640A93 /* MedicineTableViewCell.swift in Sources */,
+				B0E253D22317DE0800874561 /* OnBoardData.swift in Sources */,
+				4D0DC5E123193CAB00912E65 /* ProfileModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +412,38 @@
 				B06A9C74230E69EB007D38B5 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		B0E253B02317D68400874561 /* set~.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B0E253B12317D68400874561 /* Base */,
+			);
+			name = "set~.storyboard";
+			sourceTree = "<group>";
+		};
+		B0E253B22317D68400874561 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B0E253B32317D68400874561 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		B0E253B42317D68400874561 /* set.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B0E253B52317D68400874561 /* Base */,
+			);
+			name = set.storyboard;
+			sourceTree = "<group>";
+		};
+		B0E253B62317D68400874561 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B0E253B72317D68400874561 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -404,6 +569,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MiniChallenge3/MiniChallenge3.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EF3ZB275X3;
 				INFOPLIST_FILE = MiniChallenge3/Info.plist;
@@ -422,6 +588,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MiniChallenge3/MiniChallenge3.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EF3ZB275X3;
 				INFOPLIST_FILE = MiniChallenge3/Info.plist;
