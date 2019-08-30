@@ -7,12 +7,23 @@
 //
 
 import UIKit
+import CloudKit
 
 class ViewController: UIViewController {
 
+    var doctorID = CKRecord.ID()
+    var userID = CKRecord.ID()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        print("calling function...")
+        CloudData.shared.savePsikiaterAndUserData(namaPsikiater: "bianka", nomorTelepon: "0821444444", alamat: "Jl A", namaUser: "Wilbert", tanggalLepasPasung: Date.distantFuture, umur: 14, puskesmas: "BSD") { (doctorID, userID) in
+            self.doctorID = doctorID
+            self.userID = userID
+            print("doctorID: ", doctorID)
+            print("userID: ", userID)
+        }
     }
 
 
