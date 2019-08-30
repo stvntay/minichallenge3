@@ -147,8 +147,6 @@
 		B0E253A52317D5EA00874561 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
-				B02D868A23166BA400482C4D /* DoctorData.swift */,
-				B02D868F2316797700482C4D /* OnBoardData.swift */,
 				B008936C2317AB0200D8B0DB /* SignikaNegative-Light.ttf */,
 				B00893672317AB0100D8B0DB /* SignikaNegative-Bold.ttf */,
 				B00893682317AB0200D8B0DB /* Signika-Regular.ttf */,
@@ -290,14 +288,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B02D868B23166BA400482C4D /* DoctorData.swift in Sources */,
 				B05BB1F12313A33400B80F13 /* DoctorOnBoardView.swift in Sources */,
 				B06A9C6A230E69E9007D38B5 /* ViewController.swift in Sources */,
 				B0E253AC2317D66400874561 /* DashboardData.swift in Sources */,
 				B06A9C68230E69E9007D38B5 /* AppDelegate.swift in Sources */,
 				B05BB1ED23139FB500B80F13 /* DoctorOnBoardController.swift in Sources */,
 				B05BB1F32313A34500B80F13 /* PatientOnBoardView.swift in Sources */,
-				B02D86902316797700482C4D /* OnBoardData.swift in Sources */,
 				B05BB1EF23139FD800B80F13 /* PatientOnBoardViewController.swift in Sources */,
 				B0E253AE2317D66400874561 /* CloudData.swift in Sources */,
 				B0E253D42317DE1300874561 /* DoctorData.swift in Sources */,
@@ -482,7 +478,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MiniChallenge3/MiniChallenge3.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = EF3ZB275X3;
+				DEVELOPMENT_TEAM = LLU3TMC9Q3;
 				INFOPLIST_FILE = MiniChallenge3/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -501,7 +497,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MiniChallenge3/MiniChallenge3.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = EF3ZB275X3;
+				DEVELOPMENT_TEAM = LLU3TMC9Q3;
 				INFOPLIST_FILE = MiniChallenge3/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

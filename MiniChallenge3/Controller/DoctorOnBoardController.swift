@@ -51,13 +51,14 @@ class DoctorOnBoardController: UIViewController {
 
     @objc func moveAction(sender:UIButton){
         getData()
-        //let storyboard = UIStoryboard(name: "Onboard", bundle: nil)
-        let vc = PatientOnBoardViewController()
-        vc.data = data
-        navigationController?.pushViewController(vc, animated: true)
-//         let page = storyboard.instantiateViewController(withIdentifier: "patientView") as! PatientOnBoardViewController
-//        page.data = data
-//        self.present(page, animated: true, completion: nil)
+        let storyboard = UIStoryboard(name: "Onboard", bundle: nil)
+       
+//        let vc = PatientOnBoardViewController()
+//        vc.data = data
+//        navigationController?.pushViewController(vc, animated: true)
+         let page = storyboard.instantiateViewController(withIdentifier: "patientView") as! PatientOnBoardViewController
+        page.data = data
+        self.present(page, animated: true, completion: nil)
         
     }
     

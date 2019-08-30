@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CloudKit
 
 class PatientOnBoardViewController: UIViewController {
     
@@ -15,6 +16,10 @@ class PatientOnBoardViewController: UIViewController {
     var datepicker = UIDatePicker()
     var data : DoctorData?
     var onBoardData: OnBoardData?
+//    var cloudData = CloudData()
+    var doctorID: CKRecord.ID?
+    var userID: CKRecord.ID?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 //        guard let getData = data else{
@@ -22,6 +27,7 @@ class PatientOnBoardViewController: UIViewController {
 //        }
         
         // Do any additional setup after loading the view.
+        initialization()
         
     }
     
@@ -52,7 +58,7 @@ class PatientOnBoardViewController: UIViewController {
     
     @objc func doneDatePicker(){
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd MMM yyyy"
+        dateFormatter.dateFormat = "dd/MM/yyyy"
         patientView.releaseDateInput.text = dateFormatter.string(from: datepicker.date)
         self.view.endEditing(true)
     }
@@ -63,6 +69,7 @@ class PatientOnBoardViewController: UIViewController {
     
     @objc func submitData(sender: UIButton){
         
+       
         guard let getData = data else{
             return
         }
@@ -82,8 +89,30 @@ class PatientOnBoardViewController: UIViewController {
         guard let patientHospital = patientView.hospitalInput.text else{
             return
         }
+        print("tes")
+//        onBoardData = OnBoardData(doctorData: getData, name: patientName, age: patientAge, date: releaseDate, address: patientAddress, hospital: patientHospital)
+//
+   
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/mm/yyyy"
+        let date = dateFormatter.date(from: releaseDate)
         
-        onBoardData = OnBoardData(doctorData: getData, name: patientName, age: patientAge, date: releaseDate, address: patientAddress, hospital: patientHospital)
+        guard let convertPatientAge = Int(patientAge) else { return  }
+        
+        CloudData.shared.savePsikiaterAndUserData(namaPsikiater: getData.doctorName, nomorTelepon: getData.doctorNumber, alamat: patientAddress, namaUser: patientName, tanggalLepasPasung: date!, umur: convertPatientAge, puskesmas: patientHospital, completion: { (passDoctorID, passUserID) in
+            
+            self.doctorID = passDoctorID
+            self.userID = passUserID
+//            guard let idDoctor = self.doctorID else{
+//                return
+//            }
+//            guard let idUser = self.userID else{
+//                return
+//            }
+            print("dokter: ", self.doctorID as Any)
+            print("user: ", self.userID as Any)
+            })
+        
     }
 
 
