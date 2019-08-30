@@ -103,6 +103,7 @@ class PatientOnBoardViewController: UIViewController {
             
             self.doctorID = passDoctorID
             self.userID = passUserID
+            UserDefaults.standard.set(self.userID,forKey: "userID")
 //            guard let idDoctor = self.doctorID else{
 //                return
 //            }
