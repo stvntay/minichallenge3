@@ -19,6 +19,13 @@
 		BE9BECFE230E8DAD00640A93 /* CalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9BECFD230E8DAD00640A93 /* CalenderView.swift */; };
 		BE9BED02230E944D00640A93 /* DateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9BED01230E944D00640A93 /* DateCollectionViewCell.swift */; };
 		BE9BED0423167E5300640A93 /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9BED0323167E5300640A93 /* CustomButtonStyle.swift */; };
+		BE9BED122317D4EB00640A93 /* MedicineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9BED112317D4EB00640A93 /* MedicineData.swift */; };
+		BE9BED152317D67700640A93 /* MedicineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9BED132317D67700640A93 /* MedicineTableViewCell.swift */; };
+		BE9BED162317D67700640A93 /* MedicineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE9BED142317D67700640A93 /* MedicineTableViewCell.xib */; };
+		BE9BED182317D92D00640A93 /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9BED172317D92D00640A93 /* ActivityModel.swift */; };
+		BE9BED1B2317E45A00640A93 /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9BED192317E45A00640A93 /* ActivityTableViewCell.swift */; };
+		BE9BED1C2317E45A00640A93 /* ActivityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE9BED1A2317E45A00640A93 /* ActivityTableViewCell.xib */; };
+		BEB583122318FECA000153DC /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB583112318FECA000153DC /* HistoryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +43,13 @@
 		BE9BECFD230E8DAD00640A93 /* CalenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalenderView.swift; path = MiniChallenge3/Controller/CalenderView.swift; sourceTree = SOURCE_ROOT; };
 		BE9BED01230E944D00640A93 /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DateCollectionViewCell.swift; path = MiniChallenge3/Controller/DateCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		BE9BED0323167E5300640A93 /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
+		BE9BED112317D4EB00640A93 /* MedicineData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MedicineData.swift; path = MiniChallenge3/View/MedicineData.swift; sourceTree = SOURCE_ROOT; };
+		BE9BED132317D67700640A93 /* MedicineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineTableViewCell.swift; sourceTree = "<group>"; };
+		BE9BED142317D67700640A93 /* MedicineTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicineTableViewCell.xib; sourceTree = "<group>"; };
+		BE9BED172317D92D00640A93 /* ActivityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ActivityModel.swift; path = MiniChallenge3/View/ActivityModel.swift; sourceTree = SOURCE_ROOT; };
+		BE9BED192317E45A00640A93 /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
+		BE9BED1A2317E45A00640A93 /* ActivityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityTableViewCell.xib; sourceTree = "<group>"; };
+		BEB583112318FECA000153DC /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +99,8 @@
 		B06A9C83230E6F17007D38B5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BE9BED112317D4EB00640A93 /* MedicineData.swift */,
+				BE9BED172317D92D00640A93 /* ActivityModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -94,6 +110,11 @@
 			children = (
 				BE9BED0323167E5300640A93 /* CustomButtonStyle.swift */,
 				BE9BECFB230E897900640A93 /* History.storyboard */,
+				BEB583112318FECA000153DC /* HistoryView.swift */,
+				BE9BED132317D67700640A93 /* MedicineTableViewCell.swift */,
+				BE9BED142317D67700640A93 /* MedicineTableViewCell.xib */,
+				BE9BED192317E45A00640A93 /* ActivityTableViewCell.swift */,
+				BE9BED1A2317E45A00640A93 /* ActivityTableViewCell.xib */,
 				BE9BED01230E944D00640A93 /* DateCollectionViewCell.swift */,
 				BE9BECFD230E8DAD00640A93 /* CalenderView.swift */,
 			);
@@ -168,8 +189,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B06A9C75230E69EB007D38B5 /* LaunchScreen.storyboard in Resources */,
+				BE9BED162317D67700640A93 /* MedicineTableViewCell.xib in Resources */,
 				B06A9C72230E69EB007D38B5 /* Assets.xcassets in Resources */,
 				B06A9C6D230E69E9007D38B5 /* Main.storyboard in Resources */,
+				BE9BED1C2317E45A00640A93 /* ActivityTableViewCell.xib in Resources */,
 				BE9BECFC230E897900640A93 /* History.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -181,14 +204,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE9BED122317D4EB00640A93 /* MedicineData.swift in Sources */,
 				BE9BECFA230E892F00640A93 /* HistoryController.swift in Sources */,
+				BE9BED1B2317E45A00640A93 /* ActivityTableViewCell.swift in Sources */,
+				BE9BED182317D92D00640A93 /* ActivityModel.swift in Sources */,
 				B06A9C87230E7173007D38B5 /* DashboardController.swift in Sources */,
 				BE9BED0423167E5300640A93 /* CustomButtonStyle.swift in Sources */,
 				BE9BECFE230E8DAD00640A93 /* CalenderView.swift in Sources */,
+				BEB583122318FECA000153DC /* HistoryView.swift in Sources */,
 				B06A9C6A230E69E9007D38B5 /* ViewController.swift in Sources */,
 				B06A9C68230E69E9007D38B5 /* AppDelegate.swift in Sources */,
 				B06A9C70230E69E9007D38B5 /* MiniChallenge3.xcdatamodeld in Sources */,
 				BE9BED02230E944D00640A93 /* DateCollectionViewCell.swift in Sources */,
+				BE9BED152317D67700640A93 /* MedicineTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,11 +10,7 @@ import UIKit
 
 class HistoryController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var monthLabel: UILabel!
-    @IBOutlet weak var calendarView: UICollectionView!
-    
-    @IBOutlet weak var addRecordBtn: UIBarButtonItem!
+    @IBOutlet var historyView: HistoryView!
     
     let Months = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"]
     var DayAmouthInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
@@ -34,17 +30,22 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
         
         currentMonth = Months[month]
         
-        monthLabel.text = "\(currentMonth) \(year)"
+        historyView.monthLabel.text = "\(currentMonth) \(year)"
 
-        self.dateLabel.text = "\(Days[day % 7]), \(day) \(currentMonth) \(year)"
+        historyView.currentDateLabel.text = "\(Days[day % 7]), \(day) \(currentMonth) \(year)"
         
-        calendarView.isPagingEnabled = true
+        historyView.calendarView.isPagingEnabled = true
         
-        calendarView.delegate = self
-        calendarView.dataSource = self
+        historyView.calendarView.delegate = self
+        historyView.calendarView.dataSource = self
+        
+        historyView.previousBtn.addTarget(self, action: #selector(previousMonth), for: .touchUpInside)
+        historyView.nextBtn.addTarget(self, action: #selector(nextMonth), for: .touchUpInside)
+        
     }
     
-    @IBAction func previousMonth(_ sender: Any) {
+    // Back button function
+    @objc func previousMonth(sender: UIButton) {
         switch currentMonth {
         case "Januari":
             month = 11
@@ -71,7 +72,8 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
         }
     }
     
-    @IBAction func nextMonth(_ sender: Any) {
+    // Next button function
+    @objc func nextMonth(sender: UIButton) {
         switch currentMonth {
         case "Desember":
             month = 0
@@ -99,6 +101,7 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
         }
     }
     
+    // Function to fill out empty box in calendar
     func startDateDayPosition() {
         switch direction {
         case 0:
@@ -131,10 +134,12 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
         }
     }
     
+    // Set section of collection view
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 5
     }
     
+    // Set number of item in calendar per month
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch direction {
         case 0:
@@ -148,6 +153,7 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
         }
     }
     
+    // Cell congfiguration
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Calendar", for: indexPath) as! DateCollectionViewCell
         cell.backgroundColor = .clear
@@ -185,6 +191,8 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
         return cell
     }
     
+    
+    // Select Deselect configuration for calendar
     var selectedDate: IndexPath?
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -193,9 +201,9 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
         collectionViewCell?.dateLabel.textColor = .white
         
         if indexPath.row - 1 == -1 {
-            self.dateLabel.text = "\(Days[(indexPath.row) % 7]), \(String((collectionViewCell?.dateLabel.text!)!)) \(String(monthLabel.text!))"
+            historyView.currentDateLabel.text = "\(Days[(indexPath.row) % 7]), \(String((collectionViewCell?.dateLabel.text!)!)) \(String(historyView.monthLabel.text!))"
         } else {
-            self.dateLabel.text = "\(Days[(indexPath.row - 1) % 7]), \(String((collectionViewCell?.dateLabel.text!)!)) \(String(monthLabel.text!))"
+            historyView.currentDateLabel.text = "\(Days[(indexPath.row - 1) % 7]), \(String((collectionViewCell?.dateLabel.text!)!)) \(String(historyView.monthLabel.text!))"
         }
     }
     
@@ -213,12 +221,14 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
         }
     }
     
+    // Update function for calendar in month
     func calendarUpdate() {
         currentMonth = Months[month]
         
-        monthLabel.text = "\(currentMonth) \(year)"
-        calendarView.reloadData()
+        historyView.monthLabel.text = "\(currentMonth) \(year)"
+        historyView.calendarView.reloadData()
     }
+    
 }
 
 
