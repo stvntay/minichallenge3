@@ -53,7 +53,6 @@ final class CloudData {
                 DispatchQueue.main.async {
                     recordDoctorID = recordDoctor!.recordID
                     //                    print(recordDoctorID)
-                    
                     let reference = CKRecord.Reference(recordID: recordDoctorID, action: .deleteSelf)
                     
                     userData.setValue(alamat, forKey: "alamat")
