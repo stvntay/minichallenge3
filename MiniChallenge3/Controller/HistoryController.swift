@@ -2,12 +2,17 @@
 //  HistoryController.swift
 //  MiniChallenge3
 //
+<<<<<<< HEAD
 //  Created by Finley Khouwira on 22/08/19.
+=======
+//  Created by Steven on 8/22/19.
+>>>>>>> master
 //  Copyright © 2019 Steven. All rights reserved.
 //
 
 import UIKit
 
+<<<<<<< HEAD
 class HistoryController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITableViewDelegate, UITableViewDataSource {
     
     
@@ -296,3 +301,25 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
 
 
 
+=======
+class HistoryController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+    }
+
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}
+>>>>>>> master

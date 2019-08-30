@@ -13,6 +13,7 @@
 		B06A9C70230E69E9007D38B5 /* MiniChallenge3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C6E230E69E9007D38B5 /* MiniChallenge3.xcdatamodeld */; };
 		B06A9C72230E69EB007D38B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B06A9C71230E69EB007D38B5 /* Assets.xcassets */; };
 		B06A9C75230E69EB007D38B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B06A9C73230E69EB007D38B5 /* LaunchScreen.storyboard */; };
+<<<<<<< HEAD
 		B06A9C87230E7173007D38B5 /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C86230E7173007D38B5 /* DashboardController.swift */; };
 		BE9BECFA230E892F00640A93 /* HistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9BECF9230E892F00640A93 /* HistoryController.swift */; };
 		BE9BECFC230E897900640A93 /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE9BECFB230E897900640A93 /* History.storyboard */; };
@@ -26,6 +27,14 @@
 		BE9BED1B2317E45A00640A93 /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9BED192317E45A00640A93 /* ActivityTableViewCell.swift */; };
 		BE9BED1C2317E45A00640A93 /* ActivityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE9BED1A2317E45A00640A93 /* ActivityTableViewCell.xib */; };
 		BEB583122318FECA000153DC /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB583112318FECA000153DC /* HistoryView.swift */; };
+=======
+		B06A9C89230E73C8007D38B5 /* DashboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C88230E73C8007D38B5 /* DashboardModel.swift */; };
+		B06A9C8B230E73D7007D38B5 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C8A230E73D7007D38B5 /* DashboardView.swift */; };
+		B06A9C8E230E7ABD007D38B5 /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C8C230E7ABD007D38B5 /* DashboardController.swift */; };
+		B06A9C92230E7CF8007D38B5 /* HistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C90230E7CF8007D38B5 /* HistoryController.swift */; };
+		B06A9C97230E7D31007D38B5 /* HistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C96230E7D31007D38B5 /* HistoryModel.swift */; };
+		B06A9C99230E7D54007D38B5 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C98230E7D54007D38B5 /* HistoryView.swift */; };
+>>>>>>> master
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +46,7 @@
 		B06A9C71230E69EB007D38B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B06A9C74230E69EB007D38B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B06A9C76230E69EB007D38B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		B06A9C86230E7173007D38B5 /* DashboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
 		BE9BECF9230E892F00640A93 /* HistoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryController.swift; sourceTree = "<group>"; };
 		BE9BECFB230E897900640A93 /* History.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = History.storyboard; path = MiniChallenge3/Controller/History.storyboard; sourceTree = SOURCE_ROOT; };
@@ -50,6 +60,14 @@
 		BE9BED192317E45A00640A93 /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
 		BE9BED1A2317E45A00640A93 /* ActivityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityTableViewCell.xib; sourceTree = "<group>"; };
 		BEB583112318FECA000153DC /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+=======
+		B06A9C88230E73C8007D38B5 /* DashboardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardModel.swift; sourceTree = "<group>"; };
+		B06A9C8A230E73D7007D38B5 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		B06A9C8C230E7ABD007D38B5 /* DashboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
+		B06A9C90230E7CF8007D38B5 /* HistoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryController.swift; sourceTree = "<group>"; };
+		B06A9C96230E7D31007D38B5 /* HistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryModel.swift; sourceTree = "<group>"; };
+		B06A9C98230E7D54007D38B5 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+>>>>>>> master
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +117,13 @@
 		B06A9C83230E6F17007D38B5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				BE9BED112317D4EB00640A93 /* MedicineData.swift */,
 				BE9BED172317D92D00640A93 /* ActivityModel.swift */,
+=======
+				B06A9C88230E73C8007D38B5 /* DashboardModel.swift */,
+				B06A9C96230E7D31007D38B5 /* HistoryModel.swift */,
+>>>>>>> master
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -108,6 +131,7 @@
 		B06A9C84230E6F3F007D38B5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				BE9BED0323167E5300640A93 /* CustomButtonStyle.swift */,
 				BE9BECFB230E897900640A93 /* History.storyboard */,
 				BEB583112318FECA000153DC /* HistoryView.swift */,
@@ -117,6 +141,10 @@
 				BE9BED1A2317E45A00640A93 /* ActivityTableViewCell.xib */,
 				BE9BED01230E944D00640A93 /* DateCollectionViewCell.swift */,
 				BE9BECFD230E8DAD00640A93 /* CalenderView.swift */,
+=======
+				B06A9C8A230E73D7007D38B5 /* DashboardView.swift */,
+				B06A9C98230E7D54007D38B5 /* HistoryView.swift */,
+>>>>>>> master
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -124,8 +152,13 @@
 		B06A9C85230E6F44007D38B5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				B06A9C86230E7173007D38B5 /* DashboardController.swift */,
 				BE9BECF9230E892F00640A93 /* HistoryController.swift */,
+=======
+				B06A9C8C230E7ABD007D38B5 /* DashboardController.swift */,
+				B06A9C90230E7CF8007D38B5 /* HistoryController.swift */,
+>>>>>>> master
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -204,6 +237,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
 				BE9BED122317D4EB00640A93 /* MedicineData.swift in Sources */,
 				BE9BECFA230E892F00640A93 /* HistoryController.swift in Sources */,
 				BE9BED1B2317E45A00640A93 /* ActivityTableViewCell.swift in Sources */,
@@ -212,8 +246,16 @@
 				BE9BED0423167E5300640A93 /* CustomButtonStyle.swift in Sources */,
 				BE9BECFE230E8DAD00640A93 /* CalenderView.swift in Sources */,
 				BEB583122318FECA000153DC /* HistoryView.swift in Sources */,
+=======
+				B06A9C89230E73C8007D38B5 /* DashboardModel.swift in Sources */,
+				B06A9C97230E7D31007D38B5 /* HistoryModel.swift in Sources */,
+				B06A9C8B230E73D7007D38B5 /* DashboardView.swift in Sources */,
+>>>>>>> master
 				B06A9C6A230E69E9007D38B5 /* ViewController.swift in Sources */,
+				B06A9C92230E7CF8007D38B5 /* HistoryController.swift in Sources */,
 				B06A9C68230E69E9007D38B5 /* AppDelegate.swift in Sources */,
+				B06A9C8E230E7ABD007D38B5 /* DashboardController.swift in Sources */,
+				B06A9C99230E7D54007D38B5 /* HistoryView.swift in Sources */,
 				B06A9C70230E69E9007D38B5 /* MiniChallenge3.xcdatamodeld in Sources */,
 				BE9BED02230E944D00640A93 /* DateCollectionViewCell.swift in Sources */,
 				BE9BED152317D67700640A93 /* MedicineTableViewCell.swift in Sources */,
