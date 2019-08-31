@@ -16,7 +16,7 @@ final class ProfileModel {
     
     private init() {}
     
-    // MARK: - Load data to CloudKit
+    // MARK: - Load profile data to CloudKit
     
     func loadPsikiaterData(doctorID: CKRecord.ID, completion: @escaping (_ recID: [CKRecord]) -> Void) {
         let pred = NSPredicate(format: "recordID = %@", doctorID)
