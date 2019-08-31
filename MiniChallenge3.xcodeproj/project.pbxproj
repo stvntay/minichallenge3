@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		958EF9B5231932A400878F33 /* CreateRecord.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 958EF9B4231932A400878F33 /* CreateRecord.storyboard */; };
 		958EF9B7231932DD00878F33 /* CreateRecordTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958EF9B6231932DD00878F33 /* CreateRecordTableVC.swift */; };
+		958EF9BA2319350200878F33 /* TwoLabelsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958EF9B82319350200878F33 /* TwoLabelsCell.swift */; };
+		958EF9BB2319350200878F33 /* TwoLabelsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 958EF9B92319350200878F33 /* TwoLabelsCell.xib */; };
+		958EF9BE231937AB00878F33 /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958EF9BC231937AB00878F33 /* TextFieldCell.swift */; };
+		958EF9BF231937AB00878F33 /* TextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 958EF9BD231937AB00878F33 /* TextFieldCell.xib */; };
+		958EF9C22319FD4700878F33 /* ActivityPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958EF9C02319FD4700878F33 /* ActivityPickerCell.swift */; };
+		958EF9C32319FD4800878F33 /* ActivityPickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 958EF9C12319FD4700878F33 /* ActivityPickerCell.xib */; };
+		958EF9C5231A44FB00878F33 /* OptionsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958EF9C4231A44FB00878F33 /* OptionsTableVC.swift */; };
 		B06A9C68230E69E9007D38B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C67230E69E9007D38B5 /* AppDelegate.swift */; };
 		B06A9C6A230E69E9007D38B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C69230E69E9007D38B5 /* ViewController.swift */; };
 		B06A9C6D230E69E9007D38B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B06A9C6B230E69E9007D38B5 /* Main.storyboard */; };
@@ -26,6 +33,13 @@
 /* Begin PBXFileReference section */
 		958EF9B4231932A400878F33 /* CreateRecord.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateRecord.storyboard; sourceTree = "<group>"; };
 		958EF9B6231932DD00878F33 /* CreateRecordTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRecordTableVC.swift; sourceTree = "<group>"; };
+		958EF9B82319350200878F33 /* TwoLabelsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoLabelsCell.swift; sourceTree = "<group>"; };
+		958EF9B92319350200878F33 /* TwoLabelsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TwoLabelsCell.xib; sourceTree = "<group>"; };
+		958EF9BC231937AB00878F33 /* TextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldCell.swift; sourceTree = "<group>"; };
+		958EF9BD231937AB00878F33 /* TextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldCell.xib; sourceTree = "<group>"; };
+		958EF9C02319FD4700878F33 /* ActivityPickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityPickerCell.swift; sourceTree = "<group>"; };
+		958EF9C12319FD4700878F33 /* ActivityPickerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityPickerCell.xib; sourceTree = "<group>"; };
+		958EF9C4231A44FB00878F33 /* OptionsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsTableVC.swift; sourceTree = "<group>"; };
 		B06A9C64230E69E9007D38B5 /* MiniChallenge3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniChallenge3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B06A9C67230E69E9007D38B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B06A9C69230E69E9007D38B5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,7 +113,13 @@
 			isa = PBXGroup;
 			children = (
 				B06A9C8A230E73D7007D38B5 /* DashboardView.swift */,
+				958EF9C02319FD4700878F33 /* ActivityPickerCell.swift */,
+				958EF9C12319FD4700878F33 /* ActivityPickerCell.xib */,
 				958EF9B4231932A400878F33 /* CreateRecord.storyboard */,
+				958EF9BC231937AB00878F33 /* TextFieldCell.swift */,
+				958EF9BD231937AB00878F33 /* TextFieldCell.xib */,
+				958EF9B82319350200878F33 /* TwoLabelsCell.swift */,
+				958EF9B92319350200878F33 /* TwoLabelsCell.xib */,
 				B06A9C98230E7D54007D38B5 /* HistoryView.swift */,
 			);
 			path = View;
@@ -108,6 +128,7 @@
 		B06A9C85230E6F44007D38B5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				958EF9C4231A44FB00878F33 /* OptionsTableVC.swift */,
 				B06A9C8C230E7ABD007D38B5 /* DashboardController.swift */,
 				B06A9C90230E7CF8007D38B5 /* HistoryController.swift */,
 				958EF9B6231932DD00878F33 /* CreateRecordTableVC.swift */,
@@ -176,7 +197,10 @@
 				B06A9C75230E69EB007D38B5 /* LaunchScreen.storyboard in Resources */,
 				958EF9B5231932A400878F33 /* CreateRecord.storyboard in Resources */,
 				B06A9C72230E69EB007D38B5 /* Assets.xcassets in Resources */,
+				958EF9BB2319350200878F33 /* TwoLabelsCell.xib in Resources */,
+				958EF9C32319FD4800878F33 /* ActivityPickerCell.xib in Resources */,
 				B06A9C6D230E69E9007D38B5 /* Main.storyboard in Resources */,
+				958EF9BF231937AB00878F33 /* TextFieldCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,10 +217,14 @@
 				B06A9C6A230E69E9007D38B5 /* ViewController.swift in Sources */,
 				958EF9B7231932DD00878F33 /* CreateRecordTableVC.swift in Sources */,
 				B06A9C92230E7CF8007D38B5 /* HistoryController.swift in Sources */,
+				958EF9C5231A44FB00878F33 /* OptionsTableVC.swift in Sources */,
+				958EF9C22319FD4700878F33 /* ActivityPickerCell.swift in Sources */,
 				B06A9C68230E69E9007D38B5 /* AppDelegate.swift in Sources */,
 				B06A9C8E230E7ABD007D38B5 /* DashboardController.swift in Sources */,
+				958EF9BA2319350200878F33 /* TwoLabelsCell.swift in Sources */,
 				B06A9C99230E7D54007D38B5 /* HistoryView.swift in Sources */,
 				B06A9C70230E69E9007D38B5 /* MiniChallenge3.xcdatamodeld in Sources */,
+				958EF9BE231937AB00878F33 /* TextFieldCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
