@@ -29,7 +29,7 @@ struct commentValue {
 class CreateRecordTableVC: UITableViewController {
     
     // TO DO:
-    // - Fix the damn pickerview
+    // - Fix the damn pickerview, it's fuckin cliping through the cells!!!!
     // - Integrate with CK
     
     let labelCellIdentifier = "TwoLabelsCell"
@@ -115,7 +115,7 @@ class CreateRecordTableVC: UITableViewController {
                 for: indexPath
                 ) as! ActivityPickerCell
             cell.activityName.text = activityValues[indexPath.row].activityName
-            cell.activityValue.text = activityValues[indexPath.row].activityValue
+            cell.activityValue.text = "Pilih"
             return cell
         }
         
@@ -149,9 +149,10 @@ class CreateRecordTableVC: UITableViewController {
             if indexPath.row != expandedRow {
                 return 50
             }
+            return 120
         }
         
-        // expanded & text field cell's height
+        // text field cell's height
         return 200
     }
 
@@ -174,7 +175,6 @@ class CreateRecordTableVC: UITableViewController {
         tableView.endUpdates()
     }
     
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueToOptions" {
             let destination = segue.destination as! OptionsTableVC
@@ -185,7 +185,6 @@ class CreateRecordTableVC: UITableViewController {
     @IBAction func unwind(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? OptionsTableVC {
             medicineValues[sourceViewController.selectedRow].medicineConsumptionFrequency = sourceViewController.selectedValue
-            print(sourceViewController.selectedValue)
             tableView.reloadData()
         }
     }

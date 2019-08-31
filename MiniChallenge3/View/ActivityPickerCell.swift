@@ -15,6 +15,16 @@ class ActivityPickerCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDat
     @IBOutlet weak var activityValue: UILabel!
     @IBOutlet weak var activityPicker: UIPickerView!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        activityPicker.delegate = self
+        activityPicker.dataSource = self
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+    }
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -30,13 +40,4 @@ class ActivityPickerCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDat
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         activityValue.text = activityOptions[pickerView.selectedRow(inComponent: component)]
     }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-    
 }

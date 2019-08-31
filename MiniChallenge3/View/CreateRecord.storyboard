@@ -54,7 +54,7 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <segue identifier="unwindFromOption" destination="HCt-VN-3xA" kind="unwind" unwindAction="unwindWithSender:" id="lVa-aE-IdR"/>
+                        <segue destination="HCt-VN-3xA" kind="unwind" identifier="unwindFromOption" unwindAction="unwindWithSender:" id="lVa-aE-IdR"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sbx-9H-oqf" userLabel="First Responder" sceneMemberID="firstResponder"/>
