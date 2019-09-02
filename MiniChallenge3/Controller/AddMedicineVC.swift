@@ -127,7 +127,7 @@ class AddMedicineVC: UIViewController,UIPickerViewDelegate, UIPickerViewDataSour
         let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelChooseCategory))
         
-        toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
+        toolbar.setItems([cancelButton,spaceButton,doneButton], animated: false)
         pickerCategory.delegate = self
         medicineCategory.inputAccessoryView = toolbar
         medicineCategory.inputView = pickerCategory
