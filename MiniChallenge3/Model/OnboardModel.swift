@@ -18,7 +18,7 @@ final class OnboardModel {
     
     // MARK: - Save onboard data to CloudKit
     
-    func savePsikiaterAndUserData(namaPsikiater: String, nomorTelepon: String, alamat: String, namaUser: String, tanggalLepasPasung: Date, umur: Int, puskesmas: String, completion: @escaping (_ doctorRecordName: String, _ userRecordName: String) -> Void) {
+    func savePsikiaterAndUserData(namaPsikiater: String, nomorTelepon: String, alamat: String, namaUser: String, tanggalLepasPasung: Date, umur: String, puskesmas: String, completion: @escaping (_ doctorRecordName: String, _ userRecordName: String) -> Void) {
         print("called")
         
         let doctorData = CKRecord(recordType: "PsikiaterData")

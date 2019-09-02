@@ -212,7 +212,6 @@
 				B05BB1EC23139FB500B80F13 /* DoctorOnBoardController.swift */,
 				B05BB1EE23139FD800B80F13 /* PatientOnBoardViewController.swift */,
 				4D0DC5E2231CAB5400912E65 /* ProfileController.swift */,
-				4D0DC5EA231CCB1200912E65 /* Profile.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -245,6 +244,7 @@
 				4D0DC5DE23193AFD00912E65 /* MedicineModel.swift */,
 				4D0DC5E023193CAB00912E65 /* ProfileModel.swift */,
 				B0948772231D0677002C2B59 /* MedicineData.swift */,
+				4D0DC5EA231CCB1200912E65 /* Profile.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";

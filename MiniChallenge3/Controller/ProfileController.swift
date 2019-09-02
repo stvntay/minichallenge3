@@ -71,6 +71,8 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
             self.doctorTableView.reloadData()
         }
         
+        
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
