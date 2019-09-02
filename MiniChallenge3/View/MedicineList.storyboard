@@ -73,20 +73,11 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="medicineList" destination="svb-jf-8qN" id="zEg-ww-fs1"/>
-                        <segue destination="f43-85-BX5" kind="show" identifier="listMed_addMed" id="r1a-br-soo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="957.97101449275374" y="20.758928571428569"/>
-        </scene>
-        <!--AddMedicine-->
-        <scene sceneID="fpJ-z7-bng">
-            <objects>
-                <viewControllerPlaceholder storyboardName="AddMedicine" id="f43-85-BX5" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wIw-2h-qo0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1484.7826086956522" y="-185.49107142857142"/>
         </scene>
     </scenes>
 </document>

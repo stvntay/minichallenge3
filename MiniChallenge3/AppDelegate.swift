@@ -19,15 +19,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Override point for customization after application launch.
         
-//        window = UIWindow(frame: UIScreen.main.bounds)
-//        if UserDefaults.standard.value(forKey: "userID") as! String != "" {
-//            let storyboard = UIStoryboard(name: "TabMenu", bundle: nil)
-//            let dashBoard = storyboard.instantiateViewController(withIdentifier: "menuTab")
+        window = UIWindow(frame: UIScreen.main.bounds)
+//        if UserDefaults.standard.string(forKey: "userID") != nil {
+//            
+//            let storyboard = UIStoryboard(name: "AddMedicine", bundle: nil)
+//            let dashBoard = storyboard.instantiateViewController(withIdentifier: "addMedicine")
 //
 //            window?.rootViewController = dashBoard
 //            window?.makeKeyAndVisible()
+//        }else{
+//            let storyboard = UIStoryboard(name: "Onboard", bundle: nil)
+//            let dashBoard = storyboard.instantiateViewController(withIdentifier: "doctorView")
+//            
+//            window?.rootViewController = dashBoard
+//            window?.makeKeyAndVisible()
+//            
 //        }
+        let storyboard = UIStoryboard(name: "AddMedicine", bundle: nil)
+        let dashBoard = storyboard.instantiateViewController(withIdentifier: "addMedicine")
         
+        window?.rootViewController = dashBoard
+        window?.makeKeyAndVisible()
         
         return true
     }

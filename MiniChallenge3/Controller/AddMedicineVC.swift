@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import CloudKit
 
-class AddMedicineVC: UIViewController {
+class AddMedicineVC: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate{
+    
 
     @IBOutlet weak var addMedicineTitle: UILabel!
     @IBOutlet weak var medicineCategory: UITextField!
@@ -19,9 +21,18 @@ class AddMedicineVC: UIViewController {
     
     @IBOutlet weak var navBar: UINavigationItem!
     
+    let medicineCategoryData: [String] = ["Rutin","Sewaktu-waktu"]
+    let medicineTimeData: [String] = ["Sebelum makan","Sesudah makan"]
+    let pickerCategory = UIPickerView()
+    let pickerTime = UIPickerView()
+    var getCategory = ""
+    var getTime = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
+        
         medicineCategory.addLine(position: .LINE_POSITION_BOTTOM, color: UIColor(red:0.94, green:0.45, blue:0.37, alpha:1.0), width: 1)
         medicineName.addLine(position: .LINE_POSITION_BOTTOM, color: UIColor(red:0.94, green:0.45, blue:0.37, alpha:1.0), width: 1)
         medicineTime.addLine(position: .LINE_POSITION_BOTTOM, color: UIColor(red:0.94, green:0.45, blue:0.37, alpha:1.0), width: 1)
@@ -29,23 +40,147 @@ class AddMedicineVC: UIViewController {
         medicineDosage.addLine(position: .LINE_POSITION_BOTTOM, color: UIColor(red:0.94, green:0.45, blue:0.37, alpha:1.0), width: 1)
         
         navBar.rightBarButtonItem = UIBarButtonItem(title: "Selesai", style: .done, target: self, action: #selector(onFinishTapped))
+        closeKeyboardWhenClickView()
+        medicineTime.delegate = self
+        medicineCategory.delegate = self
+        medicineTime.addTarget(self, action: #selector(chooseTime), for: .touchDown)
         medicineCategory.addTarget(self, action: #selector(chooseCategory), for: .touchDown)
-    }
-    
-    @objc func chooseCategory(sender: UITextField){
+        
         
     }
     
+//    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+//        if textField == medicineTime {
+//            print("kepanggil")
+//            return false
+//        }else if textField == medicineCategory{
+//            print("kepanggil 2")
+//            return false
+//        }else{
+//            return true
+//        }
+//    }
+//
+    
+    
+    func closeKeyboardWhenClickView(){
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    @objc func dismissKeyboard(){
+        view.endEditing(true)
+    }
+    
+    @objc func chooseTime(sender: UITextField){
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneChooseTime))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelChooseTime))
+        
+        toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
+        pickerTime.delegate = self
+        medicineTime.inputAccessoryView = toolbar
+        medicineTime.inputView = pickerTime
+    }
+    
+    @objc func chooseCategory(sender: UITextField){
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneChooseCategory))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelChooseCategory))
+        
+        toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
+        pickerCategory.delegate = self
+        medicineCategory.inputAccessoryView = toolbar
+        medicineCategory.inputView = pickerCategory
+    }
+    
+    @objc func doneChooseTime(){
+        medicineTime.text = getTime
+        
+        self.view.endEditing(true)
+    }
+    
+    @objc func cancelChooseTime(){
+        medicineCategory.text = ""
+        self.view.endEditing(true)
+    }
+    
+    @objc func doneChooseCategory(){
+        medicineCategory.text = getCategory
+        self.view.endEditing(true)
+    }
+    
+    @objc func cancelChooseCategory(){
+        medicineCategory.text = ""
+        self.view.endEditing(true)
+    }
+    
     @objc func onFinishTapped() {
+        guard let getName = medicineName.text else{
+            return
+        }
+        
+        guard let getDesc = medicineDescription.text else{
+            return
+        }
+        
+        guard let getDose = medicineDosage.text else{
+            return
+        }
+        
+        guard let getUserID = UserDefaults.standard.string(forKey: "userID") else {
+            return
+        }
+        
+        let getRecordID = CKRecord.ID(recordName: getUserID)
+        if getCategory == "Rutin" {
+            CloudData.shared.saveCommonMedicineData(namaObat: getName, deskripsiObat: getDesc, dosisObat: getDose, setelahSebelumMakan: getTime, jumlahPerHari: 0, pasienID: getRecordID)
+        }else if getCategory == "Sewaktu-waktu"{
+            CloudData.shared.saveRareMedichineData(namaObat: getName, deskripsiObat: getDesc, dosisObat: getDose, setelahSebelumMakan: getTime, pasienID: getRecordID)
+        }
+        
+        let storyboard = UIStoryboard(name: "MedicineList", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "medicineView") as UIViewController
+        self.present(vc, animated: true, completion: nil)
+        
         // do something
     }
     
-    // MARK: - Navigation
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//         Get the new view controller using segue.destination.
-//         Pass the selected object to the new view controller.
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
     }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
+        return 2
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if pickerView == pickerCategory {
+            getCategory = medicineCategoryData[row]
+            return getCategory
+        }else if pickerView == pickerTime {
+            getTime = medicineTimeData[row]
+            return getTime
+        }else{
+            return ""
+        }
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if pickerView == pickerCategory {
+            getCategory = medicineCategoryData[row]
+            medicineCategory.text =  getCategory
+        }else if pickerView == pickerTime {
+            getTime = medicineTimeData[row]
+            medicineTime.text = getTime
+        }
+    }
+    
+    
 }
 
 enum LINE_POSITION {
