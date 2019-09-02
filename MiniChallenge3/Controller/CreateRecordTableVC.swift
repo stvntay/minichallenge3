@@ -42,11 +42,11 @@ class CreateRecordTableVC: UITableViewController {
     var medicineType = -1
     
     var activityValues = [
-        activityValue(activityName: "Pasien membersihkan diri", activityValue: "Belum Diatur"),
-        activityValue(activityName: "Pasien makan dengan rapi", activityValue: "Belum Diatur"),
-        activityValue(activityName: "Pasien membereskan pakaian", activityValue: "Belum Diatur"),
-        activityValue(activityName: "Pasien membersihkan rumah", activityValue: "Belum Diatur"),
-        activityValue(activityName: "Pasien berkomunikasi dengan linkungan", activityValue: "Belum Diatur"),
+        activityValue(activityName: "Membersihkan diri", activityValue: "Belum Diatur"),
+        activityValue(activityName: "Makan dengan rapi", activityValue: "Belum Diatur"),
+        activityValue(activityName: "Membereskan pakaian", activityValue: "Belum Diatur"),
+        activityValue(activityName: "Membersihkan rumah", activityValue: "Belum Diatur"),
+        activityValue(activityName: "Komunikasi dengan baik", activityValue: "Belum Diatur"),
     ]
     var routineMedicineValues = [medicineValue]()
     var occasionalMedicineValues = [medicineValue]()

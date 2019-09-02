@@ -17,6 +17,7 @@
 		4D0DC5E7231CB2B500912E65 /* UserProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0DC5E6231CB2B500912E65 /* UserProfileCell.swift */; };
 		4D0DC5E9231CB34A00912E65 /* DoctorProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0DC5E8231CB34A00912E65 /* DoctorProfileCell.swift */; };
 		4D0DC5EB231CCB1200912E65 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0DC5EA231CCB1200912E65 /* Profile.swift */; };
+		955F95D1231D35CB00CB9182 /* ActivityRecordGuide.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955F95D0231D35CB00CB9182 /* ActivityRecordGuide.storyboard */; };
 		958EF9CB231D0E7B00878F33 /* ActivityPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958EF9C8231D0E7B00878F33 /* ActivityPickerCell.swift */; };
 		958EF9CC231D0E7B00878F33 /* ActivityPickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 958EF9C9231D0E7B00878F33 /* ActivityPickerCell.xib */; };
 		958EF9CD231D0E7B00878F33 /* CreateRecord.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 958EF9CA231D0E7B00878F33 /* CreateRecord.storyboard */; };
@@ -47,7 +48,6 @@
 		B0E253AC2317D66400874561 /* DashboardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E253A82317D66400874561 /* DashboardData.swift */; };
 		B0E253AE2317D66400874561 /* CloudData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E253AA2317D66400874561 /* CloudData.swift */; };
 		B0E253B82317D68500874561 /* set~.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0E253B02317D68400874561 /* set~.storyboard */; };
-		B0E253B92317D68500874561 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0E253B22317D68400874561 /* LaunchScreen.storyboard */; };
 		B0E253BA2317D68500874561 /* set.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0E253B42317D68400874561 /* set.storyboard */; };
 		B0E253C52317D68D00874561 /* Signika-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B0E253BD2317D68D00874561 /* Signika-Light.ttf */; };
 		B0E253C62317D68D00874561 /* SignikaNegative-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B0E253BE2317D68D00874561 /* SignikaNegative-Bold.ttf */; };
@@ -82,6 +82,7 @@
 		4D0DC5E6231CB2B500912E65 /* UserProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileCell.swift; sourceTree = "<group>"; };
 		4D0DC5E8231CB34A00912E65 /* DoctorProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorProfileCell.swift; sourceTree = "<group>"; };
 		4D0DC5EA231CCB1200912E65 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		955F95D0231D35CB00CB9182 /* ActivityRecordGuide.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ActivityRecordGuide.storyboard; sourceTree = "<group>"; };
 		958EF9C8231D0E7B00878F33 /* ActivityPickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityPickerCell.swift; sourceTree = "<group>"; };
 		958EF9C9231D0E7B00878F33 /* ActivityPickerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityPickerCell.xib; sourceTree = "<group>"; };
 		958EF9CA231D0E7B00878F33 /* CreateRecord.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateRecord.storyboard; sourceTree = "<group>"; };
@@ -208,6 +209,7 @@
 				958EF9C8231D0E7B00878F33 /* ActivityPickerCell.swift */,
 				958EF9C9231D0E7B00878F33 /* ActivityPickerCell.xib */,
 				958EF9CA231D0E7B00878F33 /* CreateRecord.storyboard */,
+				955F95D0231D35CB00CB9182 /* ActivityRecordGuide.storyboard */,
 				BE6492CA23195025001E27A7 /* MedicineTableViewCell.xib */,
 				BE6492C023194FB0001E27A7 /* ActivityTableViewCell.xib */,
 				BE6492BE23194F92001E27A7 /* ActivityTableViewCell.swift */,
@@ -369,6 +371,7 @@
 				B06A9C75230E69EB007D38B5 /* LaunchScreen.storyboard in Resources */,
 				958EF9CD231D0E7B00878F33 /* CreateRecord.storyboard in Resources */,
 				B06A9C72230E69EB007D38B5 /* Assets.xcassets in Resources */,
+				955F95D1231D35CB00CB9182 /* ActivityRecordGuide.storyboard in Resources */,
 				B05BB1E923139C1700B80F13 /* Onboard.storyboard in Resources */,
 				B0E253B82317D68500874561 /* set~.storyboard in Resources */,
 				B0974FA7231926FE00EC9101 /* MedicineListTableViewCell.xib in Resources */,
