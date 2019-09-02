@@ -21,38 +21,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         
         window = UIWindow(frame: UIScreen.main.bounds)
-//        if UserDefaults.standard.string(forKey: "userID") != nil {
-//            
-//            let storyboard = UIStoryboard(name: "AddMedicine", bundle: nil)
-//            let dashBoard = storyboard.instantiateViewController(withIdentifier: "addMedicine")
-//
-//            window?.rootViewController = dashBoard
-//            window?.makeKeyAndVisible()
-//        }else{
-//            let storyboard = UIStoryboard(name: "Onboard", bundle: nil)
-//            let dashBoard = storyboard.instantiateViewController(withIdentifier: "doctorView")
-//            
-//            window?.rootViewController = dashBoard
-//            window?.makeKeyAndVisible()
-//            
-//        }
-//        let storyboard = UIStoryboard(name: "TabMenu", bundle: nil)
-//        
-//        //        let vc = PatientOnBoardViewController()
-//        //        vc.data = data
-//        //        navigationController?.pushViewController(vc, animated: true)
-//        let page = storyboard.instantiateViewController(withIdentifier: "menuTab") as! UITabBarController
-//        
-//
-//        window = UIWindow(frame: UIScreen.main.bounds)
-//        let storyboard = UIStoryboard(name: "Onboard", bundle: nil)
-//        let patient = storyboard.instantiateViewController(withIdentifier: "doctorNav")
-//        
-//        window?.rootViewController = patient
-//        window?.makeKeyAndVisible()
-//
-//        window?.rootViewController = page
-//        window?.makeKeyAndVisible()
+        if UserDefaults.standard.string(forKey: "userID") != nil {
+            
+            let storyboard = UIStoryboard(name: "TabMenu", bundle: nil)
+            let page = storyboard.instantiateViewController(withIdentifier: "menuTab") as! UITabBarController
+            window?.rootViewController = page
+            window?.makeKeyAndVisible()
+        }else{
+            
+            let storyboard = UIStoryboard(name: "Onboard", bundle: nil)
+            let dashboard = storyboard.instantiateViewController(withIdentifier: "doctorNav")
+            
+            window?.rootViewController = dashboard
+            window?.makeKeyAndVisible()
+            
+        }
 
         
         return true

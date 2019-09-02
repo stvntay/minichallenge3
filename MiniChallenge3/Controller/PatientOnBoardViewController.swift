@@ -17,8 +17,8 @@ class PatientOnBoardViewController: UIViewController {
     var data : DoctorData?
     var onBoardData: OnBoardData?
 //    var cloudData = CloudData()
-    var doctorID: CKRecord.ID?
-    var userID: CKRecord.ID?
+    var doctorID: String = ""
+    var userID: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -110,33 +110,46 @@ class PatientOnBoardViewController: UIViewController {
         dateFormatter.dateFormat = "dd/mm/yyyy"
         let date = dateFormatter.date(from: releaseDate)
         
+     
         guard let convertPatientAge = Int(patientAge) else { return  }
         
-        CloudData.shared.savePsikiaterAndUserData(namaPsikiater: getData.doctorName, nomorTelepon: getData.doctorNumber, alamat: patientAddress, namaUser: patientName, tanggalLepasPasung: date!, umur: convertPatientAge, puskesmas: patientHospital, completion: { (passDoctorID, passUserID) in
-            
-            self.doctorID = passDoctorID
-            self.userID = passUserID
+        let storyboard = UIStoryboard(name: "TabMenu", bundle: nil)
+        
+        //        let vc = PatientOnBoardViewController()
+        //        vc.data = data
+        //        navigationController?.pushViewController(vc, animated: true)
+        let page = storyboard.instantiateViewController(withIdentifier: "menuTab") as! UITabBarController
+        
+        self.present(page, animated: true, completion: nil)
 
-//            let userIDString = self.userID
-            UserDefaults.standard.set(self.userID!.recordName,forKey: "userID")
-            
-            let storyboard = UIStoryboard(name: "TabMenu", bundle: nil)
-            
-            //        let vc = PatientOnBoardViewController()
-            //        vc.data = data
-            //        navigationController?.pushViewController(vc, animated: true)
-            let page = storyboard.instantiateViewController(withIdentifier: "menuTab") as! UITabBarController
-           
-            self.present(page, animated: true, completion: nil)
-            
-//            guard let idDoctor = self.doctorID else{
-//                return
-//            }
-//            guard let idUser = self.userID else{
-//                return
-//            }
-            
-            })
+        
+//        OnboardModel.shared.savePsikiaterAndUserData(namaPsikiater: getData.doctorName, nomorTelepon: getData.doctorNumber, alamat: patientAddress, namaUser: patientName, tanggalLepasPasung: date!, umur: convertPatientAge, puskesmas: patientHospital, completion: { (passDoctorID, passUserID) in
+//            
+//            
+//            self.doctorID = passDoctorID
+//            self.userID = passUserID
+//
+////            let userIDString = self.userID
+//            UserDefaults.standard.set(self.userID,forKey: "userID")
+//            
+//            
+////            let storyboard = UIStoryboard(name: "TabMenu", bundle: nil)
+////
+////            //        let vc = PatientOnBoardViewController()
+////            //        vc.data = data
+////            //        navigationController?.pushViewController(vc, animated: true)
+////            let page = storyboard.instantiateViewController(withIdentifier: "menuTab") as! UITabBarController
+////           
+////            self.present(page, animated: true, completion: nil)
+//            
+////            guard let idDoctor = self.doctorID else{
+////                return
+////            }
+////            guard let idUser = self.userID else{
+////                return
+////            }
+//            
+//            })
         
     }
 

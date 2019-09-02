@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9KN-nD-Clo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4C8-bj-YMG">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -134,6 +134,8 @@
                         <color key="backgroundColor" red="0.95836640100188664" green="0.95836640100188664" blue="0.95836640100188664" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="ZDc-jB-v3t"/>
                     </view>
+                    <navigationItem key="navigationItem" id="fV2-Yz-5QZ"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="doctorDataView" destination="igk-5i-oxZ" id="xlf-Gz-iey"/>
                         <outlet property="doctorTableView" destination="EMM-b2-obz" id="s55-br-XLf"/>
@@ -146,6 +148,26 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rBa-VU-uIg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="784.05797101449286" y="11.383928571428571"/>
+        </scene>
+        <!--Profil-->
+        <scene sceneID="wIn-ta-qcS">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4C8-bj-YMG" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profil" id="jRe-c1-IA5"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HOY-mF-lFE">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9KN-nD-Clo" kind="relationship" relationship="rootViewController" id="Axb-Eb-8Y5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ixf-wk-OMq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-126.08695652173914" y="11.383928571428571"/>
         </scene>
