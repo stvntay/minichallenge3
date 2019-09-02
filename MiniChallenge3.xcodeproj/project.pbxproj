@@ -49,6 +49,10 @@
 		BE6492CB23195025001E27A7 /* MedicineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE6492CA23195025001E27A7 /* MedicineTableViewCell.xib */; };
 		BE6492CF2319509D001E27A7 /* MedicineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6492CE2319509D001E27A7 /* MedicineData.swift */; };
 		BE6492D223195151001E27A7 /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE6492D023195151001E27A7 /* History.storyboard */; };
+		BE6492E3231D1696001E27A7 /* SleepTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6492E1231D1696001E27A7 /* SleepTableViewCell.swift */; };
+		BE6492E4231D1696001E27A7 /* SleepTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE6492E2231D1696001E27A7 /* SleepTableViewCell.xib */; };
+		BE6492E7231D169F001E27A7 /* ComplainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6492E5231D169F001E27A7 /* ComplainTableViewCell.swift */; };
+		BE6492E8231D169F001E27A7 /* ComplainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE6492E6231D169F001E27A7 /* ComplainTableViewCell.xib */; };
 		BE9BECFA230E892F00640A93 /* HistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9BECF9230E892F00640A93 /* HistoryController.swift */; };
 		BE9BED182317D92D00640A93 /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9BED172317D92D00640A93 /* ActivityModel.swift */; };
 /* End PBXBuildFile section */
@@ -109,6 +113,10 @@
 		BE6492CA23195025001E27A7 /* MedicineTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MedicineTableViewCell.xib; sourceTree = "<group>"; };
 		BE6492CE2319509D001E27A7 /* MedicineData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicineData.swift; sourceTree = "<group>"; };
 		BE6492D123195151001E27A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = History.storyboard; sourceTree = "<group>"; };
+		BE6492E1231D1696001E27A7 /* SleepTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepTableViewCell.swift; sourceTree = "<group>"; };
+		BE6492E2231D1696001E27A7 /* SleepTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SleepTableViewCell.xib; sourceTree = "<group>"; };
+		BE6492E5231D169F001E27A7 /* ComplainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplainTableViewCell.swift; sourceTree = "<group>"; };
+		BE6492E6231D169F001E27A7 /* ComplainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComplainTableViewCell.xib; sourceTree = "<group>"; };
 		BE9BECF9230E892F00640A93 /* HistoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryController.swift; sourceTree = "<group>"; };
 		BE9BED172317D92D00640A93 /* ActivityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ActivityModel.swift; path = MiniChallenge3/View/ActivityModel.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -228,6 +236,19 @@
 				B0E253B02317D68400874561 /* set~.storyboard */,
 				B0E253B22317D68400874561 /* LaunchScreen.storyboard */,
 				B0E253B42317D68400874561 /* set.storyboard */,
+				BE9BED0323167E5300640A93 /* CustomButtonStyle.swift */,
+				BE9BECFB230E897900640A93 /* History.storyboard */,
+				BEB583112318FECA000153DC /* HistoryView.swift */,
+				BE9BED132317D67700640A93 /* MedicineTableViewCell.swift */,
+				BE9BED142317D67700640A93 /* MedicineTableViewCell.xib */,
+				BE9BED192317E45A00640A93 /* ActivityTableViewCell.swift */,
+				BE9BED1A2317E45A00640A93 /* ActivityTableViewCell.xib */,
+				BE6492E1231D1696001E27A7 /* SleepTableViewCell.swift */,
+				BE6492E2231D1696001E27A7 /* SleepTableViewCell.xib */,
+				BE6492E5231D169F001E27A7 /* ComplainTableViewCell.swift */,
+				BE6492E6231D169F001E27A7 /* ComplainTableViewCell.xib */,
+				BE9BED01230E944D00640A93 /* DateCollectionViewCell.swift */,
+				BE9BECFD230E8DAD00640A93 /* CalenderView.swift */,
 			);
 			path = Base.lproj;
 			sourceTree = "<group>";
@@ -318,6 +339,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE6492E8231D169F001E27A7 /* ComplainTableViewCell.xib in Resources */,
 				B06A9C75230E69EB007D38B5 /* LaunchScreen.storyboard in Resources */,
 				B06A9C72230E69EB007D38B5 /* Assets.xcassets in Resources */,
 				B05BB1E923139C1700B80F13 /* Onboard.storyboard in Resources */,
@@ -329,13 +351,14 @@
 				B0E253C62317D68D00874561 /* SignikaNegative-Bold.ttf in Resources */,
 				B06A9C6D230E69E9007D38B5 /* Main.storyboard in Resources */,
 				BE6492CB23195025001E27A7 /* MedicineTableViewCell.xib in Resources */,
-				BE6492C123194FB0001E27A7 /* ActivityTableViewCell.xib in Resources */,
 				B0E253B92317D68500874561 /* LaunchScreen.storyboard in Resources */,
 				B0E253BA2317D68500874561 /* set.storyboard in Resources */,
 				B0E253CC2317D68D00874561 /* SignikaNegative-Light.ttf in Resources */,
 				B0E253CB2317D68D00874561 /* Signika-Bold.ttf in Resources */,
 				B0E253C52317D68D00874561 /* Signika-Light.ttf in Resources */,
-				BE6492D223195151001E27A7 /* History.storyboard in Resources */,
+				BE9BED1C2317E45A00640A93 /* ActivityTableViewCell.xib in Resources */,
+				BE9BECFC230E897900640A93 /* History.storyboard in Resources */,
+				BE6492E4231D1696001E27A7 /* SleepTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,11 +377,11 @@
 				B06A9C6A230E69E9007D38B5 /* ViewController.swift in Sources */,
 				B0E253AC2317D66400874561 /* DashboardData.swift in Sources */,
 				B06A9C68230E69E9007D38B5 /* AppDelegate.swift in Sources */,
+<<<<<<< HEAD
 				BE6492CF2319509D001E27A7 /* MedicineData.swift in Sources */,
 				4D0DC5DD23193A2500912E65 /* RecordModel.swift in Sources */,
 				BE6492BF23194F92001E27A7 /* ActivityTableViewCell.swift in Sources */,
 				B05BB1ED23139FB500B80F13 /* DoctorOnBoardController.swift in Sources */,
-				BE6492BB23194EFB001E27A7 /* DateCollectionViewCell.swift in Sources */,
 				B05BB1F32313A34500B80F13 /* PatientOnBoardView.swift in Sources */,
 				4D0DC5DF23193AFD00912E65 /* MedicineModel.swift in Sources */,
 				4D0DC5DB231934E900912E65 /* HistoryModel.swift in Sources */,
@@ -367,11 +390,15 @@
 				4D0DC5D92319341F00912E65 /* OnboardModel.swift in Sources */,
 				B0E253AE2317D66400874561 /* CloudData.swift in Sources */,
 				BE6492BD23194F20001E27A7 /* HistoryController.swift in Sources */,
-				BE6492C92319501B001E27A7 /* MedicineTableViewCell.swift in Sources */,
 				B0E253D42317DE1300874561 /* DoctorData.swift in Sources */,
 				B06A9C70230E69E9007D38B5 /* MiniChallenge3.xcdatamodeld in Sources */,
 				B0E253D22317DE0800874561 /* OnBoardData.swift in Sources */,
 				4D0DC5E123193CAB00912E65 /* ProfileModel.swift in Sources */,
+				BE6492E7231D169F001E27A7 /* ComplainTableViewCell.swift in Sources */,
+				B06A9C70230E69E9007D38B5 /* MiniChallenge3.xcdatamodeld in Sources */,
+				BE6492E3231D1696001E27A7 /* SleepTableViewCell.swift in Sources */,
+				BE9BED02230E944D00640A93 /* DateCollectionViewCell.swift in Sources */,
+				BE9BED152317D67700640A93 /* MedicineTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
