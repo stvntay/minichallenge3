@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CloudKit
 
 let sectionTitle = ["Obat", "Aktivitas", "Tidur", "Keluhan"]
 var rowsPerSection = [0, 0, 1, 1]
@@ -35,7 +36,7 @@ class CreateRecordTableVC: UITableViewController {
     let labelCellIdentifier = "TwoLabelsCell"
     let textFieldCellIdentifier = "TextfieldCell"
     let activityPickerCellIdentifier = "ActivityPickerCell"
-    
+
     var valueToPass = -1
     var expandedRow = -1
     
@@ -51,10 +52,23 @@ class CreateRecordTableVC: UITableViewController {
         commentValue(commentTitle: "Bagaimana tidur pasien?", commentBody: "Nyenyak kayaknya"),
         commentValue(commentTitle: "Apakah ada keluhan / kejadian hari ini?", commentBody: "")
     ]
+    var CKCommonMedicineData = [CKRecord]()
+    var CKRareMedicineData = [CKRecord]()
+    var medicineNames = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        RecordModel.shared.loadCommonMedicineData(userRN: "5187BE88-B4D8-4E65-B2D4-6D20663B6D6C") { (result) in
+            self.CKCommonMedicineData = result
+        }
+        
+        RecordModel.shared.loadRareMedicineData(userRN: "5187BE88-B4D8-4E65-B2D4-6D20663B6D6C") { (result) in
+            self.CKRareMedicineData = result
+        }
+        
+        medicineNames = RecordModel.shared.parseMedicineName(common: CKCommonMedicineData, rare: CKRareMedicineData)
+        
         tableView.register(
             UINib(nibName: "TwoLabelsCell", bundle: nil),
             forCellReuseIdentifier: labelCellIdentifier
@@ -81,7 +95,7 @@ class CreateRecordTableVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return medicineValues.count // replace with length of medicine list from CK
+            return medicineNames.count
         }
         
         if section == 1 {
