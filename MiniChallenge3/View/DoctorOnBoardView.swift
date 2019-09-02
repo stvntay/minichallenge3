@@ -13,7 +13,7 @@ class DoctorOnBoardView: UIView {
     @IBOutlet weak var doctorNameInput: UITextField!
     
     @IBOutlet weak var telephoneDoctor: UITextField!
-    @IBOutlet weak var nextPageBtn: UIButton!
+
     
     
     override func awakeFromNib() {

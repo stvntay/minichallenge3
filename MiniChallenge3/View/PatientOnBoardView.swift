@@ -15,7 +15,7 @@ class PatientOnBoardView: UIView {
     @IBOutlet weak var releaseDateInput: UITextField!
     @IBOutlet weak var addressPatientInput: UITextField!
     @IBOutlet weak var hospitalInput: UITextField!
-    @IBOutlet weak var doneBtn: UIButton!
+
     
     override func awakeFromNib() {
         namePatientInput.clearButtonMode = UITextField.ViewMode.whileEditing
