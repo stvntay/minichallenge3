@@ -28,11 +28,20 @@ class PatientOnBoardViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         initialization()
+        closeKeyboardWhenClickView()
         
         navigationItem.title = "Data Pasien"
         self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 0.4190294743, blue: 0.3407981396, alpha: 1)
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Selesai", style: .plain, target: self, action: #selector(submitData))
         
+    }
+    
+    func closeKeyboardWhenClickView(){
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    @objc func dismissKeyboard(){
+        view.endEditing(true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -93,7 +102,7 @@ class PatientOnBoardViewController: UIViewController {
         guard let patientHospital = patientView.hospitalInput.text else{
             return
         }
-        print("tes")
+        
 //        onBoardData = OnBoardData(doctorData: getData, name: patientName, age: patientAge, date: releaseDate, address: patientAddress, hospital: patientHospital)
 //
    
@@ -107,7 +116,19 @@ class PatientOnBoardViewController: UIViewController {
             
             self.doctorID = passDoctorID
             self.userID = passUserID
-            UserDefaults.standard.set(self.userID,forKey: "userID")
+
+//            let userIDString = self.userID
+            UserDefaults.standard.set(self.userID!.recordName,forKey: "userID")
+            
+            let storyboard = UIStoryboard(name: "TabMenu", bundle: nil)
+            
+            //        let vc = PatientOnBoardViewController()
+            //        vc.data = data
+            //        navigationController?.pushViewController(vc, animated: true)
+            let page = storyboard.instantiateViewController(withIdentifier: "menuTab") as! UITabBarController
+           
+            self.present(page, animated: true, completion: nil)
+            
 //            guard let idDoctor = self.doctorID else{
 //                return
 //            }
