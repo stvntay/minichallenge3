@@ -45,25 +45,29 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
         userTableView.separatorColor = .clear
         userTableView.delegate = self
         userTableView.dataSource = self
+        userTableView.isUserInteractionEnabled = false
         userDataView.layer.cornerRadius = 20
+        userDataView.backgroundColor = UIColor(red: 249/255, green: 249/255, blue: 249/255, alpha: 1)
         userTableView.layer.cornerRadius = 20
         userTableView.isScrollEnabled = false
+        
         doctorTableView.separatorColor = .clear
         doctorTableView.delegate = self
         doctorTableView.dataSource = self
+        doctorTableView.isUserInteractionEnabled = false
         doctorDataView.layer.cornerRadius = 20
+        doctorDataView.backgroundColor = UIColor(red: 249/255, green: 249/255, blue: 249/255, alpha: 1)
         doctorTableView.layer.cornerRadius = 20
         doctorTableView.isScrollEnabled = false
         
+        
         ProfileModel.shared.loadMedicalID(userRN: "5187BE88-B4D8-4E65-B2D4-6D20663B6D6C") { (result) in
             self.userContent = result
-            self.view.reloadInputViews()
             self.userTableView.reloadData()
             self.titleName.text = "\(self.userContent.last?.value(forKey: "nama") ?? "no data")"
         }
         ProfileModel.shared.loadPsikiaterData(doctorRN: "B1C05391-3D56-495F-9EF5-BBA996D534A0") { (result) in
             self.doctorContent = result
-            self.view.reloadInputViews()
             self.doctorTableView.reloadData()
         }
         
@@ -114,14 +118,14 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return userDataView.frame.height/4
         
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let newView = UIView(frame: CGRect(x: 0, y: 0, width: 361, height: 60))
-        let lineView = UIView(frame: CGRect(x: 0, y: 59, width: 361, height: 1))
-        let headerLabel = UILabel(frame: CGRect(x: 17, y: 0, width: 200, height: 60))
+        let newView = UIView(frame: CGRect(x: 0, y: 0, width: 361, height: 70))
+        let lineView = UIView(frame: CGRect(x: 0, y: 69, width: 361, height: 1))
+        let headerLabel = UILabel(frame: CGRect(x: 17, y: 0, width: 200, height: 70))
         
         newView.backgroundColor = .white
         headerLabel.backgroundColor = .clear
@@ -139,7 +143,7 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if tableView == doctorTableView {
-            return 60
+            return doctorDataView.frame.height - userDataView.frame.height/2
         } else {
             return 0
         }
