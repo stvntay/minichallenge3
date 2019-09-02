@@ -114,7 +114,7 @@ class PatientOnBoardViewController: UIViewController {
         guard let convertPatientAge = Int(patientAge) else { return  }
         
         
-        OnboardModel.shared.savePsikiaterAndUserData(namaPsikiater: getData.doctorName, nomorTelepon: getData.doctorNumber, alamat: patientAddress, namaUser: patientName, tanggalLepasPasung: date!, umur: convertPatientAge, puskesmas: patientHospital, completion: { (passDoctorID, passUserID) in
+        OnboardModel.shared.savePsikiaterAndUserData(namaPsikiater: getData.doctorName, nomorTelepon: getData.doctorNumber, alamat: patientAddress, namaUser: patientName, tanggalLepasPasung: date!, umur: "\(convertPatientAge)", puskesmas: patientHospital, completion: { (passDoctorID, passUserID) in
             
             
             self.doctorID = passDoctorID
