@@ -19,7 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Override point for customization after application launch.
 
-        
         window = UIWindow(frame: UIScreen.main.bounds)
         if UserDefaults.standard.string(forKey: "userID") != nil {
 
@@ -36,7 +35,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.makeKeyAndVisible()
             
         }
-
         
         return true
     }
