@@ -18,16 +18,13 @@ final class RecordModel {
     
     // MARK: - Load medicine name data from cloudkit
     
-    func parseMedicineName(common: [CKRecord], rare: [CKRecord]) -> [String] {
-        var dataNama = [String]()
-        for data in common {
-            dataNama.append(data["nama"] as! String)
-        }
-        for data in rare {
-            dataNama.append(data["nama"] as! String)
-        }
-        return dataNama
+    func parseMedicineName(medicineDatas: [CKRecord]) -> [String] {
+        var datas = [String]()
         
+        for data in medicineDatas {
+            datas.append(data["nama"] as! String)
+        }
+        return datas
     }
     
     func loadCommonMedicineData(userRN: String, completion: @escaping (_ recID: [CKRecord]) -> Void) {
@@ -72,10 +69,32 @@ final class RecordModel {
     
     // MARK: - Save record data to CloudKit
     
-    func saveMedicalRecord(obatRutin: [String], obatSewaktu: [String], membersihkanDiri: String, makanDenganRapi: String, membersihkanPakaian: String, membersihkanRumah: String, berkomunikasiDenganLingkungan: String, tidurHariIni: String, catatan: String, pasienRN: String) {
+    func saveMedicalRecord(
+           obatRutin: [String],
+           obatSewaktu: [String],
+           membersihkanDiri: String,
+           makanDenganRapi: String,
+           membersihkanPakaian: String,
+           membersihkanRumah: String,
+           berkomunikasiDenganLingkungan: String,
+           tidurHariIni: String,
+           catatan: String,
+           pasienRN: String
+        ) {
         let newData = CKRecord(recordType: "MedicalRecord")
         let pasienID = CKRecord.ID(recordName: pasienRN)
         let reference = CKRecord.Reference(recordID: pasienID, action: .deleteSelf)
+        
+        print(obatRutin,
+              obatSewaktu,
+              membersihkanDiri,
+              makanDenganRapi,
+              membersihkanPakaian,
+              membersihkanRumah,
+              berkomunikasiDenganLingkungan,
+              tidurHariIni,
+              catatan,
+              pasienRN)
         
         newData.setValue(obatRutin, forKey: "obatRutin")
         newData.setValue(obatSewaktu, forKey: "obatSewaktu")

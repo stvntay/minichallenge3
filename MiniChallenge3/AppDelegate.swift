@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
 
         
-        window = UIWindow(frame: UIScreen.main.bounds)
+//        window = UIWindow(frame: UIScreen.main.bounds)
 //        if UserDefaults.standard.string(forKey: "userID") != nil {
 //            
 //            let storyboard = UIStoryboard(name: "AddMedicine", bundle: nil)

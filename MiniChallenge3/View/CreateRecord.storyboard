@@ -17,6 +17,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0w7-Fu-ImF">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="submit:" destination="5aF-pk-qYB" eventType="touchUpInside" id="rf5-b0-umL"/>
+                            </connections>
+                        </button>
                         <connections>
                             <outlet property="dataSource" destination="5aF-pk-qYB" id="yci-jp-aiD"/>
                             <outlet property="delegate" destination="5aF-pk-qYB" id="qsc-1c-wAX"/>

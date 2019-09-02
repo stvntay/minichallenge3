@@ -67,7 +67,7 @@ class MedicineListViewController: UIViewController, UITableViewDelegate, UITable
     
     @objc func addMedicinePage(sender: UIBarButtonItem){
         let storyboard = UIStoryboard(name: "AddMedicine", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "addMedicine") as! UIViewController
+        let vc = storyboard.instantiateViewController(withIdentifier: "addMedicine") 
         self.navigationController?.pushViewController(vc, animated: true)
 
 //        let vc = AddMedicineVC()

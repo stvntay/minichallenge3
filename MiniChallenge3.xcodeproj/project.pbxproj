@@ -122,7 +122,6 @@
 		B0E253A82317D66400874561 /* DashboardData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardData.swift; sourceTree = "<group>"; };
 		B0E253AA2317D66400874561 /* CloudData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudData.swift; sourceTree = "<group>"; };
 		B0E253B12317D68400874561 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "set~.storyboard"; sourceTree = "<group>"; };
-		B0E253B32317D68400874561 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B0E253B52317D68400874561 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = set.storyboard; sourceTree = "<group>"; };
 		B0E253BD2317D68D00874561 /* Signika-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Signika-Light.ttf"; sourceTree = "<group>"; };
 		B0E253BE2317D68D00874561 /* SignikaNegative-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SignikaNegative-Bold.ttf"; sourceTree = "<group>"; };
@@ -280,7 +279,6 @@
 			isa = PBXGroup;
 			children = (
 				B0E253B02317D68400874561 /* set~.storyboard */,
-				B0E253B22317D68400874561 /* LaunchScreen.storyboard */,
 				B0E253B42317D68400874561 /* set.storyboard */,
 			);
 			path = Base.lproj;
@@ -389,7 +387,6 @@
 				B0E253C92317D68D00874561 /* Signika-Semibold.ttf in Resources */,
 				B0E253C62317D68D00874561 /* SignikaNegative-Bold.ttf in Resources */,
 				B0974FA4231926FE00EC9101 /* MedicineList.storyboard in Resources */,
-				B0E253B92317D68500874561 /* LaunchScreen.storyboard in Resources */,
 				B0E253BA2317D68500874561 /* set.storyboard in Resources */,
 				B0E253CC2317D68D00874561 /* SignikaNegative-Light.ttf in Resources */,
 				B0974FAD2319298C00EC9101 /* TabMenu.storyboard in Resources */,
@@ -465,14 +462,6 @@
 				B0E253B12317D68400874561 /* Base */,
 			);
 			name = "set~.storyboard";
-			sourceTree = "<group>";
-		};
-		B0E253B22317D68400874561 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B0E253B32317D68400874561 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 		B0E253B42317D68400874561 /* set.storyboard */ = {

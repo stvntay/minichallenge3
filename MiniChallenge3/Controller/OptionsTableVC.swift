@@ -11,6 +11,7 @@ import UIKit
 class OptionsTableVC: UITableViewController {
 
     var selectedRow = 0
+    var selectedMedicineType = -1
     var selectedValue = "1x"
     var valueOptions = ["1x", "2x", "3x"]
     
