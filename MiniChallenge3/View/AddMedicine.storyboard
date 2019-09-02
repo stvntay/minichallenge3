@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wbi-fq-qz0">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add MedicineVC-->
+        <scene sceneID="zu4-y4-bmw">
+            <objects>
+                <viewController storyboardIdentifier="addMedicine" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pzb-0H-09B" customClass="AddMedicineVC" customModule="MiniChallenge3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="prV-Ad-Znb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="d7p-Te-qB5">
+                                <rect key="frame" x="20" y="158" width="374" height="300"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Kategori Obat (rutin / sewaktu-waktu)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kun-U8-ZWL">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="36"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Nama Obat" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GNT-TZ-5Sa">
+                                        <rect key="frame" x="0.0" y="66" width="374" height="36"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Deskripsi Obat" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fbG-YA-8bb">
+                                        <rect key="frame" x="0.0" y="132" width="374" height="36"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Dosis Obat" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yh4-7R-2Xp">
+                                        <rect key="frame" x="0.0" y="198" width="374" height="36"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Waktu minum (sebelum/sesudah makan)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6dy-yj-Igt">
+                                        <rect key="frame" x="0.0" y="264" width="374" height="36"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="1wP-db-WBq"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="MRc-DV-epi" firstAttribute="trailing" secondItem="d7p-Te-qB5" secondAttribute="trailing" constant="20" id="9Ut-Vn-gLo"/>
+                            <constraint firstItem="d7p-Te-qB5" firstAttribute="leading" secondItem="MRc-DV-epi" secondAttribute="leading" constant="20" id="AFZ-C5-ghw"/>
+                            <constraint firstItem="d7p-Te-qB5" firstAttribute="top" secondItem="MRc-DV-epi" secondAttribute="top" constant="70" id="TrA-BL-hEy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="MRc-DV-epi"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hxz-8a-C24"/>
+                    <connections>
+                        <outlet property="medicineCategory" destination="Kun-U8-ZWL" id="6tS-04-2Np"/>
+                        <outlet property="medicineDescription" destination="fbG-YA-8bb" id="E3O-Rp-295"/>
+                        <outlet property="medicineDosage" destination="yh4-7R-2Xp" id="HYf-Oe-5Zp"/>
+                        <outlet property="medicineName" destination="GNT-TZ-5Sa" id="roC-vN-IGV"/>
+                        <outlet property="medicineTime" destination="6dy-yj-Igt" id="c7D-mn-4dG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2ll-YW-qbq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1668.1159420289857" y="118.52678571428571"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fG0-7c-PnG">
+            <objects>
+                <navigationController storyboardIdentifier="addMedicineNav" automaticallyAdjustsScrollViewInsets="NO" id="Wbi-fq-qz0" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ski-f5-b7g">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="pzb-0H-09B" kind="relationship" relationship="rootViewController" id="uiu-eb-MCL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ws2-jr-6h7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="757.97101449275374" y="118.52678571428571"/>
+        </scene>
+    </scenes>
+</document>

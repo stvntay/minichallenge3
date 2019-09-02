@@ -40,6 +40,9 @@ final class CloudData {
     }
     
     func savePsikiaterAndUserData(namaPsikiater: String, nomorTelepon: String, alamat: String, namaUser: String, tanggalLepasPasung: Date, umur: Int, puskesmas: String, completion: @escaping (_ doctorID: CKRecord.ID, _ userID: CKRecord.ID) -> Void) {
+
+        print("this function is called")
+
         let doctorData = CKRecord(recordType: "PsikiaterData")
         let userData = CKRecord(recordType: "MedicalID")
         var recordDoctorID = CKRecord.ID()
@@ -48,10 +51,12 @@ final class CloudData {
         doctorData.setValue(namaPsikiater, forKey: "nama")
         doctorData.setValue(nomorTelepon, forKey: "nomorTelepon")
         
-        CKContainer.default().publicCloudDatabase.save(doctorData) { (recordDoctor, error) in
+        CKContainer.default().publicCloudDatabase.save(doctorData) { (recordDoctor, doctorError) in
             if recordDoctor != nil {
                 DispatchQueue.main.async {
                     recordDoctorID = recordDoctor!.recordID
+                    print(recordDoctorID)
+                    
                     //                    print(recordDoctorID)
                     let reference = CKRecord.Reference(recordID: recordDoctorID, action: .deleteSelf)
                     
@@ -62,19 +67,19 @@ final class CloudData {
                     userData.setValue(umur, forKey: "umur")
                     userData.setValue(puskesmas, forKey: "puskesmas")
                     
-                    CKContainer.default().publicCloudDatabase.save(userData) { (recordUser, error) in
+                    CKContainer.default().publicCloudDatabase.save(userData) { (recordUser, userError) in
                         if recordUser != nil {
                             DispatchQueue.main.async {
                                 recordUserID = recordUser!.recordID
                                 completion(recordDoctorID, recordUserID)
                             }
                         } else {
-                            print(error.debugDescription)
+                            print(userError.debugDescription)
                         }
                     }
                 }
             } else {
-                print(error.debugDescription)
+                print(doctorError.debugDescription)
             }
         }
         
@@ -271,5 +276,7 @@ final class CloudData {
         }
         
     }
+    
+    
     
 }
