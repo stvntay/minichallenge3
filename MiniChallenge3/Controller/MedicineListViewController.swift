@@ -15,6 +15,8 @@ class MedicineListViewController: UIViewController, UITableViewDelegate, UITable
     
     var medicineData : [MedicineData] = []
     
+    var deletedIndex: Int = 0
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return medicineData.count
     }
@@ -28,6 +30,15 @@ class MedicineListViewController: UIViewController, UITableViewDelegate, UITable
         return cell
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            
+        }
+    }
     
     
     override func viewDidLoad() {
