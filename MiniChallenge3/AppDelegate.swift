@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         // Override point for customization after application launch.
+<<<<<<< HEAD
         
         window = UIWindow(frame: UIScreen.main.bounds)
         if UserDefaults.standard.value(forKey: "userID") != nil {
@@ -28,6 +29,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.makeKeyAndVisible()
         }
         
+=======
+        window = UIWindow(frame: UIScreen.main.bounds)
+        let storyboard = UIStoryboard(name: "Onboard", bundle: nil)
+        let patient = storyboard.instantiateViewController(withIdentifier: "doctorNav")
+        
+        window?.rootViewController = patient
+        window?.makeKeyAndVisible()
+>>>>>>> onboardxmodel
         
         return true
     }

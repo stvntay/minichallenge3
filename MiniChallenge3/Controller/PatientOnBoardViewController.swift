@@ -29,6 +29,10 @@ class PatientOnBoardViewController: UIViewController {
         // Do any additional setup after loading the view.
         initialization()
         
+        navigationItem.title = "Data Pasien"
+        self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 0.4190294743, blue: 0.3407981396, alpha: 1)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Selesai", style: .plain, target: self, action: #selector(submitData))
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,7 +41,7 @@ class PatientOnBoardViewController: UIViewController {
     
     func initialization(){
         patientView.releaseDateInput.addTarget(self, action: #selector(getDateRelease), for: .touchDown)
-        patientView.doneBtn.addTarget(self, action: #selector(submitData), for: .touchUpInside)
+       
     }
     
     @objc func getDateRelease(sender: UITextField){
