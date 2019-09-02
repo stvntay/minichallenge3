@@ -30,37 +30,73 @@ class AddMedicineVC: UIViewController,UIPickerViewDelegate, UIPickerViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        editTextField()
         
-
+        navigationItem.title = "Tambah Obat"
         
-        medicineCategory.addLine(position: .LINE_POSITION_BOTTOM, color: UIColor(red:0.94, green:0.45, blue:0.37, alpha:1.0), width: 1)
-        medicineName.addLine(position: .LINE_POSITION_BOTTOM, color: UIColor(red:0.94, green:0.45, blue:0.37, alpha:1.0), width: 1)
-        medicineTime.addLine(position: .LINE_POSITION_BOTTOM, color: UIColor(red:0.94, green:0.45, blue:0.37, alpha:1.0), width: 1)
-        medicineDescription.addLine(position: .LINE_POSITION_BOTTOM, color: UIColor(red:0.94, green:0.45, blue:0.37, alpha:1.0), width: 1)
-        medicineDosage.addLine(position: .LINE_POSITION_BOTTOM, color: UIColor(red:0.94, green:0.45, blue:0.37, alpha:1.0), width: 1)
         
-        navBar.rightBarButtonItem = UIBarButtonItem(title: "Selesai", style: .done, target: self, action: #selector(onFinishTapped))
         closeKeyboardWhenClickView()
         medicineTime.delegate = self
         medicineCategory.delegate = self
         medicineTime.addTarget(self, action: #selector(chooseTime), for: .touchDown)
         medicineCategory.addTarget(self, action: #selector(chooseCategory), for: .touchDown)
         
+        //let addImg = UIImage(named: "add-icon")
+        let addButton = UIBarButtonItem(title: "Selesai", style: .plain, target: self, action: #selector(sendData))
+        
+        self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 0.4196078431, blue: 0.3411764706, alpha: 1)
+        navigationItem.rightBarButtonItem = addButton
+        
+        clearNavigationBar()
+    }
+    
+    @objc func sendData(sender: UIBarButtonItem){
+        guard let getName = medicineName.text else{
+            return
+        }
+        
+        guard let getDesc = medicineDescription.text else{
+            return
+        }
+        
+        guard let getDose = medicineDosage.text else{
+            return
+        }
+        
+        guard let getUserID = UserDefaults.standard.string(forKey: "userID") else {
+            return
+        }
+        
+        let getRecordID = CKRecord.ID(recordName: getUserID)
+        if getCategory == "Rutin" {
+            CloudData.shared.saveCommonMedicineData(namaObat: getName, deskripsiObat: getDesc, dosisObat: getDose, setelahSebelumMakan: getTime, jumlahPerHari: 0, pasienID: getRecordID)
+        }else if getCategory == "Sewaktu-waktu"{
+            CloudData.shared.saveRareMedichineData(namaObat: getName, deskripsiObat: getDesc, dosisObat: getDose, setelahSebelumMakan: getTime, pasienID: getRecordID)
+        }
+        
+        let storyboard = UIStoryboard(name: "MedicineList", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "medicineView") as UIViewController
+        self.present(vc, animated: true, completion: nil)
         
     }
     
-//    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-//        if textField == medicineTime {
-//            print("kepanggil")
-//            return false
-//        }else if textField == medicineCategory{
-//            print("kepanggil 2")
-//            return false
-//        }else{
-//            return true
-//        }
-//    }
-//
+    func editTextField(){
+        medicineCategory.addLine(position: .LINE_POSITION_BOTTOM, color: UIColor(red:0.94, green:0.45, blue:0.37, alpha:1.0), width: 1)
+        medicineName.addLine(position: .LINE_POSITION_BOTTOM, color: UIColor(red:0.94, green:0.45, blue:0.37, alpha:1.0), width: 1)
+        medicineTime.addLine(position: .LINE_POSITION_BOTTOM, color: UIColor(red:0.94, green:0.45, blue:0.37, alpha:1.0), width: 1)
+        medicineDescription.addLine(position: .LINE_POSITION_BOTTOM, color: UIColor(red:0.94, green:0.45, blue:0.37, alpha:1.0), width: 1)
+        medicineDosage.addLine(position: .LINE_POSITION_BOTTOM, color: UIColor(red:0.94, green:0.45, blue:0.37, alpha:1.0), width: 1)
+    }
+    
+    func clearNavigationBar(){
+        func clearNavigationBar(){
+            self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+            self.navigationController?.navigationBar.shadowImage = UIImage()
+            self.navigationController?.navigationBar.isTranslucent = true
+            navigationController?.view.backgroundColor = .clear
+        }
+    }
     
     
     func closeKeyboardWhenClickView(){
@@ -78,7 +114,7 @@ class AddMedicineVC: UIViewController,UIPickerViewDelegate, UIPickerViewDataSour
         let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelChooseTime))
         
-        toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
+        toolbar.setItems([cancelButton,spaceButton,doneButton], animated: false)
         pickerTime.delegate = self
         medicineTime.inputAccessoryView = toolbar
         medicineTime.inputView = pickerTime
@@ -117,37 +153,7 @@ class AddMedicineVC: UIViewController,UIPickerViewDelegate, UIPickerViewDataSour
         medicineCategory.text = ""
         self.view.endEditing(true)
     }
-    
-    @objc func onFinishTapped() {
-        guard let getName = medicineName.text else{
-            return
-        }
-        
-        guard let getDesc = medicineDescription.text else{
-            return
-        }
-        
-        guard let getDose = medicineDosage.text else{
-            return
-        }
-        
-        guard let getUserID = UserDefaults.standard.string(forKey: "userID") else {
-            return
-        }
-        
-        let getRecordID = CKRecord.ID(recordName: getUserID)
-        if getCategory == "Rutin" {
-            CloudData.shared.saveCommonMedicineData(namaObat: getName, deskripsiObat: getDesc, dosisObat: getDose, setelahSebelumMakan: getTime, jumlahPerHari: 0, pasienID: getRecordID)
-        }else if getCategory == "Sewaktu-waktu"{
-            CloudData.shared.saveRareMedichineData(namaObat: getName, deskripsiObat: getDesc, dosisObat: getDose, setelahSebelumMakan: getTime, pasienID: getRecordID)
-        }
-        
-        let storyboard = UIStoryboard(name: "MedicineList", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "medicineView") as UIViewController
-        self.present(vc, animated: true, completion: nil)
-        
-        // do something
-    }
+   
     
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -209,3 +215,4 @@ extension UITextField {
         }
     }
 }
+

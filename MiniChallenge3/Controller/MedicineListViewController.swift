@@ -24,22 +24,35 @@ class MedicineListViewController: UIViewController, UITableViewDelegate, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(red:0.94, green:0.45, blue:0.37, alpha:1.0)]
+        
         self.medicineList.rowHeight = 210
         medicineList.delegate = self
         medicineList.dataSource = self
         medicineList.register(UINib(nibName: "MedicineListTableViewCell", bundle: nil), forCellReuseIdentifier: "medicineList")
-//        navBar.rightBarButtonItem = UIBarButtonItem(
-//            image: UIImage(named: "add-icon")?.withRenderingMode(.alwaysOriginal),
-//            landscapeImagePhone: UIImage(named: "add-icon"),
-//            style: .plain,
-//            target: self,
-//            action: #selector(onCreateMedicineTapped)
-//        )
-        // Do any additional setup after loading the view.
+        
+        navigationItem.title = "Obat"
+        let addImg = UIImage(named: "add-icon")
+        let addButton = UIBarButtonItem(image: addImg, style: .plain, target: self, action: #selector(addMedicinePage))
+       
+        navigationItem.rightBarButtonItem = addButton
+        
+        clearNavigationBar()
+    }
+    
+    func clearNavigationBar(){
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        navigationController?.view.backgroundColor = .clear
+    }
+    
+    @objc func addMedicinePage(sender: UIBarButtonItem){
+        let storyboard = UIStoryboard(name: "AddMedicine", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "addMedicine") as! UIViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+
+//        let vc = AddMedicineVC()
+//        self.navigationController?.pushViewController(vc, animated: true)
     }
 
-    @objc func onCreateMedicineTapped() {
-        
-    }
 }

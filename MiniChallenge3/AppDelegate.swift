@@ -35,10 +35,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            window?.makeKeyAndVisible()
 //            
 //        }
-        let storyboard = UIStoryboard(name: "AddMedicine", bundle: nil)
-        let dashBoard = storyboard.instantiateViewController(withIdentifier: "addMedicine")
+        let storyboard = UIStoryboard(name: "TabMenu", bundle: nil)
         
-        window?.rootViewController = dashBoard
+        //        let vc = PatientOnBoardViewController()
+        //        vc.data = data
+        //        navigationController?.pushViewController(vc, animated: true)
+        let page = storyboard.instantiateViewController(withIdentifier: "menuTab") as! UITabBarController
+        
+        window?.rootViewController = page
         window?.makeKeyAndVisible()
         
         return true

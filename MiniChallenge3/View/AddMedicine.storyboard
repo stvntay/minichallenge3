@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pzb-0H-09B">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wbi-fq-qz0">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -18,99 +18,83 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rTA-k9-EKz">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.4549019608" blue="0.37254901959999998" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="barTintColor" red="0.93725490199999995" green="0.4549019608" blue="0.37254901959999998" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                <items>
-                                    <navigationItem title="Title" id="pOC-9D-XiW"/>
-                                </items>
-                            </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Masukkan Data Obat Pasien" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2pg-ec-YYT">
-                                <rect key="frame" x="25" y="118" width="364.5" height="34"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
-                                <color key="textColor" red="0.93725490199999995" green="0.4549019608" blue="0.37254901959999998" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Kategori Obat (rutin / sewaktu-waktu)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kun-U8-ZWL">
-                                <rect key="frame" x="20" y="166" width="374" height="40"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="d7p-Te-qB5">
+                                <rect key="frame" x="20" y="158" width="374" height="300"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Kategori Obat (rutin / sewaktu-waktu)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kun-U8-ZWL">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="36"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Nama Obat" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GNT-TZ-5Sa">
+                                        <rect key="frame" x="0.0" y="66" width="374" height="36"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Deskripsi Obat" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fbG-YA-8bb">
+                                        <rect key="frame" x="0.0" y="132" width="374" height="36"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Dosis Obat" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yh4-7R-2Xp">
+                                        <rect key="frame" x="0.0" y="198" width="374" height="36"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Waktu minum (sebelum/sesudah makan)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6dy-yj-Igt">
+                                        <rect key="frame" x="0.0" y="264" width="374" height="36"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="374" id="rpk-7y-hlh"/>
+                                    <constraint firstAttribute="height" constant="300" id="1wP-db-WBq"/>
                                 </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Waktu minum (sebelum/sesudah makan)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6dy-yj-Igt">
-                                <rect key="frame" x="20" y="315" width="374" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="374" id="UDx-7P-dNm"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Nama Obat" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GNT-TZ-5Sa">
-                                <rect key="frame" x="20" y="203" width="374" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="374" id="RoT-ZM-5Sz"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Dosis Obat" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yh4-7R-2Xp">
-                                <rect key="frame" x="20" y="278" width="374" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="374" id="geA-MF-YRW"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Deskripsi Obat" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fbG-YA-8bb">
-                                <rect key="frame" x="20" y="240" width="374" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="374" id="dBa-0l-enM"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Kun-U8-ZWL" firstAttribute="centerX" secondItem="prV-Ad-Znb" secondAttribute="centerX" id="71l-AS-pY1"/>
-                            <constraint firstItem="Kun-U8-ZWL" firstAttribute="top" secondItem="2pg-ec-YYT" secondAttribute="bottom" constant="40" id="7Nj-Kz-k1c"/>
-                            <constraint firstItem="rTA-k9-EKz" firstAttribute="trailing" secondItem="MRc-DV-epi" secondAttribute="trailing" id="A0Q-Fr-H9O"/>
-                            <constraint firstItem="GNT-TZ-5Sa" firstAttribute="top" secondItem="Kun-U8-ZWL" secondAttribute="bottom" constant="40" id="JVt-eM-XY0"/>
-                            <constraint firstItem="2pg-ec-YYT" firstAttribute="centerX" secondItem="prV-Ad-Znb" secondAttribute="centerX" id="Ms8-L7-vQ6"/>
-                            <constraint firstItem="GNT-TZ-5Sa" firstAttribute="centerX" secondItem="prV-Ad-Znb" secondAttribute="centerX" id="SSG-wN-HgE"/>
-                            <constraint firstItem="6dy-yj-Igt" firstAttribute="top" secondItem="yh4-7R-2Xp" secondAttribute="bottom" constant="40" id="WzO-Ly-HZ5"/>
-                            <constraint firstItem="fbG-YA-8bb" firstAttribute="centerX" secondItem="prV-Ad-Znb" secondAttribute="centerX" id="aqJ-2u-wkJ"/>
-                            <constraint firstItem="rTA-k9-EKz" firstAttribute="top" secondItem="MRc-DV-epi" secondAttribute="top" id="bMY-mf-bLz"/>
-                            <constraint firstItem="2pg-ec-YYT" firstAttribute="top" secondItem="rTA-k9-EKz" secondAttribute="bottom" constant="30" id="f4P-0b-YxN"/>
-                            <constraint firstItem="yh4-7R-2Xp" firstAttribute="top" secondItem="fbG-YA-8bb" secondAttribute="bottom" constant="40" id="hyM-9q-a13"/>
-                            <constraint firstItem="6dy-yj-Igt" firstAttribute="centerX" secondItem="prV-Ad-Znb" secondAttribute="centerX" id="i67-V4-xA0"/>
-                            <constraint firstItem="yh4-7R-2Xp" firstAttribute="centerX" secondItem="prV-Ad-Znb" secondAttribute="centerX" id="iT2-lX-U0p"/>
-                            <constraint firstItem="rTA-k9-EKz" firstAttribute="leading" secondItem="MRc-DV-epi" secondAttribute="leading" id="ufN-YG-vSj"/>
-                            <constraint firstItem="fbG-YA-8bb" firstAttribute="top" secondItem="GNT-TZ-5Sa" secondAttribute="bottom" constant="40" id="zAF-mz-y2G"/>
+                            <constraint firstItem="MRc-DV-epi" firstAttribute="trailing" secondItem="d7p-Te-qB5" secondAttribute="trailing" constant="20" id="9Ut-Vn-gLo"/>
+                            <constraint firstItem="d7p-Te-qB5" firstAttribute="leading" secondItem="MRc-DV-epi" secondAttribute="leading" constant="20" id="AFZ-C5-ghw"/>
+                            <constraint firstItem="d7p-Te-qB5" firstAttribute="top" secondItem="MRc-DV-epi" secondAttribute="top" constant="70" id="TrA-BL-hEy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MRc-DV-epi"/>
                     </view>
+                    <navigationItem key="navigationItem" id="hxz-8a-C24"/>
                     <connections>
-                        <outlet property="addMedicineTitle" destination="2pg-ec-YYT" id="EWg-bV-bAp"/>
                         <outlet property="medicineCategory" destination="Kun-U8-ZWL" id="6tS-04-2Np"/>
                         <outlet property="medicineDescription" destination="fbG-YA-8bb" id="E3O-Rp-295"/>
                         <outlet property="medicineDosage" destination="yh4-7R-2Xp" id="HYf-Oe-5Zp"/>
                         <outlet property="medicineName" destination="GNT-TZ-5Sa" id="roC-vN-IGV"/>
                         <outlet property="medicineTime" destination="6dy-yj-Igt" id="c7D-mn-4dG"/>
-                        <outlet property="navBar" destination="pOC-9D-XiW" id="ICS-tO-vOe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ll-YW-qbq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-152.17391304347828" y="118.52678571428571"/>
+            <point key="canvasLocation" x="1668.1159420289857" y="118.52678571428571"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fG0-7c-PnG">
+            <objects>
+                <navigationController storyboardIdentifier="addMedicineNav" automaticallyAdjustsScrollViewInsets="NO" id="Wbi-fq-qz0" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ski-f5-b7g">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="pzb-0H-09B" kind="relationship" relationship="rootViewController" id="uiu-eb-MCL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ws2-jr-6h7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="757.97101449275374" y="118.52678571428571"/>
         </scene>
     </scenes>
 </document>
