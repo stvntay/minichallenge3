@@ -105,6 +105,29 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zcf-TV-gZy">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="180"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="he9-Km-npD">
+                                        <rect key="frame" x="0.0" y="100" width="414" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6lS-QA-z9a">
+                                                <rect key="frame" x="17" y="0.0" width="200" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CCj-H0-ZIJ">
+                                                <rect key="frame" x="17" y="40" width="200" height="20"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -114,6 +137,10 @@
                     <connections>
                         <outlet property="doctorDataView" destination="igk-5i-oxZ" id="xlf-Gz-iey"/>
                         <outlet property="doctorTableView" destination="EMM-b2-obz" id="s55-br-XLf"/>
+                        <outlet property="smallTitle" destination="CCj-H0-ZIJ" id="mSC-V8-2vV"/>
+                        <outlet property="textView" destination="he9-Km-npD" id="aUS-Cc-M0R"/>
+                        <outlet property="titleName" destination="6lS-QA-z9a" id="04Z-fb-Gxp"/>
+                        <outlet property="titleView" destination="Zcf-TV-gZy" id="zYa-En-J5R"/>
                         <outlet property="userDataView" destination="YFp-Qa-zle" id="tqW-CA-DQP"/>
                         <outlet property="userTableView" destination="pAy-BA-atS" id="EIw-9x-9iq"/>
                     </connections>

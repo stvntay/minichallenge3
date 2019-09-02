@@ -15,6 +15,10 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
     @IBOutlet weak var doctorDataView: UIView!
     @IBOutlet weak var userTableView: UITableView!
     @IBOutlet weak var doctorTableView: UITableView!
+    @IBOutlet weak var titleView: UIView!
+    @IBOutlet weak var textView: UIView!
+    @IBOutlet weak var titleName: UILabel!
+    @IBOutlet weak var smallTitle: UILabel!
     
     let userDef = UserDefaults.standard
     let userData = [userProfile.umur, userProfile.alamat, userProfile.tanggalLepasPasung, userProfile.puskesmas]
@@ -24,10 +28,18 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        textView.backgroundColor = UIColor(red: 239/255, green: 116/255, blue: 95/255, alpha: 1)
+        titleName.text = "\(userContent.last?.value(forKey: "nama") ?? "no data")"
+        titleName.font = UIFont.boldSystemFont(ofSize: 34)
+        titleName.textColor = .white
+        smallTitle.text = "Homecare"
+        smallTitle.font = UIFont.systemFont(ofSize: 17)
+        smallTitle.textColor = .white
+        titleView.backgroundColor = UIColor(red: 239/255, green: 116/255, blue: 95/255, alpha: 1)
 //        let userID = userDef.value(forKey: "userID") as! CKRecord.ID
-        let userID = CKRecord.ID(recordName: "5187BE88-B4D8-4E65-B2D4-6D20663B6D6C")
+//        let userID = CKRecord.ID(recordName: "5187BE88-B4D8-4E65-B2D4-6D20663B6D6C")
 //        let doctorID = userDef.value(forKey: "doctorID") as! CKRecord.ID
-        let doctorID = CKRecord.ID(recordName: "B1C05391-3D56-495F-9EF5-BBA996D534A0")
+//        let doctorID = CKRecord.ID(recordName: "B1C05391-3D56-495F-9EF5-BBA996D534A0")
         
         view.layer.backgroundColor = UIColor.init(displayP3Red: 249/255, green: 249/255, blue: 249/255, alpha: 1).cgColor
         userTableView.separatorColor = .clear
@@ -43,39 +55,17 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
         doctorTableView.layer.cornerRadius = 20
         doctorTableView.isScrollEnabled = false
         
-//        ProfileModel.shared.loadMedicalID(userRN: userID) { (result) in
-//            self.userContent = result
-//            self.userTableView.reloadData()
-//        }
-//        ProfileModel.shared.loadPsikiaterData(doctorRN: doctorID) { (result) in
-//            self.doctorContent = result
-//            self.doctorTableView.reloadData()
-//        }
-        
-        let newView = addTitleView()
-        view.addSubview(newView)
-        
-    }
-    
-    func addTitleView() -> UIView {
-        let titleView = UIView(frame: CGRect(x: 0, y: 0, width: 414, height: 180))
-        let textView = UIView(frame: CGRect(x: 0, y: 100, width: 361, height: 80))
-        let largeLabel = UILabel(frame: CGRect(x: 17, y: 0, width: 200, height: 40))
-        let smallLabel = UILabel(frame: CGRect(x: 17, y: 40, width: 200, height: 20))
-        
-        textView.backgroundColor = UIColor(red: 239/255, green: 116/255, blue: 95/255, alpha: 1)
-        largeLabel.text = "\(userContent.last?.value(forKey: "nama") ?? "no data")"
-        largeLabel.font = UIFont.boldSystemFont(ofSize: 34)
-        largeLabel.textColor = .white
-        smallLabel.text = "Homecare"
-        smallLabel.font = UIFont.systemFont(ofSize: 17)
-        smallLabel.textColor = .white
-        titleView.backgroundColor = UIColor(red: 239/255, green: 116/255, blue: 95/255, alpha: 1)
-        textView.addSubview(largeLabel)
-        textView.addSubview(smallLabel)
-        titleView.addSubview(textView)
-        
-        return titleView
+        ProfileModel.shared.loadMedicalID(userRN: "5187BE88-B4D8-4E65-B2D4-6D20663B6D6C") { (result) in
+            self.userContent = result
+            self.view.reloadInputViews()
+            self.userTableView.reloadData()
+            self.titleName.text = "\(self.userContent.last?.value(forKey: "nama") ?? "no data")"
+        }
+        ProfileModel.shared.loadPsikiaterData(doctorRN: "B1C05391-3D56-495F-9EF5-BBA996D534A0") { (result) in
+            self.doctorContent = result
+            self.view.reloadInputViews()
+            self.doctorTableView.reloadData()
+        }
         
     }
     
@@ -94,8 +84,21 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
             cell.titleLabel.text = userData[indexPath.row].title
             cell.titleLabel.font = UIFont.systemFont(ofSize: 12)
             cell.contentLabel.text = "\(userContent.first?.value(forKey: userData[indexPath.row].key) ?? "no data")"
-//            print(indexPath.row)
             cell.contentLabel.font = UIFont.boldSystemFont(ofSize: 17)
+            if indexPath.row == 0 {
+                cell.contentLabel.textColor = UIColor(red: 151/255, green: 151/255, blue: 151/255, alpha: 1)
+            } else if indexPath.row == 2 {
+                if (userContent.last?.value(forKey: userData[indexPath.row].key) as? Date) != nil {
+                    let dateFormatterGet = DateFormatter()
+                    dateFormatterGet.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                    
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "MMM dd, yyyy"
+                    
+                    let date: Date? = userContent.last?.value(forKey: userData[indexPath.row].key) as? Date
+                    cell.contentLabel.text = dateFormatter.string(from: date!)
+                }
+            }
             
             return cell
         } else {
@@ -117,7 +120,7 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let newView = UIView(frame: CGRect(x: 0, y: 0, width: 361, height: 60))
-        let lineView = UIView(frame: CGRect(x: 0, y: 55, width: 361, height: 1))
+        let lineView = UIView(frame: CGRect(x: 0, y: 59, width: 361, height: 1))
         let headerLabel = UILabel(frame: CGRect(x: 17, y: 0, width: 200, height: 60))
         
         newView.backgroundColor = .white
