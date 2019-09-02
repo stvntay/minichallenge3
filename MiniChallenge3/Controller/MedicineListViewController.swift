@@ -13,14 +13,22 @@ class MedicineListViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var navBar: UINavigationItem!
     @IBOutlet weak var medicineList: UITableView!
     
+    var medicineData : [MedicineData] = []
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return medicineData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "medicineList", for: indexPath) as! MedicineListTableViewCell
+        cell.medicineName.text = medicineData[indexPath.row].medicineName
+        cell.medicineTime.text = medicineData[indexPath.row].medicineTime
+        cell.medicineDescription.text = medicineData[indexPath.row].medicineDesc
+        cell.medicineAmount.text = medicineData[indexPath.row].medicineDose
         return cell
     }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +61,10 @@ class MedicineListViewController: UIViewController, UITableViewDelegate, UITable
 
 //        let vc = AddMedicineVC()
 //        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func getData(){
+        
     }
 
 }
