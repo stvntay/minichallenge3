@@ -16,9 +16,10 @@ class AddMedicineVC: UIViewController,UIPickerViewDelegate, UIPickerViewDataSour
     @IBOutlet weak var medicineCategory: UITextField!
     @IBOutlet weak var medicineName: UITextField!
     @IBOutlet weak var medicineDescription: UITextField!
-    @IBOutlet weak var medicineDosage: UITextField!
     @IBOutlet weak var medicineTime: UITextField!
     
+    @IBOutlet weak var hari: UITextField!
+    @IBOutlet weak var butir: UITextField!
     @IBOutlet weak var navBar: UINavigationItem!
     
     let medicineCategoryData: [String] = ["Rutin","Sewaktu-waktu"]
@@ -60,7 +61,11 @@ class AddMedicineVC: UIViewController,UIPickerViewDelegate, UIPickerViewDataSour
             return
         }
         
-        guard let getDose = medicineDosage.text else{
+        guard let getDose = butir.text else{
+            return
+        }
+        
+        guard let getDay = hari.text else{
             return
         }
         
@@ -69,9 +74,9 @@ class AddMedicineVC: UIViewController,UIPickerViewDelegate, UIPickerViewDataSour
         }
         
         if getCategory == "Rutin" {
-           MedicineModel.shared.saveMedicineData(kategori: getCategory, namaObat: getName, deskripsiObat: getDesc, dosisObat: getDose, setelahSebelumMakan: getTime, jumlahPerHari: 3, pasienRN: getUserID)
+           MedicineModel.shared.saveMedicineData(kategori: getCategory, namaObat: getName, deskripsiObat: getDesc, dosisObat: getDose, setelahSebelumMakan: getTime, jumlahPerHari: getDay, pasienRN: getUserID)
         }else if getCategory == "Sewaktu-waktu"{
-            MedicineModel.shared.saveMedicineData(kategori: getCategory, namaObat: getName, deskripsiObat: getDesc, dosisObat: getDose, setelahSebelumMakan: getTime, jumlahPerHari: 0, pasienRN: getUserID)
+            MedicineModel.shared.saveMedicineData(kategori: getCategory, namaObat: getName, deskripsiObat: getDesc, dosisObat: getDose, setelahSebelumMakan: getTime, jumlahPerHari: getDay, pasienRN: getUserID)
         }
         
         
@@ -87,7 +92,7 @@ class AddMedicineVC: UIViewController,UIPickerViewDelegate, UIPickerViewDataSour
         medicineName.addLine(position: .LINE_POSITION_BOTTOM, color: UIColor(red:0.94, green:0.45, blue:0.37, alpha:1.0), width: 1)
         medicineTime.addLine(position: .LINE_POSITION_BOTTOM, color: UIColor(red:0.94, green:0.45, blue:0.37, alpha:1.0), width: 1)
         medicineDescription.addLine(position: .LINE_POSITION_BOTTOM, color: UIColor(red:0.94, green:0.45, blue:0.37, alpha:1.0), width: 1)
-        medicineDosage.addLine(position: .LINE_POSITION_BOTTOM, color: UIColor(red:0.94, green:0.45, blue:0.37, alpha:1.0), width: 1)
+    
     }
     
     func clearNavigationBar(){
@@ -142,16 +147,29 @@ class AddMedicineVC: UIViewController,UIPickerViewDelegate, UIPickerViewDataSour
     
     @objc func cancelChooseTime(){
         medicineCategory.text = ""
+        
         self.view.endEditing(true)
     }
     
     @objc func doneChooseCategory(){
         medicineCategory.text = getCategory
+        if getCategory == "Sewaktu-waktu"{
+            hari.isEnabled = false
+            hari.text = "0"
+        }else {
+            hari.isEnabled = true
+        }
         self.view.endEditing(true)
     }
     
     @objc func cancelChooseCategory(){
         medicineCategory.text = ""
+        if getCategory == "Sewaktu-waktu"{
+            hari.isEnabled = false
+            hari.text = "0"
+        }else {
+            hari.isEnabled = true
+        }
         self.view.endEditing(true)
     }
    
@@ -169,6 +187,12 @@ class AddMedicineVC: UIViewController,UIPickerViewDelegate, UIPickerViewDataSour
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView == pickerCategory {
             getCategory = medicineCategoryData[row]
+            if getCategory == "Sewaktu-waktu"{
+                hari.isEnabled = false
+                hari.text = "0"
+            }else {
+                hari.isEnabled = true
+            }
             return getCategory
         }else if pickerView == pickerTime {
             getTime = medicineTimeData[row]
@@ -181,6 +205,12 @@ class AddMedicineVC: UIViewController,UIPickerViewDelegate, UIPickerViewDataSour
         if pickerView == pickerCategory {
             getCategory = medicineCategoryData[row]
             medicineCategory.text =  getCategory
+            if getCategory == "Sewaktu-waktu"{
+                hari.isEnabled = false
+                hari.text = "0"
+            }else {
+                hari.isEnabled = true
+            }
         }else if pickerView == pickerTime {
             getTime = medicineTimeData[row]
             medicineTime.text = getTime

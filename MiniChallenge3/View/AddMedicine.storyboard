@@ -18,58 +18,88 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="d7p-Te-qB5">
-                                <rect key="frame" x="20" y="158" width="374" height="300"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="xhA-m7-BKp">
+                                <rect key="frame" x="20" y="148" width="374" height="300"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Kategori Obat (rutin / sewaktu-waktu)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kun-U8-ZWL">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="36"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="35"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Nama Obat" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GNT-TZ-5Sa">
-                                        <rect key="frame" x="0.0" y="66" width="374" height="36"/>
+                                        <rect key="frame" x="0.0" y="66" width="374" height="35.5"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Deskripsi Obat" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fbG-YA-8bb">
-                                        <rect key="frame" x="0.0" y="132" width="374" height="36"/>
+                                        <rect key="frame" x="0.0" y="132.5" width="374" height="35"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Dosis Obat" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yh4-7R-2Xp">
-                                        <rect key="frame" x="0.0" y="198" width="374" height="36"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="84R-ap-QSN">
+                                        <rect key="frame" x="0.0" y="198.5" width="374" height="35.5"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jO8-O2-r1g">
+                                                <rect key="frame" x="0.0" y="0.0" width="86" height="35.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="86" id="aX1-l8-2Hy"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Butir" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HB3-bc-6PN">
+                                                <rect key="frame" x="96" y="0.0" width="86" height="35.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y6Y-6b-0gB">
+                                                <rect key="frame" x="192" y="0.0" width="86" height="35.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="86" id="ip6-1a-dzr"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x sehari" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkc-7A-Qvj">
+                                                <rect key="frame" x="288" y="0.0" width="86" height="35.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Waktu minum (sebelum/sesudah makan)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6dy-yj-Igt">
-                                        <rect key="frame" x="0.0" y="264" width="374" height="36"/>
+                                        <rect key="frame" x="0.0" y="265" width="374" height="35"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="1wP-db-WBq"/>
+                                    <constraint firstAttribute="height" constant="300" id="Rp6-hc-Qfc"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="MRc-DV-epi" firstAttribute="trailing" secondItem="d7p-Te-qB5" secondAttribute="trailing" constant="20" id="9Ut-Vn-gLo"/>
-                            <constraint firstItem="d7p-Te-qB5" firstAttribute="leading" secondItem="MRc-DV-epi" secondAttribute="leading" constant="20" id="AFZ-C5-ghw"/>
-                            <constraint firstItem="d7p-Te-qB5" firstAttribute="top" secondItem="MRc-DV-epi" secondAttribute="top" constant="70" id="TrA-BL-hEy"/>
+                            <constraint firstItem="xhA-m7-BKp" firstAttribute="top" secondItem="MRc-DV-epi" secondAttribute="top" constant="60" id="QF7-S8-Naf"/>
+                            <constraint firstItem="MRc-DV-epi" firstAttribute="trailing" secondItem="xhA-m7-BKp" secondAttribute="trailing" constant="20" id="lra-aw-iuS"/>
+                            <constraint firstItem="xhA-m7-BKp" firstAttribute="leading" secondItem="MRc-DV-epi" secondAttribute="leading" constant="20" id="mAT-zz-uvD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MRc-DV-epi"/>
                     </view>
                     <navigationItem key="navigationItem" id="hxz-8a-C24"/>
                     <connections>
+                        <outlet property="butir" destination="jO8-O2-r1g" id="Vm9-lK-dK7"/>
+                        <outlet property="hari" destination="y6Y-6b-0gB" id="kxd-km-aIB"/>
                         <outlet property="medicineCategory" destination="Kun-U8-ZWL" id="6tS-04-2Np"/>
                         <outlet property="medicineDescription" destination="fbG-YA-8bb" id="E3O-Rp-295"/>
-                        <outlet property="medicineDosage" destination="yh4-7R-2Xp" id="HYf-Oe-5Zp"/>
                         <outlet property="medicineName" destination="GNT-TZ-5Sa" id="roC-vN-IGV"/>
                         <outlet property="medicineTime" destination="6dy-yj-Igt" id="c7D-mn-4dG"/>
                     </connections>
