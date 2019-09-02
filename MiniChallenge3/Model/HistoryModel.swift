@@ -30,7 +30,8 @@ final class HistoryModel {
         
     }
     
-    func loadCommonMedicineData(userID: CKRecord.ID, completion: @escaping (_ recID: [CKRecord]) -> Void) {
+    func loadCommonMedicineData(userRN: String, completion: @escaping (_ recID: [CKRecord]) -> Void) {
+        let userID = CKRecord.ID(recordName: userRN)
         let pred = NSPredicate(format: "pasienID = %@", userID)
         let query = CKQuery(recordType: "CommonMedicineData", predicate: pred)
         let sort = NSSortDescriptor(key: "creationDate", ascending: true)
@@ -49,7 +50,8 @@ final class HistoryModel {
         
     }
     
-    func loadRareMedicineData(userID: CKRecord.ID, completion: @escaping (_ recID: [CKRecord]) -> Void) {
+    func loadRareMedicineData(userRN: String, completion: @escaping (_ recID: [CKRecord]) -> Void) {
+        let userID = CKRecord.ID(recordName: userRN)
         let pred = NSPredicate(format: "pasienID = %@", userID)
         let query = CKQuery(recordType: "RareMedicineData", predicate: pred)
         let sort = NSSortDescriptor(key: "creationDate", ascending: true)
@@ -68,7 +70,8 @@ final class HistoryModel {
         
     }
     
-    func loadMedicalRecord(userID: CKRecord.ID, completion: @escaping (_ recID: [CKRecord]) -> Void) {
+    func loadMedicalRecord(userRN: String, completion: @escaping (_ recID: [CKRecord]) -> Void) {
+        let userID = CKRecord.ID(recordName: userRN)
         let pred = NSPredicate(format: "pasienID = %@", userID)
         let query = CKQuery(recordType: "MedicalRecord", predicate: pred)
         let sort = NSSortDescriptor(key: "creationDate", ascending: true)

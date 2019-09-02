@@ -18,7 +18,7 @@ final class OnboardModel {
     
     // MARK: - Save onboard data to CloudKit
     
-    func savePsikiaterAndUserData(namaPsikiater: String, nomorTelepon: String, alamat: String, namaUser: String, tanggalLepasPasung: Date, umur: Int, puskesmas: String, completion: @escaping (_ doctorID: CKRecord.ID, _ userID: CKRecord.ID) -> Void) {
+    func savePsikiaterAndUserData(namaPsikiater: String, nomorTelepon: String, alamat: String, namaUser: String, tanggalLepasPasung: Date, umur: Int, puskesmas: String, completion: @escaping (_ doctorRecordName: String, _ userRecordName: String) -> Void) {
         let doctorData = CKRecord(recordType: "PsikiaterData")
         let userData = CKRecord(recordType: "MedicalID")
         var recordDoctorID = CKRecord.ID()
@@ -45,7 +45,7 @@ final class OnboardModel {
                         if recordUser != nil {
                             DispatchQueue.main.async {
                                 recordUserID = recordUser!.recordID
-                                completion(recordDoctorID, recordUserID)
+                                completion(recordDoctorID.recordName, recordUserID.recordName)
                             }
                         } else {
                             print(error.debugDescription)

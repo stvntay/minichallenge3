@@ -12,6 +12,11 @@
 		4D0DC5DD23193A2500912E65 /* RecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0DC5DC23193A2500912E65 /* RecordModel.swift */; };
 		4D0DC5DF23193AFD00912E65 /* MedicineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0DC5DE23193AFD00912E65 /* MedicineModel.swift */; };
 		4D0DC5E123193CAB00912E65 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0DC5E023193CAB00912E65 /* ProfileModel.swift */; };
+		4D0DC5E3231CAB5400912E65 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0DC5E2231CAB5400912E65 /* ProfileController.swift */; };
+		4D0DC5E5231CAC3900912E65 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D0DC5E4231CAC3900912E65 /* Profile.storyboard */; };
+		4D0DC5E7231CB2B500912E65 /* UserProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0DC5E6231CB2B500912E65 /* UserProfileCell.swift */; };
+		4D0DC5E9231CB34A00912E65 /* DoctorProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0DC5E8231CB34A00912E65 /* DoctorProfileCell.swift */; };
+		4D0DC5EB231CCB1200912E65 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0DC5EA231CCB1200912E65 /* Profile.swift */; };
 		B05BB1E923139C1700B80F13 /* Onboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B05BB1E823139C1700B80F13 /* Onboard.storyboard */; };
 		B05BB1ED23139FB500B80F13 /* DoctorOnBoardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05BB1EC23139FB500B80F13 /* DoctorOnBoardController.swift */; };
 		B05BB1EF23139FD800B80F13 /* PatientOnBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05BB1EE23139FD800B80F13 /* PatientOnBoardViewController.swift */; };
@@ -56,6 +61,11 @@
 		4D0DC5DC23193A2500912E65 /* RecordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordModel.swift; sourceTree = "<group>"; };
 		4D0DC5DE23193AFD00912E65 /* MedicineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineModel.swift; sourceTree = "<group>"; };
 		4D0DC5E023193CAB00912E65 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		4D0DC5E2231CAB5400912E65 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		4D0DC5E4231CAC3900912E65 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		4D0DC5E6231CB2B500912E65 /* UserProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileCell.swift; sourceTree = "<group>"; };
+		4D0DC5E8231CB34A00912E65 /* DoctorProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorProfileCell.swift; sourceTree = "<group>"; };
+		4D0DC5EA231CCB1200912E65 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		B00893662317AB0100D8B0DB /* Signika-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Signika-Bold.ttf"; sourceTree = "<group>"; };
 		B00893672317AB0100D8B0DB /* SignikaNegative-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SignikaNegative-Bold.ttf"; sourceTree = "<group>"; };
 		B00893682317AB0200D8B0DB /* Signika-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Signika-Regular.ttf"; sourceTree = "<group>"; };
@@ -166,6 +176,9 @@
 				BE9BED172317D92D00640A93 /* ActivityModel.swift */,
 				B05BB1F02313A33400B80F13 /* DoctorOnBoardView.swift */,
 				B05BB1F22313A34500B80F13 /* PatientOnBoardView.swift */,
+				4D0DC5E4231CAC3900912E65 /* Profile.storyboard */,
+				4D0DC5E6231CB2B500912E65 /* UserProfileCell.swift */,
+				4D0DC5E8231CB34A00912E65 /* DoctorProfileCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -178,6 +191,8 @@
 				BE6492B823194EAB001E27A7 /* CalenderView.swift */,
 				B05BB1EC23139FB500B80F13 /* DoctorOnBoardController.swift */,
 				B05BB1EE23139FD800B80F13 /* PatientOnBoardViewController.swift */,
+				4D0DC5E2231CAB5400912E65 /* ProfileController.swift */,
+				4D0DC5EA231CCB1200912E65 /* Profile.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -311,6 +326,7 @@
 				B0E253B82317D68500874561 /* set~.storyboard in Resources */,
 				B0E253CA2317D68D00874561 /* SignikaNegative-Regular.ttf in Resources */,
 				B0E253C72317D68D00874561 /* Signika-Regular.ttf in Resources */,
+				4D0DC5E5231CAC3900912E65 /* Profile.storyboard in Resources */,
 				B0E253C82317D68D00874561 /* SignikaNegative-Semibold.ttf in Resources */,
 				B0E253C92317D68D00874561 /* Signika-Semibold.ttf in Resources */,
 				B0E253C62317D68D00874561 /* SignikaNegative-Bold.ttf in Resources */,
@@ -332,6 +348,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D0DC5E3231CAB5400912E65 /* ProfileController.swift in Sources */,
 				BE9BED182317D92D00640A93 /* ActivityModel.swift in Sources */,
 				BE6492B923194EAB001E27A7 /* CalenderView.swift in Sources */,
 				B05BB1F12313A33400B80F13 /* DoctorOnBoardView.swift in Sources */,
@@ -344,12 +361,15 @@
 				B05BB1ED23139FB500B80F13 /* DoctorOnBoardController.swift in Sources */,
 				BE6492BB23194EFB001E27A7 /* DateCollectionViewCell.swift in Sources */,
 				B05BB1F32313A34500B80F13 /* PatientOnBoardView.swift in Sources */,
+				4D0DC5E7231CB2B500912E65 /* UserProfileCell.swift in Sources */,
 				4D0DC5DF23193AFD00912E65 /* MedicineModel.swift in Sources */,
 				4D0DC5DB231934E900912E65 /* HistoryModel.swift in Sources */,
 				B05BB1EF23139FD800B80F13 /* PatientOnBoardViewController.swift in Sources */,
+				4D0DC5EB231CCB1200912E65 /* Profile.swift in Sources */,
 				BE6492C523194FEB001E27A7 /* HistoryView.swift in Sources */,
 				4D0DC5D92319341F00912E65 /* OnboardModel.swift in Sources */,
 				B0E253AE2317D66400874561 /* CloudData.swift in Sources */,
+				4D0DC5E9231CB34A00912E65 /* DoctorProfileCell.swift in Sources */,
 				BE6492BD23194F20001E27A7 /* HistoryController.swift in Sources */,
 				BE6492C92319501B001E27A7 /* MedicineTableViewCell.swift in Sources */,
 				B0E253D42317DE1300874561 /* DoctorData.swift in Sources */,
@@ -527,7 +547,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MiniChallenge3/MiniChallenge3.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = EF3ZB275X3;
+				DEVELOPMENT_TEAM = LLU3TMC9Q3;
 				INFOPLIST_FILE = MiniChallenge3/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -546,7 +566,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MiniChallenge3/MiniChallenge3.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = EF3ZB275X3;
+				DEVELOPMENT_TEAM = LLU3TMC9Q3;
 				INFOPLIST_FILE = MiniChallenge3/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

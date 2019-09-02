@@ -18,8 +18,9 @@ final class MedicineModel {
     
     // MARK: - Save medicine data to CloudKit
     
-    func saveCommonMedicineData(namaObat: String, deskripsiObat: String, dosisObat:String, setelahSebelumMakan: String, jumlahPerHari: Int, pasienID: CKRecord.ID) {
+    func saveCommonMedicineData(namaObat: String, deskripsiObat: String, dosisObat:String, setelahSebelumMakan: String, jumlahPerHari: Int, pasienRN: String) {
         let newData = CKRecord(recordType: "CommonMedicineData")
+        let pasienID = CKRecord.ID(recordName: pasienRN)
         let reference = CKRecord.Reference(recordID: pasienID, action: .deleteSelf)
         
         newData.setValue(namaObat, forKey: "namaObat")
@@ -39,8 +40,9 @@ final class MedicineModel {
         
     }
     
-    func saveRareMedichineData(namaObat: String, deskripsiObat: String, dosisObat:String, setelahSebelumMakan: String, pasienID: CKRecord.ID) {
+    func saveRareMedichineData(namaObat: String, deskripsiObat: String, dosisObat:String, setelahSebelumMakan: String, pasienRN: String) {
         let newData = CKRecord(recordType: "RareMedicineData")
+        let pasienID = CKRecord.ID(recordName: pasienRN)
         let reference = CKRecord.Reference(recordID: pasienID, action: .deleteSelf)
         
         newData.setValue(namaObat, forKey: "namaObat")
@@ -61,7 +63,8 @@ final class MedicineModel {
     
     // MARK: - Load medicine data to CloudKit
     
-    func loadCommonMedicineData(userID: CKRecord.ID, completion: @escaping (_ recID: [CKRecord]) -> Void) {
+    func loadCommonMedicineData(userRN: String, completion: @escaping (_ recID: [CKRecord]) -> Void) {
+        let userID = CKRecord.ID(recordName: userRN)
         let pred = NSPredicate(format: "pasienID = %@", userID)
         let query = CKQuery(recordType: "CommonMedicineData", predicate: pred)
         
@@ -78,7 +81,8 @@ final class MedicineModel {
         
     }
     
-    func loadRareMedicineData(userID: CKRecord.ID, completion: @escaping (_ recID: [CKRecord]) -> Void) {
+    func loadRareMedicineData(userRN: String, completion: @escaping (_ recID: [CKRecord]) -> Void) {
+        let userID = CKRecord.ID(recordName: userRN)
         let pred = NSPredicate(format: "pasienID = %@", userID)
         let query = CKQuery(recordType: "RareMedicineData", predicate: pred)
         

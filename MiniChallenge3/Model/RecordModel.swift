@@ -30,7 +30,8 @@ final class RecordModel {
         
     }
     
-    func loadCommonMedicineData(userID: CKRecord.ID, completion: @escaping (_ recID: [CKRecord]) -> Void) {
+    func loadCommonMedicineData(userRN: String, completion: @escaping (_ recID: [CKRecord]) -> Void) {
+        let userID = CKRecord.ID(recordName: userRN)
         let pred = NSPredicate(format: "pasienID = %@", userID)
         let query = CKQuery(recordType: "CommonMedicineData", predicate: pred)
         let sort = NSSortDescriptor(key: "creationDate", ascending: true)
@@ -49,7 +50,8 @@ final class RecordModel {
         
     }
     
-    func loadRareMedicineData(userID: CKRecord.ID, completion: @escaping (_ recID: [CKRecord]) -> Void) {
+    func loadRareMedicineData(userRN: String, completion: @escaping (_ recID: [CKRecord]) -> Void) {
+        let userID = CKRecord.ID(recordName: userRN)
         let pred = NSPredicate(format: "pasienID = %@", userID)
         let query = CKQuery(recordType: "RareMedicineData", predicate: pred)
         let sort = NSSortDescriptor(key: "creationDate", ascending: true)
@@ -70,8 +72,9 @@ final class RecordModel {
     
     // MARK: - Save record data to CloudKit
     
-    func saveMedicalRecord(obatRutin: [String], obatSewaktu: [String], membersihkanDiri: String, makanDenganRapi: String, membersihkanPakaian: String, membersihkanRumah: String, berkomunikasiDenganLingkungan: String, tidurHariIni: String, catatan: String, pasienID: CKRecord.ID) {
+    func saveMedicalRecord(obatRutin: [String], obatSewaktu: [String], membersihkanDiri: String, makanDenganRapi: String, membersihkanPakaian: String, membersihkanRumah: String, berkomunikasiDenganLingkungan: String, tidurHariIni: String, catatan: String, pasienRN: String) {
         let newData = CKRecord(recordType: "MedicalRecord")
+        let pasienID = CKRecord.ID(recordName: pasienRN)
         let reference = CKRecord.Reference(recordID: pasienID, action: .deleteSelf)
         
         newData.setValue(obatRutin, forKey: "obatRutin")
