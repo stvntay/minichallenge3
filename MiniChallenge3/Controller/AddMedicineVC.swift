@@ -68,16 +68,17 @@ class AddMedicineVC: UIViewController,UIPickerViewDelegate, UIPickerViewDataSour
             return
         }
         
-        let getRecordID = CKRecord.ID(recordName: getUserID)
         if getCategory == "Rutin" {
-            CloudData.shared.saveCommonMedicineData(namaObat: getName, deskripsiObat: getDesc, dosisObat: getDose, setelahSebelumMakan: getTime, jumlahPerHari: 0, pasienID: getRecordID)
+           MedicineModel.shared.saveMedicineData(kategori: getCategory, namaObat: getName, deskripsiObat: getDesc, dosisObat: getDose, setelahSebelumMakan: getTime, jumlahPerHari: 3, pasienRN: getUserID)
         }else if getCategory == "Sewaktu-waktu"{
-            CloudData.shared.saveRareMedichineData(namaObat: getName, deskripsiObat: getDesc, dosisObat: getDose, setelahSebelumMakan: getTime, pasienID: getRecordID)
+            MedicineModel.shared.saveMedicineData(kategori: getCategory, namaObat: getName, deskripsiObat: getDesc, dosisObat: getDose, setelahSebelumMakan: getTime, jumlahPerHari: 0, pasienRN: getUserID)
         }
         
-        let storyboard = UIStoryboard(name: "MedicineList", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "medicineView") as UIViewController
-        self.present(vc, animated: true, completion: nil)
+        
+        
+        let storyboard = UIStoryboard(name: "TabMenu", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "menuTab") as! UITabBarController
+        self.present(vc, animated: true,completion: nil)
         
     }
     

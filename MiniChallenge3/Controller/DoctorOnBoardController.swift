@@ -20,12 +20,13 @@ class DoctorOnBoardController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.navigationBar.isHidden = true
         
-        moveToPatientPage()
         // Do any additional setup after loading the view.
         closeKeyboardWhenClickView()
         
+        navigationItem.title = "Data Psikiater"
+        self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 0.4190294743, blue: 0.3407981396, alpha: 1)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Selanjutnya", style: .plain, target: self, action: #selector(moveAction))
         
     }
     
@@ -44,10 +45,6 @@ class DoctorOnBoardController: UIViewController {
         
     }
     
-    func moveToPatientPage(){
-        
-        onBoardDoctor.nextPageBtn.addTarget(self, action: #selector(moveAction), for: .touchUpInside)
-    }
 
     @objc func moveAction(sender:UIButton){
         getData()
@@ -58,7 +55,8 @@ class DoctorOnBoardController: UIViewController {
 //        navigationController?.pushViewController(vc, animated: true)
          let page = storyboard.instantiateViewController(withIdentifier: "patientView") as! PatientOnBoardViewController
         page.data = data
-        self.present(page, animated: true, completion: nil)
+        self.navigationController?.pushViewController(page, animated: true)
+//        self.present(page, animated: true, completion: nil)
         
     }
     

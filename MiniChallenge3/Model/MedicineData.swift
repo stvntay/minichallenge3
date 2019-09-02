@@ -10,13 +10,15 @@ import Foundation
 
 class MedicineData {
     var medicineID: String
+    var medicineCategory: String
     var medicineName: String
     var medicineDesc: String
     var medicineDose: String
     var medicineTime: String
     
-    init(ID: String,name: String , desc: String, dose: String, time: String) {
+    init(ID: String,category: String ,name: String , desc: String, dose: String, time: String) {
         medicineID = ID
+        medicineCategory = category
         medicineName = name
         medicineDesc = desc
         medicineDose = dose
