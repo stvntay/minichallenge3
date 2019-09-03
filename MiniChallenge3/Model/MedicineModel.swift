@@ -18,7 +18,7 @@ final class MedicineModel {
     
     // MARK: - Save medicine data to CloudKit
     
-    func saveMedicineData(kategori: String, namaObat: String, deskripsiObat: String, dosisObat:String, setelahSebelumMakan: String, jumlahPerHari: String, pasienRN: String) {
+    func saveMedicineData(kategori: String, namaObat: String, deskripsiObat: String, dosisObat:String, setelahSebelumMakan: String, jumlahPerHari: String, pasienRN: String, completion: @escaping (_ recID: CKRecord) -> Void) {
         let newData = CKRecord(recordType: "MedicineData")
         let pasienID = CKRecord.ID(recordName: pasienRN)
         let reference = CKRecord.Reference(recordID: pasienID, action: .deleteSelf)
@@ -32,10 +32,13 @@ final class MedicineModel {
         newData.setValue(reference, forKey: "pasienID")
         
         CKContainer.default().publicCloudDatabase.save(newData) { (record, error) in
-            if record != nil {
-                print("save data success")
-            } else {
-                print(error.debugDescription)
+            DispatchQueue.main.async {
+                if record != nil {
+                    print("save data success")
+                    completion(record!)
+                } else {
+                    print(error.debugDescription)
+                }
             }
         }
         

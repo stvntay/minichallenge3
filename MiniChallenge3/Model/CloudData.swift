@@ -81,52 +81,6 @@ final class CloudData {
         
     }
     
-    func savePsikiaterAndUserData(namaPsikiater: String, nomorTelepon: String, alamat: String, namaUser: String, tanggalLepasPasung: Date, umur: Int, puskesmas: String, completion: @escaping (_ doctorID: CKRecord.ID, _ userID: CKRecord.ID) -> Void) {
-
-        print("this function is called")
-
-        let doctorData = CKRecord(recordType: "PsikiaterData")
-        let userData = CKRecord(recordType: "MedicalID")
-        var recordDoctorID = CKRecord.ID()
-        var recordUserID = CKRecord.ID()
-        
-        doctorData.setValue(namaPsikiater, forKey: "nama")
-        doctorData.setValue(nomorTelepon, forKey: "nomorTelepon")
-        
-        CKContainer.default().publicCloudDatabase.save(doctorData) { (recordDoctor, doctorError) in
-            if recordDoctor != nil {
-                DispatchQueue.main.async {
-                    recordDoctorID = recordDoctor!.recordID
-                    print(recordDoctorID)
-                    
-                    //                    print(recordDoctorID)
-                    let reference = CKRecord.Reference(recordID: recordDoctorID, action: .deleteSelf)
-                    
-                    userData.setValue(alamat, forKey: "alamat")
-                    userData.setValue(namaUser, forKey: "nama")
-                    userData.setValue(reference, forKey: "dokterID")
-                    userData.setValue(tanggalLepasPasung, forKey: "tanggalLepasPasung")
-                    userData.setValue(umur, forKey: "umur")
-                    userData.setValue(puskesmas, forKey: "puskesmas")
-                    
-                    CKContainer.default().publicCloudDatabase.save(userData) { (recordUser, userError) in
-                        if recordUser != nil {
-                            DispatchQueue.main.async {
-                                recordUserID = recordUser!.recordID
-                                completion(recordDoctorID, recordUserID)
-                            }
-                        } else {
-                            print(userError.debugDescription)
-                        }
-                    }
-                }
-            } else {
-                print(doctorError.debugDescription)
-            }
-        }
-        
-    }
-    
     func saveMedicalID(alamat: String, nama: String, tanggalLepasPasung: Date, umur: Int, dokterID: CKRecord.ID, puskesmas: String, completion: @escaping (_ recID: CKRecord.ID) -> Void) {
         
         let newData = CKRecord(recordType: "MedicalID")
