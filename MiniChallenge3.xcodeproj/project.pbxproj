@@ -49,6 +49,7 @@
 		BE998315231E2C0E000459E5 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = BE998314231E2C0E000459E5 /* Fonts */; };
 		BE998318231E2C63000459E5 /* Onboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE998316231E2C63000459E5 /* Onboard.storyboard */; };
 		BE998319231E2C63000459E5 /* TabMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE998317231E2C63000459E5 /* TabMenu.storyboard */; };
+		BE998323231E3DB2000459E5 /* RecordData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE998322231E3DB2000459E5 /* RecordData.swift */; };
 		BE9BECFA230E892F00640A93 /* HistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9BECF9230E892F00640A93 /* HistoryController.swift */; };
 		BE9BECFE230E8DAD00640A93 /* CalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9BECFD230E8DAD00640A93 /* CalenderView.swift */; };
 		BE9BED02230E944D00640A93 /* DateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9BED01230E944D00640A93 /* DateCollectionViewCell.swift */; };
@@ -104,6 +105,7 @@
 		BE998314231E2C0E000459E5 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 		BE998316231E2C63000459E5 /* Onboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Onboard.storyboard; sourceTree = "<group>"; };
 		BE998317231E2C63000459E5 /* TabMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TabMenu.storyboard; sourceTree = "<group>"; };
+		BE998322231E3DB2000459E5 /* RecordData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordData.swift; sourceTree = "<group>"; };
 		BE9BECF9230E892F00640A93 /* HistoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryController.swift; sourceTree = "<group>"; };
 		BE9BECFD230E8DAD00640A93 /* CalenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalenderView.swift; path = MiniChallenge3/Controller/CalenderView.swift; sourceTree = SOURCE_ROOT; };
 		BE9BED01230E944D00640A93 /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DateCollectionViewCell.swift; path = MiniChallenge3/Controller/DateCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
@@ -176,6 +178,7 @@
 				BE9982F2231E2BCA000459E5 /* Profile.swift */,
 				BE9982F4231E2BCB000459E5 /* ProfileModel.swift */,
 				BE9982F5231E2BCB000459E5 /* RecordModel.swift */,
+				BE998322231E3DB2000459E5 /* RecordData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				BE998311231E2BFE000459E5 /* AddMedicineVC.swift in Sources */,
 				BEB583122318FECA000153DC /* HistoryView.swift in Sources */,
 				BE998305231E2BCB000459E5 /* DashboardData.swift in Sources */,
+				BE998323231E3DB2000459E5 /* RecordData.swift in Sources */,
 				BE998303231E2BCB000459E5 /* HistoryModel.swift in Sources */,
 				BE998310231E2BFE000459E5 /* PatientOnBoardViewController.swift in Sources */,
 				BE9982FF231E2BCB000459E5 /* OnBoardData.swift in Sources */,
