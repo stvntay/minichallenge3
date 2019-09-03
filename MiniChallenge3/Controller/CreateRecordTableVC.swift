@@ -31,7 +31,6 @@ class CreateRecordTableVC: UITableViewController {
     
     // TO DO:
     // - Fix the damn pickerview, it's fuckin cliping through the cells!!!!
-    // - Integrate with CK
     
     let labelCellIdentifier = "TwoLabelsCell"
     let textFieldCellIdentifier = "TextfieldCell"
@@ -42,11 +41,11 @@ class CreateRecordTableVC: UITableViewController {
     var medicineType = -1
     
     var activityValues = [
-        activityValue(activityName: "Membersihkan diri", activityValue: "Belum Diatur"),
-        activityValue(activityName: "Makan dengan rapi", activityValue: "Belum Diatur"),
-        activityValue(activityName: "Membereskan pakaian", activityValue: "Belum Diatur"),
-        activityValue(activityName: "Membersihkan rumah", activityValue: "Belum Diatur"),
-        activityValue(activityName: "Komunikasi dengan baik", activityValue: "Belum Diatur"),
+        activityValue(activityName: "Membersihkan diri", activityValue: ""),
+        activityValue(activityName: "Makan dengan rapi", activityValue: ""),
+        activityValue(activityName: "Membereskan pakaian", activityValue: ""),
+        activityValue(activityName: "Membersihkan rumah", activityValue: ""),
+        activityValue(activityName: "Komunikasi dengan baik", activityValue: ""),
     ]
     var routineMedicineValues = [medicineValue]()
     var occasionalMedicineValues = [medicineValue]()
@@ -86,16 +85,17 @@ class CreateRecordTableVC: UITableViewController {
             self.CKRareMedicineData = result
         }
         
+        // populate local variable with medicine data
+        // medicine name
         routineMedicineNames = RecordModel.shared.parseMedicineName(medicineDatas: CKCommonMedicineData)
-        
         occasionalMedicineNames = RecordModel.shared.parseMedicineName(medicineDatas: CKRareMedicineData)
         
+        // medicine frequency
         for name in routineMedicineNames {
             routineMedicineValues.append(medicineValue(medicineName: name, medicineConsumptionFrequency: "Pilih"))
         }
-        
         for name in occasionalMedicineNames {
-            occasionalMedicineValues.append(medicineValue(medicineName: name, medicineConsumptionFrequency: "1x"))
+            occasionalMedicineValues.append(medicineValue(medicineName: name, medicineConsumptionFrequency: "Pilih"))
         }
         
         let addButton = UIBarButtonItem(title: "Selesai", style: .plain, target: self, action: #selector(submit))
