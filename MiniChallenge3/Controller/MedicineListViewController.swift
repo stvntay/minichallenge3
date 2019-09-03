@@ -18,15 +18,18 @@ class MedicineListViewController: UIViewController, UITableViewDelegate, UITable
     
     var medicineDataRutin : [MedicineData] = []
     var medicineDataSewaktu : [MedicineData] = []
+    var arrayOfData = [CKRecord]()
     
     var deletedIndex: Int = 0
+    var medicineRutin = 0
+    var medicineSewaktu = 0
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if getCategory == "Rutin"{
-            return medicineDataRutin.count
+            return medicineRutin
         }else{
-            return medicineDataSewaktu.count
+            return medicineSewaktu
         }
         
     }
@@ -64,28 +67,39 @@ class MedicineListViewController: UIViewController, UITableViewDelegate, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+        print("viewDidLoad")
         
         self.medicineList.rowHeight = 210
         
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+//        getData()
+    }
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("viewWillAppear")
         
-        guard let category = medicineCategory.titleForSegment(at: medicineCategory.selectedSegmentIndex) else{
-            return
-        }
         
-        getCategory = category
-        print(getCategory)
-        
-        medicineCategory.addTarget(self, action: #selector(chooseCategory), for: .valueChanged)
+        medicineList.isHidden = true
         
         medicineList.delegate = self
         medicineList.dataSource = self
         medicineList.register(UINib(nibName: "MedicineListTableViewCell", bundle: nil), forCellReuseIdentifier: "medicineList")
+        
+        getData()
+
+
+        guard let category = medicineCategory.titleForSegment(at: medicineCategory.selectedSegmentIndex) else{
+            return
+        }
+
+        getCategory = category
+        print(getCategory)
+
+        medicineCategory.addTarget(self, action: #selector(chooseCategory), for: .valueChanged)
         
         navigationItem.title = "Obat"
         let addImg = UIImage(named: "plusRiwayat")
@@ -96,7 +110,6 @@ class MedicineListViewController: UIViewController, UITableViewDelegate, UITable
         clearNavigationBar()
         self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 0.4196078431, blue: 0.3411764706, alpha: 1)
         
-        getData()
     }
     
     @objc func chooseCategory(sender: UISegmentedControl){
@@ -122,7 +135,8 @@ class MedicineListViewController: UIViewController, UITableViewDelegate, UITable
     
     @objc func addMedicinePage(sender: UIBarButtonItem){
         let storyboard = UIStoryboard(name: "AddMedicine", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "addMedicine") 
+        let vc = storyboard.instantiateViewController(withIdentifier: "addMedicine") as! AddMedicineVC
+        vc.delegate = self
         self.navigationController?.pushViewController(vc, animated: true)
 
 //        let vc = AddMedicineVC()
@@ -130,25 +144,25 @@ class MedicineListViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func getData(){
-        medicineDataRutin = []
-        medicineDataSewaktu = []
+        medicineDataRutin.removeAll()
+        medicineDataSewaktu.removeAll()
         guard let userID = UserDefaults.standard.string(forKey: "userID") else{
             return
         }
         print(userID)
-        
 
-        
+     
         MedicineModel.shared.loadMedicineData(userRN: userID) { (result) in
             
             for i in result {
-                guard
-                    let id = i.recordID.recordName as? String,
-                    let getName =  i["namaObat"] as? String
-                else{
+                guard let id = i.recordID.recordName as? String else {
+                    
                     return
                 }
-                
+                guard let getName =  i["namaObat"] as? String else{
+                    return
+                }
+                print(getName)
                 guard let getDesc = i["deskripsiObat"] as? String else{
                     return
                 }
@@ -170,17 +184,23 @@ class MedicineListViewController: UIViewController, UITableViewDelegate, UITable
                 }
                 if getCategory == "Rutin" {
                     self.medicineDataRutin.append(MedicineData(ID: id, category: getCategory, name: getName, desc: getDesc, dose: getDose, freq: getFreq, time: getTime))
+                    self.medicineRutin = self.medicineDataRutin.count
                 }else{
                     self.medicineDataSewaktu.append(MedicineData(ID: id, category: getCategory, name: getName, desc: getDesc, dose: getDose, freq: getFreq, time: getTime))
+                    self.medicineSewaktu = self.medicineDataSewaktu.count
                 }
-      
+                self.medicineList.isHidden = false
                 self.medicineList.reloadData()
+                self.medicineList.setNeedsLayout()
             }
-            
-            
-            
         }
         
     }
 
+}
+
+extension MedicineListViewController: AddMedicineVCDelegate {
+    func reloadDataBasedOnNewArray() {
+        getData()
+    }
 }

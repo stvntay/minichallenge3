@@ -33,7 +33,7 @@ final class RecordModel {
         let query = CKQuery(recordType: "MedicineData", predicate: pred)
         let sort = NSSortDescriptor(key: "creationDate", ascending: true)
         query.sortDescriptors = [sort]
-        
+        print("called load medical data")
         CKContainer.default().publicCloudDatabase.perform(query, inZoneWith: nil) { (records, error) in
             DispatchQueue.main.async {
                 guard let records = records else {
@@ -49,18 +49,7 @@ final class RecordModel {
     
     // MARK: - Save record data to CloudKit
     
-    func saveMedicalRecord(
-            namaObat: [String],
-            obat: [String],
-            membersihkanDiri: String,
-            makanDenganRapi: String,
-            membersihkanPakaian: String,
-            membersihkanRumah: String,
-            berkomunikasiDenganLingkungan: String,
-            tidurHariIni: String,
-            catatan: String,
-            pasienRN: String
-        ) {
+    func saveMedicalRecord(namaObat: [String], obat: [String], membersihkanDiri: String, makanDenganRapi: String, membersihkanPakaian: String, membersihkanRumah: String, berkomunikasiDenganLingkungan: String, tidurHariIni: String, catatan: String, pasienRN: String, completion: @escaping (_ recID: CKRecord) -> Void) {
         let newData = CKRecord(recordType: "MedicalRecord")
         let pasienID = CKRecord.ID(recordName: pasienRN)
         let reference = CKRecord.Reference(recordID: pasienID, action: .deleteSelf)
@@ -86,13 +75,17 @@ final class RecordModel {
         newData.setValue(tidurHariIni, forKey: "tidurHariIni")
         newData.setValue(catatan, forKey: "catatan")
         newData.setValue(reference, forKey: "pasienID")
-        
+        print("save called")
         CKContainer.default().publicCloudDatabase.save(newData) { (record, error) in
-            if record != nil {
-                print("save data success")
-            } else {
-                print(error.debugDescription)
+            DispatchQueue.main.async {
+                if record != nil {
+                    print("save data success")
+                    completion(record!)
+                } else {
+                    print(error.debugDescription)
+                }
             }
+
         }
         
     }

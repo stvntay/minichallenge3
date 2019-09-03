@@ -8,6 +8,16 @@
 
 import Foundation
 
+struct medData {
+    var medicineID: String
+    var medicineCategory: String
+    var medicineName: String
+    var medicineDesc: String
+    var medicineDose: String
+    var medicineTime: String
+    var medicineFreq: String
+}
+var getMedData: [medData]?
 class MedicineData {
     var medicineID: String
     var medicineCategory: String

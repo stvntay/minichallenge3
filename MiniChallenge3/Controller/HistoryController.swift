@@ -9,6 +9,7 @@
 //
 
 import UIKit
+import CloudKit
 
 class HistoryController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITableViewDelegate, UITableViewDataSource {
     
@@ -29,15 +30,15 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
     var positionIndex = 3
     var leapYearCounter = 3
     var selectedSegment = 0
-    
+    var historyMedicine = [[String]]()
+    var historyActivity = [String]()
+    var historySleep = [String]()
+    var historyComplain = [String]()
     lazy var selectedData = Months
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        let loadView = Load.shared.showLoad()
-//        self.present(loadView, animated: true, completion: nil)
-        
+
         currentMonth = Months[month - 1]
         
         startDateDayPosition()
@@ -88,6 +89,10 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
         print(weekday)
         print(month)
         print(year)
+
+        HistoryModel.shared.loadMedicalRecord(userRN: UserDefaults.standard.string(forKey: "userID")!, dateClicked: date) { (result) in
+            print("this data")
+        }
     }
     
     // go to create record
@@ -259,7 +264,34 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
         } else {
             historyView.currentDateLabel.text = "\(Days[(indexPath.row - 1) % 7]), \(String((collectionViewCell?.dateLabel.text!)!)) \(String(historyView.monthLabel.text!))"
         }
-//        self.dismiss(animated: true, completion: nil)
+
+        // show alert
+        HistoryModel.shared.loadMedicalRecord(userRN: UserDefaults.standard.string(forKey: "userID")!, dateClicked: date) { (result) in
+            self.parseHistoryData(records: result)
+            // dismis alert
+//            print(result)
+//            self.historyView.infoTableView.reloadData()
+        }
+
+    }
+    
+    func parseHistoryData(records: [CKRecord]) {
+        let data = records.last
+
+        self.historyMedicine.append(data?["namaObat"] as! [String])
+        self.historyMedicine.append(data?["obat"] as! [String])
+        self.historyActivity.append(data?["membersihkanDiri"] as! String)
+        self.historyActivity.append(data?["makanDenganRapi"] as! String)
+        self.historyActivity.append(data?["membersihkanPakaian"] as! String)
+        self.historyActivity.append(data?["membersihkanRumah"] as! String)
+        self.historyActivity.append(data?["berkomunikasiDenganLingkungan"] as! String)
+        self.historySleep.append(data?["tidurHariIni"] as! String)
+        self.historyComplain.append(data?["catatan"] as! String)
+        
+        self.historyView.infoTableView.reloadData()
+
+        print(historyMedicine)
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
@@ -305,13 +337,30 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch selectedSegment {
         case 0:
-            return recordData.count
+            if historyMedicine.count > 0 {
+                return historyMedicine[0].count
+            } else {
+                return 1
+            }
+          
         case 1:
-            return 5
+            if historyActivity.count > 0 {
+                return historyActivity.count
+            } else {
+                return 1
+            }
         case 2:
-            return 1
+            if historyActivity.count > 0 {
+                return historySleep.count
+            } else {
+                return 1
+            }
         case 3:
-            return 1
+            if historyActivity.count > 0 {
+                return historyComplain.count
+            } else {
+                return 1
+            }
         default:
             return recordData.count
         }
@@ -321,21 +370,39 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
         switch selectedSegment {
         case 0:
             let cell = (tableView.dequeueReusableCell(withIdentifier: "MedicineID") as? MedicineTableViewCell)!
-            cell.medicineNameLabel.text = selectedData[indexPath.row]
-            cell.doseLabel.text = selectedData[indexPath.row]
+            if historyMedicine.count > 0 {
+                cell.medicineNameLabel.text = historyMedicine[0][indexPath.row]
+                cell.doseLabel.text = historyMedicine[1][indexPath.row]
+            } else {
+                cell.medicineNameLabel.text = "No data"
+                cell.doseLabel.text = ""
+            }
             return cell
         case 1:
             let cell = (tableView.dequeueReusableCell(withIdentifier: "ActivityID") as? ActivityTableViewCell)!
-            cell.activityLabel.text = selectedData[indexPath.row]
-            cell.statusImage.image = UIImage.init(named: selectedData[indexPath.row])
+            if historyActivity.count > 0 {
+                cell.activityLabel.text = selectedData[indexPath.row]
+                cell.statusImage.image = UIImage.init(named: historyActivity[indexPath.row] )
+            } else {
+                cell.activityLabel.text = "No data"
+//                cell.statusImage.image = UIImage.init(named: historyActivity[indexPath.row] )
+            }
             return cell
         case 2:
             let cell = (tableView.dequeueReusableCell(withIdentifier: "SleepID") as? SleepTableViewCell)!
-            cell.sleepLabel.text = selectedData[indexPath.row]
+            if historySleep.count > 0 {
+                cell.sleepLabel.text = historySleep[indexPath.row]
+            } else {
+                cell.sleepLabel.text = "No data"
+            }
             return cell
         case 3:
             let cell = (tableView.dequeueReusableCell(withIdentifier: "ComplainID") as? ComplainTableViewCell)!
-            cell.complainLabel.text = selectedData[indexPath.row]
+            if historyComplain.count > 0 {
+                cell.complainLabel.text = historyComplain[indexPath.row]
+            } else {
+                cell.complainLabel.text = "No data"
+            }
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "MedicineID") as! MedicineTableViewCell
