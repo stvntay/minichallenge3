@@ -18,7 +18,7 @@ final class MedicineModel {
     
     // MARK: - Save medicine data to CloudKit
     
-    func saveMedicineData(kategori: String, namaObat: String, deskripsiObat: String, dosisObat:String, setelahSebelumMakan: String, jumlahPerHari: String, pasienRN: String) {
+    func saveMedicineData(kategori: String, namaObat: String, deskripsiObat: String, dosisObat:String, setelahSebelumMakan: String, jumlahPerHari: String, pasienRN: String, completion: @escaping (_ recID: CKRecord) -> Void) {
         let newData = CKRecord(recordType: "MedicineData")
         let pasienID = CKRecord.ID(recordName: pasienRN)
         let reference = CKRecord.Reference(recordID: pasienID, action: .deleteSelf)
@@ -32,10 +32,13 @@ final class MedicineModel {
         newData.setValue(reference, forKey: "pasienID")
         
         CKContainer.default().publicCloudDatabase.save(newData) { (record, error) in
-            if record != nil {
-                print("save data success")
-            } else {
-                print(error.debugDescription)
+            DispatchQueue.main.async {
+                if record != nil {
+                    print("save data success")
+                    completion(record!)
+                } else {
+                    print(error.debugDescription)
+                }
             }
         }
         
@@ -47,6 +50,8 @@ final class MedicineModel {
         let userID = CKRecord.ID(recordName: userRN)
         let pred = NSPredicate(format: "pasienID = %@", userID)
         let query = CKQuery(recordType: "MedicineData", predicate: pred)
+//        let sort = NSSortDescriptor(key: "creationDate", ascending: true)
+//        query.sortDescriptors = [sort]
         
         CKContainer.default().publicCloudDatabase.perform(query, inZoneWith: nil) { (records, error) in
             DispatchQueue.main.async {
@@ -54,8 +59,10 @@ final class MedicineModel {
                     print(error?.localizedDescription as Any)
                     return
                 }
-                print(records)
-                completion(records)
+                let sortRecords = records.sorted(by: { $0.creationDate! < $1.creationDate!
+                })
+                print(sortRecords)
+                completion(sortRecords)
             }
         }
         

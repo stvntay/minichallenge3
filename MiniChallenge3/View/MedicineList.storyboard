@@ -66,6 +66,7 @@
                     <navigationItem key="navigationItem" id="48d-PV-z3m"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="medicineCategory" destination="ZL0-bK-JwH" id="T97-ZU-oJV"/>
                         <outlet property="medicineList" destination="svb-jf-8qN" id="zEg-ww-fs1"/>
                     </connections>
                 </viewController>
@@ -76,7 +77,7 @@
         <!--Obat-->
         <scene sceneID="UBH-FP-V4l">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0hJ-IH-5Im" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="medicineListNav" automaticallyAdjustsScrollViewInsets="NO" id="0hJ-IH-5Im" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Obat" id="HaJ-fN-JWL"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jq7-Bh-RkQ">

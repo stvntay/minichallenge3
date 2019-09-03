@@ -13,6 +13,7 @@
 		B06A9C70230E69E9007D38B5 /* MiniChallenge3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C6E230E69E9007D38B5 /* MiniChallenge3.xcdatamodeld */; };
 		B06A9C72230E69EB007D38B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B06A9C71230E69EB007D38B5 /* Assets.xcassets */; };
 		B06A9C75230E69EB007D38B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B06A9C73230E69EB007D38B5 /* LaunchScreen.storyboard */; };
+		B099EA75231E341F00BEF2F8 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B099EA74231E341F00BEF2F8 /* CloudKit.framework */; };
 		BE6492E3231D1696001E27A7 /* SleepTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6492E1231D1696001E27A7 /* SleepTableViewCell.swift */; };
 		BE6492E4231D1696001E27A7 /* SleepTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE6492E2231D1696001E27A7 /* SleepTableViewCell.xib */; };
 		BE6492E7231D169F001E27A7 /* ComplainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6492E5231D169F001E27A7 /* ComplainTableViewCell.swift */; };
@@ -68,6 +69,8 @@
 		B06A9C71230E69EB007D38B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B06A9C74230E69EB007D38B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B06A9C76230E69EB007D38B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B099EA72231E33BB00BEF2F8 /* MiniChallenge3.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MiniChallenge3.entitlements; sourceTree = "<group>"; };
+		B099EA74231E341F00BEF2F8 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		BE6492E1231D1696001E27A7 /* SleepTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepTableViewCell.swift; sourceTree = "<group>"; };
 		BE6492E2231D1696001E27A7 /* SleepTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SleepTableViewCell.xib; sourceTree = "<group>"; };
 		BE6492E5231D169F001E27A7 /* ComplainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplainTableViewCell.swift; sourceTree = "<group>"; };
@@ -119,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B099EA75231E341F00BEF2F8 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +134,7 @@
 			children = (
 				B06A9C66230E69E9007D38B5 /* MiniChallenge3 */,
 				B06A9C65230E69E9007D38B5 /* Products */,
+				B099EA73231E341F00BEF2F8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -144,6 +149,7 @@
 		B06A9C66230E69E9007D38B5 /* MiniChallenge3 */ = {
 			isa = PBXGroup;
 			children = (
+				B099EA72231E33BB00BEF2F8 /* MiniChallenge3.entitlements */,
 				BE998316231E2C63000459E5 /* Onboard.storyboard */,
 				BE998317231E2C63000459E5 /* TabMenu.storyboard */,
 				BE998314231E2C0E000459E5 /* Fonts */,
@@ -223,6 +229,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		B099EA73231E341F00BEF2F8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B099EA74231E341F00BEF2F8 /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -255,6 +269,11 @@
 				TargetAttributes = {
 					B06A9C63230E69E9007D38B5 = {
 						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -486,8 +505,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MiniChallenge3/MiniChallenge3.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = EF3ZB275X3;
+				DEVELOPMENT_TEAM = LLU3TMC9Q3;
 				INFOPLIST_FILE = MiniChallenge3/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -504,8 +524,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MiniChallenge3/MiniChallenge3.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = EF3ZB275X3;
+				DEVELOPMENT_TEAM = LLU3TMC9Q3;
 				INFOPLIST_FILE = MiniChallenge3/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

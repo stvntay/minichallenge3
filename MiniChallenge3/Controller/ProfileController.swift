@@ -54,14 +54,16 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.addSubview(titleView)
         
-        ProfileModel.shared.loadMedicalID(userRN: userRN) { (result) in
+
+        ProfileModel.shared.loadMedicalID(userRN: userDef.string(forKey: "userID")!) { (result) in
+
             self.userContent = result
             self.userTableView.reloadData()
             self.navigationController?.navigationBar.viewWithTag(9)?.removeFromSuperview()
             let newTitleView = self.addTitleView(titleName: result.last?.value(forKey: "nama") as! String)
             self.navigationController?.navigationBar.addSubview(newTitleView)
         }
-        ProfileModel.shared.loadPsikiaterData(doctorRN: "B1C05391-3D56-495F-9EF5-BBA996D534A0") { (result) in
+        ProfileModel.shared.loadPsikiaterData(doctorRN: userDef.string(forKey: "doctorID")!) { (result) in
             self.doctorContent = result
             self.doctorTableView.reloadData()
         }
