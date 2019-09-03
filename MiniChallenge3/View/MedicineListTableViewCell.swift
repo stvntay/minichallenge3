@@ -13,9 +13,10 @@ class MedicineListTableViewCell: UITableViewCell {
     @IBOutlet weak var medicineName: UILabel!
     @IBOutlet weak var medicineDescription: UITextView!
     @IBOutlet weak var medicineAmount: UILabel!
+    @IBOutlet weak var medicineFreq: UILabel!
     @IBOutlet weak var medicineTime: UILabel!
     
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

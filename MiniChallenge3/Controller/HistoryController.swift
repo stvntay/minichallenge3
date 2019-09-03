@@ -20,6 +20,8 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
     
     var currentMonth = String()
     
+    var recordData: [RecordData] = []
+    
     var numberOfEmptyBox = Int()
     var nextNumberOfEmptyBox = Int()
     var previousNumberOfEmptyBox: Int = 0
@@ -40,7 +42,7 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
         
         // month calendar label and current date label configuration
         historyView.monthLabel.text = "\(currentMonth) \(year)"
-        historyView.currentDateLabel.text = "\(Days[day % 7]), \(day) \(currentMonth) \(year)"
+        historyView.currentDateLabel.text = "\(Days[day - 2 % 7]), \(day) \(currentMonth) \(year)"
         
         historyView.calendarView.isPagingEnabled = true
         
@@ -145,13 +147,13 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
         case 0:
             switch day {
             case 1...7:
-                numberOfEmptyBox = weekday - day
+                numberOfEmptyBox = (weekday - day) % 7
             case 8...14:
-                numberOfEmptyBox = weekday - day - 7
+                numberOfEmptyBox = (weekday - day - 7) % 7
             case 15...21:
-                numberOfEmptyBox = weekday - day - 14
+                numberOfEmptyBox = (weekday - day - 14) % 7
             case 22...28:
-                numberOfEmptyBox = weekday - day - 21
+                numberOfEmptyBox = (weekday - day - 21) % 7
             case 29...31:
                 numberOfEmptyBox = weekday - day - 28
             default:
@@ -222,7 +224,7 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
             cell.dateLabel.textColor = .black
         }
         
-        if currentMonth == Months[calendar.component(.month, from: date) - 1] && year == calendar.component(.year, from: date) && day == calendar.component(.day, from: date) && indexPath.row + -3 == day {
+        if currentMonth == Months[calendar.component(.month, from: date) - 1] && year == calendar.component(.year, from: date) && day == calendar.component(.day, from: date) && indexPath.row + 1 == day{
             cell.dateLabel.textColor = .red
         }
         
@@ -236,6 +238,7 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let collectionViewCell = collectionView.cellForItem(at: indexPath) as? DateCollectionViewCell
         collectionViewCell?.backgroundColor = #colorLiteral(red: 0.9541211724, green: 0.4644083977, blue: 0.4005665183, alpha: 1)
+        collectionViewCell?.sizeToFit()
         collectionViewCell?.dateLabel.textColor = .white
         
         if indexPath.row - 1 == -1 {
@@ -250,7 +253,7 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
         if indexPath.row % 7 == 0 || indexPath.row % 7 == 6 {
             collectionViewCell?.backgroundColor = .clear
             collectionViewCell?.dateLabel.textColor = .gray
-        } else if currentMonth == Months[calendar.component(.month, from: date) - 1] && year == calendar.component(.year, from: date) && day == calendar.component(.day, from: date) && indexPath.row + -3 == day {
+        } else if currentMonth == Months[calendar.component(.month, from: date) - 1] && year == calendar.component(.year, from: date) && day == calendar.component(.day, from: date) && indexPath.row + 1 == day {
             collectionViewCell?.backgroundColor = .clear
             collectionViewCell?.dateLabel.textColor = .red
         } else {
@@ -261,7 +264,7 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
     
     // Update function for calendar in month
     func calendarUpdate() {
-        currentMonth = Months[month]
+        currentMonth = Months[month - 1]
         
         historyView.monthLabel.text = "\(currentMonth) \(year)"
         historyView.calendarView.reloadData()
@@ -288,15 +291,15 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch selectedSegment {
         case 0:
-            return selectedData.count
+            return recordData.count
         case 1:
-            return selectedData.count
+            return 5
         case 2:
             return 1
         case 3:
             return 1
         default:
-            return selectedData.count
+            return recordData.count
         }
     }
     
@@ -310,7 +313,7 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
         case 1:
             let cell = (tableView.dequeueReusableCell(withIdentifier: "ActivityID") as? ActivityTableViewCell)!
             cell.activityLabel.text = selectedData[indexPath.row]
-            cell.statusImage.image = UIImage.init(named: "Tergantung")
+            cell.statusImage.image = UIImage.init(named: selectedData[indexPath.row])
             return cell
         case 2:
             let cell = (tableView.dequeueReusableCell(withIdentifier: "SleepID") as? SleepTableViewCell)!

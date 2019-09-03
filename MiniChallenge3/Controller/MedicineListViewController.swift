@@ -7,26 +7,47 @@
 //
 
 import UIKit
+import CloudKit
 
 class MedicineListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var navBar: UINavigationItem!
+
+    @IBOutlet weak var medicineCategory: UISegmentedControl!
     @IBOutlet weak var medicineList: UITableView!
+    var getCategory: String = ""
     
-    var medicineData : [MedicineData] = []
+    var medicineDataRutin : [MedicineData] = []
+    var medicineDataSewaktu : [MedicineData] = []
     
     var deletedIndex: Int = 0
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return medicineData.count
+        
+        if getCategory == "Rutin"{
+            return medicineDataRutin.count
+        }else{
+            return medicineDataSewaktu.count
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "medicineList", for: indexPath) as! MedicineListTableViewCell
-        cell.medicineName.text = medicineData[indexPath.row].medicineName
-        cell.medicineTime.text = medicineData[indexPath.row].medicineTime
-        cell.medicineDescription.text = medicineData[indexPath.row].medicineDesc
-        cell.medicineAmount.text = medicineData[indexPath.row].medicineDose
+        if getCategory == "Rutin" {
+            //print(medicineData[indexPath.row].medicineCategory)
+            cell.medicineName.text = medicineDataRutin[indexPath.row].medicineName
+            cell.medicineTime.text = medicineDataRutin[indexPath.row].medicineTime
+            cell.medicineDescription.text = medicineDataRutin[indexPath.row].medicineDesc
+            cell.medicineFreq.text = "\(medicineDataRutin[indexPath.row].medicineFreq) x Sehari"
+            cell.medicineAmount.text = medicineDataRutin[indexPath.row].medicineDose
+        }else{
+            cell.medicineName.text = medicineDataSewaktu[indexPath.row].medicineName
+            cell.medicineTime.text = medicineDataSewaktu[indexPath.row].medicineTime
+            cell.medicineFreq.text = "-"
+            cell.medicineDescription.text = medicineDataSewaktu[indexPath.row].medicineDesc
+            cell.medicineAmount.text = medicineDataSewaktu[indexPath.row].medicineDose
+        }
+        
         return cell
     }
     
@@ -44,21 +65,55 @@ class MedicineListViewController: UIViewController, UITableViewDelegate, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         self.medicineList.rowHeight = 210
+        
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        guard let category = medicineCategory.titleForSegment(at: medicineCategory.selectedSegmentIndex) else{
+            return
+        }
+        
+        getCategory = category
+        print(getCategory)
+        
+        medicineCategory.addTarget(self, action: #selector(chooseCategory), for: .valueChanged)
+        
         medicineList.delegate = self
         medicineList.dataSource = self
         medicineList.register(UINib(nibName: "MedicineListTableViewCell", bundle: nil), forCellReuseIdentifier: "medicineList")
         
         navigationItem.title = "Obat"
-        let addImg = UIImage(named: "add-icon")
+        let addImg = UIImage(named: "plusRiwayat")
         let addButton = UIBarButtonItem(image: addImg, style: .plain, target: self, action: #selector(addMedicinePage))
-       
+        
         navigationItem.rightBarButtonItem = addButton
         
         clearNavigationBar()
+        self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 0.4196078431, blue: 0.3411764706, alpha: 1)
+        
+        getData()
+    }
+    
+    @objc func chooseCategory(sender: UISegmentedControl){
+        
+        guard let category = medicineCategory.titleForSegment(at: medicineCategory.selectedSegmentIndex) else{
+            return
+        }
+        
+        getCategory = category
+        
+        print("reload")
+        medicineList.reloadData()
     }
     
     func clearNavigationBar(){
+        
+        self.navigationItem.leftBarButtonItem = nil
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
@@ -75,6 +130,57 @@ class MedicineListViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func getData(){
+        medicineDataRutin = []
+        medicineDataSewaktu = []
+        guard let userID = UserDefaults.standard.string(forKey: "userID") else{
+            return
+        }
+        print(userID)
+        
+        
+        MedicineModel.shared.loadMedicineData(userRN: userID) { (result) in
+            
+            for i in result {
+                guard let id = i.recordID.recordName as? String else{
+                    
+                    return
+                }
+                
+                guard let getName =  i["namaObat"] as? String else{
+                    return
+                }
+                
+                guard let getDesc = i["deskripsiObat"] as? String else{
+                    return
+                }
+                
+                guard let getDose = i["dosisObat"]  as? String else{
+                    return
+                }
+                
+                guard let getTime = i["setelahSebelumMakan"]  as? String else{
+                    return
+                }
+                
+                guard let getCategory = i["kategori"] as? String else{
+                    return
+                }
+                
+                guard let getFreq = i["jumlahPerHari"] as? String else{
+                    return
+                }
+                if getCategory == "Rutin" {
+                    self.medicineDataRutin.append(MedicineData(ID: id, category: getCategory, name: getName, desc: getDesc, dose: getDose, freq: getFreq, time: getTime))
+                }else{
+                    self.medicineDataSewaktu.append(MedicineData(ID: id, category: getCategory, name: getName, desc: getDesc, dose: getDose, freq: getFreq, time: getTime))
+                }
+      
+                self.medicineList.reloadData()
+            }
+            
+            
+            
+        }
         
     }
 
