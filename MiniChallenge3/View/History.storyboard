@@ -149,6 +149,40 @@
                                 <rect key="frame" x="0.0" y="534" width="414" height="279"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MedicineID" id="z8n-F9-1pI" customClass="MedicineTableViewCell" customModule="MiniChallenge3" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="z8n-F9-1pI" id="Z0l-Bk-TJU">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0hl-cw-FcC">
+                                                    <rect key="frame" x="20" y="11.5" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dsc-Nt-2RG">
+                                                    <rect key="frame" x="350.5" y="11.5" width="43.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="0hl-cw-FcC" firstAttribute="centerY" secondItem="Z0l-Bk-TJU" secondAttribute="centerY" id="5nO-KD-ZeR"/>
+                                                <constraint firstItem="0hl-cw-FcC" firstAttribute="leading" secondItem="Z0l-Bk-TJU" secondAttribute="leading" constant="20" id="E7D-Iz-nXg"/>
+                                                <constraint firstItem="Dsc-Nt-2RG" firstAttribute="centerY" secondItem="Z0l-Bk-TJU" secondAttribute="centerY" id="ZAe-SF-i1f"/>
+                                                <constraint firstAttribute="trailing" secondItem="Dsc-Nt-2RG" secondAttribute="trailing" constant="20" id="xy4-iy-RfE"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="doseLabel" destination="Dsc-Nt-2RG" id="FYn-pE-EOu"/>
+                                            <outlet property="medicineNameLabel" destination="0hl-cw-FcC" id="Skh-Eb-I9E"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
