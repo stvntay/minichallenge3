@@ -122,7 +122,7 @@ class PatientOnBoardViewController: UIViewController {
 
 //            let userIDString = self.userID
             UserDefaults.standard.set(self.userID,forKey: "userID")
-                UserDefaults.standard.set(self.doctorID, forKey: "doctorID")
+            UserDefaults.standard.set(self.doctorID, forKey: "doctorID")
             
             let storyboard = UIStoryboard(name: "TabMenu", bundle: nil)
 

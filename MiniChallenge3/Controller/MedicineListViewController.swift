@@ -137,16 +137,15 @@ class MedicineListViewController: UIViewController, UITableViewDelegate, UITable
         }
         print(userID)
         
+
         
         MedicineModel.shared.loadMedicineData(userRN: userID) { (result) in
             
             for i in result {
-                guard let id = i.recordID.recordName as? String else{
-                    
-                    return
-                }
-                
-                guard let getName =  i["namaObat"] as? String else{
+                guard
+                    let id = i.recordID.recordName as? String,
+                    let getName =  i["namaObat"] as? String
+                else{
                     return
                 }
                 

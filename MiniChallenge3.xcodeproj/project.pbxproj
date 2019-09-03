@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B044F629231E867000FFF42D /* Load.swift in Sources */ = {isa = PBXBuildFile; fileRef = B044F628231E867000FFF42D /* Load.swift */; };
 		B06A9C68230E69E9007D38B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C67230E69E9007D38B5 /* AppDelegate.swift */; };
 		B06A9C6A230E69E9007D38B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C69230E69E9007D38B5 /* ViewController.swift */; };
 		B06A9C6D230E69E9007D38B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B06A9C6B230E69E9007D38B5 /* Main.storyboard */; };
@@ -61,6 +62,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B044F628231E867000FFF42D /* Load.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Load.swift; sourceTree = "<group>"; };
 		B06A9C64230E69E9007D38B5 /* MiniChallenge3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniChallenge3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B06A9C67230E69E9007D38B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B06A9C69230E69E9007D38B5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 				BE99830B231E2BFD000459E5 /* MedicineListViewController.swift */,
 				BE998309231E2BFD000459E5 /* PatientOnBoardViewController.swift */,
 				BE998307231E2BFD000459E5 /* ProfileController.swift */,
+				B044F628231E867000FFF42D /* Load.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				BE9BED1B2317E45A00640A93 /* ActivityTableViewCell.swift in Sources */,
 				BE9BECFE230E8DAD00640A93 /* CalenderView.swift in Sources */,
 				BE9982FC231E2BCB000459E5 /* OnboardModel.swift in Sources */,
+				B044F629231E867000FFF42D /* Load.swift in Sources */,
 				BE998311231E2BFE000459E5 /* AddMedicineVC.swift in Sources */,
 				BEB583122318FECA000153DC /* HistoryView.swift in Sources */,
 				BE998305231E2BCB000459E5 /* DashboardData.swift in Sources */,

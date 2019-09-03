@@ -33,6 +33,9 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        let loadView = Load.shared.showLoad()
+//        self.present(loadView, animated: true, completion: nil)
+        
         currentMonth = Months[month - 1]
         
         startDateDayPosition()
@@ -243,6 +246,7 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
         } else {
             historyView.currentDateLabel.text = "\(Days[(indexPath.row - 1) % 7]), \(String((collectionViewCell?.dateLabel.text!)!)) \(String(historyView.monthLabel.text!))"
         }
+//        self.dismiss(animated: true, completion: nil)
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
