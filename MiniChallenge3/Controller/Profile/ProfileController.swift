@@ -29,8 +29,6 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
 //        textView.backgroundColor = UIColor(red: 239/255, green: 116/255, blue: 95/255, alpha: 1)
         let loadView = Load.shared.showLoad()
         self.present(loadView, animated: true, completion: nil)
-        userRN = userDef.string(forKey: "userID") ?? "5187BE88-B4D8-4E65-B2D4-6D20663B6D6C"
-        doctorRN = userDef.string(forKey: "doctorID") ?? "B1C05391-3D56-495F-9EF5-BBA996D534A0"
         
         view.layer.backgroundColor = UIColor.init(displayP3Red: 249/255, green: 249/255, blue: 249/255, alpha: 1).cgColor
         userTableView.separatorColor = .clear
@@ -58,7 +56,6 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
         
 
         ProfileModel.shared.loadMedicalID(userRN: userDef.string(forKey: "userID")!) { (result) in
-
             self.userContent = result
             self.userTableView.reloadData()
             self.navigationController?.navigationBar.viewWithTag(9)?.removeFromSuperview()

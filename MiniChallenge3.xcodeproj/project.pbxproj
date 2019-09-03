@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B044F629231E867000FFF42D /* Load.swift in Sources */ = {isa = PBXBuildFile; fileRef = B044F628231E867000FFF42D /* Load.swift */; };
 		9535595B231E63330014EA5F /* CreateRecord.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95355953231E63320014EA5F /* CreateRecord.storyboard */; };
 		9535595C231E63330014EA5F /* ActivityPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95355954231E63320014EA5F /* ActivityPickerCell.swift */; };
 		9535595D231E63330014EA5F /* TwoLabelsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95355955231E63320014EA5F /* TwoLabelsCell.xib */; };
@@ -18,6 +17,7 @@
 		95355962231E63330014EA5F /* ActivityRecordGuide.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9535595A231E63330014EA5F /* ActivityRecordGuide.storyboard */; };
 		95355965231E635C0014EA5F /* CreateRecordTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95355963231E635C0014EA5F /* CreateRecordTableVC.swift */; };
 		95355966231E635C0014EA5F /* OptionsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95355964231E635C0014EA5F /* OptionsTableVC.swift */; };
+		B044F629231E867000FFF42D /* Load.swift in Sources */ = {isa = PBXBuildFile; fileRef = B044F628231E867000FFF42D /* Load.swift */; };
 		B06A9C68230E69E9007D38B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C67230E69E9007D38B5 /* AppDelegate.swift */; };
 		B06A9C6A230E69E9007D38B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C69230E69E9007D38B5 /* ViewController.swift */; };
 		B06A9C6D230E69E9007D38B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B06A9C6B230E69E9007D38B5 /* Main.storyboard */; };
@@ -64,7 +64,6 @@
 		BE998323231E3DB2000459E5 /* RecordData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE998322231E3DB2000459E5 /* RecordData.swift */; };
 		BE9BECFA230E892F00640A93 /* HistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9BECF9230E892F00640A93 /* HistoryController.swift */; };
 		BE9BECFE230E8DAD00640A93 /* CalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9BECFD230E8DAD00640A93 /* CalenderView.swift */; };
-		BE9BED02230E944D00640A93 /* DateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9BED01230E944D00640A93 /* DateCollectionViewCell.swift */; };
 		BE9BED152317D67700640A93 /* MedicineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9BED132317D67700640A93 /* MedicineTableViewCell.swift */; };
 		BE9BED162317D67700640A93 /* MedicineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE9BED142317D67700640A93 /* MedicineTableViewCell.xib */; };
 		BE9BED1B2317E45A00640A93 /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9BED192317E45A00640A93 /* ActivityTableViewCell.swift */; };
@@ -73,7 +72,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B044F628231E867000FFF42D /* Load.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Load.swift; sourceTree = "<group>"; };
 		95355953231E63320014EA5F /* CreateRecord.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateRecord.storyboard; sourceTree = "<group>"; };
 		95355954231E63320014EA5F /* ActivityPickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityPickerCell.swift; sourceTree = "<group>"; };
 		95355955231E63320014EA5F /* TwoLabelsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TwoLabelsCell.xib; sourceTree = "<group>"; };
@@ -84,6 +82,7 @@
 		9535595A231E63330014EA5F /* ActivityRecordGuide.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ActivityRecordGuide.storyboard; sourceTree = "<group>"; };
 		95355963231E635C0014EA5F /* CreateRecordTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateRecordTableVC.swift; sourceTree = "<group>"; };
 		95355964231E635C0014EA5F /* OptionsTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsTableVC.swift; sourceTree = "<group>"; };
+		B044F628231E867000FFF42D /* Load.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Load.swift; sourceTree = "<group>"; };
 		B06A9C64230E69E9007D38B5 /* MiniChallenge3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniChallenge3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B06A9C67230E69E9007D38B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B06A9C69230E69E9007D38B5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -133,7 +132,6 @@
 		BE998322231E3DB2000459E5 /* RecordData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordData.swift; sourceTree = "<group>"; };
 		BE9BECF9230E892F00640A93 /* HistoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryController.swift; sourceTree = "<group>"; };
 		BE9BECFD230E8DAD00640A93 /* CalenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalenderView.swift; path = MiniChallenge3/Controller/CalenderView.swift; sourceTree = SOURCE_ROOT; };
-		BE9BED01230E944D00640A93 /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DateCollectionViewCell.swift; path = MiniChallenge3/Controller/DateCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		BE9BED132317D67700640A93 /* MedicineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineTableViewCell.swift; sourceTree = "<group>"; };
 		BE9BED142317D67700640A93 /* MedicineTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicineTableViewCell.xib; sourceTree = "<group>"; };
 		BE9BED192317E45A00640A93 /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
@@ -153,6 +151,142 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D0DC5FA231E98E800912E65 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				95355964231E635C0014EA5F /* OptionsTableVC.swift */,
+				95355963231E635C0014EA5F /* CreateRecordTableVC.swift */,
+				BE998306231E2BFD000459E5 /* DateCollectionViewCell.swift */,
+				BE99830C231E2BFE000459E5 /* CalenderView.swift */,
+				BE9BECF9230E892F00640A93 /* HistoryController.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		4D0DC5FB231E98F600912E65 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				BE998307231E2BFD000459E5 /* ProfileController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		4D0DC5FC231E990300912E65 /* Medicine */ = {
+			isa = PBXGroup;
+			children = (
+				BE99830A231E2BFD000459E5 /* AddMedicineVC.swift */,
+				BE99830B231E2BFD000459E5 /* MedicineListViewController.swift */,
+			);
+			path = Medicine;
+			sourceTree = "<group>";
+		};
+		4D0DC5FD231E993200912E65 /* Onboard */ = {
+			isa = PBXGroup;
+			children = (
+				BE998308231E2BFD000459E5 /* DoctorOnBoardController.swift */,
+				BE998309231E2BFD000459E5 /* PatientOnBoardViewController.swift */,
+			);
+			path = Onboard;
+			sourceTree = "<group>";
+		};
+		4D0DC5FE231E996000912E65 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				BE9982E2231E2B83000459E5 /* Profile.storyboard */,
+				BE9982DE231E2B83000459E5 /* UserProfileCell.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		4D0DC5FF231E996B00912E65 /* Onboard */ = {
+			isa = PBXGroup;
+			children = (
+				BE9982DD231E2B83000459E5 /* PatientOnBoardView.swift */,
+				BE9982E4231E2B83000459E5 /* DoctorOnBoardView.swift */,
+				BE9982E1231E2B83000459E5 /* DoctorProfileCell.swift */,
+			);
+			path = Onboard;
+			sourceTree = "<group>";
+		};
+		4D0DC600231E997200912E65 /* Medicine */ = {
+			isa = PBXGroup;
+			children = (
+				BE9BED132317D67700640A93 /* MedicineTableViewCell.swift */,
+				BE9BED142317D67700640A93 /* MedicineTableViewCell.xib */,
+				BE9982E3231E2B83000459E5 /* AddMedicine.storyboard */,
+				BE9982E0231E2B83000459E5 /* MedicineList.storyboard */,
+				BE9982DF231E2B83000459E5 /* MedicineListTableViewCell.swift */,
+				BE9982DC231E2B83000459E5 /* MedicineListTableViewCell.xib */,
+			);
+			path = Medicine;
+			sourceTree = "<group>";
+		};
+		4D0DC601231E997E00912E65 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				4D0DC606231E9BB700912E65 /* CreateRecord */,
+				BE9982D8231E2AB7000459E5 /* History.storyboard */,
+				BEB583112318FECA000153DC /* HistoryView.swift */,
+				BE9BED192317E45A00640A93 /* ActivityTableViewCell.swift */,
+				BE9BED1A2317E45A00640A93 /* ActivityTableViewCell.xib */,
+				BE6492E1231D1696001E27A7 /* SleepTableViewCell.swift */,
+				BE6492E2231D1696001E27A7 /* SleepTableViewCell.xib */,
+				BE6492E5231D169F001E27A7 /* ComplainTableViewCell.swift */,
+				BE6492E6231D169F001E27A7 /* ComplainTableViewCell.xib */,
+				9535595A231E63330014EA5F /* ActivityRecordGuide.storyboard */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		4D0DC602231E9AE400912E65 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				BE9982F5231E2BCB000459E5 /* RecordModel.swift */,
+				BE9982F7231E2BCB000459E5 /* HistoryModel.swift */,
+				BE9982F6231E2BCB000459E5 /* ActivityModel.swift */,
+				BE998322231E3DB2000459E5 /* RecordData.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		4D0DC603231E9AEA00912E65 /* Onboard */ = {
+			isa = PBXGroup;
+			children = (
+				BE9982F3231E2BCB000459E5 /* OnBoardData.swift */,
+				BE9982EE231E2BCA000459E5 /* DoctorData.swift */,
+				BE9982F0231E2BCA000459E5 /* OnboardModel.swift */,
+			);
+			path = Onboard;
+			sourceTree = "<group>";
+		};
+		4D0DC604231E9B1400912E65 /* Medicine */ = {
+			isa = PBXGroup;
+			children = (
+				BE9982F1231E2BCA000459E5 /* MedicineData.swift */,
+				BE9982EF231E2BCA000459E5 /* MedicineModel.swift */,
+			);
+			path = Medicine;
+			sourceTree = "<group>";
+		};
+		4D0DC605231E9B1D00912E65 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				BE9982F2231E2BCA000459E5 /* Profile.swift */,
+				BE9982F4231E2BCB000459E5 /* ProfileModel.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		4D0DC606231E9BB700912E65 /* CreateRecord */ = {
+			isa = PBXGroup;
+			children = (
+				95355953231E63320014EA5F /* CreateRecord.storyboard */,
+				95355954231E63320014EA5F /* ActivityPickerCell.swift */,
+				95355956231E63320014EA5F /* ActivityPickerCell.xib */,
+			);
+			path = CreateRecord;
+			sourceTree = "<group>";
+		};
 		B06A9C5B230E69E9007D38B5 = {
 			isa = PBXGroup;
 			children = (
@@ -194,19 +328,12 @@
 		B06A9C83230E6F17007D38B5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				BE9982F6231E2BCB000459E5 /* ActivityModel.swift */,
 				BE9982F8231E2BCB000459E5 /* CloudData.swift */,
 				BE9982F9231E2BCB000459E5 /* DashboardData.swift */,
-				BE9982EE231E2BCA000459E5 /* DoctorData.swift */,
-				BE9982F7231E2BCB000459E5 /* HistoryModel.swift */,
-				BE9982F1231E2BCA000459E5 /* MedicineData.swift */,
-				BE9982EF231E2BCA000459E5 /* MedicineModel.swift */,
-				BE9982F3231E2BCB000459E5 /* OnBoardData.swift */,
-				BE9982F0231E2BCA000459E5 /* OnboardModel.swift */,
-				BE9982F2231E2BCA000459E5 /* Profile.swift */,
-				BE9982F4231E2BCB000459E5 /* ProfileModel.swift */,
-				BE9982F5231E2BCB000459E5 /* RecordModel.swift */,
-				BE998322231E3DB2000459E5 /* RecordData.swift */,
+				4D0DC605231E9B1D00912E65 /* Profile */,
+				4D0DC604231E9B1400912E65 /* Medicine */,
+				4D0DC603231E9AEA00912E65 /* Onboard */,
+				4D0DC602231E9AE400912E65 /* History */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -214,35 +341,15 @@
 		B06A9C84230E6F3F007D38B5 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				BE9982D8231E2AB7000459E5 /* History.storyboard */,
-				BEB583112318FECA000153DC /* HistoryView.swift */,
-				BE9BED132317D67700640A93 /* MedicineTableViewCell.swift */,
-				BE9BED142317D67700640A93 /* MedicineTableViewCell.xib */,
-				BE9BED192317E45A00640A93 /* ActivityTableViewCell.swift */,
-				BE9BED1A2317E45A00640A93 /* ActivityTableViewCell.xib */,
-				BE6492E1231D1696001E27A7 /* SleepTableViewCell.swift */,
-				BE6492E2231D1696001E27A7 /* SleepTableViewCell.xib */,
-				BE6492E5231D169F001E27A7 /* ComplainTableViewCell.swift */,
-				BE6492E6231D169F001E27A7 /* ComplainTableViewCell.xib */,
-				BE9BED01230E944D00640A93 /* DateCollectionViewCell.swift */,
-				95355954231E63320014EA5F /* ActivityPickerCell.swift */,
-				95355956231E63320014EA5F /* ActivityPickerCell.xib */,
-				9535595A231E63330014EA5F /* ActivityRecordGuide.storyboard */,
-				95355953231E63320014EA5F /* CreateRecord.storyboard */,
+				4D0DC601231E997E00912E65 /* History */,
+				4D0DC600231E997200912E65 /* Medicine */,
+				4D0DC5FF231E996B00912E65 /* Onboard */,
+				4D0DC5FE231E996000912E65 /* Profile */,
 				95355957231E63320014EA5F /* TextFieldCell.swift */,
 				95355959231E63330014EA5F /* TextFieldCell.xib */,
 				95355958231E63330014EA5F /* TwoLabelsCell.swift */,
 				95355955231E63320014EA5F /* TwoLabelsCell.xib */,
 				BE9BECFD230E8DAD00640A93 /* CalenderView.swift */,
-				BE9982E3231E2B83000459E5 /* AddMedicine.storyboard */,
-				BE9982E4231E2B83000459E5 /* DoctorOnBoardView.swift */,
-				BE9982E1231E2B83000459E5 /* DoctorProfileCell.swift */,
-				BE9982E0231E2B83000459E5 /* MedicineList.storyboard */,
-				BE9982DF231E2B83000459E5 /* MedicineListTableViewCell.swift */,
-				BE9982DC231E2B83000459E5 /* MedicineListTableViewCell.xib */,
-				BE9982DD231E2B83000459E5 /* PatientOnBoardView.swift */,
-				BE9982E2231E2B83000459E5 /* Profile.storyboard */,
-				BE9982DE231E2B83000459E5 /* UserProfileCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -250,16 +357,10 @@
 		B06A9C85230E6F44007D38B5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				BE9BECF9230E892F00640A93 /* HistoryController.swift */,
-				BE99830A231E2BFD000459E5 /* AddMedicineVC.swift */,
-				BE99830C231E2BFE000459E5 /* CalenderView.swift */,
-				BE998306231E2BFD000459E5 /* DateCollectionViewCell.swift */,
-				BE998308231E2BFD000459E5 /* DoctorOnBoardController.swift */,
-				BE99830B231E2BFD000459E5 /* MedicineListViewController.swift */,
-				95355963231E635C0014EA5F /* CreateRecordTableVC.swift */,
-				95355964231E635C0014EA5F /* OptionsTableVC.swift */,
-				BE998309231E2BFD000459E5 /* PatientOnBoardViewController.swift */,
-				BE998307231E2BFD000459E5 /* ProfileController.swift */,
+				4D0DC5FD231E993200912E65 /* Onboard */,
+				4D0DC5FC231E990300912E65 /* Medicine */,
+				4D0DC5FB231E98F600912E65 /* Profile */,
+				4D0DC5FA231E98E800912E65 /* History */,
 				B044F628231E867000FFF42D /* Load.swift */,
 			);
 			path = Controller;
@@ -405,7 +506,6 @@
 				B06A9C70230E69E9007D38B5 /* MiniChallenge3.xcdatamodeld in Sources */,
 				BE6492E3231D1696001E27A7 /* SleepTableViewCell.swift in Sources */,
 				BE9982FB231E2BCB000459E5 /* MedicineModel.swift in Sources */,
-				BE9BED02230E944D00640A93 /* DateCollectionViewCell.swift in Sources */,
 				BE998304231E2BCB000459E5 /* CloudData.swift in Sources */,
 				BE9BED152317D67700640A93 /* MedicineTableViewCell.swift in Sources */,
 			);
