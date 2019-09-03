@@ -73,11 +73,11 @@ class AddMedicineVC: UIViewController,UIPickerViewDelegate, UIPickerViewDataSour
             return
         }
         
-//        if getCategory == "Rutin" {
-//           MedicineModel.shared.saveMedicineData(kategori: getCategory, namaObat: getName, deskripsiObat: getDesc, dosisObat: getDose, setelahSebelumMakan: getTime, jumlahPerHari: getDay, pasienRN: getUserID)
-//        }else if getCategory == "Sewaktu-waktu"{
-//            MedicineModel.shared.saveMedicineData(kategori: getCategory, namaObat: getName, deskripsiObat: getDesc, dosisObat: getDose, setelahSebelumMakan: getTime, jumlahPerHari: getDay, pasienRN: getUserID)
-//        }
+        if getCategory == "Rutin" {
+           MedicineModel.shared.saveMedicineData(kategori: getCategory, namaObat: getName, deskripsiObat: getDesc, dosisObat: getDose, setelahSebelumMakan: getTime, jumlahPerHari: getDay, pasienRN: getUserID)
+        }else if getCategory == "Sewaktu-waktu"{
+            MedicineModel.shared.saveMedicineData(kategori: getCategory, namaObat: getName, deskripsiObat: getDesc, dosisObat: getDose, setelahSebelumMakan: getTime, jumlahPerHari: getDay, pasienRN: getUserID)
+        }
         
         
         
