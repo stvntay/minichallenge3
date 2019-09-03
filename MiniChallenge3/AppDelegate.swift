@@ -53,22 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //
 //        window?.rootViewController = page
 //        window?.makeKeyAndVisible()
-        window = UIWindow(frame: UIScreen.main.bounds)
-        if UserDefaults.standard.string(forKey: "userID") != nil {
 
-            let storyboard = UIStoryboard(name: "TabMenu", bundle: nil)
-            let page = storyboard.instantiateViewController(withIdentifier: "menuTab") as! UITabBarController
-            window?.rootViewController = page
-            window?.makeKeyAndVisible()
-        }else{
-        
-            let storyboard = UIStoryboard(name: "Onboard", bundle: nil)
-            let dashboard = storyboard.instantiateViewController(withIdentifier: "doctorNav")
-        
-            window?.rootViewController = dashboard
-            window?.makeKeyAndVisible()
-            
-        }
         
         return true
     }

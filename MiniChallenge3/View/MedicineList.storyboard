@@ -13,6 +13,7 @@
         <!--Medicine List View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="medicineView" id="BYZ-38-t0r" customClass="MedicineListViewController" customModule="MiniChallenge3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -69,15 +70,14 @@
                         <outlet property="medicineList" destination="svb-jf-8qN" id="zEg-ww-fs1"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1868.1159420289857" y="20.758928571428569"/>
         </scene>
-        <!--Obat-->
+        <!--Item-->
         <scene sceneID="UBH-FP-V4l">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0hJ-IH-5Im" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Obat" id="HaJ-fN-JWL"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="HaJ-fN-JWL"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jq7-Bh-RkQ">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
