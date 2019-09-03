@@ -65,16 +65,16 @@ final class RecordModel {
         let pasienID = CKRecord.ID(recordName: pasienRN)
         let reference = CKRecord.Reference(recordID: pasienID, action: .deleteSelf)
         
-        print(namaObat, "nama obat",
-              obat, "freq obat",
-              membersihkanDiri,
-              makanDenganRapi,
-              membersihkanPakaian,
-              membersihkanRumah,
-              berkomunikasiDenganLingkungan,
-              tidurHariIni,
-              catatan,
-              pasienRN
+        print(
+          "Nama Obat:", namaObat,
+          "Freq Obat:", obat,
+          membersihkanDiri,
+          makanDenganRapi,
+          membersihkanPakaian,
+          membersihkanRumah,
+          berkomunikasiDenganLingkungan,
+          "Tidur:", tidurHariIni,
+          "Notes:", catatan
         )
         newData.setValue(namaObat, forKey: "namaObat")
         newData.setValue(obat, forKey: "obat")

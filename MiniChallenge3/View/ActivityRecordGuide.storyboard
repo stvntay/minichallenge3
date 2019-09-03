@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--activityGuide-->
         <scene sceneID="Pqw-3l-biZ">
             <objects>
-                <viewController id="qT8-y8-d0G" sceneMemberID="viewController">
+                <viewController title="Panduan Penilaian Aktivitas" id="qT8-y8-d0G" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bGj-MG-CiU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,14 +28,16 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.4549019608" blue="0.37254901959999998" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" editable="NO" text="Pasien melaksanakan kegiatan tanpa dibimbing dan disuruh" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="BNV-jr-PfB">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Pasien melaksanakan kegiatan tanpa dibimbing dan disuruh" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="BNV-jr-PfB">
                                 <rect key="frame" x="30" y="166" width="354" height="82"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Mandiri" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s7U-Fd-zFz">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mandiri" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s7U-Fd-zFz">
                                 <rect key="frame" x="30" y="135" width="354" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <color key="textColor" red="0.93725490199999995" green="0.4549019608" blue="0.37254901959999998" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -70,10 +72,6 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="s7U-Fd-zFz" firstAttribute="centerX" secondItem="bGj-MG-CiU" secondAttribute="centerX" id="HqW-sM-teX"/>
-                            <constraint firstItem="BNV-jr-PfB" firstAttribute="centerX" secondItem="bGj-MG-CiU" secondAttribute="centerX" id="yFz-qg-j2g"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="JTe-m7-EVt"/>
                     </view>
                 </viewController>

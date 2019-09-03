@@ -29,9 +29,6 @@ struct commentValue {
 
 class CreateRecordTableVC: UITableViewController {
     
-    // TO DO:
-    // - Fix the damn pickerview, it's fuckin cliping through the cells!!!!
-    
     let labelCellIdentifier = "TwoLabelsCell"
     let textFieldCellIdentifier = "TextfieldCell"
     let activityPickerCellIdentifier = "ActivityPickerCell"
@@ -39,6 +36,7 @@ class CreateRecordTableVC: UITableViewController {
     var valueToPass = -1
     var expandedRow = -1
     
+    var medicineValues = [medicineValue]()
     var activityValues = [
         activityValue(activityName: "Membersihkan diri", activityValue: ""),
         activityValue(activityName: "Makan dengan rapi", activityValue: ""),
@@ -46,15 +44,8 @@ class CreateRecordTableVC: UITableViewController {
         activityValue(activityName: "Membersihkan rumah", activityValue: ""),
         activityValue(activityName: "Komunikasi dengan baik", activityValue: ""),
     ]
-    var medicineValues = [medicineValue]()
-    
-//    var medicineValues = [
-//        medicineValue(medicineName: "Cannabinol", medicineConsumptionFrequency: "99x"),
-//        medicineValue(medicineName: "Lysergic Acid Diethylamid", medicineConsumptionFrequency: "99x")
-//    ]
-    
     var commentValues = [
-        commentValue(commentTitle: "Bagaimana tidur pasien?", commentBody: "Nyenyak kayaknya"),
+        commentValue(commentTitle: "Bagaimana tidur pasien?", commentBody: ""),
         commentValue(commentTitle: "Apakah ada keluhan / kejadian hari ini?", commentBody: "")
     ]
     
@@ -72,6 +63,8 @@ class CreateRecordTableVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationController?.title = "Buat Catatan"
+        
         RecordModel.shared.loadMedicineData(userRN: "5187BE88-B4D8-4E65-B2D4-6D20663B6D6C") { (result) in
             self.CKMedicineData = result
         }
@@ -102,6 +95,11 @@ class CreateRecordTableVC: UITableViewController {
             UINib(nibName: "ActivityPickerCell", bundle: nil),
             forCellReuseIdentifier: activityPickerCellIdentifier
         )
+        
+//        tableView.register(
+//            UINib(nibName: "ActivityPickerHeader", bundle: nil),
+//            forCellReuseIdentifier: tableView.headerView(forSection: 1)?.reuseIdentifier ?? ""
+//        )
     }
 
     // MARK: - Table view data source
@@ -116,7 +114,7 @@ class CreateRecordTableVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return medicineNames.count
+            return medicineValues.count
         }
         
         if section == 1 {
@@ -138,8 +136,8 @@ class CreateRecordTableVC: UITableViewController {
                 withIdentifier: labelCellIdentifier,
                 for: indexPath
                 ) as! TwoLabelsCell
-            cell.title.text = medicineNames[indexPath.row]
-//            cell.cellValue.text = medicineValues[indexPath.row].medicineConsumptionFrequency
+            cell.title.text = medicineValues[indexPath.row].medicineName
+            cell.cellValue.text = medicineValues[indexPath.row].medicineConsumptionFrequency
             return cell
         }
         
@@ -149,9 +147,14 @@ class CreateRecordTableVC: UITableViewController {
                 withIdentifier: activityPickerCellIdentifier,
                 for: indexPath
                 ) as! ActivityPickerCell
+            let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(goToActivityGuide))
+
             cell.activityName.text = activityValues[indexPath.row].activityName
             cell.activityValue.text = "Pilih"
             cell.activityPicker.isHidden = true
+            cell.activityGuide.isUserInteractionEnabled = true
+            cell.activityGuide.addGestureRecognizer(gestureRecognizer)
+            
             return cell
         }
         
@@ -161,8 +164,10 @@ class CreateRecordTableVC: UITableViewController {
                 withIdentifier: textFieldCellIdentifier,
                 for: indexPath
                 ) as! TextFieldCell
+            
             cell.question.text = commentValues[0].commentTitle
             cell.textInput.text = commentValues[0].commentBody
+            
             return cell
         }
         
@@ -171,9 +176,15 @@ class CreateRecordTableVC: UITableViewController {
             withIdentifier: textFieldCellIdentifier,
             for: indexPath
             ) as! TextFieldCell
+        
         cell.question.text = commentValues[1].commentTitle
         cell.textInput.text = commentValues[1].commentBody
+        
         return cell
+    }
+    
+    @objc func goToActivityGuide() {
+        performSegue(withIdentifier: "toActivityGuide", sender: self)
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -208,13 +219,17 @@ class CreateRecordTableVC: UITableViewController {
                 expandedRow = indexPath.row
                 cell.activityPicker.isHidden = false
             }
-            
-            
         }
         
         tableView.beginUpdates()
         tableView.endUpdates()
     }
+    
+//    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let header = tableView.headerView(forSection: 1)
+//        
+//        return header
+//    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueToOptions" {
@@ -226,12 +241,18 @@ class CreateRecordTableVC: UITableViewController {
     @IBAction func unwind(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? OptionsTableVC {
             medicineValues[sourceViewController.selectedRow].medicineConsumptionFrequency = sourceViewController.selectedValue
-            
             tableView.reloadData()
         }
     }
     
     @IBAction func submit(_ sender: Any) {
+        if medicineValues.count > 0 {
+            for x in 0...medicineValues.count - 1 {
+                medicineNames.append(medicineValues[x].medicineName)
+                medicineFreq.append(medicineValues[x].medicineConsumptionFrequency)
+            }
+        }
+        
         for x in 0...activityValues.count - 1 {
             let indexes = IndexPath.init(row: x, section: 1)
             let cell = tableView.cellForRow(at: indexes) as! ActivityPickerCell

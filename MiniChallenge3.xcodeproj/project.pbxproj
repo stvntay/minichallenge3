@@ -17,6 +17,8 @@
 		95355962231E63330014EA5F /* ActivityRecordGuide.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9535595A231E63330014EA5F /* ActivityRecordGuide.storyboard */; };
 		95355965231E635C0014EA5F /* CreateRecordTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95355963231E635C0014EA5F /* CreateRecordTableVC.swift */; };
 		95355966231E635C0014EA5F /* OptionsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95355964231E635C0014EA5F /* OptionsTableVC.swift */; };
+		95355968231E7C580014EA5F /* ActivityPickerHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95355967231E7C580014EA5F /* ActivityPickerHeader.swift */; };
+		9535596A231E7C750014EA5F /* ActivityPickerHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95355969231E7C750014EA5F /* ActivityPickerHeader.xib */; };
 		B06A9C68230E69E9007D38B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C67230E69E9007D38B5 /* AppDelegate.swift */; };
 		B06A9C6A230E69E9007D38B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C69230E69E9007D38B5 /* ViewController.swift */; };
 		B06A9C6D230E69E9007D38B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B06A9C6B230E69E9007D38B5 /* Main.storyboard */; };
@@ -82,6 +84,8 @@
 		9535595A231E63330014EA5F /* ActivityRecordGuide.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ActivityRecordGuide.storyboard; sourceTree = "<group>"; };
 		95355963231E635C0014EA5F /* CreateRecordTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateRecordTableVC.swift; sourceTree = "<group>"; };
 		95355964231E635C0014EA5F /* OptionsTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsTableVC.swift; sourceTree = "<group>"; };
+		95355967231E7C580014EA5F /* ActivityPickerHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityPickerHeader.swift; sourceTree = "<group>"; };
+		95355969231E7C750014EA5F /* ActivityPickerHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityPickerHeader.xib; sourceTree = "<group>"; };
 		B06A9C64230E69E9007D38B5 /* MiniChallenge3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniChallenge3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B06A9C67230E69E9007D38B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B06A9C69230E69E9007D38B5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -216,6 +220,8 @@
 				BEB583112318FECA000153DC /* HistoryView.swift */,
 				BE9BED132317D67700640A93 /* MedicineTableViewCell.swift */,
 				BE9BED142317D67700640A93 /* MedicineTableViewCell.xib */,
+				95355967231E7C580014EA5F /* ActivityPickerHeader.swift */,
+				95355969231E7C750014EA5F /* ActivityPickerHeader.xib */,
 				BE9BED192317E45A00640A93 /* ActivityTableViewCell.swift */,
 				BE9BED1A2317E45A00640A93 /* ActivityTableViewCell.xib */,
 				BE6492E1231D1696001E27A7 /* SleepTableViewCell.swift */,
@@ -341,6 +347,7 @@
 				BE9982EB231E2B83000459E5 /* Profile.storyboard in Resources */,
 				BE6492E8231D169F001E27A7 /* ComplainTableViewCell.xib in Resources */,
 				9535595E231E63330014EA5F /* ActivityPickerCell.xib in Resources */,
+				9535596A231E7C750014EA5F /* ActivityPickerHeader.xib in Resources */,
 				BE998318231E2C63000459E5 /* Onboard.storyboard in Resources */,
 				B06A9C75230E69EB007D38B5 /* LaunchScreen.storyboard in Resources */,
 				BE998315231E2C0E000459E5 /* Fonts in Resources */,
@@ -380,6 +387,7 @@
 				BE998311231E2BFE000459E5 /* AddMedicineVC.swift in Sources */,
 				BEB583122318FECA000153DC /* HistoryView.swift in Sources */,
 				BE998305231E2BCB000459E5 /* DashboardData.swift in Sources */,
+				95355968231E7C580014EA5F /* ActivityPickerHeader.swift in Sources */,
 				9535595C231E63330014EA5F /* ActivityPickerCell.swift in Sources */,
 				BE998323231E3DB2000459E5 /* RecordData.swift in Sources */,
 				BE998303231E2BCB000459E5 /* HistoryModel.swift in Sources */,
@@ -551,7 +559,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MiniChallenge3/MiniChallenge3.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LLU3TMC9Q3;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = MiniChallenge3/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -570,7 +578,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MiniChallenge3/MiniChallenge3.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LLU3TMC9Q3;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = MiniChallenge3/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

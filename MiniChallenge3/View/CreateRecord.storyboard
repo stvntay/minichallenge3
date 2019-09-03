@@ -17,14 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0w7-Fu-ImF">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Button"/>
-                            <connections>
-                                <action selector="submit:" destination="5aF-pk-qYB" eventType="touchUpInside" id="rf5-b0-umL"/>
-                            </connections>
-                        </button>
                         <connections>
                             <outlet property="dataSource" destination="5aF-pk-qYB" id="yci-jp-aiD"/>
                             <outlet property="delegate" destination="5aF-pk-qYB" id="qsc-1c-wAX"/>
@@ -32,6 +24,7 @@
                     </tableView>
                     <connections>
                         <segue destination="VZ4-TT-VTZ" kind="show" identifier="segueToOptions" id="VTC-RX-cbV"/>
+                        <segue destination="obZ-XP-2Fr" kind="show" identifier="toActivityGuide" id="9n4-rw-Vg6"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hcr-HN-p1b" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -47,10 +40,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="optionCell" id="ta9-wc-mxk">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="optionCell" id="T61-Vw-Bcc">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ta9-wc-mxk" id="rrK-Wz-1bg">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="T61-Vw-Bcc" id="n3m-cV-Tvy">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
@@ -69,6 +62,14 @@
                 <exit id="HCt-VN-3xA" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="446" y="182"/>
+        </scene>
+        <!--ActivityRecordGuide-->
+        <scene sceneID="3ll-M6-XjV">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ActivityRecordGuide" id="obZ-XP-2Fr" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RPY-2J-J8D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1212" y="54"/>
         </scene>
     </scenes>
 </document>
