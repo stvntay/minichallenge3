@@ -18,6 +18,15 @@ final class RecordModel {
     
     // MARK: - Load medicine name data from cloudkit
     
+    func parseMedicineName(medicineDatas: [CKRecord]) -> [String] {
+        var datas = [String]()
+        
+        for data in medicineDatas {
+            datas.append(data["nama"] as! String)
+        }
+        return datas
+    }
+    
     func loadMedicineData(userRN: String, completion: @escaping (_ recID: [CKRecord]) -> Void) {
         let userID = CKRecord.ID(recordName: userRN)
         let pred = NSPredicate(format: "pasienID = %@", userID)
@@ -40,11 +49,33 @@ final class RecordModel {
     
     // MARK: - Save record data to CloudKit
     
-    func saveMedicalRecord(namaObat: [String], obat: [String], membersihkanDiri: String, makanDenganRapi: String, membersihkanPakaian: String, membersihkanRumah: String, berkomunikasiDenganLingkungan: String, tidurHariIni: String, catatan: String, pasienRN: String) {
+    func saveMedicalRecord(
+            namaObat: [String],
+            obat: [String],
+            membersihkanDiri: String,
+            makanDenganRapi: String,
+            membersihkanPakaian: String,
+            membersihkanRumah: String,
+            berkomunikasiDenganLingkungan: String,
+            tidurHariIni: String,
+            catatan: String,
+            pasienRN: String
+        ) {
         let newData = CKRecord(recordType: "MedicalRecord")
         let pasienID = CKRecord.ID(recordName: pasienRN)
         let reference = CKRecord.Reference(recordID: pasienID, action: .deleteSelf)
         
+        print(namaObat, "nama obat",
+              obat, "freq obat",
+              membersihkanDiri,
+              makanDenganRapi,
+              membersihkanPakaian,
+              membersihkanRumah,
+              berkomunikasiDenganLingkungan,
+              tidurHariIni,
+              catatan,
+              pasienRN
+        )
         newData.setValue(namaObat, forKey: "namaObat")
         newData.setValue(obat, forKey: "obat")
         newData.setValue(membersihkanDiri, forKey: "membersihkanDiri")
