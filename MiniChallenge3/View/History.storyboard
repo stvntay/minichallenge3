@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="x2h-43-9pr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xdy-7l-rr1">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -128,15 +128,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zzs-JK-eoU">
-                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <items>
-                                    <tabBarItem systemItem="favorites" id="LRh-pe-RiQ"/>
-                                    <tabBarItem systemItem="more" id="SlB-Xl-a5a"/>
-                                </items>
-                            </tabBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="57i-ep-uoc">
                                 <rect key="frame" x="26" y="456" width="363" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -207,12 +198,33 @@
                             <outlet property="segmentedControl" destination="2d3-xU-ESD" id="eYr-Jm-lXL"/>
                         </connections>
                     </view>
+                    <navigationItem key="navigationItem" id="aXi-oV-R2i"/>
                     <connections>
                         <outlet property="historyView" destination="ZlK-fE-37N" id="lPK-yD-GRR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zTQ-7y-Um3" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="Odx-OM-NP4"/>
+            </objects>
+            <point key="canvasLocation" x="-1026.0869565217392" y="-128.57142857142856"/>
+        </scene>
+        <!--Riwayat-->
+        <scene sceneID="Hd2-F8-eBP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xdy-7l-rr1" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Riwayat" id="Ubg-F6-Pkv"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gwS-bL-Y47">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="x2h-43-9pr" kind="relationship" relationship="rootViewController" id="79S-Zx-h2V"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fOJ-YV-a7o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1936.2318840579712" y="-128.57142857142856"/>
         </scene>

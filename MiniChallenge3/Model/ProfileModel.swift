@@ -16,9 +16,10 @@ final class ProfileModel {
     
     private init() {}
     
-    // MARK: - Load data to CloudKit
+    // MARK: - Load profile data to CloudKit
     
-    func loadPsikiaterData(doctorID: CKRecord.ID, completion: @escaping (_ recID: [CKRecord]) -> Void) {
+    func loadPsikiaterData(doctorRN: String, completion: @escaping (_ recID: [CKRecord]) -> Void) {
+        let doctorID = CKRecord.ID(recordName: doctorRN)
         let pred = NSPredicate(format: "recordID = %@", doctorID)
         let query = CKQuery(recordType: "PsikiaterData", predicate: pred)
         
@@ -35,7 +36,8 @@ final class ProfileModel {
         
     }
     
-    func loadMedicalID(userID: CKRecord.ID, completion: @escaping (_ recID: [CKRecord]) -> Void) {
+    func loadMedicalID(userRN: String, completion: @escaping (_ recID: [CKRecord]) -> Void) {
+        let userID = CKRecord.ID(recordName: userRN)
         let pred = NSPredicate(format: "recordID = %@", userID)
         let query = CKQuery(recordType: "MedicalID", predicate: pred)
         

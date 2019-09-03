@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CloudKit
 
 class PatientOnBoardViewController: UIViewController {
     
@@ -15,6 +16,10 @@ class PatientOnBoardViewController: UIViewController {
     var datepicker = UIDatePicker()
     var data : DoctorData?
     var onBoardData: OnBoardData?
+//    var cloudData = CloudData()
+    var doctorID: String = ""
+    var userID: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 //        guard let getData = data else{
@@ -22,7 +27,21 @@ class PatientOnBoardViewController: UIViewController {
 //        }
         
         // Do any additional setup after loading the view.
+        initialization()
+        closeKeyboardWhenClickView()
         
+        navigationItem.title = "Data Pasien"
+        self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 0.4190294743, blue: 0.3407981396, alpha: 1)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Selesai", style: .plain, target: self, action: #selector(submitData))
+        
+    }
+    
+    func closeKeyboardWhenClickView(){
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    @objc func dismissKeyboard(){
+        view.endEditing(true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -31,7 +50,7 @@ class PatientOnBoardViewController: UIViewController {
     
     func initialization(){
         patientView.releaseDateInput.addTarget(self, action: #selector(getDateRelease), for: .touchDown)
-        patientView.doneBtn.addTarget(self, action: #selector(submitData), for: .touchUpInside)
+       
     }
     
     @objc func getDateRelease(sender: UITextField){
@@ -52,7 +71,7 @@ class PatientOnBoardViewController: UIViewController {
     
     @objc func doneDatePicker(){
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd MMM yyyy"
+        dateFormatter.dateFormat = "dd/MM/yyyy"
         patientView.releaseDateInput.text = dateFormatter.string(from: datepicker.date)
         self.view.endEditing(true)
     }
@@ -63,6 +82,7 @@ class PatientOnBoardViewController: UIViewController {
     
     @objc func submitData(sender: UIButton){
         
+       
         guard let getData = data else{
             return
         }
@@ -83,7 +103,45 @@ class PatientOnBoardViewController: UIViewController {
             return
         }
         
-        onBoardData = OnBoardData(doctorData: getData, name: patientName, age: patientAge, date: releaseDate, address: patientAddress, hospital: patientHospital)
+//        onBoardData = OnBoardData(doctorData: getData, name: patientName, age: patientAge, date: releaseDate, address: patientAddress, hospital: patientHospital)
+//
+   
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/mm/yyyy"
+        let date = dateFormatter.date(from: releaseDate)
+        
+     
+        guard let convertPatientAge = Int(patientAge) else { return  }
+        
+        
+        OnboardModel.shared.savePsikiaterAndUserData(namaPsikiater: getData.doctorName, nomorTelepon: getData.doctorNumber, alamat: patientAddress, namaUser: patientName, tanggalLepasPasung: date!, umur: "\(convertPatientAge)", puskesmas: patientHospital, completion: { (passDoctorID, passUserID) in
+            
+            
+            self.doctorID = passDoctorID
+            self.userID = passUserID
+
+//            let userIDString = self.userID
+            UserDefaults.standard.set(self.userID,forKey: "userID")
+            
+            
+            let storyboard = UIStoryboard(name: "TabMenu", bundle: nil)
+
+            //        let vc = PatientOnBoardViewController()
+            //        vc.data = data
+            //        navigationController?.pushViewController(vc, animated: true)
+            let page = storyboard.instantiateViewController(withIdentifier: "menuTab") as! UITabBarController
+
+            self.present(page, animated: true, completion: nil)
+            
+//            guard let idDoctor = self.doctorID else{
+//                return
+//            }
+//            guard let idUser = self.userID else{
+//                return
+//            }
+            
+            })
+        
     }
 
 

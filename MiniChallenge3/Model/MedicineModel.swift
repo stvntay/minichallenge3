@@ -18,10 +18,12 @@ final class MedicineModel {
     
     // MARK: - Save medicine data to CloudKit
     
-    func saveCommonMedicineData(namaObat: String, deskripsiObat: String, dosisObat:String, setelahSebelumMakan: String, jumlahPerHari: Int, pasienID: CKRecord.ID) {
-        let newData = CKRecord(recordType: "CommonMedicineData")
+    func saveMedicineData(kategori: String, namaObat: String, deskripsiObat: String, dosisObat:String, setelahSebelumMakan: String, jumlahPerHari: String, pasienRN: String) {
+        let newData = CKRecord(recordType: "MedicineData")
+        let pasienID = CKRecord.ID(recordName: pasienRN)
         let reference = CKRecord.Reference(recordID: pasienID, action: .deleteSelf)
         
+        newData.setValue(kategori, forKey: "kategori")
         newData.setValue(namaObat, forKey: "namaObat")
         newData.setValue(deskripsiObat, forKey: "deskripsiObat")
         newData.setValue(dosisObat, forKey: "dosisObat")
@@ -39,48 +41,12 @@ final class MedicineModel {
         
     }
     
-    func saveRareMedichineData(namaObat: String, deskripsiObat: String, dosisObat:String, setelahSebelumMakan: String, pasienID: CKRecord.ID) {
-        let newData = CKRecord(recordType: "RareMedicineData")
-        let reference = CKRecord.Reference(recordID: pasienID, action: .deleteSelf)
-        
-        newData.setValue(namaObat, forKey: "namaObat")
-        newData.setValue(deskripsiObat, forKey: "deskripsiObat")
-        newData.setValue(dosisObat, forKey: "dosisObat")
-        newData.setValue(setelahSebelumMakan, forKey: "setelahSebelumMakan")
-        newData.setValue(reference, forKey: "pasienID")
-        
-        CKContainer.default().publicCloudDatabase.save(newData) { (record, error) in
-            if record != nil {
-                print("save data success")
-            } else {
-                print(error.debugDescription)
-            }
-        }
-        
-    }
-    
     // MARK: - Load medicine data to CloudKit
     
-    func loadCommonMedicineData(userID: CKRecord.ID, completion: @escaping (_ recID: [CKRecord]) -> Void) {
+    func loadMedicineData(userRN: String, completion: @escaping (_ recID: [CKRecord]) -> Void) {
+        let userID = CKRecord.ID(recordName: userRN)
         let pred = NSPredicate(format: "pasienID = %@", userID)
-        let query = CKQuery(recordType: "CommonMedicineData", predicate: pred)
-        
-        CKContainer.default().publicCloudDatabase.perform(query, inZoneWith: nil) { (records, error) in
-            DispatchQueue.main.async {
-                guard let records = records else {
-                    print(error?.localizedDescription as Any)
-                    return
-                }
-                print(records)
-                completion(records)
-            }
-        }
-        
-    }
-    
-    func loadRareMedicineData(userID: CKRecord.ID, completion: @escaping (_ recID: [CKRecord]) -> Void) {
-        let pred = NSPredicate(format: "pasienID = %@", userID)
-        let query = CKQuery(recordType: "RareMedicineData", predicate: pred)
+        let query = CKQuery(recordType: "MedicineData", predicate: pred)
         
         CKContainer.default().publicCloudDatabase.perform(query, inZoneWith: nil) { (records, error) in
             DispatchQueue.main.async {

@@ -18,21 +18,10 @@ final class HistoryModel {
     
     // MARK: - Load history data to CloudKit
     
-    func parseMedicineName(common: [CKRecord], rare: [CKRecord]) -> [String] {
-        var dataNama = [String]()
-        for data in common {
-            dataNama.append(data["nama"] as! String)
-        }
-        for data in rare {
-            dataNama.append(data["nama"] as! String)
-        }
-        return dataNama
-        
-    }
-    
-    func loadCommonMedicineData(userID: CKRecord.ID, completion: @escaping (_ recID: [CKRecord]) -> Void) {
+    func loadMedicineData(userRN: String, completion: @escaping (_ recID: [CKRecord]) -> Void) {
+        let userID = CKRecord.ID(recordName: userRN)
         let pred = NSPredicate(format: "pasienID = %@", userID)
-        let query = CKQuery(recordType: "CommonMedicineData", predicate: pred)
+        let query = CKQuery(recordType: "MedicineData", predicate: pred)
         let sort = NSSortDescriptor(key: "creationDate", ascending: true)
         query.sortDescriptors = [sort]
         
@@ -49,28 +38,12 @@ final class HistoryModel {
         
     }
     
-    func loadRareMedicineData(userID: CKRecord.ID, completion: @escaping (_ recID: [CKRecord]) -> Void) {
+    func loadMedicalRecord(userRN: String, dateClicked: Date, completion: @escaping (_ recID: [CKRecord]) -> Void) {
+        let userID = CKRecord.ID(recordName: userRN)
         let pred = NSPredicate(format: "pasienID = %@", userID)
-        let query = CKQuery(recordType: "RareMedicineData", predicate: pred)
-        let sort = NSSortDescriptor(key: "creationDate", ascending: true)
-        query.sortDescriptors = [sort]
-        
-        CKContainer.default().publicCloudDatabase.perform(query, inZoneWith: nil) { (records, error) in
-            DispatchQueue.main.async {
-                guard let records = records else {
-                    print(error?.localizedDescription as Any)
-                    return
-                }
-                print(records)
-                completion(records)
-            }
-        }
-        
-    }
-    
-    func loadMedicalRecord(userID: CKRecord.ID, completion: @escaping (_ recID: [CKRecord]) -> Void) {
-        let pred = NSPredicate(format: "pasienID = %@", userID)
-        let query = CKQuery(recordType: "MedicalRecord", predicate: pred)
+        let pred2 = NSPredicate(format: "creationDate = %@", dateClicked as CVarArg)
+        let searchCriteria = NSCompoundPredicate(andPredicateWithSubpredicates: [pred, pred2])
+        let query = CKQuery(recordType: "MedicalRecord", predicate: searchCriteria)
         let sort = NSSortDescriptor(key: "creationDate", ascending: true)
         query.sortDescriptors = [sort]
         
