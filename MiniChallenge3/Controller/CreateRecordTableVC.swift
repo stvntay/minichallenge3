@@ -271,9 +271,6 @@ class CreateRecordTableVC: UITableViewController {
             catatan: commentValues[1].commentBody,
             pasienRN: UserDefaults.standard.string(forKey: "userID") ?? ""
         )
-        
-        let storyboard = UIStoryboard(name: "History", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "recordHistory")
-        self.navigationController?.pushViewController(vc, animated: true)
+        navigationController?.popToRootViewController(animated: true)
     }
 }
