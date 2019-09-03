@@ -24,7 +24,7 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
     var nextNumberOfEmptyBox = Int()
     var previousNumberOfEmptyBox: Int = 0
     var direction = 0
-    var positionIndex = 0
+    var positionIndex = 3
     var leapYearCounter = 3
     var selectedSegment = 0
     
@@ -33,17 +33,20 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        currentMonth = Months[month]
+        currentMonth = Months[month - 1]
         
+        startDateDayPosition()
+        calendarUpdate()
+        
+        // month calendar label and current date label configuration
         historyView.monthLabel.text = "\(currentMonth) \(year)"
-
         historyView.currentDateLabel.text = "\(Days[day % 7]), \(day) \(currentMonth) \(year)"
         
         historyView.calendarView.isPagingEnabled = true
         
+        // Calendar collection view and info table view delegate and data source
         historyView.calendarView.delegate = self
         historyView.calendarView.dataSource = self
-        
         historyView.infoTableView.delegate = self
         historyView.infoTableView.dataSource = self
         
@@ -52,9 +55,31 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
         
         historyView.segmentedControl.addTarget(self, action: #selector(handleSegmentedChange), for: .valueChanged)
         
-        historyView.infoTableView.register(UINib(nibName: "MedicineTableViewCell", bundle: nil), forCellReuseIdentifier: "Medicine")
+        // Register XIB file to Table View
+//        historyView.infoTableView.register(UINib(nibName: "MedicineTableViewCell", bundle: nil), forCellReuseIdentifier: "MedicineID")
         historyView.infoTableView.register(UINib(nibName: "ActivityTableViewCell", bundle: nil), forCellReuseIdentifier: "ActivityID")
+        historyView.infoTableView.register(UINib(nibName: "SleepTableViewCell", bundle: nil), forCellReuseIdentifier: "SleepID")
+        historyView.infoTableView.register(UINib(nibName: "ComplainTableViewCell", bundle: nil), forCellReuseIdentifier: "ComplainID")
         
+        // Dynamic Cell
+        historyView.infoTableView.estimatedRowHeight = 44
+        historyView.infoTableView.rowHeight = UITableView.automaticDimension
+        
+        historyView.infoTableView.tableFooterView = UIView()
+        
+        // set image for calendar button
+        historyView.nextBtn.setImage(UIImage(named: "Next"), for: .normal)
+        historyView.nextBtn.tintColor = #colorLiteral(red: 1, green: 0.4196078431, blue: 0.3411764706, alpha: 1)
+        historyView.previousBtn.setImage(UIImage(named: "Previous"), for: .normal)
+        historyView.previousBtn.tintColor = #colorLiteral(red: 1, green: 0.4196078431, blue: 0.3411764706, alpha: 1)
+        
+        
+        
+        print(date)
+        print(day)
+        print(weekday)
+        print(month)
+        print(year)
     }
     
     // Back button function
@@ -261,31 +286,42 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
     
     // Table View configuration
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return selectedData.count
+        switch selectedSegment {
+        case 0:
+            return selectedData.count
+        case 1:
+            return selectedData.count
+        case 2:
+            return 1
+        case 3:
+            return 1
+        default:
+            return selectedData.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch selectedSegment {
         case 0:
-            let cell = (tableView.dequeueReusableCell(withIdentifier: "Medicine") as? MedicineTableViewCell)!
+            let cell = (tableView.dequeueReusableCell(withIdentifier: "MedicineID") as? MedicineTableViewCell)!
             cell.medicineNameLabel.text = selectedData[indexPath.row]
             cell.doseLabel.text = selectedData[indexPath.row]
             return cell
         case 1:
             let cell = (tableView.dequeueReusableCell(withIdentifier: "ActivityID") as? ActivityTableViewCell)!
             cell.activityLabel.text = selectedData[indexPath.row]
+            cell.statusImage.image = UIImage.init(named: "Tergantung")
             return cell
         case 2:
-            let cell = (tableView.dequeueReusableCell(withIdentifier: "Medicine") as? MedicineTableViewCell)!
-            cell.medicineNameLabel.text = selectedData[indexPath.row]
-            cell.doseLabel.text = selectedData[indexPath.row]
+            let cell = (tableView.dequeueReusableCell(withIdentifier: "SleepID") as? SleepTableViewCell)!
+            cell.sleepLabel.text = selectedData[indexPath.row]
             return cell
         case 3:
-            let cell = (tableView.dequeueReusableCell(withIdentifier: "ActivityID") as? ActivityTableViewCell)!
-            cell.activityLabel.text = selectedData[indexPath.row]
+            let cell = (tableView.dequeueReusableCell(withIdentifier: "ComplainID") as? ComplainTableViewCell)!
+            cell.complainLabel.text = selectedData[indexPath.row]
             return cell
         default:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "Medicine") as! MedicineTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "MedicineID") as! MedicineTableViewCell
             cell.medicineNameLabel.text = selectedData[indexPath.row]
             cell.doseLabel.text = selectedData[indexPath.row]
             return cell
