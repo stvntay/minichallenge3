@@ -61,12 +61,12 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
         doctorTableView.isScrollEnabled = false
         
         
-        ProfileModel.shared.loadMedicalID(userRN: "5187BE88-B4D8-4E65-B2D4-6D20663B6D6C") { (result) in
+        ProfileModel.shared.loadMedicalID(userRN: userDef.string(forKey: "userID")!) { (result) in
             self.userContent = result
             self.userTableView.reloadData()
             self.titleName.text = "\(self.userContent.last?.value(forKey: "nama") ?? "no data")"
         }
-        ProfileModel.shared.loadPsikiaterData(doctorRN: "B1C05391-3D56-495F-9EF5-BBA996D534A0") { (result) in
+        ProfileModel.shared.loadPsikiaterData(doctorRN: userDef.string(forKey: "doctorID")!) { (result) in
             self.doctorContent = result
             self.doctorTableView.reloadData()
         }

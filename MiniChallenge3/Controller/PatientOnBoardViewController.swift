@@ -61,7 +61,7 @@ class PatientOnBoardViewController: UIViewController {
         let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker))
         
-        toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
+        toolbar.setItems([cancelButton,spaceButton,doneButton], animated: false)
         
         datepicker.datePickerMode = .date
         patientView.releaseDateInput.inputAccessoryView = toolbar
@@ -122,7 +122,7 @@ class PatientOnBoardViewController: UIViewController {
 
 //            let userIDString = self.userID
             UserDefaults.standard.set(self.userID,forKey: "userID")
-            
+                UserDefaults.standard.set(self.doctorID, forKey: "doctorID")
             
             let storyboard = UIStoryboard(name: "TabMenu", bundle: nil)
 

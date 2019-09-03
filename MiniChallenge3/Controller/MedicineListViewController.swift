@@ -115,9 +115,10 @@ class MedicineListViewController: UIViewController, UITableViewDelegate, UITable
                 
                 
                 self.medicineData.append(MedicineData(ID: id, category: getCategory, name: getName, desc: getDesc, dose: getDose, time: getTime))
+                self.medicineList.reloadData()
             }
             
-            self.medicineList.reloadData()
+            
             
         }
         
