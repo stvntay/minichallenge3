@@ -12,86 +12,98 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="medicineList" rowHeight="163" id="KGk-i7-Jjw" customClass="MedicineListTableViewCell" customModule="MiniChallenge3" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="163"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="medicineList" rowHeight="192" id="KGk-i7-Jjw" customClass="MedicineListTableViewCell" customModule="MiniChallenge3" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="192"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="162.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="191.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vitamin 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ry-xG-FB7">
-                        <rect key="frame" x="20" y="10" width="110" height="30"/>
+                        <rect key="frame" x="20" y="10" width="130" height="33.5"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="30" id="RG1-SX-a94"/>
+                            <constraint firstAttribute="width" constant="130" id="ICU-Bt-9I3"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
                         <color key="textColor" red="0.93725490196078431" green="0.45490196078431372" blue="0.37254901960784315" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 butir" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gNN-TZ-Nbg">
-                        <rect key="frame" x="136" y="106" width="41" height="17"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Untuk meredakan episode mania dan gangguan suasana hati" translatesAutoresizingMaskIntoConstraints="NO" id="aXN-hG-qnd">
-                        <rect key="frame" x="20" y="48" width="284" height="50"/>
+                        <rect key="frame" x="20" y="48" width="280" height="50"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="50" id="URg-nK-xmc"/>
-                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dosis" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GV4-2a-97O">
-                        <rect key="frame" x="25" y="105" width="44" height="19"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dosis obat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GV4-2a-97O">
+                        <rect key="frame" x="20" y="106" width="82" height="19.5"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waktu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OrP-AD-ZIV">
-                        <rect key="frame" x="25" y="133" width="50" height="20"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waktu konsumsi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TwR-QU-tzz">
+                        <rect key="frame" x="20" y="160" width="127.5" height="19.5"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sesudah makan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rDv-Qq-YfE">
-                        <rect key="frame" x="135" y="133" width="103" height="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sesudah makan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="URc-xS-AVs">
+                        <rect key="frame" x="201.5" y="162.5" width="102.5" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Frekuensi Minum" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OrP-AD-ZIV">
+                        <rect key="frame" x="20" y="132" width="133" height="19.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 x Sehari" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rDv-Qq-YfE">
+                        <rect key="frame" x="236" y="134.5" width="64" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 butir" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gNN-TZ-Nbg">
+                        <rect key="frame" x="259.5" y="108" width="40.5" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="gNN-TZ-Nbg" firstAttribute="top" secondItem="aXN-hG-qnd" secondAttribute="bottom" constant="8" symbolic="YES" id="5m8-zu-fvK"/>
-                    <constraint firstItem="OrP-AD-ZIV" firstAttribute="top" secondItem="GV4-2a-97O" secondAttribute="bottom" constant="9" id="7dS-Qw-GZi"/>
-                    <constraint firstItem="1ry-xG-FB7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="95k-sm-Zp7"/>
-                    <constraint firstItem="gNN-TZ-Nbg" firstAttribute="leading" secondItem="GV4-2a-97O" secondAttribute="trailing" constant="67" id="ELa-D3-FB0"/>
-                    <constraint firstItem="aXN-hG-qnd" firstAttribute="leading" secondItem="1ry-xG-FB7" secondAttribute="leading" id="M5h-Hj-WPG"/>
-                    <constraint firstItem="GV4-2a-97O" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="9" id="Mcd-eb-dxl"/>
-                    <constraint firstItem="rDv-Qq-YfE" firstAttribute="leading" secondItem="OrP-AD-ZIV" secondAttribute="trailing" constant="60" id="N2w-Iy-b83"/>
-                    <constraint firstItem="rDv-Qq-YfE" firstAttribute="top" secondItem="gNN-TZ-Nbg" secondAttribute="bottom" constant="10" id="Q6K-2D-QNQ"/>
-                    <constraint firstItem="aXN-hG-qnd" firstAttribute="top" secondItem="1ry-xG-FB7" secondAttribute="bottom" constant="8" symbolic="YES" id="UPr-Ju-F0y"/>
-                    <constraint firstItem="rDv-Qq-YfE" firstAttribute="leading" secondItem="OrP-AD-ZIV" secondAttribute="trailing" constant="60" id="b60-kj-feP"/>
-                    <constraint firstItem="1ry-xG-FB7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="gtN-Ds-G0k"/>
-                    <constraint firstItem="GV4-2a-97O" firstAttribute="baseline" secondItem="gNN-TZ-Nbg" secondAttribute="firstBaseline" id="h93-IK-DFU"/>
-                    <constraint firstAttribute="bottom" secondItem="rDv-Qq-YfE" secondAttribute="bottom" constant="12.5" id="nBZ-oT-IAJ"/>
-                    <constraint firstItem="GV4-2a-97O" firstAttribute="centerY" secondItem="gNN-TZ-Nbg" secondAttribute="centerY" id="oYh-eE-Orz"/>
-                    <constraint firstItem="OrP-AD-ZIV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="25" id="rxq-bB-nze"/>
-                    <constraint firstItem="GV4-2a-97O" firstAttribute="baseline" secondItem="gNN-TZ-Nbg" secondAttribute="baseline" id="uB8-cV-c5Y"/>
-                    <constraint firstItem="aXN-hG-qnd" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="xZt-LQ-cxv"/>
-                    <constraint firstAttribute="trailing" secondItem="rDv-Qq-YfE" secondAttribute="trailing" constant="82" id="xwG-1N-5IM"/>
-                    <constraint firstAttribute="bottom" secondItem="OrP-AD-ZIV" secondAttribute="bottom" constant="9.5" id="zK7-Tt-KnH"/>
+                    <constraint firstItem="GV4-2a-97O" firstAttribute="top" secondItem="aXN-hG-qnd" secondAttribute="bottom" constant="8" id="1rX-Ls-Qmv"/>
+                    <constraint firstItem="rDv-Qq-YfE" firstAttribute="top" secondItem="gNN-TZ-Nbg" secondAttribute="bottom" constant="9.5" id="8rM-61-rcS"/>
+                    <constraint firstItem="TwR-QU-tzz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="9vX-JE-WtD"/>
+                    <constraint firstAttribute="trailing" secondItem="rDv-Qq-YfE" secondAttribute="trailing" constant="20" id="CLm-wa-sIP"/>
+                    <constraint firstItem="OrP-AD-ZIV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="EAQ-LN-9fv"/>
+                    <constraint firstItem="OrP-AD-ZIV" firstAttribute="top" secondItem="GV4-2a-97O" secondAttribute="bottom" constant="6.5" id="H4S-AS-eyI"/>
+                    <constraint firstItem="aXN-hG-qnd" firstAttribute="top" secondItem="1ry-xG-FB7" secondAttribute="bottom" constant="4.5" id="O0G-zs-GNT"/>
+                    <constraint firstItem="aXN-hG-qnd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="ZlX-hY-gxD"/>
+                    <constraint firstItem="GV4-2a-97O" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="d6B-7a-V2h"/>
+                    <constraint firstItem="URc-xS-AVs" firstAttribute="top" secondItem="rDv-Qq-YfE" secondAttribute="bottom" constant="11" id="esM-Kc-QuJ"/>
+                    <constraint firstItem="TwR-QU-tzz" firstAttribute="top" secondItem="OrP-AD-ZIV" secondAttribute="bottom" constant="8.5" id="gQh-RI-gzN"/>
+                    <constraint firstItem="1ry-xG-FB7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="hTc-KM-2zg"/>
+                    <constraint firstAttribute="trailing" secondItem="URc-xS-AVs" secondAttribute="trailing" constant="16" id="iiF-51-zwg"/>
+                    <constraint firstAttribute="bottom" secondItem="TwR-QU-tzz" secondAttribute="bottom" constant="12" id="lNs-j9-mZH"/>
+                    <constraint firstItem="gNN-TZ-Nbg" firstAttribute="top" secondItem="aXN-hG-qnd" secondAttribute="bottom" constant="10" id="mKF-Q5-QQW"/>
+                    <constraint firstItem="URc-xS-AVs" firstAttribute="top" secondItem="rDv-Qq-YfE" secondAttribute="bottom" constant="11" id="qeh-sq-fso"/>
+                    <constraint firstAttribute="trailing" secondItem="gNN-TZ-Nbg" secondAttribute="trailing" constant="20" id="sln-YR-lm4"/>
+                    <constraint firstItem="aXN-hG-qnd" firstAttribute="top" secondItem="1ry-xG-FB7" secondAttribute="bottom" constant="4.5" id="tM5-5T-Lwp"/>
+                    <constraint firstAttribute="bottom" secondItem="URc-xS-AVs" secondAttribute="bottom" constant="12" id="x1B-JY-yxc"/>
+                    <constraint firstItem="1ry-xG-FB7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="zKg-FN-Zbn"/>
+                    <constraint firstAttribute="trailing" secondItem="aXN-hG-qnd" secondAttribute="trailing" constant="20" id="zLk-Pp-e3A"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="medicineAmount" destination="gNN-TZ-Nbg" id="P9a-YM-vgH"/>
                 <outlet property="medicineDescription" destination="aXN-hG-qnd" id="yOf-ZT-D7A"/>
+                <outlet property="medicineFreq" destination="rDv-Qq-YfE" id="soW-0x-aXB"/>
                 <outlet property="medicineName" destination="1ry-xG-FB7" id="0Sk-3K-ezR"/>
-                <outlet property="medicineTime" destination="rDv-Qq-YfE" id="vAn-rd-evA"/>
+                <outlet property="medicineTime" destination="URc-xS-AVs" id="ias-Od-pZV"/>
             </connections>
-            <point key="canvasLocation" x="137.68115942028987" y="184.48660714285714"/>
+            <point key="canvasLocation" x="137.68115942028987" y="194.19642857142856"/>
         </tableViewCell>
     </objects>
 </document>
