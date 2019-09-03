@@ -7,32 +7,139 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+<<<<<<< HEAD
 		4D1DCDF6230FCA3F00E6B230 /* CloudData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1DCDF5230FCA3F00E6B230 /* CloudData.swift */; };
 		4D1DCDF8230FDF8300E6B230 /* DashboardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1DCDF7230FDF8300E6B230 /* DashboardData.swift */; };
 		4D7984B6231907B90099654F /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D7984B5231907B90099654F /* CloudKit.framework */; };
+=======
+		4D0DC5D92319341F00912E65 /* OnboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0DC5D82319341F00912E65 /* OnboardModel.swift */; };
+		4D0DC5DB231934E900912E65 /* HistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0DC5DA231934E900912E65 /* HistoryModel.swift */; };
+		4D0DC5DD23193A2500912E65 /* RecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0DC5DC23193A2500912E65 /* RecordModel.swift */; };
+		4D0DC5DF23193AFD00912E65 /* MedicineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0DC5DE23193AFD00912E65 /* MedicineModel.swift */; };
+		4D0DC5E123193CAB00912E65 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0DC5E023193CAB00912E65 /* ProfileModel.swift */; };
+		4D0DC5E3231CAB5400912E65 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0DC5E2231CAB5400912E65 /* ProfileController.swift */; };
+		4D0DC5E5231CAC3900912E65 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D0DC5E4231CAC3900912E65 /* Profile.storyboard */; };
+		4D0DC5E7231CB2B500912E65 /* UserProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0DC5E6231CB2B500912E65 /* UserProfileCell.swift */; };
+		4D0DC5E9231CB34A00912E65 /* DoctorProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0DC5E8231CB34A00912E65 /* DoctorProfileCell.swift */; };
+		4D0DC5EB231CCB1200912E65 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0DC5EA231CCB1200912E65 /* Profile.swift */; };
+		B05BB1E923139C1700B80F13 /* Onboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B05BB1E823139C1700B80F13 /* Onboard.storyboard */; };
+		B05BB1ED23139FB500B80F13 /* DoctorOnBoardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05BB1EC23139FB500B80F13 /* DoctorOnBoardController.swift */; };
+		B05BB1EF23139FD800B80F13 /* PatientOnBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05BB1EE23139FD800B80F13 /* PatientOnBoardViewController.swift */; };
+		B05BB1F12313A33400B80F13 /* DoctorOnBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05BB1F02313A33400B80F13 /* DoctorOnBoardView.swift */; };
+		B05BB1F32313A34500B80F13 /* PatientOnBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05BB1F22313A34500B80F13 /* PatientOnBoardView.swift */; };
+>>>>>>> master
 		B06A9C68230E69E9007D38B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C67230E69E9007D38B5 /* AppDelegate.swift */; };
 		B06A9C6A230E69E9007D38B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C69230E69E9007D38B5 /* ViewController.swift */; };
-		B06A9C6D230E69E9007D38B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B06A9C6B230E69E9007D38B5 /* Main.storyboard */; };
 		B06A9C70230E69E9007D38B5 /* MiniChallenge3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C6E230E69E9007D38B5 /* MiniChallenge3.xcdatamodeld */; };
 		B06A9C72230E69EB007D38B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B06A9C71230E69EB007D38B5 /* Assets.xcassets */; };
 		B06A9C75230E69EB007D38B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B06A9C73230E69EB007D38B5 /* LaunchScreen.storyboard */; };
-		B06A9C87230E7173007D38B5 /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C86230E7173007D38B5 /* DashboardController.swift */; };
+		B0948773231D0677002C2B59 /* MedicineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0948772231D0677002C2B59 /* MedicineData.swift */; };
+		B0974FA4231926FE00EC9101 /* MedicineList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0974FA0231926FE00EC9101 /* MedicineList.storyboard */; };
+		B0974FA5231926FE00EC9101 /* AddMedicine.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0974FA1231926FE00EC9101 /* AddMedicine.storyboard */; };
+		B0974FA6231926FE00EC9101 /* MedicineListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0974FA2231926FE00EC9101 /* MedicineListTableViewCell.swift */; };
+		B0974FA7231926FE00EC9101 /* MedicineListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0974FA3231926FE00EC9101 /* MedicineListTableViewCell.xib */; };
+		B0974FAA2319270D00EC9101 /* AddMedicineVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0974FA82319270D00EC9101 /* AddMedicineVC.swift */; };
+		B0974FAB2319270D00EC9101 /* MedicineListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0974FA92319270D00EC9101 /* MedicineListViewController.swift */; };
+		B0974FAD2319298C00EC9101 /* TabMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0974FAC2319298C00EC9101 /* TabMenu.storyboard */; };
+		B0E253AC2317D66400874561 /* DashboardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E253A82317D66400874561 /* DashboardData.swift */; };
+		B0E253AE2317D66400874561 /* CloudData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E253AA2317D66400874561 /* CloudData.swift */; };
+		B0E253B82317D68500874561 /* set~.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0E253B02317D68400874561 /* set~.storyboard */; };
+		B0E253B92317D68500874561 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0E253B22317D68400874561 /* LaunchScreen.storyboard */; };
+		B0E253BA2317D68500874561 /* set.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0E253B42317D68400874561 /* set.storyboard */; };
+		B0E253C52317D68D00874561 /* Signika-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B0E253BD2317D68D00874561 /* Signika-Light.ttf */; };
+		B0E253C62317D68D00874561 /* SignikaNegative-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B0E253BE2317D68D00874561 /* SignikaNegative-Bold.ttf */; };
+		B0E253C72317D68D00874561 /* Signika-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B0E253BF2317D68D00874561 /* Signika-Regular.ttf */; };
+		B0E253C82317D68D00874561 /* SignikaNegative-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B0E253C02317D68D00874561 /* SignikaNegative-Semibold.ttf */; };
+		B0E253C92317D68D00874561 /* Signika-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B0E253C12317D68D00874561 /* Signika-Semibold.ttf */; };
+		B0E253CA2317D68D00874561 /* SignikaNegative-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B0E253C22317D68D00874561 /* SignikaNegative-Regular.ttf */; };
+		B0E253CB2317D68D00874561 /* Signika-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B0E253C32317D68D00874561 /* Signika-Bold.ttf */; };
+		B0E253CC2317D68D00874561 /* SignikaNegative-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B0E253C42317D68D00874561 /* SignikaNegative-Light.ttf */; };
+		B0E253D22317DE0800874561 /* OnBoardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E253D12317DE0800874561 /* OnBoardData.swift */; };
+		B0E253D42317DE1300874561 /* DoctorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E253D32317DE1300874561 /* DoctorData.swift */; };
+		BE6492B923194EAB001E27A7 /* CalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6492B823194EAB001E27A7 /* CalenderView.swift */; };
+		BE6492BB23194EFB001E27A7 /* DateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6492BA23194EFA001E27A7 /* DateCollectionViewCell.swift */; };
+		BE6492BD23194F20001E27A7 /* HistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6492BC23194F20001E27A7 /* HistoryController.swift */; };
+		BE6492BF23194F92001E27A7 /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6492BE23194F92001E27A7 /* ActivityTableViewCell.swift */; };
+		BE6492C123194FB0001E27A7 /* ActivityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE6492C023194FB0001E27A7 /* ActivityTableViewCell.xib */; };
+		BE6492C523194FEB001E27A7 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6492C423194FEB001E27A7 /* HistoryView.swift */; };
+		BE6492C92319501B001E27A7 /* MedicineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6492C82319501B001E27A7 /* MedicineTableViewCell.swift */; };
+		BE6492CB23195025001E27A7 /* MedicineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE6492CA23195025001E27A7 /* MedicineTableViewCell.xib */; };
+		BE6492D223195151001E27A7 /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE6492D023195151001E27A7 /* History.storyboard */; };
+		BE9BED182317D92D00640A93 /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9BED172317D92D00640A93 /* ActivityModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+<<<<<<< HEAD
 		4D1DCDE7230E8CEA00E6B230 /* MiniChallenge3.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MiniChallenge3.entitlements; sourceTree = "<group>"; };
 		4D1DCDF5230FCA3F00E6B230 /* CloudData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudData.swift; sourceTree = "<group>"; };
 		4D1DCDF7230FDF8300E6B230 /* DashboardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardData.swift; sourceTree = "<group>"; };
 		4D7984B5231907B90099654F /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+=======
+		4D0DC5D82319341F00912E65 /* OnboardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardModel.swift; sourceTree = "<group>"; };
+		4D0DC5DA231934E900912E65 /* HistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryModel.swift; sourceTree = "<group>"; };
+		4D0DC5DC23193A2500912E65 /* RecordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordModel.swift; sourceTree = "<group>"; };
+		4D0DC5DE23193AFD00912E65 /* MedicineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineModel.swift; sourceTree = "<group>"; };
+		4D0DC5E023193CAB00912E65 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		4D0DC5E2231CAB5400912E65 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		4D0DC5E4231CAC3900912E65 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		4D0DC5E6231CB2B500912E65 /* UserProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileCell.swift; sourceTree = "<group>"; };
+		4D0DC5E8231CB34A00912E65 /* DoctorProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorProfileCell.swift; sourceTree = "<group>"; };
+		4D0DC5EA231CCB1200912E65 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		B00893662317AB0100D8B0DB /* Signika-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Signika-Bold.ttf"; sourceTree = "<group>"; };
+		B00893672317AB0100D8B0DB /* SignikaNegative-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SignikaNegative-Bold.ttf"; sourceTree = "<group>"; };
+		B00893682317AB0200D8B0DB /* Signika-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Signika-Regular.ttf"; sourceTree = "<group>"; };
+		B00893692317AB0200D8B0DB /* SignikaNegative-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SignikaNegative-Regular.ttf"; sourceTree = "<group>"; };
+		B008936A2317AB0200D8B0DB /* SignikaNegative-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SignikaNegative-Semibold.ttf"; sourceTree = "<group>"; };
+		B008936B2317AB0200D8B0DB /* Signika-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Signika-Semibold.ttf"; sourceTree = "<group>"; };
+		B008936C2317AB0200D8B0DB /* SignikaNegative-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SignikaNegative-Light.ttf"; sourceTree = "<group>"; };
+		B008936D2317AB0300D8B0DB /* Signika-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Signika-Light.ttf"; sourceTree = "<group>"; };
+		B05BB1E823139C1700B80F13 /* Onboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboard.storyboard; sourceTree = "<group>"; };
+		B05BB1EC23139FB500B80F13 /* DoctorOnBoardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorOnBoardController.swift; sourceTree = "<group>"; };
+		B05BB1EE23139FD800B80F13 /* PatientOnBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientOnBoardViewController.swift; sourceTree = "<group>"; };
+		B05BB1F02313A33400B80F13 /* DoctorOnBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorOnBoardView.swift; sourceTree = "<group>"; };
+		B05BB1F22313A34500B80F13 /* PatientOnBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientOnBoardView.swift; sourceTree = "<group>"; };
+>>>>>>> master
 		B06A9C64230E69E9007D38B5 /* MiniChallenge3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniChallenge3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B06A9C67230E69E9007D38B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B06A9C69230E69E9007D38B5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B06A9C6C230E69E9007D38B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B06A9C6F230E69E9007D38B5 /* MiniChallenge3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MiniChallenge3.xcdatamodel; sourceTree = "<group>"; };
 		B06A9C71230E69EB007D38B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B06A9C74230E69EB007D38B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B06A9C76230E69EB007D38B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B06A9C86230E7173007D38B5 /* DashboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
+		B0948772231D0677002C2B59 /* MedicineData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineData.swift; sourceTree = "<group>"; };
+		B0974FA0231926FE00EC9101 /* MedicineList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MedicineList.storyboard; sourceTree = "<group>"; };
+		B0974FA1231926FE00EC9101 /* AddMedicine.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddMedicine.storyboard; sourceTree = "<group>"; };
+		B0974FA2231926FE00EC9101 /* MedicineListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicineListTableViewCell.swift; sourceTree = "<group>"; };
+		B0974FA3231926FE00EC9101 /* MedicineListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MedicineListTableViewCell.xib; sourceTree = "<group>"; };
+		B0974FA82319270D00EC9101 /* AddMedicineVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMedicineVC.swift; sourceTree = "<group>"; };
+		B0974FA92319270D00EC9101 /* MedicineListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicineListViewController.swift; sourceTree = "<group>"; };
+		B0974FAC2319298C00EC9101 /* TabMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabMenu.storyboard; sourceTree = "<group>"; };
+		B0E253A82317D66400874561 /* DashboardData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardData.swift; sourceTree = "<group>"; };
+		B0E253AA2317D66400874561 /* CloudData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudData.swift; sourceTree = "<group>"; };
+		B0E253B12317D68400874561 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "set~.storyboard"; sourceTree = "<group>"; };
+		B0E253B32317D68400874561 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B0E253B52317D68400874561 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = set.storyboard; sourceTree = "<group>"; };
+		B0E253BD2317D68D00874561 /* Signika-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Signika-Light.ttf"; sourceTree = "<group>"; };
+		B0E253BE2317D68D00874561 /* SignikaNegative-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SignikaNegative-Bold.ttf"; sourceTree = "<group>"; };
+		B0E253BF2317D68D00874561 /* Signika-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Signika-Regular.ttf"; sourceTree = "<group>"; };
+		B0E253C02317D68D00874561 /* SignikaNegative-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SignikaNegative-Semibold.ttf"; sourceTree = "<group>"; };
+		B0E253C12317D68D00874561 /* Signika-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Signika-Semibold.ttf"; sourceTree = "<group>"; };
+		B0E253C22317D68D00874561 /* SignikaNegative-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SignikaNegative-Regular.ttf"; sourceTree = "<group>"; };
+		B0E253C32317D68D00874561 /* Signika-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Signika-Bold.ttf"; sourceTree = "<group>"; };
+		B0E253C42317D68D00874561 /* SignikaNegative-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SignikaNegative-Light.ttf"; sourceTree = "<group>"; };
+		B0E253CD2317D6D500874561 /* MiniChallenge3.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MiniChallenge3.entitlements; sourceTree = "<group>"; };
+		B0E253D12317DE0800874561 /* OnBoardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardData.swift; sourceTree = "<group>"; };
+		B0E253D32317DE1300874561 /* DoctorData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorData.swift; sourceTree = "<group>"; };
+		BE6492B823194EAB001E27A7 /* CalenderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalenderView.swift; sourceTree = "<group>"; };
+		BE6492BA23194EFA001E27A7 /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateCollectionViewCell.swift; sourceTree = "<group>"; };
+		BE6492BC23194F20001E27A7 /* HistoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryController.swift; sourceTree = "<group>"; };
+		BE6492BE23194F92001E27A7 /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
+		BE6492C023194FB0001E27A7 /* ActivityTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityTableViewCell.xib; sourceTree = "<group>"; };
+		BE6492C423194FEB001E27A7 /* HistoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		BE6492C82319501B001E27A7 /* MedicineTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicineTableViewCell.swift; sourceTree = "<group>"; };
+		BE6492CA23195025001E27A7 /* MedicineTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MedicineTableViewCell.xib; sourceTree = "<group>"; };
+		BE6492D123195151001E27A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = History.storyboard; sourceTree = "<group>"; };
+		BE9BED172317D92D00640A93 /* ActivityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ActivityModel.swift; path = MiniChallenge3/View/ActivityModel.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,13 +147,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
 				4D7984B6231907B90099654F /* CloudKit.framework in Frameworks */,
+=======
+>>>>>>> master
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+<<<<<<< HEAD
 		4D1DCDE8230E8CF900E6B230 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -64,12 +175,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+=======
+>>>>>>> master
 		B06A9C5B230E69E9007D38B5 = {
 			isa = PBXGroup;
 			children = (
 				B06A9C66230E69E9007D38B5 /* MiniChallenge3 */,
 				B06A9C65230E69E9007D38B5 /* Products */,
-				4D1DCDE8230E8CF900E6B230 /* Frameworks */,
+				B0E253A52317D5EA00874561 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -84,17 +197,20 @@
 		B06A9C66230E69E9007D38B5 /* MiniChallenge3 */ = {
 			isa = PBXGroup;
 			children = (
-				4D1DCDF4230FCA2100E6B230 /* Model */,
-				4D1DCDE7230E8CEA00E6B230 /* MiniChallenge3.entitlements */,
+				B0E253CD2317D6D500874561 /* MiniChallenge3.entitlements */,
+				B0E253BC2317D68D00874561 /* Fonts */,
+				B0E253AF2317D68400874561 /* Base.lproj */,
+				B0E253A62317D66400874561 /* Model */,
 				B06A9C85230E6F44007D38B5 /* Controller */,
 				B06A9C84230E6F3F007D38B5 /* View */,
 				B06A9C67230E69E9007D38B5 /* AppDelegate.swift */,
 				B06A9C69230E69E9007D38B5 /* ViewController.swift */,
-				B06A9C6B230E69E9007D38B5 /* Main.storyboard */,
 				B06A9C71230E69EB007D38B5 /* Assets.xcassets */,
 				B06A9C73230E69EB007D38B5 /* LaunchScreen.storyboard */,
 				B06A9C76230E69EB007D38B5 /* Info.plist */,
 				B06A9C6E230E69E9007D38B5 /* MiniChallenge3.xcdatamodeld */,
+				B05BB1E823139C1700B80F13 /* Onboard.storyboard */,
+				B0974FAC2319298C00EC9101 /* TabMenu.storyboard */,
 			);
 			path = MiniChallenge3;
 			sourceTree = "<group>";
@@ -102,6 +218,22 @@
 		B06A9C84230E6F3F007D38B5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BE6492D023195151001E27A7 /* History.storyboard */,
+				BE6492C423194FEB001E27A7 /* HistoryView.swift */,
+				BE6492C82319501B001E27A7 /* MedicineTableViewCell.swift */,
+				BE6492CA23195025001E27A7 /* MedicineTableViewCell.xib */,
+				BE6492C023194FB0001E27A7 /* ActivityTableViewCell.xib */,
+				BE6492BE23194F92001E27A7 /* ActivityTableViewCell.swift */,
+				BE9BED172317D92D00640A93 /* ActivityModel.swift */,
+				B0974FA1231926FE00EC9101 /* AddMedicine.storyboard */,
+				B0974FA0231926FE00EC9101 /* MedicineList.storyboard */,
+				B0974FA2231926FE00EC9101 /* MedicineListTableViewCell.swift */,
+				B0974FA3231926FE00EC9101 /* MedicineListTableViewCell.xib */,
+				B05BB1F02313A33400B80F13 /* DoctorOnBoardView.swift */,
+				B05BB1F22313A34500B80F13 /* PatientOnBoardView.swift */,
+				4D0DC5E4231CAC3900912E65 /* Profile.storyboard */,
+				4D0DC5E6231CB2B500912E65 /* UserProfileCell.swift */,
+				4D0DC5E8231CB34A00912E65 /* DoctorProfileCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -109,9 +241,74 @@
 		B06A9C85230E6F44007D38B5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B06A9C86230E7173007D38B5 /* DashboardController.swift */,
+				BE6492BC23194F20001E27A7 /* HistoryController.swift */,
+				BE6492BA23194EFA001E27A7 /* DateCollectionViewCell.swift */,
+				BE6492B823194EAB001E27A7 /* CalenderView.swift */,
+				B0974FA82319270D00EC9101 /* AddMedicineVC.swift */,
+				B0974FA92319270D00EC9101 /* MedicineListViewController.swift */,
+				B05BB1EC23139FB500B80F13 /* DoctorOnBoardController.swift */,
+				B05BB1EE23139FD800B80F13 /* PatientOnBoardViewController.swift */,
+				4D0DC5E2231CAB5400912E65 /* ProfileController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		B0E253A52317D5EA00874561 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				B008936C2317AB0200D8B0DB /* SignikaNegative-Light.ttf */,
+				B00893672317AB0100D8B0DB /* SignikaNegative-Bold.ttf */,
+				B00893682317AB0200D8B0DB /* Signika-Regular.ttf */,
+				B008936A2317AB0200D8B0DB /* SignikaNegative-Semibold.ttf */,
+				B00893662317AB0100D8B0DB /* Signika-Bold.ttf */,
+				B008936D2317AB0300D8B0DB /* Signika-Light.ttf */,
+				B008936B2317AB0200D8B0DB /* Signika-Semibold.ttf */,
+				B00893692317AB0200D8B0DB /* SignikaNegative-Regular.ttf */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		B0E253A62317D66400874561 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B0E253A82317D66400874561 /* DashboardData.swift */,
+				B0E253AA2317D66400874561 /* CloudData.swift */,
+				B0E253D12317DE0800874561 /* OnBoardData.swift */,
+				B0E253D32317DE1300874561 /* DoctorData.swift */,
+				4D0DC5D82319341F00912E65 /* OnboardModel.swift */,
+				4D0DC5DA231934E900912E65 /* HistoryModel.swift */,
+				4D0DC5DC23193A2500912E65 /* RecordModel.swift */,
+				4D0DC5DE23193AFD00912E65 /* MedicineModel.swift */,
+				4D0DC5E023193CAB00912E65 /* ProfileModel.swift */,
+				B0948772231D0677002C2B59 /* MedicineData.swift */,
+				4D0DC5EA231CCB1200912E65 /* Profile.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B0E253AF2317D68400874561 /* Base.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				B0E253B02317D68400874561 /* set~.storyboard */,
+				B0E253B22317D68400874561 /* LaunchScreen.storyboard */,
+				B0E253B42317D68400874561 /* set.storyboard */,
+			);
+			path = Base.lproj;
+			sourceTree = "<group>";
+		};
+		B0E253BC2317D68D00874561 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B0E253BD2317D68D00874561 /* Signika-Light.ttf */,
+				B0E253BE2317D68D00874561 /* SignikaNegative-Bold.ttf */,
+				B0E253BF2317D68D00874561 /* Signika-Regular.ttf */,
+				B0E253C02317D68D00874561 /* SignikaNegative-Semibold.ttf */,
+				B0E253C12317D68D00874561 /* Signika-Semibold.ttf */,
+				B0E253C22317D68D00874561 /* SignikaNegative-Regular.ttf */,
+				B0E253C32317D68D00874561 /* Signika-Bold.ttf */,
+				B0E253C42317D68D00874561 /* SignikaNegative-Light.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +361,7 @@
 			knownRegions = (
 				en,
 				Base,
+				global,
 			);
 			mainGroup = B06A9C5B230E69E9007D38B5;
 			productRefGroup = B06A9C65230E69E9007D38B5 /* Products */;
@@ -182,7 +380,29 @@
 			files = (
 				B06A9C75230E69EB007D38B5 /* LaunchScreen.storyboard in Resources */,
 				B06A9C72230E69EB007D38B5 /* Assets.xcassets in Resources */,
-				B06A9C6D230E69E9007D38B5 /* Main.storyboard in Resources */,
+				B05BB1E923139C1700B80F13 /* Onboard.storyboard in Resources */,
+				B0E253B82317D68500874561 /* set~.storyboard in Resources */,
+				B0974FA7231926FE00EC9101 /* MedicineListTableViewCell.xib in Resources */,
+				B0E253CA2317D68D00874561 /* SignikaNegative-Regular.ttf in Resources */,
+				B0E253C72317D68D00874561 /* Signika-Regular.ttf in Resources */,
+				4D0DC5E5231CAC3900912E65 /* Profile.storyboard in Resources */,
+				B0E253C82317D68D00874561 /* SignikaNegative-Semibold.ttf in Resources */,
+				B0E253C92317D68D00874561 /* Signika-Semibold.ttf in Resources */,
+				B0E253C62317D68D00874561 /* SignikaNegative-Bold.ttf in Resources */,
+				BE6492CB23195025001E27A7 /* MedicineTableViewCell.xib in Resources */,
+				BE6492C123194FB0001E27A7 /* ActivityTableViewCell.xib in Resources */,
+				B0974FA5231926FE00EC9101 /* AddMedicine.storyboard in Resources */,
+				B0E253C82317D68D00874561 /* SignikaNegative-Semibold.ttf in Resources */,
+				B0E253C92317D68D00874561 /* Signika-Semibold.ttf in Resources */,
+				B0E253C62317D68D00874561 /* SignikaNegative-Bold.ttf in Resources */,
+				B0974FA4231926FE00EC9101 /* MedicineList.storyboard in Resources */,
+				B0E253B92317D68500874561 /* LaunchScreen.storyboard in Resources */,
+				B0E253BA2317D68500874561 /* set.storyboard in Resources */,
+				B0E253CC2317D68D00874561 /* SignikaNegative-Light.ttf in Resources */,
+				B0974FAD2319298C00EC9101 /* TabMenu.storyboard in Resources */,
+				B0E253CB2317D68D00874561 /* Signika-Bold.ttf in Resources */,
+				B0E253C52317D68D00874561 /* Signika-Light.ttf in Resources */,
+				BE6492D223195151001E27A7 /* History.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,32 +413,81 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D1DCDF8230FDF8300E6B230 /* DashboardData.swift in Sources */,
-				B06A9C87230E7173007D38B5 /* DashboardController.swift in Sources */,
-				4D1DCDF6230FCA3F00E6B230 /* CloudData.swift in Sources */,
+				4D0DC5E3231CAB5400912E65 /* ProfileController.swift in Sources */,
+				BE9BED182317D92D00640A93 /* ActivityModel.swift in Sources */,
+				BE6492B923194EAB001E27A7 /* CalenderView.swift in Sources */,
+				B05BB1F12313A33400B80F13 /* DoctorOnBoardView.swift in Sources */,
 				B06A9C6A230E69E9007D38B5 /* ViewController.swift in Sources */,
+				B0E253AC2317D66400874561 /* DashboardData.swift in Sources */,
 				B06A9C68230E69E9007D38B5 /* AppDelegate.swift in Sources */,
+				4D0DC5DD23193A2500912E65 /* RecordModel.swift in Sources */,
+				BE6492BF23194F92001E27A7 /* ActivityTableViewCell.swift in Sources */,
+				B0974FAB2319270D00EC9101 /* MedicineListViewController.swift in Sources */,
+				B05BB1ED23139FB500B80F13 /* DoctorOnBoardController.swift in Sources */,
+				BE6492BB23194EFB001E27A7 /* DateCollectionViewCell.swift in Sources */,
+				B05BB1F32313A34500B80F13 /* PatientOnBoardView.swift in Sources */,
+				4D0DC5E7231CB2B500912E65 /* UserProfileCell.swift in Sources */,
+				4D0DC5DF23193AFD00912E65 /* MedicineModel.swift in Sources */,
+				4D0DC5DB231934E900912E65 /* HistoryModel.swift in Sources */,
+				B05BB1EF23139FD800B80F13 /* PatientOnBoardViewController.swift in Sources */,
+				4D0DC5EB231CCB1200912E65 /* Profile.swift in Sources */,
+				BE6492C523194FEB001E27A7 /* HistoryView.swift in Sources */,
+				4D0DC5D92319341F00912E65 /* OnboardModel.swift in Sources */,
+				B0974FA6231926FE00EC9101 /* MedicineListTableViewCell.swift in Sources */,
+				B0E253AE2317D66400874561 /* CloudData.swift in Sources */,
+				4D0DC5E9231CB34A00912E65 /* DoctorProfileCell.swift in Sources */,
+				BE6492BD23194F20001E27A7 /* HistoryController.swift in Sources */,
+				BE6492C92319501B001E27A7 /* MedicineTableViewCell.swift in Sources */,
+				B0E253D42317DE1300874561 /* DoctorData.swift in Sources */,
+				B0948773231D0677002C2B59 /* MedicineData.swift in Sources */,
 				B06A9C70230E69E9007D38B5 /* MiniChallenge3.xcdatamodeld in Sources */,
+				B0974FAA2319270D00EC9101 /* AddMedicineVC.swift in Sources */,
+				B0E253D22317DE0800874561 /* OnBoardData.swift in Sources */,
+				4D0DC5E123193CAB00912E65 /* ProfileModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B06A9C6B230E69E9007D38B5 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B06A9C6C230E69E9007D38B5 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B06A9C73230E69EB007D38B5 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				B06A9C74230E69EB007D38B5 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		B0E253B02317D68400874561 /* set~.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B0E253B12317D68400874561 /* Base */,
+			);
+			name = "set~.storyboard";
+			sourceTree = "<group>";
+		};
+		B0E253B22317D68400874561 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B0E253B32317D68400874561 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		B0E253B42317D68400874561 /* set.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B0E253B52317D68400874561 /* Base */,
+			);
+			name = set.storyboard;
+			sourceTree = "<group>";
+		};
+		BE6492D023195151001E27A7 /* History.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BE6492D123195151001E27A7 /* Base */,
+			);
+			name = History.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

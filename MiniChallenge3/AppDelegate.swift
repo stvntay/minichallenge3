@@ -16,7 +16,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
         // Override point for customization after application launch.
+
+        window = UIWindow(frame: UIScreen.main.bounds)
+        if UserDefaults.standard.string(forKey: "userID") != nil {
+
+            let storyboard = UIStoryboard(name: "TabMenu", bundle: nil)
+            let page = storyboard.instantiateViewController(withIdentifier: "menuTab") as! UITabBarController
+            window?.rootViewController = page
+            window?.makeKeyAndVisible()
+        }else{
+        
+            let storyboard = UIStoryboard(name: "Onboard", bundle: nil)
+            let dashboard = storyboard.instantiateViewController(withIdentifier: "doctorNav")
+        
+            window?.rootViewController = dashboard
+            window?.makeKeyAndVisible()
+            
+        }
+        
         return true
     }
 

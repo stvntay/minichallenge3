@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WFb-Nd-WKb">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Doctor On Board Controller-->
+        <scene sceneID="fRx-UP-1EV">
+            <objects>
+                <viewController storyboardIdentifier="doctorView" id="Qxo-WO-esM" customClass="DoctorOnBoardController" customModule="MiniChallenge3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MYa-14-x44" customClass="DoctorOnBoardView" customModule="MiniChallenge3" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="cfk-H3-UHC">
+                                <rect key="frame" x="20" y="148" width="374" height="100"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nama Dokter" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ByK-zS-aAk">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="No. Telepon Psikiater" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lhi-M9-Jz5">
+                                        <rect key="frame" x="0.0" y="70" width="374" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="FLk-0X-2de"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cfk-H3-UHC" firstAttribute="top" secondItem="vwd-VX-aW6" secondAttribute="top" constant="60" id="3aq-gl-KsR"/>
+                            <constraint firstItem="vwd-VX-aW6" firstAttribute="trailing" secondItem="cfk-H3-UHC" secondAttribute="trailing" constant="20" id="F9D-a5-jyJ"/>
+                            <constraint firstItem="cfk-H3-UHC" firstAttribute="leading" secondItem="vwd-VX-aW6" secondAttribute="leading" constant="20" id="rEf-VA-gJu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vwd-VX-aW6"/>
+                        <connections>
+                            <outlet property="doctorNameInput" destination="ByK-zS-aAk" id="Cq1-fm-l13"/>
+                            <outlet property="telephoneDoctor" destination="lhi-M9-Jz5" id="oqb-XJ-cTF"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="4YH-Cn-nyF"/>
+                    <connections>
+                        <outlet property="onBoardDoctor" destination="MYa-14-x44" id="jFq-et-yzv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GsA-nb-wve" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3157.971014492754" y="22.767857142857142"/>
+        </scene>
+        <!--Patient On Board View Controller-->
+        <scene sceneID="S8m-u1-3Fn">
+            <objects>
+                <viewController storyboardIdentifier="patientView" id="cAx-g7-dKR" customClass="PatientOnBoardViewController" customModule="MiniChallenge3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pEZ-pK-X9f" customClass="PatientOnBoardView" customModule="MiniChallenge3" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="Mwj-so-LjV">
+                                <rect key="frame" x="20" y="148" width="374" height="250"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nama Pasien" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T3n-rb-U3w">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Umur Pasien" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lcd-Pa-rqj">
+                                        <rect key="frame" x="0.0" y="55" width="374" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tanggal Lepas Pasung (dd/mm/yyyy)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="95U-J9-rgX">
+                                        <rect key="frame" x="0.0" y="110" width="374" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Alamat Pasien" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gCz-cf-SVU">
+                                        <rect key="frame" x="0.0" y="165" width="374" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nama Puskesmas/Rumah sakit" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Bc-91-Rfl">
+                                        <rect key="frame" x="0.0" y="220" width="374" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="7kv-Y3-FAk"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Mwj-so-LjV" firstAttribute="leading" secondItem="OVK-yL-PtO" secondAttribute="leading" constant="20" id="AiX-gU-Ya7"/>
+                            <constraint firstItem="OVK-yL-PtO" firstAttribute="trailing" secondItem="Mwj-so-LjV" secondAttribute="trailing" constant="20" id="LEU-PL-453"/>
+                            <constraint firstItem="Mwj-so-LjV" firstAttribute="top" secondItem="OVK-yL-PtO" secondAttribute="top" constant="60" id="MTK-6Z-BzN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="OVK-yL-PtO"/>
+                        <connections>
+                            <outlet property="addressPatientInput" destination="gCz-cf-SVU" id="yk2-ny-Bhi"/>
+                            <outlet property="agePatientInput" destination="lcd-Pa-rqj" id="ogE-Vr-79f"/>
+                            <outlet property="hospitalInput" destination="2Bc-91-Rfl" id="YOk-mP-Vfe"/>
+                            <outlet property="namePatientInput" destination="T3n-rb-U3w" id="EgH-Q3-BUs"/>
+                            <outlet property="releaseDateInput" destination="95U-J9-rgX" id="Z6E-Yj-dpr"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="oH5-qW-Ofa"/>
+                    <connections>
+                        <outlet property="patientView" destination="pEZ-pK-X9f" id="fNW-0U-Y3K"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZDV-Q9-RgH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5231.884057971015" y="-44.196428571428569"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="SqA-B8-DgX">
+            <objects>
+                <navigationController storyboardIdentifier="doctorNav" automaticallyAdjustsScrollViewInsets="NO" id="WFb-Nd-WKb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="B02-1S-aVd">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Qxo-WO-esM" kind="relationship" relationship="rootViewController" id="DNW-Ce-r4R"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fr8-bq-5F6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2247.826086956522" y="22.767857142857142"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qzd-za-c68">
+            <objects>
+                <navigationController storyboardIdentifier="patientNav" automaticallyAdjustsScrollViewInsets="NO" id="qBP-hg-Eiy" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4To-Kt-AWF">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cAx-g7-dKR" kind="relationship" relationship="rootViewController" id="t5G-LI-0WE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KzL-NH-Mbp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4321.739130434783" y="-44.196428571428569"/>
+        </scene>
+    </scenes>
+</document>
