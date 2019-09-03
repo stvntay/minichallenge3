@@ -66,6 +66,7 @@
                     <navigationItem key="navigationItem" id="48d-PV-z3m"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="medicineCategory" destination="ZL0-bK-JwH" id="T97-ZU-oJV"/>
                         <outlet property="medicineList" destination="svb-jf-8qN" id="zEg-ww-fs1"/>
                     </connections>
                 </viewController>

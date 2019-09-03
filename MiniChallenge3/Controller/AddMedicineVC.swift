@@ -72,18 +72,13 @@ class AddMedicineVC: UIViewController,UIPickerViewDelegate, UIPickerViewDataSour
         guard let getUserID = UserDefaults.standard.string(forKey: "userID") else {
             return
         }
+       
+        MedicineModel.shared.saveMedicineData(kategori: getCategory, namaObat: getName, deskripsiObat: getDesc, dosisObat: getDose, setelahSebelumMakan: getTime, jumlahPerHari: getDay, pasienRN: getUserID, completion: {
+            (record) in
+                
+            self.navigationController?.popToRootViewController(animated: true)
+        })
         
-        if getCategory == "Rutin" {
-           MedicineModel.shared.saveMedicineData(kategori: getCategory, namaObat: getName, deskripsiObat: getDesc, dosisObat: getDose, setelahSebelumMakan: getTime, jumlahPerHari: getDay, pasienRN: getUserID)
-        }else if getCategory == "Sewaktu-waktu"{
-            MedicineModel.shared.saveMedicineData(kategori: getCategory, namaObat: getName, deskripsiObat: getDesc, dosisObat: getDose, setelahSebelumMakan: getTime, jumlahPerHari: getDay, pasienRN: getUserID)
-        }
-        
-        
-        
-        let storyboard = UIStoryboard(name: "TabMenu", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "menuTab") as! UITabBarController
-        self.present(vc, animated: true,completion: nil)
         
     }
     
@@ -155,7 +150,7 @@ class AddMedicineVC: UIViewController,UIPickerViewDelegate, UIPickerViewDataSour
         medicineCategory.text = getCategory
         if getCategory == "Sewaktu-waktu"{
             hari.isEnabled = false
-            hari.text = "0"
+            hari.text = ""
         }else {
             hari.isEnabled = true
         }
@@ -166,7 +161,7 @@ class AddMedicineVC: UIViewController,UIPickerViewDelegate, UIPickerViewDataSour
         medicineCategory.text = ""
         if getCategory == "Sewaktu-waktu"{
             hari.isEnabled = false
-            hari.text = "0"
+            hari.text = ""
         }else {
             hari.isEnabled = true
         }
@@ -189,7 +184,7 @@ class AddMedicineVC: UIViewController,UIPickerViewDelegate, UIPickerViewDataSour
             getCategory = medicineCategoryData[row]
             if getCategory == "Sewaktu-waktu"{
                 hari.isEnabled = false
-                hari.text = "0"
+                hari.text = ""
             }else {
                 hari.isEnabled = true
             }
@@ -207,7 +202,7 @@ class AddMedicineVC: UIViewController,UIPickerViewDelegate, UIPickerViewDataSour
             medicineCategory.text =  getCategory
             if getCategory == "Sewaktu-waktu"{
                 hari.isEnabled = false
-                hari.text = "0"
+                hari.text = ""
             }else {
                 hari.isEnabled = true
             }
