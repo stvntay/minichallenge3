@@ -61,4 +61,31 @@ final class MedicineModel {
         
     }
     
+    func updateMedicineData(records: [CKRecord], kategori: String, namaObat: String, deskripsiObat: String, dosisObat:String, setelahSebelumMakan: String, jumlahPerHari: String, completion: @escaping (_ recID: [CKRecord]) -> Void) {
+        
+        records[0].setValue(kategori, forKey: "kategori")
+        records[0].setValue(namaObat, forKey: "namaObat")
+        records[0].setValue(deskripsiObat, forKey: "deskripsiObat")
+        records[0].setValue(dosisObat, forKey: "dosisObat")
+        records[0].setValue(setelahSebelumMakan, forKey: "setelahSebelumMakan")
+        records[0].setValue(jumlahPerHari, forKey: "jumlahPerHari")
+        
+        let modified = CKModifyRecordsOperation()
+        modified.recordsToSave = records
+        modified.savePolicy = .ifServerRecordUnchanged
+        
+        modified.modifyRecordsCompletionBlock = { savedRecords, deletedRecordIDs, error in
+            guard modified.isFinished == true else {
+                print(error.debugDescription)
+                return
+            }
+            if let savedRecords = savedRecords {
+                print("update data success")
+                completion(savedRecords)
+            }
+        }
+        CKContainer.default().publicCloudDatabase.add(modified)
+        
+    }
+    
 }
