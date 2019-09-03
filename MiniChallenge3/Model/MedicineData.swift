@@ -15,13 +15,15 @@ class MedicineData {
     var medicineDesc: String
     var medicineDose: String
     var medicineTime: String
+    var medicineFreq: String
     
-    init(ID: String,category: String ,name: String , desc: String, dose: String, time: String) {
+    init(ID: String,category: String ,name: String , desc: String, dose: String,freq: String, time: String) {
         medicineID = ID
         medicineCategory = category
         medicineName = name
         medicineDesc = desc
         medicineDose = dose
+        medicineFreq = freq
         medicineTime = time
     }
 }

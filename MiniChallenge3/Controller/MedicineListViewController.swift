@@ -38,10 +38,12 @@ class MedicineListViewController: UIViewController, UITableViewDelegate, UITable
             cell.medicineName.text = medicineDataRutin[indexPath.row].medicineName
             cell.medicineTime.text = medicineDataRutin[indexPath.row].medicineTime
             cell.medicineDescription.text = medicineDataRutin[indexPath.row].medicineDesc
+            cell.medicineFreq.text = "\(medicineDataRutin[indexPath.row].medicineFreq) x Sehari"
             cell.medicineAmount.text = medicineDataRutin[indexPath.row].medicineDose
         }else{
             cell.medicineName.text = medicineDataSewaktu[indexPath.row].medicineName
             cell.medicineTime.text = medicineDataSewaktu[indexPath.row].medicineTime
+            cell.medicineFreq.text = "-"
             cell.medicineDescription.text = medicineDataSewaktu[indexPath.row].medicineDesc
             cell.medicineAmount.text = medicineDataSewaktu[indexPath.row].medicineDose
         }
@@ -164,10 +166,13 @@ class MedicineListViewController: UIViewController, UITableViewDelegate, UITable
                     return
                 }
                 
+                guard let getFreq = i["jumlahPerHari"] as? String else{
+                    return
+                }
                 if getCategory == "Rutin" {
-                    self.medicineDataRutin.append(MedicineData(ID: id, category: getCategory, name: getName, desc: getDesc, dose: getDose, time: getTime))
+                    self.medicineDataRutin.append(MedicineData(ID: id, category: getCategory, name: getName, desc: getDesc, dose: getDose, freq: getFreq, time: getTime))
                 }else{
-                    self.medicineDataSewaktu.append(MedicineData(ID: id, category: getCategory, name: getName, desc: getDesc, dose: getDose, time: getTime))
+                    self.medicineDataSewaktu.append(MedicineData(ID: id, category: getCategory, name: getName, desc: getDesc, dose: getDose, freq: getFreq, time: getTime))
                 }
       
                 self.medicineList.reloadData()
