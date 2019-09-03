@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CloudKit
 
 class MedicineListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -56,9 +57,12 @@ class MedicineListViewController: UIViewController, UITableViewDelegate, UITable
         navigationItem.rightBarButtonItem = addButton
         
         clearNavigationBar()
+        getData()
     }
     
     func clearNavigationBar(){
+        
+        self.navigationItem.leftBarButtonItem = nil
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
@@ -75,6 +79,48 @@ class MedicineListViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func getData(){
+        guard let userID = UserDefaults.standard.string(forKey: "userID") else{
+            return
+        }
+        print(userID)
+        
+        
+        MedicineModel.shared.loadMedicineData(userRN: userID) { (result) in
+            
+            for i in result {
+                guard let id = i.recordID.recordName as? String else{
+                    
+                    return
+                }
+                
+                guard let getName =  i["namaObat"] as? String else{
+                    return
+                }
+                
+                guard let getDesc = i["deskripsiObat"] as? String else{
+                    return
+                }
+                
+                guard let getDose = i["dosisObat"]  as? String else{
+                    return
+                }
+                
+                guard let getTime = i["setelahSebelumMakan"]  as? String else{
+                    return
+                }
+                
+                guard let getCategory = i["kategori"] as? String else{
+                    return
+                }
+                
+                
+                self.medicineData.append(MedicineData(ID: id, category: getCategory, name: getName, desc: getDesc, dose: getDose, time: getTime))
+                self.medicineList.reloadData()
+            }
+            
+            
+            
+        }
         
     }
 

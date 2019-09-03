@@ -1,18 +1,16 @@
 //
-//  ActivityTableViewCell.swift
+//  ComplainTableViewCell.swift
 //  MiniChallenge3
 //
-//  Created by Finley Khouwira on 29/08/19.
+//  Created by Finley Khouwira on 02/09/19.
 //  Copyright © 2019 Steven. All rights reserved.
 //
 
 import UIKit
 
-class ActivityTableViewCell: UITableViewCell {
-    
-    @IBOutlet weak var activityLabel: UILabel!
-    @IBOutlet weak var statusImage: UIImageView!
-    
+class ComplainTableViewCell: UITableViewCell {
+
+    @IBOutlet weak var complainLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
