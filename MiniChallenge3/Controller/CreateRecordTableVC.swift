@@ -9,8 +9,8 @@
 import UIKit
 import CloudKit
 
-let sectionTitle = ["Obat Rutin", "Obat Non-rutin", "Aktivitas", "Tidur", "Keluhan"]
-var rowsPerSection = [0, 0, 0, 1, 1]
+let sectionTitle = ["Obat", "Aktivitas", "Tidur", "Keluhan"]
+var rowsPerSection = [0, 0, 1, 1]
 
 struct medicineValue {
     var medicineName: String
@@ -38,7 +38,6 @@ class CreateRecordTableVC: UITableViewController {
 
     var valueToPass = -1
     var expandedRow = -1
-    var medicineType = -1
     
     var activityValues = [
         activityValue(activityName: "Membersihkan diri", activityValue: ""),
@@ -47,8 +46,7 @@ class CreateRecordTableVC: UITableViewController {
         activityValue(activityName: "Membersihkan rumah", activityValue: ""),
         activityValue(activityName: "Komunikasi dengan baik", activityValue: ""),
     ]
-    var routineMedicineValues = [medicineValue]()
-    var occasionalMedicineValues = [medicineValue]()
+    var medicineValues = [medicineValue]()
     
 //    var medicineValues = [
 //        medicineValue(medicineName: "Cannabinol", medicineConsumptionFrequency: "99x"),
@@ -60,8 +58,7 @@ class CreateRecordTableVC: UITableViewController {
         commentValue(commentTitle: "Apakah ada keluhan / kejadian hari ini?", commentBody: "")
     ]
     
-    var routineMedicineFreq = [String]()
-    var occasionalMedicineFreq = [String]()
+    var medicineFreq = [String]()
     
     var membersihkanDiri = ""
     var makanDenganRapi = ""
@@ -69,33 +66,23 @@ class CreateRecordTableVC: UITableViewController {
     var membersihkanRumah = ""
     var berkomunikasiDenganLingkungan = ""
     
-    var CKCommonMedicineData = [CKRecord]()
-    var CKRareMedicineData = [CKRecord]()
-    var routineMedicineNames = [String]()
-    var occasionalMedicineNames = [String]()
+    var CKMedicineData = [CKRecord]()
+    var medicineNames = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        RecordModel.shared.loadCommonMedicineData(userRN: "5187BE88-B4D8-4E65-B2D4-6D20663B6D6C") { (result) in
-            self.CKCommonMedicineData = result
-        }
-        
-        RecordModel.shared.loadRareMedicineData(userRN: "5187BE88-B4D8-4E65-B2D4-6D20663B6D6C") { (result) in
-            self.CKRareMedicineData = result
+        RecordModel.shared.loadMedicineData(userRN: "5187BE88-B4D8-4E65-B2D4-6D20663B6D6C") { (result) in
+            self.CKMedicineData = result
         }
         
         // populate local variable with medicine data
         // medicine name
-        routineMedicineNames = RecordModel.shared.parseMedicineName(medicineDatas: CKCommonMedicineData)
-        occasionalMedicineNames = RecordModel.shared.parseMedicineName(medicineDatas: CKRareMedicineData)
+        medicineNames = RecordModel.shared.parseMedicineName(medicineDatas: CKMedicineData)
         
         // medicine frequency
-        for name in routineMedicineNames {
-            routineMedicineValues.append(medicineValue(medicineName: name, medicineConsumptionFrequency: "Pilih"))
-        }
-        for name in occasionalMedicineNames {
-            occasionalMedicineValues.append(medicineValue(medicineName: name, medicineConsumptionFrequency: "Pilih"))
+        for name in medicineNames {
+            medicineValues.append(medicineValue(medicineName: name, medicineConsumptionFrequency: "Pilih"))
         }
         
         let addButton = UIBarButtonItem(title: "Selesai", style: .plain, target: self, action: #selector(submit))
@@ -120,7 +107,7 @@ class CreateRecordTableVC: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 5
+        return 4
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -129,14 +116,10 @@ class CreateRecordTableVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return routineMedicineNames.count
+            return medicineNames.count
         }
         
         if section == 1 {
-            return occasionalMedicineNames.count
-        }
-        
-        if section == 2 {
             return activityValues.count
         }
         
@@ -155,34 +138,25 @@ class CreateRecordTableVC: UITableViewController {
                 withIdentifier: labelCellIdentifier,
                 for: indexPath
                 ) as! TwoLabelsCell
-            cell.title.text = routineMedicineNames[indexPath.row]
-//            cell.cellValue.text = medicineValues[indexPath.row].medicineConsumptionFrequency
-            return cell
-        }
-        
-        if indexPath.section == 1 {
-            let cell = tableView.dequeueReusableCell(
-                withIdentifier: labelCellIdentifier,
-                for: indexPath
-                ) as! TwoLabelsCell
-            cell.title.text = occasionalMedicineNames[indexPath.row]
+            cell.title.text = medicineNames[indexPath.row]
 //            cell.cellValue.text = medicineValues[indexPath.row].medicineConsumptionFrequency
             return cell
         }
         
         // Activity Section
-        if indexPath.section == 2 {
+        if indexPath.section == 1 {
             let cell = tableView.dequeueReusableCell(
                 withIdentifier: activityPickerCellIdentifier,
                 for: indexPath
                 ) as! ActivityPickerCell
             cell.activityName.text = activityValues[indexPath.row].activityName
             cell.activityValue.text = "Pilih"
+            cell.activityPicker.isHidden = true
             return cell
         }
         
         // Sleep section
-        if indexPath.section == 3 {
+        if indexPath.section == 2 {
             let cell = tableView.dequeueReusableCell(
                 withIdentifier: textFieldCellIdentifier,
                 for: indexPath
@@ -203,17 +177,15 @@ class CreateRecordTableVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 0 ||
-            indexPath.section == 1
-        {
+        if indexPath.section == 0 {
             return 50
         }
         
-        if indexPath.section == 2 {
+        if indexPath.section == 1 {
             if indexPath.row != expandedRow {
                 return 50
             }
-            return 120
+            return 200
         }
         
         // text field cell's height
@@ -222,20 +194,22 @@ class CreateRecordTableVC: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if indexPath.section == 0 ||
-            indexPath.section == 1
-        {
+        if indexPath.section == 0 {
             valueToPass = indexPath.row
-            medicineType = indexPath.section
             performSegue(withIdentifier: "segueToOptions", sender: self)
         }
         
-        if indexPath.section == 2 {
+        if indexPath.section == 1 {
+            guard let cell = tableView.cellForRow(at: indexPath) as? ActivityPickerCell else {return}
             if expandedRow == indexPath.row {
+                cell.activityPicker.isHidden = true
                 expandedRow = -1
             } else {
                 expandedRow = indexPath.row
+                cell.activityPicker.isHidden = false
             }
+            
+            
         }
         
         tableView.beginUpdates()
@@ -246,31 +220,20 @@ class CreateRecordTableVC: UITableViewController {
         if segue.identifier == "segueToOptions" {
             let destination = segue.destination as! OptionsTableVC
             destination.selectedRow = valueToPass
-            destination.selectedMedicineType = medicineType
         }
     }
     
     @IBAction func unwind(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? OptionsTableVC {
-            if sourceViewController.selectedMedicineType == 1 { occasionalMedicineValues[sourceViewController.selectedRow].medicineConsumptionFrequency = sourceViewController.selectedValue
-            } else if sourceViewController.selectedMedicineType == 0 {
-                routineMedicineValues[sourceViewController.selectedRow].medicineConsumptionFrequency = sourceViewController.selectedValue
-            }
+            medicineValues[sourceViewController.selectedRow].medicineConsumptionFrequency = sourceViewController.selectedValue
+            
             tableView.reloadData()
         }
     }
     
     @IBAction func submit(_ sender: Any) {
-        for routineMedicine in routineMedicineValues {
-            routineMedicineFreq.append(routineMedicine.medicineConsumptionFrequency)
-        }
-        
-        for occasionalMedicine in occasionalMedicineValues {
-            occasionalMedicineFreq.append(occasionalMedicine.medicineConsumptionFrequency)
-        }
-        
         for x in 0...activityValues.count - 1 {
-            let indexes = IndexPath.init(row: x, section: 2)
+            let indexes = IndexPath.init(row: x, section: 1)
             let cell = tableView.cellForRow(at: indexes) as! ActivityPickerCell
             
             if x == 0 {
@@ -286,10 +249,10 @@ class CreateRecordTableVC: UITableViewController {
             }
         }
         
-        for x in 3...4 {
+        for x in 2...3 {
             let indexes = IndexPath.init(row: 0, section: x)
             let cell = tableView.cellForRow(at: indexes) as! TextFieldCell
-            if x == 3 {
+            if x == 2 {
                 commentValues[0].commentBody = cell.textInput.text
             } else {
                 commentValues[1].commentBody = cell.textInput.text
@@ -297,8 +260,8 @@ class CreateRecordTableVC: UITableViewController {
         }
         
         RecordModel.shared.saveMedicalRecord(
-            obatRutin: routineMedicineFreq,
-            obatSewaktu: occasionalMedicineFreq,
+            namaObat: medicineNames,
+            obat: medicineFreq,
             membersihkanDiri: membersihkanDiri,
             makanDenganRapi: makanDenganRapi,
             membersihkanPakaian: membersihkanPakaian,
@@ -306,7 +269,11 @@ class CreateRecordTableVC: UITableViewController {
             berkomunikasiDenganLingkungan: berkomunikasiDenganLingkungan,
             tidurHariIni: commentValues[0].commentBody,
             catatan: commentValues[1].commentBody,
-            pasienRN: "String STOP DISINI"
+            pasienRN: UserDefaults.standard.string(forKey: "userID") ?? ""
         )
+        
+        let storyboard = UIStoryboard(name: "History", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "recordHistory")
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

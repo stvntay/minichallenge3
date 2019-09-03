@@ -75,13 +75,23 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
         historyView.previousBtn.setImage(UIImage(named: "Previous"), for: .normal)
         historyView.previousBtn.tintColor = #colorLiteral(red: 1, green: 0.4196078431, blue: 0.3411764706, alpha: 1)
         
+        let addImg = UIImage(named: "plusRiwayat")
+        let addButton = UIBarButtonItem(image: addImg, style: .plain, target: self, action: #selector(createRecordPage))
         
+        navigationItem.rightBarButtonItem = addButton
         
         print(date)
         print(day)
         print(weekday)
         print(month)
         print(year)
+    }
+    
+    // go to create record
+    @objc func createRecordPage(sender: UIBarButtonItem){
+        let storyboard = UIStoryboard(name: "CreateRecord", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "CreateRecordTableVC")
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     // Back button function
