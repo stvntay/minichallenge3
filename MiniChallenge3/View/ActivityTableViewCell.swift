@@ -11,7 +11,6 @@ import UIKit
 class ActivityTableViewCell: UITableViewCell {
     
     @IBOutlet weak var activityLabel: UILabel!
-    @IBOutlet weak var statusImage: UIImageView!
     
     
     override func awakeFromNib() {

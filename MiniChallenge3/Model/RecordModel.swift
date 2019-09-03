@@ -27,10 +27,30 @@ final class RecordModel {
         return datas
     }
     
-    func loadMedicineData(userRN: String, completion: @escaping (_ recID: [CKRecord]) -> Void) {
+    func loadCommonMedicineData(userRN: String, completion: @escaping (_ recID: [CKRecord]) -> Void) {
         let userID = CKRecord.ID(recordName: userRN)
         let pred = NSPredicate(format: "pasienID = %@", userID)
-        let query = CKQuery(recordType: "MedicineData", predicate: pred)
+        let query = CKQuery(recordType: "CommonMedicineData", predicate: pred)
+        let sort = NSSortDescriptor(key: "creationDate", ascending: true)
+        query.sortDescriptors = [sort]
+        
+        CKContainer.default().publicCloudDatabase.perform(query, inZoneWith: nil) { (records, error) in
+            DispatchQueue.main.async {
+                guard let records = records else {
+                    print(error?.localizedDescription as Any)
+                    return
+                }
+                print(records)
+                completion(records)
+            }
+        }
+        
+    }
+    
+    func loadRareMedicineData(userRN: String, completion: @escaping (_ recID: [CKRecord]) -> Void) {
+        let userID = CKRecord.ID(recordName: userRN)
+        let pred = NSPredicate(format: "pasienID = %@", userID)
+        let query = CKQuery(recordType: "RareMedicineData", predicate: pred)
         let sort = NSSortDescriptor(key: "creationDate", ascending: true)
         query.sortDescriptors = [sort]
         
@@ -50,23 +70,34 @@ final class RecordModel {
     // MARK: - Save record data to CloudKit
     
     func saveMedicalRecord(
-            namaObat: [String],
-            obat: [String],
-            membersihkanDiri: String,
-            makanDenganRapi: String,
-            membersihkanPakaian: String,
-            membersihkanRumah: String,
-            berkomunikasiDenganLingkungan: String,
-            tidurHariIni: String,
-            catatan: String,
-            pasienRN: String
+           obatRutin: [String],
+           obatSewaktu: [String],
+           membersihkanDiri: String,
+           makanDenganRapi: String,
+           membersihkanPakaian: String,
+           membersihkanRumah: String,
+           berkomunikasiDenganLingkungan: String,
+           tidurHariIni: String,
+           catatan: String,
+           pasienRN: String
         ) {
         let newData = CKRecord(recordType: "MedicalRecord")
         let pasienID = CKRecord.ID(recordName: pasienRN)
         let reference = CKRecord.Reference(recordID: pasienID, action: .deleteSelf)
         
-        newData.setValue(namaObat, forKey: "namaObat")
-        newData.setValue(obat, forKey: "obat")
+        print(obatRutin,
+              obatSewaktu,
+              membersihkanDiri,
+              makanDenganRapi,
+              membersihkanPakaian,
+              membersihkanRumah,
+              berkomunikasiDenganLingkungan,
+              tidurHariIni,
+              catatan,
+              pasienRN)
+        
+        newData.setValue(obatRutin, forKey: "obatRutin")
+        newData.setValue(obatSewaktu, forKey: "obatSewaktu")
         newData.setValue(membersihkanDiri, forKey: "membersihkanDiri")
         newData.setValue(makanDenganRapi, forKey: "makanDenganRapi")
         newData.setValue(membersihkanPakaian, forKey: "membersihkanPakaian")
