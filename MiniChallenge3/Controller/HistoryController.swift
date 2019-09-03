@@ -38,15 +38,15 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
         startDateDayPosition()
         calendarUpdate()
         
+        // month calendar label and current date label configuration
         historyView.monthLabel.text = "\(currentMonth) \(year)"
-
         historyView.currentDateLabel.text = "\(Days[day % 7]), \(day) \(currentMonth) \(year)"
         
         historyView.calendarView.isPagingEnabled = true
         
+        // Calendar collection view and info table view delegate and data source
         historyView.calendarView.delegate = self
         historyView.calendarView.dataSource = self
-        
         historyView.infoTableView.delegate = self
         historyView.infoTableView.dataSource = self
         
@@ -66,6 +66,14 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
         historyView.infoTableView.rowHeight = UITableView.automaticDimension
         
         historyView.infoTableView.tableFooterView = UIView()
+        
+        // set image for calendar button
+        historyView.nextBtn.setImage(UIImage(named: "Next"), for: .normal)
+        historyView.nextBtn.tintColor = #colorLiteral(red: 1, green: 0.4196078431, blue: 0.3411764706, alpha: 1)
+        historyView.previousBtn.setImage(UIImage(named: "Previous"), for: .normal)
+        historyView.previousBtn.tintColor = #colorLiteral(red: 1, green: 0.4196078431, blue: 0.3411764706, alpha: 1)
+        
+        
         
         print(date)
         print(day)
