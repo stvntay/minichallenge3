@@ -95,11 +95,10 @@ class CreateRecordTableVC: UITableViewController {
             UINib(nibName: "ActivityPickerCell", bundle: nil),
             forCellReuseIdentifier: activityPickerCellIdentifier
         )
-        
-//        tableView.register(
-//            UINib(nibName: "ActivityPickerHeader", bundle: nil),
-//            forCellReuseIdentifier: tableView.headerView(forSection: 1)?.reuseIdentifier ?? ""
-//        )
+        tableView.register(
+            ActivityRecordHeader.self,
+            forHeaderFooterViewReuseIdentifier: "sectionHeader"
+        )
     }
 
     // MARK: - Table view data source
@@ -147,14 +146,10 @@ class CreateRecordTableVC: UITableViewController {
                 withIdentifier: activityPickerCellIdentifier,
                 for: indexPath
                 ) as! ActivityPickerCell
-            let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(goToActivityGuide))
-
             cell.activityName.text = activityValues[indexPath.row].activityName
             cell.activityValue.text = "Pilih"
-            cell.activityPicker.isHidden = true
-            cell.activityGuide.isUserInteractionEnabled = true
-            cell.activityGuide.addGestureRecognizer(gestureRecognizer)
             
+            cell.activityPicker.isHidden = true
             return cell
         }
         
@@ -225,11 +220,19 @@ class CreateRecordTableVC: UITableViewController {
         tableView.endUpdates()
     }
     
-//    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let header = tableView.headerView(forSection: 1)
-//        
-//        return header
-//    }
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = tableView.dequeueReusableHeaderFooterView(withIdentifier:
+            "sectionHeader") as! ActivityRecordHeader
+        
+        if section == 1 {
+            let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(goToActivityGuide))
+            view.image.image = UIImage(named: "info-icon")
+            view.image.layer.cornerRadius = 11
+            view.addGestureRecognizer(gestureRecognizer)
+        }
+        
+        return view
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueToOptions" {

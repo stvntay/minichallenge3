@@ -14,13 +14,11 @@ class ActivityPickerCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDat
     @IBOutlet weak var activityName: UILabel!
     @IBOutlet weak var activityValue: UILabel!
     @IBOutlet weak var activityPicker: UIPickerView!
-    @IBOutlet weak var activityGuide: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         activityPicker.delegate = self
         activityPicker.dataSource = self
-        activityGuide.layer.cornerRadius = 11
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
