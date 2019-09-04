@@ -8,21 +8,16 @@
 
 import UIKit
 
-class TextFieldCell: UITableViewCell, UITextViewDelegate {
+class TextFieldCell: UITableViewCell {
 
     @IBOutlet weak var question: UITextView!
     @IBOutlet weak var textInput: UITextView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        textInput.delegate = self
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-    }
-    
-    func textViewDidChange(_ textView: UITextView) { //Handle the t
-        textInput.text = textView.text
     }
 }
