@@ -293,8 +293,9 @@ class CreateRecordTableVC: UITableViewController {
             berkomunikasiDenganLingkungan: berkomunikasiDenganLingkungan,
             tidurHariIni: commentValues[0].commentBody,
             catatan: commentValues[1].commentBody,
-            pasienRN: UserDefaults.standard.string(forKey: "userID") ?? ""
-        )
+            pasienRN: UserDefaults.standard.string(forKey: "userID") ?? "", completion:{ (rec) in
+                
+        })
         navigationController?.popToRootViewController(animated: true)
     }
 }

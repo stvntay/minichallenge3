@@ -43,10 +43,9 @@ final class HistoryModel {
         let pred = NSPredicate(format: "pasienID = %@", userID)
         let pred2 = NSPredicate(format: "creationDate = %@", dateClicked as CVarArg)
         let searchCriteria = NSCompoundPredicate(andPredicateWithSubpredicates: [pred, pred2])
-        let query = CKQuery(recordType: "MedicalRecord", predicate: searchCriteria)
-        let sort = NSSortDescriptor(key: "creationDate", ascending: true)
-        query.sortDescriptors = [sort]
-        
+        let query = CKQuery(recordType: "MedicalRecord", predicate: pred)
+
+        print("this func called load data")
         CKContainer.default().publicCloudDatabase.perform(query, inZoneWith: nil) { (records, error) in
             DispatchQueue.main.async {
                 guard let records = records else {

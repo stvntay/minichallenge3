@@ -9,9 +9,15 @@
 import UIKit
 import CloudKit
 
+protocol AddMedicineVCDelegate: class {
+    func reloadDataBasedOnNewArray()
+}
+
 class AddMedicineVC: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate{
     
 
+    weak var delegate: AddMedicineVCDelegate?
+    
     @IBOutlet weak var addMedicineTitle: UILabel!
     @IBOutlet weak var medicineCategory: UITextField!
     @IBOutlet weak var medicineName: UITextField!
@@ -28,6 +34,11 @@ class AddMedicineVC: UIViewController,UIPickerViewDelegate, UIPickerViewDataSour
     let pickerTime = UIPickerView()
     var getCategory = ""
     var getTime = ""
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.delegate?.reloadDataBasedOnNewArray()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,8 +86,8 @@ class AddMedicineVC: UIViewController,UIPickerViewDelegate, UIPickerViewDataSour
        
         MedicineModel.shared.saveMedicineData(kategori: getCategory, namaObat: getName, deskripsiObat: getDesc, dosisObat: getDose, setelahSebelumMakan: getTime, jumlahPerHari: getDay, pasienRN: getUserID, completion: {
             (record) in
-                
-            self.navigationController?.popToRootViewController(animated: true)
+
+            self.navigationController?.popViewController(animated: true)
         })
         
         
