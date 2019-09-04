@@ -60,12 +60,15 @@ class CreateRecordTableVC: UITableViewController {
     var CKMedicineData = [CKRecord]()
     var medicineNames = [String]()
     
+    let getUserID = UserDefaults.standard.string(forKey: "userID") ?? ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         navigationController?.title = "Buat Catatan"
         
-        RecordModel.shared.loadMedicineData(userRN: "5187BE88-B4D8-4E65-B2D4-6D20663B6D6C") { (result) in
+        print("record model userID ->", getUserID as Any)
+        RecordModel.shared.loadMedicineData(userRN: getUserID) { (result) in
             self.CKMedicineData = result
         }
         
@@ -293,7 +296,7 @@ class CreateRecordTableVC: UITableViewController {
             berkomunikasiDenganLingkungan: berkomunikasiDenganLingkungan,
             tidurHariIni: commentValues[0].commentBody,
             catatan: commentValues[1].commentBody,
-            pasienRN: UserDefaults.standard.string(forKey: "userID") ?? "", completion:{ (rec) in
+            pasienRN: getUserID, completion:{ (rec) in
                 
         })
         navigationController?.popToRootViewController(animated: true)

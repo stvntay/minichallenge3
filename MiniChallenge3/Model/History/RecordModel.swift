@@ -41,7 +41,7 @@ final class RecordModel {
                     print(error?.localizedDescription as Any)
                     return
                 }
-                print(records)
+                print("Medical data -> ", records)
                 completion(records)
             }
         }
