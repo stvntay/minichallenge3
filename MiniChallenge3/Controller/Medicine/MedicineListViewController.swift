@@ -9,27 +9,140 @@
 import UIKit
 import CloudKit
 
-class MedicineListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MedicineListViewController: UIViewController {
     
-
+    
     @IBOutlet weak var medicineCategory: UISegmentedControl!
     @IBOutlet weak var medicineList: UITableView!
     var getCategory: String = ""
+    var isFromAdd = Bool()
     
-    var medicineDataRutin : [MedicineData] = []
-    var medicineDataSewaktu : [MedicineData] = []
-    var arrayOfData = [CKRecord]()
+    var medicineDataRutin = [MedicineData]()
+    var medicineDataSewaktu = [MedicineData]()
     
     var deletedIndex: Int = 0
-    var medicineRutin = 0
-    var medicineSewaktu = 0
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        print("viewDidLoad")
+        self.medicineList.rowHeight = 210
+//        if !isFromAdd {
+//            getData()
+//        } else {
+//            medicineList.reloadData()
+//        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("viewWillAppear")
+        medicineCategory.addTarget(self, action: #selector(chooseCategory), for: .valueChanged)
         
+        medicineList.delegate = self
+        medicineList.dataSource = self
+        medicineList.register(UINib(nibName: "MedicineListTableViewCell", bundle: nil), forCellReuseIdentifier: "medicineList")
+        
+        navigationItem.title = "Obat"
+        let addImg = UIImage(named: "plusRiwayat")
+        let addButton = UIBarButtonItem(image: addImg, style: .plain, target: self, action: #selector(addMedicinePage))
+        
+        navigationItem.rightBarButtonItem = addButton
+        
+        clearNavigationBar()
+        self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 0.4196078431, blue: 0.3411764706, alpha: 1)
+        
+        guard let category = medicineCategory.titleForSegment(at: medicineCategory.selectedSegmentIndex) else{
+            return
+        }
+        getCategory = category
+        if !isFromAdd {
+            
+            print("bukan dari add")
+            getData()
+        } else {
+            isFromAdd = false
+            print("dari add")
+            medicineList.reloadData()
+        }
+    }
+    
+    @objc func chooseCategory(sender: UISegmentedControl){
+        
+        guard let category = medicineCategory.titleForSegment(at: medicineCategory.selectedSegmentIndex) else {
+            return
+        }
+        
+        getCategory = category
+        
+        print("reload")
+        medicineList.reloadData()
+    }
+    
+    func clearNavigationBar(){
+        self.navigationItem.leftBarButtonItem = nil
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        navigationController?.view.backgroundColor = .clear
+    }
+    
+    @objc func addMedicinePage(sender: UIBarButtonItem){
+        let storyboard = UIStoryboard(name: "AddMedicine", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "addMedicine") as? AddMedicineVC
+        vc!.delegate = self
+        vc?.medicineDataRutin = self.medicineDataRutin
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
+    
+    func getData(){
+        medicineDataRutin.removeAll()
+        medicineDataSewaktu.removeAll()
+        guard let userID = UserDefaults.standard.string(forKey: "userID") else{
+            return
+        }
+        
+//        let loadingView = Load.shared.showLoad()
+//        self.present(loadingView, animated: true, completion: nil)
+        MedicineModel.shared.loadMedicineData(userRN: userID) { (result) in
+            for i in result {
+                guard
+                    let id = i.recordID.recordName as? String,
+                    let getName =  i["namaObat"] as? String,
+                    let getDesc = i["deskripsiObat"] as? String,
+                    let getDose = i["dosisObat"]  as? String,
+                    let getTime = i["setelahSebelumMakan"]  as? String,
+                    let getCategory = i["kategori"] as? String,
+                    let getFreq = i["jumlahPerHari"] as? String
+                    else{
+                        return
+                }
+                
+                
+                if getCategory == "Rutin" {
+                    print("\(getCategory) = \(getName)")
+                    self.medicineDataRutin.append(MedicineData(ID: id, category: getCategory, name: getName, desc: getDesc, dose: getDose, freq: getFreq, time: getTime))
+                }else if getCategory == "Sewaktu-waktu"{
+                    print("\(getCategory) = \(getName)")
+                    self.medicineDataSewaktu.append(MedicineData(ID: id, category: getCategory, name: getName, desc: getDesc, dose: getDose, freq: getFreq, time: getTime))
+                }
+                
+                DispatchQueue.main.async {
+                    self.medicineList.reloadData()
+                }
+            }
+//            loadingView.dismiss(animated: true, completion: nil)
+//            loadingView.removeFromParent()
+        }
+    }
+    
+}
+
+extension MedicineListViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if getCategory == "Rutin"{
-            return medicineRutin
+            return medicineDataRutin.count
         }else{
-            return medicineSewaktu
+            return medicineDataSewaktu.count
         }
         
     }
@@ -63,146 +176,19 @@ class MedicineListViewController: UIViewController, UITableViewDelegate, UITable
             
         }
     }
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        print("viewDidLoad")
-        
-        self.medicineList.rowHeight = 210
-        
-        
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-//        getData()
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        print("viewWillAppear")
-        
-        
-        medicineList.isHidden = true
-        
-        medicineList.delegate = self
-        medicineList.dataSource = self
-        medicineList.register(UINib(nibName: "MedicineListTableViewCell", bundle: nil), forCellReuseIdentifier: "medicineList")
-        
-        getData()
-
-
-        guard let category = medicineCategory.titleForSegment(at: medicineCategory.selectedSegmentIndex) else{
-            return
-        }
-
-        getCategory = category
-        print(getCategory)
-
-        medicineCategory.addTarget(self, action: #selector(chooseCategory), for: .valueChanged)
-        
-        navigationItem.title = "Obat"
-        let addImg = UIImage(named: "plusRiwayat")
-        let addButton = UIBarButtonItem(image: addImg, style: .plain, target: self, action: #selector(addMedicinePage))
-        
-        navigationItem.rightBarButtonItem = addButton
-        
-        clearNavigationBar()
-        self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 0.4196078431, blue: 0.3411764706, alpha: 1)
-        
-    }
-    
-    @objc func chooseCategory(sender: UISegmentedControl){
-        
-        guard let category = medicineCategory.titleForSegment(at: medicineCategory.selectedSegmentIndex) else{
-            return
-        }
-        
-        getCategory = category
-        
-        print("reload")
-        medicineList.reloadData()
-    }
-    
-    func clearNavigationBar(){
-        
-        self.navigationItem.leftBarButtonItem = nil
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
-        navigationController?.view.backgroundColor = .clear
-    }
-    
-    @objc func addMedicinePage(sender: UIBarButtonItem){
-        let storyboard = UIStoryboard(name: "AddMedicine", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "addMedicine") as! AddMedicineVC
-        vc.delegate = self
-        self.navigationController?.pushViewController(vc, animated: true)
-
-//        let vc = AddMedicineVC()
-//        self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    func getData(){
-        medicineDataRutin.removeAll()
-        medicineDataSewaktu.removeAll()
-        guard let userID = UserDefaults.standard.string(forKey: "userID") else{
-            return
-        }
-        print(userID)
-
-        let loadView = Load.shared.showLoad()
-        self.present(loadView, animated: true, completion: nil)
-        MedicineModel.shared.loadMedicineData(userRN: userID) { (result) in
-            
-            for i in result {
-                guard let id = i.recordID.recordName as? String else {
-                    
-                    return
-                }
-                guard let getName =  i["namaObat"] as? String else{
-                    return
-                }
-                print(getName)
-                guard let getDesc = i["deskripsiObat"] as? String else{
-                    return
-                }
-                
-                guard let getDose = i["dosisObat"]  as? String else{
-                    return
-                }
-                
-                guard let getTime = i["setelahSebelumMakan"]  as? String else{
-                    return
-                }
-                
-                guard let getCategory = i["kategori"] as? String else{
-                    return
-                }
-                
-                guard let getFreq = i["jumlahPerHari"] as? String else{
-                    return
-                }
-                if getCategory == "Rutin" {
-                    self.medicineDataRutin.append(MedicineData(ID: id, category: getCategory, name: getName, desc: getDesc, dose: getDose, freq: getFreq, time: getTime))
-                    self.medicineRutin = self.medicineDataRutin.count
-                }else{
-                    self.medicineDataSewaktu.append(MedicineData(ID: id, category: getCategory, name: getName, desc: getDesc, dose: getDose, freq: getFreq, time: getTime))
-                    self.medicineSewaktu = self.medicineDataSewaktu.count
-                }
-                self.medicineList.isHidden = false
-                self.medicineList.reloadData()
-                self.medicineList.setNeedsLayout()
-                self.dismiss(animated: true, completion: nil)
-            }
-        }
-        
-    }
-
 }
 
 extension MedicineListViewController: AddMedicineVCDelegate {
-    func reloadDataBasedOnNewArray() {
-        getData()
+    func refreshWithNewData(data: [MedicineData], category: String) {
+        if data.last?.medicineCategory == "Rutin"{
+            self.medicineDataRutin.append(data.last!)
+        } else if data.last?.medicineCategory == "Sewaktu-waktu"{
+            print("Sewaktu goblok")
+            print(data.last?.medicineCategory)
+            self.medicineDataSewaktu.append(data.last!)
+        }
+        self.getCategory = category
+        self.isFromAdd = true
+        medicineList.reloadData()
     }
 }

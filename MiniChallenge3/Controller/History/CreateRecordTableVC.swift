@@ -32,7 +32,7 @@ class CreateRecordTableVC: UITableViewController {
     let labelCellIdentifier = "TwoLabelsCell"
     let textFieldCellIdentifier = "TextfieldCell"
     let activityPickerCellIdentifier = "ActivityPickerCell"
-
+    
     var valueToPass = -1
     var expandedRow = -1
     
@@ -64,22 +64,22 @@ class CreateRecordTableVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         navigationController?.title = "Buat Catatan"
-        
-        print("record model userID ->", getUserID as Any)
+//        let loadView = Load.shared.showLoad()
+//        self.present(loadView, animated: true, completion: nil)
         RecordModel.shared.loadMedicineData(userRN: getUserID) { (result) in
-            self.CKMedicineData = result
+            if result.count > 0 {
+                self.medicineNames = RecordModel.shared.parseMedicineName(medicineData: result)
+                for name in self.medicineNames {
+                    self.medicineValues.append(medicineValue(medicineName: name, medicineConsumptionFrequency: "Pilih"))
+                }
+                self.tableView.reloadData()
+//                self.dismiss(animated: true, completion: nil)
+            }
         }
         
-        // populate local variable with medicine data
-        // medicine name
-        medicineNames = RecordModel.shared.parseMedicineName(medicineData: CKMedicineData)
         
-        // medicine frequency
-        for name in medicineNames {
-            medicineValues.append(medicineValue(medicineName: name, medicineConsumptionFrequency: "Pilih"))
-        }
         
         let addButton = UIBarButtonItem(title: "Selesai", style: .plain, target: self, action: #selector(submit))
         
@@ -103,9 +103,9 @@ class CreateRecordTableVC: UITableViewController {
             forHeaderFooterViewReuseIdentifier: "sectionHeader"
         )
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 4
     }
@@ -125,12 +125,12 @@ class CreateRecordTableVC: UITableViewController {
         
         return rowsPerSection[section]
     }
-
+    
     override func tableView(
         _ tableView: UITableView,
         cellForRowAt
         indexPath: IndexPath
-    ) -> UITableViewCell {
+        ) -> UITableViewCell {
         
         // Medicine Section
         if indexPath.section == 0 {
@@ -200,7 +200,7 @@ class CreateRecordTableVC: UITableViewController {
         // text field cell's height
         return 200
     }
-
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if indexPath.section == 0 {
@@ -254,7 +254,6 @@ class CreateRecordTableVC: UITableViewController {
     @IBAction func submit(_ sender: Any) {
         if medicineValues.count > 0 {
             for x in 0...medicineValues.count - 1 {
-                medicineNames.append(medicineValues[x].medicineName)
                 medicineFreq.append(medicineValues[x].medicineConsumptionFrequency)
             }
         }

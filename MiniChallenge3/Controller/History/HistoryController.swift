@@ -81,8 +81,9 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
         
         let addImg = UIImage(named: "plusRiwayat")
         let addButton = UIBarButtonItem(image: addImg, style: .plain, target: self, action: #selector(createRecordPage))
-        
+        addButton.tintColor = #colorLiteral(red: 1, green: 0.4196078431, blue: 0.3411764706, alpha: 1)
         navigationItem.rightBarButtonItem = addButton
+        navigationItem.title = "Riwayat"
         
         print(date)
         print(day)
@@ -262,8 +263,8 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
         collectionViewCell?.sizeToFit()
         collectionViewCell?.dateLabel.textColor = .white
         
-        let loadView = Load.shared.showLoad()
-        self.present(loadView, animated: true, completion: nil)
+//        let loadView = Load.shared.showLoad()
+//        self.present(loadView, animated: true, completion: nil)
         if indexPath.row - 1 == -1 {
             historyView.currentDateLabel.text = "\(Days[(indexPath.row) % 7]), \(String((collectionViewCell?.dateLabel.text!)!)) \(String(historyView.monthLabel.text!))"
             
@@ -285,7 +286,8 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
                     self.parseHistoryData(records: result)
                 }
                 // dismis alert
-                self.dismiss(animated: true, completion: nil)
+//                loadView.dismiss(animated: true, completion: nil)
+//                loadView.removeFromParent()
                 //            print(result)
                 self.historyView.infoTableView.reloadData()
             }
@@ -307,6 +309,7 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
             
             HistoryModel.shared.loadMedicalRecord(userRN: UserDefaults.standard.string(forKey: "userID")!, dateClicked: dateClicked) { (result) in
                 print("executed")
+                print("result: ", result)
                 if result.count != 0 {
                     self.parseHistoryData(records: result)
                 } else {
@@ -316,15 +319,14 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
                     self.historyComplain.removeAll()
                 }
                 // dismis alert
-                self.dismiss(animated: true, completion: nil)
+//                loadView.dismiss(animated: true, completion: nil)
+//                loadView.removeFromParent()
                 //            print(result)
                 self.historyView.infoTableView.reloadData()
             }
         }
 
         // show alert
-
-
     }
     
     func parseHistoryData(records: [CKRecord]) {

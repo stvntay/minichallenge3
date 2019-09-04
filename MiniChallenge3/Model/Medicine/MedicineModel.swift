@@ -50,8 +50,8 @@ final class MedicineModel {
         let userID = CKRecord.ID(recordName: userRN)
         let pred = NSPredicate(format: "pasienID = %@", userID)
         let query = CKQuery(recordType: "MedicineData", predicate: pred)
-//        let sort = NSSortDescriptor(key: "creationDate", ascending: true)
-//        query.sortDescriptors = [sort]
+        //        let sort = NSSortDescriptor(key: "creationDate", ascending: true)
+        //        query.sortDescriptors = [sort]
         
         CKContainer.default().publicCloudDatabase.perform(query, inZoneWith: nil) { (records, error) in
             DispatchQueue.main.async {
@@ -61,7 +61,7 @@ final class MedicineModel {
                 }
                 let sortRecords = records.sorted(by: { $0.creationDate! < $1.creationDate!
                 })
-                print(sortRecords)
+                //                print(sortRecords)
                 completion(sortRecords)
             }
         }

@@ -37,6 +37,13 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
         userTableView.isUserInteractionEnabled = false
         userDataView.layer.cornerRadius = 20
         userDataView.backgroundColor = UIColor(red: 249/255, green: 249/255, blue: 249/255, alpha: 1)
+//        userDataView.layer.shadowRadius = 10
+//        userDataView.layer.shadowOpacity = 0
+//        userDataView.layer.shadowColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+        userDataView.layer.shadowColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+        userDataView.layer.shadowOpacity = 1
+        userDataView.layer.shadowOffset = .zero
+        userDataView.layer.shadowRadius = 10
         userTableView.layer.cornerRadius = 20
         userTableView.isScrollEnabled = false
         
@@ -46,6 +53,12 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
         doctorTableView.isUserInteractionEnabled = false
         doctorDataView.layer.cornerRadius = 20
         doctorDataView.backgroundColor = UIColor(red: 249/255, green: 249/255, blue: 249/255, alpha: 1)
+//        doctorDataView.layer.shadowRadius = 10
+//        doctorDataView.layer.shadowColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+        doctorDataView.layer.shadowColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+        doctorDataView.layer.shadowOpacity = 1
+        doctorDataView.layer.shadowOffset = .zero
+        doctorDataView.layer.shadowRadius = 10
         doctorTableView.layer.cornerRadius = 20
         doctorTableView.isScrollEnabled = false
         
