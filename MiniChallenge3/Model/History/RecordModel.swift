@@ -22,7 +22,7 @@ final class RecordModel {
         var datas = [String]()
         
         for data in medicineData {
-            datas.append(data["nama"] as! String)
+            datas.append(data["namaObat"] as! String)
         }
         return datas
     }

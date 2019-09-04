@@ -68,8 +68,6 @@ class CreateRecordTableVC: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        navigationController?.title = "Buat Catatan"
         
         // MARK - VDL Setup picker
         picker = UIPickerView.init()
@@ -121,9 +119,9 @@ class CreateRecordTableVC: UITableViewController {
             forHeaderFooterViewReuseIdentifier: "sectionHeader"
         )
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 4
     }
@@ -143,12 +141,12 @@ class CreateRecordTableVC: UITableViewController {
         
         return rowsPerSection[section]
     }
-
+    
     override func tableView(
         _ tableView: UITableView,
         cellForRowAt
         indexPath: IndexPath
-    ) -> UITableViewCell {
+        ) -> UITableViewCell {
         
         // Medicine Section
         if indexPath.section == 0 {

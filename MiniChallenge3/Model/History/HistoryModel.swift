@@ -53,8 +53,10 @@ final class HistoryModel {
                         print(error?.localizedDescription as Any)
                         return
                     }
-                    print(records)
-                    completion(records)
+                    let sortRecords = records.sorted(by: { $0.creationDate! < $1.creationDate!
+                    })
+                    print(sortRecords)
+                    completion(sortRecords)
                 } else {
                     print(error.debugDescription)
                 }

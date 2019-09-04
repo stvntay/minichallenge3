@@ -10,13 +10,11 @@ import UIKit
 import CloudKit
 
 protocol AddMedicineVCDelegate: class {
-    func reloadDataBasedOnNewArray()
+    func refreshWithNewData(data: [MedicineData], category: String)
 }
 
 class AddMedicineVC: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate{
     
-
-    weak var delegate: AddMedicineVCDelegate?
     
     @IBOutlet weak var addMedicineTitle: UILabel!
     @IBOutlet weak var medicineCategory: UITextField!
@@ -32,17 +30,17 @@ class AddMedicineVC: UIViewController,UIPickerViewDelegate, UIPickerViewDataSour
     let medicineTimeData: [String] = ["Sebelum makan","Sesudah makan"]
     let pickerCategory = UIPickerView()
     let pickerTime = UIPickerView()
-    var getCategory = ""
+    var categorySent = ""
     var getTime = ""
+    var getCategory = ""
+    var medicineDataRutin = [MedicineData]()
+    var medicineDataSewaktu = [MedicineData]()
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.delegate?.reloadDataBasedOnNewArray()
-    }
+    weak var delegate: AddMedicineVCDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
         editTextField()
         
         navigationItem.title = "Tambah Obat"
@@ -57,10 +55,21 @@ class AddMedicineVC: UIViewController,UIPickerViewDelegate, UIPickerViewDataSour
         //let addImg = UIImage(named: "add-icon")
         let addButton = UIBarButtonItem(title: "Selesai", style: .plain, target: self, action: #selector(sendData))
         
+        
         self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 0.4196078431, blue: 0.3411764706, alpha: 1)
         navigationItem.rightBarButtonItem = addButton
         
         clearNavigationBar()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if categorySent == "Rutin"{
+            self.delegate?.refreshWithNewData(data: self.medicineDataRutin, category: getCategory)
+        }else if categorySent == "Sewaktu-waktu" {
+            self.delegate?.refreshWithNewData(data: self.medicineDataSewaktu, category: getCategory)
+        }
+        
     }
     
     @objc func sendData(sender: UIBarButtonItem){
@@ -83,11 +92,34 @@ class AddMedicineVC: UIViewController,UIPickerViewDelegate, UIPickerViewDataSour
         guard let getUserID = UserDefaults.standard.string(forKey: "userID") else {
             return
         }
-       
+        
         MedicineModel.shared.saveMedicineData(kategori: getCategory, namaObat: getName, deskripsiObat: getDesc, dosisObat: getDose, setelahSebelumMakan: getTime, jumlahPerHari: getDay, pasienRN: getUserID, completion: {
             (record) in
-
+            
+            print(record)
+            
+            guard
+                let id = record.recordID.recordName as? String,
+                let getName =  record["namaObat"] as? String,
+                let getDesc = record["deskripsiObat"] as? String,
+                let getDose = record["dosisObat"]  as? String,
+                let getTime = record["setelahSebelumMakan"] as? String,
+                let getCategory = record["kategori"] as? String,
+                let getFreq = record["jumlahPerHari"] as? String
+                else {
+                    return
+            }
+            self.categorySent = getCategory
+            if getCategory == "Rutin"{
+                self.medicineDataRutin.append(MedicineData(ID: id, category: getCategory, name: getName, desc: getDesc, dose: getDose, freq: getFreq, time: getTime))
+            }else if getCategory == "Sewaktu-waktu"{
+                print("add sewaktu")
+                self.medicineDataSewaktu.append(MedicineData(ID: id, category: getCategory, name: getName, desc: getDesc, dose: getDose, freq: "-", time: getTime))
+            }
+            
+            
             self.navigationController?.popViewController(animated: true)
+            
         })
         
         
@@ -98,7 +130,7 @@ class AddMedicineVC: UIViewController,UIPickerViewDelegate, UIPickerViewDataSour
         medicineName.addLine(position: .LINE_POSITION_BOTTOM, color: UIColor(red:0.94, green:0.45, blue:0.37, alpha:1.0), width: 1)
         medicineTime.addLine(position: .LINE_POSITION_BOTTOM, color: UIColor(red:0.94, green:0.45, blue:0.37, alpha:1.0), width: 1)
         medicineDescription.addLine(position: .LINE_POSITION_BOTTOM, color: UIColor(red:0.94, green:0.45, blue:0.37, alpha:1.0), width: 1)
-    
+        
     }
     
     func clearNavigationBar(){
@@ -178,7 +210,7 @@ class AddMedicineVC: UIViewController,UIPickerViewDelegate, UIPickerViewDataSour
         }
         self.view.endEditing(true)
     }
-   
+    
     
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -252,4 +284,3 @@ extension UITextField {
         }
     }
 }
-
