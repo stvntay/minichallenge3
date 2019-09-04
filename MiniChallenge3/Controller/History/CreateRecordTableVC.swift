@@ -74,7 +74,7 @@ class CreateRecordTableVC: UITableViewController {
         
         // populate local variable with medicine data
         // medicine name
-        medicineNames = RecordModel.shared.parseMedicineName(medicineDatas: CKMedicineData)
+        medicineNames = RecordModel.shared.parseMedicineName(medicineData: CKMedicineData)
         
         // medicine frequency
         for name in medicineNames {

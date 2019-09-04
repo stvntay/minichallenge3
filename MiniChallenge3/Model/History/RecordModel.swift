@@ -18,10 +18,10 @@ final class RecordModel {
     
     // MARK: - Load medicine name data from cloudkit
     
-    func parseMedicineName(medicineDatas: [CKRecord]) -> [String] {
+    func parseMedicineName(medicineData: [CKRecord]) -> [String] {
         var datas = [String]()
         
-        for data in medicineDatas {
+        for data in medicineData {
             datas.append(data["nama"] as! String)
         }
         return datas
@@ -32,8 +32,7 @@ final class RecordModel {
         let userID = CKRecord.ID(recordName: userRN)
         let pred = NSPredicate(format: "pasienID = %@", userID)
         let query = CKQuery(recordType: "MedicineData", predicate: pred)
-        let sort = NSSortDescriptor(key: "creationDate", ascending: true)
-        query.sortDescriptors = [sort]
+
         print("called load medical data")
         CKContainer.default().publicCloudDatabase.perform(query, inZoneWith: nil) { (records, error) in
             DispatchQueue.main.async {
@@ -41,8 +40,10 @@ final class RecordModel {
                     print(error?.localizedDescription as Any)
                     return
                 }
-                print("Medical data -> ", records)
-                completion(records)
+                let sortRecords = records.sorted(by: { $0.creationDate! < $1.creationDate!
+                })
+                print(sortRecords)
+                completion(sortRecords)
             }
         }
         

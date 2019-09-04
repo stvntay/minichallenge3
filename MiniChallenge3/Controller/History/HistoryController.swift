@@ -313,7 +313,7 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
                 // dismis alert
                 self.dismiss(animated: true, completion: nil)
                 //            print(result)
-                //            self.historyView.infoTableView.reloadData()
+                self.historyView.infoTableView.reloadData()
             }
         }
 
@@ -324,7 +324,11 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
     
     func parseHistoryData(records: [CKRecord]) {
         let data = records.last
-
+        self.historyMedicine.removeAll()
+        self.historyActivity.removeAll()
+        self.historySleep.removeAll()
+        self.historyComplain.removeAll()
+        
         self.historyMedicine.append(data?["namaObat"] as! [String])
         self.historyMedicine.append(data?["obat"] as! [String])
         self.historyActivity.append(data?["membersihkanDiri"] as! String)
@@ -429,6 +433,7 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
             let cell = (tableView.dequeueReusableCell(withIdentifier: "ActivityID") as? ActivityTableViewCell)!
             if historyActivity.count > 0 {
                 cell.activityLabel.text = activityQ[indexPath.row]
+                print(historyActivity[indexPath.row])
                 cell.statusImage.image = UIImage.init(named: historyActivity[indexPath.row] )
             } else {
                 cell.activityLabel.text = "No data"

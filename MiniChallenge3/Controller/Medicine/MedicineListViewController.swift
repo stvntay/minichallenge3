@@ -151,7 +151,8 @@ class MedicineListViewController: UIViewController, UITableViewDelegate, UITable
         }
         print(userID)
 
-     
+        let loadView = Load.shared.showLoad()
+        self.present(loadView, animated: true, completion: nil)
         MedicineModel.shared.loadMedicineData(userRN: userID) { (result) in
             
             for i in result {
@@ -192,6 +193,7 @@ class MedicineListViewController: UIViewController, UITableViewDelegate, UITable
                 self.medicineList.isHidden = false
                 self.medicineList.reloadData()
                 self.medicineList.setNeedsLayout()
+                self.dismiss(animated: true, completion: nil)
             }
         }
         
