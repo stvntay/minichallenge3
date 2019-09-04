@@ -90,12 +90,12 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
         print(month)
         print(year)
 
-        HistoryModel.shared.loadMedicalRecord(userRN: UserDefaults.standard.string(forKey: "userID")!, dateClicked: "Sep 03, 2019") { (result) in
-            print("this data")
-        }
-        RecordModel.shared.saveMedicalRecord(namaObat: ["ana", "ani", "anu"], obat: ["1x", "2x", "3x"], membersihkanDiri: "Mandiri", makanDenganRapi: "Bersama", membersihkanPakaian: "Mandiri", membersihkanRumah: "Bersama", berkomunikasiDenganLingkungan: "Tergantung", tidurHariIni: "ff", catatan: "gg", pasienRN: UserDefaults.standard.string(forKey: "userID")!) { (result) in
-            print(result)
-        }
+//        HistoryModel.shared.loadMedicalRecord(userRN: UserDefaults.standard.string(forKey: "userID")!, dateClicked: "Sep 03, 2019") { (result) in
+//            print("this data")
+//        }
+//        RecordModel.shared.saveMedicalRecord(namaObat: ["ana", "ani", "anu"], obat: ["1x", "2x", "3x"], membersihkanDiri: "Mandiri", makanDenganRapi: "Bersama", membersihkanPakaian: "Mandiri", membersihkanRumah: "Bersama", berkomunikasiDenganLingkungan: "Tergantung", tidurHariIni: "ff", catatan: "gg", pasienRN: UserDefaults.standard.string(forKey: "userID")!) { (result) in
+//            print(result)
+//        }
     }
     
     // go to create record
@@ -287,7 +287,7 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
                 // dismis alert
                 self.dismiss(animated: true, completion: nil)
                 //            print(result)
-                //            self.historyView.infoTableView.reloadData()
+                self.historyView.infoTableView.reloadData()
             }
         } else {
             historyView.currentDateLabel.text = "\(Days[(indexPath.row - 1) % 7]), \(String((collectionViewCell?.dateLabel.text!)!)) \(String(historyView.monthLabel.text!))"
@@ -309,6 +309,11 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
                 print("executed")
                 if result.count != 0 {
                     self.parseHistoryData(records: result)
+                } else {
+                    self.historyMedicine.removeAll()
+                    self.historyActivity.removeAll()
+                    self.historySleep.removeAll()
+                    self.historyComplain.removeAll()
                 }
                 // dismis alert
                 self.dismiss(animated: true, completion: nil)
