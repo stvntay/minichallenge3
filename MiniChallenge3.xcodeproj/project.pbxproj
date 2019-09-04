@@ -17,6 +17,7 @@
 		95355962231E63330014EA5F /* ActivityRecordGuide.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9535595A231E63330014EA5F /* ActivityRecordGuide.storyboard */; };
 		95355965231E635C0014EA5F /* CreateRecordTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95355963231E635C0014EA5F /* CreateRecordTableVC.swift */; };
 		95355966231E635C0014EA5F /* OptionsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95355964231E635C0014EA5F /* OptionsTableVC.swift */; };
+		9535596E231F4C120014EA5F /* ActivityRecordHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9535596D231F4C120014EA5F /* ActivityRecordHeader.swift */; };
 		B044F629231E867000FFF42D /* Load.swift in Sources */ = {isa = PBXBuildFile; fileRef = B044F628231E867000FFF42D /* Load.swift */; };
 		B06A9C68230E69E9007D38B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C67230E69E9007D38B5 /* AppDelegate.swift */; };
 		B06A9C6A230E69E9007D38B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A9C69230E69E9007D38B5 /* ViewController.swift */; };
@@ -82,6 +83,7 @@
 		9535595A231E63330014EA5F /* ActivityRecordGuide.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ActivityRecordGuide.storyboard; sourceTree = "<group>"; };
 		95355963231E635C0014EA5F /* CreateRecordTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateRecordTableVC.swift; sourceTree = "<group>"; };
 		95355964231E635C0014EA5F /* OptionsTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsTableVC.swift; sourceTree = "<group>"; };
+		9535596D231F4C120014EA5F /* ActivityRecordHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityRecordHeader.swift; path = MiniChallenge3/View/ActivityRecordHeader.swift; sourceTree = SOURCE_ROOT; };
 		B044F628231E867000FFF42D /* Load.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Load.swift; sourceTree = "<group>"; };
 		B06A9C64230E69E9007D38B5 /* MiniChallenge3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniChallenge3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B06A9C67230E69E9007D38B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -131,7 +133,7 @@
 		BE998317231E2C63000459E5 /* TabMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TabMenu.storyboard; sourceTree = "<group>"; };
 		BE998322231E3DB2000459E5 /* RecordData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordData.swift; sourceTree = "<group>"; };
 		BE9BECF9230E892F00640A93 /* HistoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryController.swift; sourceTree = "<group>"; };
-		BE9BECFD230E8DAD00640A93 /* CalenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalenderView.swift; path = MiniChallenge3/Controller/CalenderView.swift; sourceTree = SOURCE_ROOT; };
+		BE9BECFD230E8DAD00640A93 /* CalenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalenderView.swift; path = MiniChallenge3/Controller/History/CalenderView.swift; sourceTree = SOURCE_ROOT; };
 		BE9BED132317D67700640A93 /* MedicineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineTableViewCell.swift; sourceTree = "<group>"; };
 		BE9BED142317D67700640A93 /* MedicineTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicineTableViewCell.xib; sourceTree = "<group>"; };
 		BE9BED192317E45A00640A93 /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
@@ -283,6 +285,7 @@
 				95355953231E63320014EA5F /* CreateRecord.storyboard */,
 				95355954231E63320014EA5F /* ActivityPickerCell.swift */,
 				95355956231E63320014EA5F /* ActivityPickerCell.xib */,
+				9535596D231F4C120014EA5F /* ActivityRecordHeader.swift */,
 			);
 			path = CreateRecord;
 			sourceTree = "<group>";
@@ -477,6 +480,7 @@
 				BE99830E231E2BFE000459E5 /* ProfileController.swift in Sources */,
 				BE9BECFA230E892F00640A93 /* HistoryController.swift in Sources */,
 				BE998312231E2BFE000459E5 /* MedicineListViewController.swift in Sources */,
+				9535596E231F4C120014EA5F /* ActivityRecordHeader.swift in Sources */,
 				BE9BED1B2317E45A00640A93 /* ActivityTableViewCell.swift in Sources */,
 				9535595F231E63330014EA5F /* TextFieldCell.swift in Sources */,
 				BE9BECFE230E8DAD00640A93 /* CalenderView.swift in Sources */,
