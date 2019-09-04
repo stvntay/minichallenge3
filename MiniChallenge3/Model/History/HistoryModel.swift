@@ -38,22 +38,26 @@ final class HistoryModel {
         
     }
     
-    func loadMedicalRecord(userRN: String, dateClicked: Date, completion: @escaping (_ recID: [CKRecord]) -> Void) {
+    func loadMedicalRecord(userRN: String, dateClicked: String, completion: @escaping (_ recID: [CKRecord]) -> Void) {
         let userID = CKRecord.ID(recordName: userRN)
         let pred = NSPredicate(format: "pasienID = %@", userID)
-        let pred2 = NSPredicate(format: "creationDate = %@", dateClicked as CVarArg)
+        let pred2 = NSPredicate(format: "date = %@", dateClicked)
         let searchCriteria = NSCompoundPredicate(andPredicateWithSubpredicates: [pred, pred2])
-        let query = CKQuery(recordType: "MedicalRecord", predicate: pred)
-
+        let query = CKQuery(recordType: "MedicalRecord", predicate: searchCriteria)
+        
         print("this func called load data")
         CKContainer.default().publicCloudDatabase.perform(query, inZoneWith: nil) { (records, error) in
             DispatchQueue.main.async {
-                guard let records = records else {
-                    print(error?.localizedDescription as Any)
-                    return
+                if records != nil {
+                    guard let records = records else {
+                        print(error?.localizedDescription as Any)
+                        return
+                    }
+                    print(records)
+                    completion(records)
+                } else {
+                    print(error.debugDescription)
                 }
-                print(records)
-                completion(records)
             }
         }
         

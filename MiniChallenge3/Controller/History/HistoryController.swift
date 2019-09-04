@@ -18,7 +18,7 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
     let Months = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"]
     var DayAmouthInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
     let Days = ["Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"]
-    
+    let activityQ = ["Membersihkan Diri", "Makan Dengan Rapi", "Membersihkan Pakaian", "Membersihkan Rumah", "Berkomunikasi Dengan Lingkungan"]
     var currentMonth = String()
     
     var recordData: [RecordData] = []
@@ -90,8 +90,11 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
         print(month)
         print(year)
 
-        HistoryModel.shared.loadMedicalRecord(userRN: UserDefaults.standard.string(forKey: "userID")!, dateClicked: date) { (result) in
+        HistoryModel.shared.loadMedicalRecord(userRN: UserDefaults.standard.string(forKey: "userID")!, dateClicked: "Sep 03, 2019") { (result) in
             print("this data")
+        }
+        RecordModel.shared.saveMedicalRecord(namaObat: ["ana", "ani", "anu"], obat: ["1x", "2x", "3x"], membersihkanDiri: "Mandiri", makanDenganRapi: "Bersama", membersihkanPakaian: "Mandiri", membersihkanRumah: "Bersama", berkomunikasiDenganLingkungan: "Tergantung", tidurHariIni: "ff", catatan: "gg", pasienRN: UserDefaults.standard.string(forKey: "userID")!) { (result) in
+            print(result)
         }
     }
     
@@ -259,19 +262,63 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
         collectionViewCell?.sizeToFit()
         collectionViewCell?.dateLabel.textColor = .white
         
+        let loadView = Load.shared.showLoad()
+        self.present(loadView, animated: true, completion: nil)
         if indexPath.row - 1 == -1 {
             historyView.currentDateLabel.text = "\(Days[(indexPath.row) % 7]), \(String((collectionViewCell?.dateLabel.text!)!)) \(String(historyView.monthLabel.text!))"
+            
+            guard let monthText = historyView.monthLabel.text else {
+                return
+            }
+            let range = monthText.startIndex..<monthText.index(monthText.startIndex, offsetBy: 3)
+            let thisMonth = monthText[range]
+            guard var thisDate = collectionViewCell?.dateLabel.text else { return }
+            if Int(thisDate)! < 10 {
+                thisDate = "0\(thisDate)"
+            }
+            let thisYear = year
+            let dateClicked = "\(thisMonth) \(thisDate), \(thisYear)"
+            print(dateClicked)
+            
+            HistoryModel.shared.loadMedicalRecord(userRN: UserDefaults.standard.string(forKey: "userID")!, dateClicked: dateClicked) { (result) in
+                if result.count != 0 {
+                    self.parseHistoryData(records: result)
+                }
+                // dismis alert
+                self.dismiss(animated: true, completion: nil)
+                //            print(result)
+                //            self.historyView.infoTableView.reloadData()
+            }
         } else {
             historyView.currentDateLabel.text = "\(Days[(indexPath.row - 1) % 7]), \(String((collectionViewCell?.dateLabel.text!)!)) \(String(historyView.monthLabel.text!))"
+            
+            guard let monthText = historyView.monthLabel.text else {
+                return
+            }
+            let range = monthText.startIndex..<monthText.index(monthText.startIndex, offsetBy: 3)
+            let thisMonth = monthText[range]
+            guard var thisDate = collectionViewCell?.dateLabel.text else { return }
+            if Int(thisDate)! < 10 {
+                thisDate = "0\(thisDate)"
+            }
+            let thisYear = year
+            let dateClicked = "\(thisMonth) \(thisDate), \(thisYear)"
+            print(dateClicked)
+            
+            HistoryModel.shared.loadMedicalRecord(userRN: UserDefaults.standard.string(forKey: "userID")!, dateClicked: dateClicked) { (result) in
+                print("executed")
+                if result.count != 0 {
+                    self.parseHistoryData(records: result)
+                }
+                // dismis alert
+                self.dismiss(animated: true, completion: nil)
+                //            print(result)
+                //            self.historyView.infoTableView.reloadData()
+            }
         }
 
         // show alert
-        HistoryModel.shared.loadMedicalRecord(userRN: UserDefaults.standard.string(forKey: "userID")!, dateClicked: date) { (result) in
-            self.parseHistoryData(records: result)
-            // dismis alert
-//            print(result)
-//            self.historyView.infoTableView.reloadData()
-        }
+
 
     }
     
@@ -381,7 +428,7 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
         case 1:
             let cell = (tableView.dequeueReusableCell(withIdentifier: "ActivityID") as? ActivityTableViewCell)!
             if historyActivity.count > 0 {
-                cell.activityLabel.text = selectedData[indexPath.row]
+                cell.activityLabel.text = activityQ[indexPath.row]
                 cell.statusImage.image = UIImage.init(named: historyActivity[indexPath.row] )
             } else {
                 cell.activityLabel.text = "No data"

@@ -58,7 +58,6 @@
 		BE998310231E2BFE000459E5 /* PatientOnBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE998309231E2BFD000459E5 /* PatientOnBoardViewController.swift */; };
 		BE998311231E2BFE000459E5 /* AddMedicineVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE99830A231E2BFD000459E5 /* AddMedicineVC.swift */; };
 		BE998312231E2BFE000459E5 /* MedicineListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE99830B231E2BFD000459E5 /* MedicineListViewController.swift */; };
-		BE998313231E2BFE000459E5 /* CalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE99830C231E2BFE000459E5 /* CalenderView.swift */; };
 		BE998315231E2C0E000459E5 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = BE998314231E2C0E000459E5 /* Fonts */; };
 		BE998318231E2C63000459E5 /* Onboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE998316231E2C63000459E5 /* Onboard.storyboard */; };
 		BE998319231E2C63000459E5 /* TabMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE998317231E2C63000459E5 /* TabMenu.storyboard */; };
@@ -470,10 +469,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE9BECFE230E8DAD00640A93 /* CalenderView.swift in Sources */,
 				BE9982E7231E2B83000459E5 /* UserProfileCell.swift in Sources */,
 				BE9982FD231E2BCB000459E5 /* MedicineData.swift in Sources */,
 				BE9982FE231E2BCB000459E5 /* Profile.swift in Sources */,
-				BE998313231E2BFE000459E5 /* CalenderView.swift in Sources */,
 				BE9982EA231E2B83000459E5 /* DoctorProfileCell.swift in Sources */,
 				BE99830F231E2BFE000459E5 /* DoctorOnBoardController.swift in Sources */,
 				BE998300231E2BCB000459E5 /* ProfileModel.swift in Sources */,
@@ -483,7 +482,6 @@
 				9535596E231F4C120014EA5F /* ActivityRecordHeader.swift in Sources */,
 				BE9BED1B2317E45A00640A93 /* ActivityTableViewCell.swift in Sources */,
 				9535595F231E63330014EA5F /* TextFieldCell.swift in Sources */,
-				BE9BECFE230E8DAD00640A93 /* CalenderView.swift in Sources */,
 				BE9982FC231E2BCB000459E5 /* OnboardModel.swift in Sources */,
 				B044F629231E867000FFF42D /* Load.swift in Sources */,
 				BE998311231E2BFE000459E5 /* AddMedicineVC.swift in Sources */,

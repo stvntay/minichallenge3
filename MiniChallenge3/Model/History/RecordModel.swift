@@ -27,7 +27,8 @@ final class RecordModel {
         return datas
     }
     
-    func loadMedicineData(userRN: String, completion: @escaping (_ recID: [CKRecord]) -> Void) {
+    func loadMedicineData(userRN: String,
+                          completion: @escaping (_ recID: [CKRecord]) -> Void) {
         let userID = CKRecord.ID(recordName: userRN)
         let pred = NSPredicate(format: "pasienID = %@", userID)
         let query = CKQuery(recordType: "MedicineData", predicate: pred)
@@ -49,21 +50,31 @@ final class RecordModel {
     
     // MARK: - Save record data to CloudKit
     
-    func saveMedicalRecord(namaObat: [String], obat: [String], membersihkanDiri: String, makanDenganRapi: String, membersihkanPakaian: String, membersihkanRumah: String, berkomunikasiDenganLingkungan: String, tidurHariIni: String, catatan: String, pasienRN: String, completion: @escaping (_ recID: CKRecord) -> Void) {
+    func saveMedicalRecord(namaObat: [String],
+                           obat: [String],
+                           membersihkanDiri: String,
+                           makanDenganRapi: String,
+                           membersihkanPakaian: String,
+                           membersihkanRumah: String,
+                           berkomunikasiDenganLingkungan: String,
+                           tidurHariIni: String,
+                           catatan: String,
+                           pasienRN: String,
+                           completion: @escaping (_ recID: CKRecord) -> Void) {
         let newData = CKRecord(recordType: "MedicalRecord")
         let pasienID = CKRecord.ID(recordName: pasienRN)
         let reference = CKRecord.Reference(recordID: pasienID, action: .deleteSelf)
         
-        print(
-          "Nama Obat:", namaObat,
-          "Freq Obat:", obat,
-          membersihkanDiri,
-          makanDenganRapi,
-          membersihkanPakaian,
-          membersihkanRumah,
-          berkomunikasiDenganLingkungan,
-          "Tidur:", tidurHariIni,
-          "Notes:", catatan
+        print(namaObat, "nama obat",
+              obat, "freq obat",
+              membersihkanDiri,
+              makanDenganRapi,
+              membersihkanPakaian,
+              membersihkanRumah,
+              berkomunikasiDenganLingkungan,
+              tidurHariIni,
+              catatan,
+              pasienRN
         )
         newData.setValue(namaObat, forKey: "namaObat")
         newData.setValue(obat, forKey: "obat")
@@ -79,13 +90,30 @@ final class RecordModel {
         CKContainer.default().publicCloudDatabase.save(newData) { (record, error) in
             DispatchQueue.main.async {
                 if record != nil {
-                    print("save data success")
-                    completion(record!)
+                    let date = record?.value(forKey: "creationDate") as! Date
+                    let dateFormatterGet = DateFormatter()
+                    dateFormatterGet.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                    
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "MMM dd, yyyy"
+                    
+                    let dateCreated = dateFormatter.string(from: date)
+                    record?.setValue(dateCreated, forKey: "date")
+                    CKContainer.default().publicCloudDatabase.save(record!) { (result, error) in
+                        DispatchQueue.main.async {
+                            if result != nil {
+                                //                                print(result)
+                                print("save data success")
+                                completion(result!)
+                            } else {
+                                print(error.debugDescription)
+                            }
+                        }
+                    }
                 } else {
                     print(error.debugDescription)
                 }
             }
-
         }
         
     }
