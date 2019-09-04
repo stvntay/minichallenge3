@@ -43,9 +43,9 @@ class MedicineListViewController: UIViewController {
         medicineList.register(UINib(nibName: "MedicineListTableViewCell", bundle: nil), forCellReuseIdentifier: "medicineList")
         
         navigationItem.title = "Obat"
-        let addImg = UIImage(named: "plusRiwayat")
-        let addButton = UIBarButtonItem(image: addImg, style: .plain, target: self, action: #selector(addMedicinePage))
-        
+//        let addImg = UIImage(named: "plusRiwayat")
+//        let addButton = UIBarButtonItem(image: addImg, style: .plain, target: self, action: #selector(addMedicinePage))
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addMedicinePage))
         navigationItem.rightBarButtonItem = addButton
         
         clearNavigationBar()

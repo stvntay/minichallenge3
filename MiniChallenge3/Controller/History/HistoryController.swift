@@ -79,10 +79,11 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
         historyView.previousBtn.setImage(UIImage(named: "Previous"), for: .normal)
         historyView.previousBtn.tintColor = #colorLiteral(red: 1, green: 0.4196078431, blue: 0.3411764706, alpha: 1)
         
-        let addImg = UIImage(named: "plusRiwayat")
-        let addButton = UIBarButtonItem(image: addImg, style: .plain, target: self, action: #selector(createRecordPage))
-        addButton.tintColor = #colorLiteral(red: 1, green: 0.4196078431, blue: 0.3411764706, alpha: 1)
-        navigationItem.rightBarButtonItem = addButton
+//        let addImg = UIImage(named: "plusRiwayat")
+
+        let addbutton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(createRecordPage))
+        addbutton.tintColor = #colorLiteral(red: 1, green: 0.4196078431, blue: 0.3411764706, alpha: 1)
+        navigationItem.rightBarButtonItem = addbutton
         navigationItem.title = "Riwayat"
         
         print(date)
@@ -432,7 +433,7 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
                 cell.medicineNameLabel.text = historyMedicine[0][indexPath.row]
                 cell.doseLabel.text = historyMedicine[1][indexPath.row]
             } else {
-                cell.medicineNameLabel.text = "No data"
+                cell.medicineNameLabel.text = "Belum ada catatan"
                 cell.doseLabel.text = ""
             }
             return cell
@@ -443,7 +444,7 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
                 print(historyActivity[indexPath.row])
                 cell.statusImage.image = UIImage.init(named: historyActivity[indexPath.row] )
             } else {
-                cell.activityLabel.text = "No data"
+                cell.activityLabel.text = "Belum ada catatan"
 //                cell.statusImage.image = UIImage.init(named: historyActivity[indexPath.row] )
             }
             return cell
@@ -452,7 +453,7 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
             if historySleep.count > 0 {
                 cell.sleepLabel.text = historySleep[indexPath.row]
             } else {
-                cell.sleepLabel.text = "No data"
+                cell.sleepLabel.text = "Belum ada catatan"
             }
             return cell
         case 3:
@@ -460,7 +461,7 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
             if historyComplain.count > 0 {
                 cell.complainLabel.text = historyComplain[indexPath.row]
             } else {
-                cell.complainLabel.text = "No data"
+                cell.complainLabel.text = "Belum ada catatan"
             }
             return cell
         default:

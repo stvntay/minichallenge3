@@ -65,7 +65,7 @@ class CreateRecordTableVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.title = "Buat Catatan"
+        self.title = "Buat Catatan"
 //        let loadView = Load.shared.showLoad()
 //        self.present(loadView, animated: true, completion: nil)
         RecordModel.shared.loadMedicineData(userRN: getUserID) { (result) in
