@@ -64,8 +64,7 @@ class CreateRecordTableVC: UITableViewController {
     var berkomunikasiDenganLingkungan = ""
     
     let getUserID = UserDefaults.standard.string(forKey: "userID") ?? ""
-    let addButton = UIBarButtonItem(title: "Selesai", style: .plain, target: self, action: #selector(submit))
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -98,6 +97,7 @@ class CreateRecordTableVC: UITableViewController {
         }
         
         // MARK - VDL Setup navbar
+        let addButton = UIBarButtonItem(title: "Selesai", style: .plain, target: self, action: #selector(submit))
         self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 0.4196078431, blue: 0.3411764706, alpha: 1)
         navigationItem.rightBarButtonItem = addButton
         
@@ -277,6 +277,7 @@ class CreateRecordTableVC: UITableViewController {
     }
     
     @IBAction func submit(_ sender: Any) {
+        print("Tombol selesai ditekan")
         RecordModel.shared.saveMedicalRecord(
             namaObat: medicineNames,
             obat: medicineFreq,
