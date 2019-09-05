@@ -64,7 +64,6 @@ class CreateRecordTableVC: UITableViewController {
     var berkomunikasiDenganLingkungan = ""
     
     let getUserID = UserDefaults.standard.string(forKey: "userID") ?? ""
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -278,6 +277,10 @@ class CreateRecordTableVC: UITableViewController {
     
     @IBAction func submit(_ sender: Any) {
         print("Tombol selesai ditekan")
+        for x in 0...medicineValues.count - 1 {
+            medicineFreq.append(medicineValues[x].medicineConsumptionFrequency)
+        }
+        
         RecordModel.shared.saveMedicalRecord(
             namaObat: medicineNames,
             obat: medicineFreq,

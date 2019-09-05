@@ -101,8 +101,8 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
         
         let dateCreated = dateFormatter.string(from: date)
         
-        let loadingView = Load.shared.showLoad()
-        self.present(loadingView, animated: true, completion: nil)
+//        let loadingView = Load.shared.showLoad()
+//        self.present(loadingView, animated: true, completion: nil)
         HistoryModel.shared.loadMedicalRecord(userRN: UserDefaults.standard.string(forKey: "userID")!, dateClicked: dateCreated) { (result) in
             if result.count != 0 {
                 self.parseHistoryData(records: result, completion: { (status) in
@@ -114,8 +114,8 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
                     }
                 })
             }
-            loadingView.dismiss(animated: true, completion: nil)
-            loadingView.removeFromParent()
+//            loadingView.dismiss(animated: true, completion: nil)
+//            loadingView.removeFromParent()
         }
 //        RecordModel.shared.saveMedicalRecord(namaObat: ["ana", "ani", "anu"], obat: ["1x", "2x", "3x"], membersihkanDiri: "Mandiri", makanDenganRapi: "Bersama", membersihkanPakaian: "Mandiri", membersihkanRumah: "Bersama", berkomunikasiDenganLingkungan: "Tergantung", tidurHariIni: "ff", catatan: "gg", pasienRN: UserDefaults.standard.string(forKey: "userID")!) { (result) in
 //            print(result)
@@ -315,8 +315,8 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
             let dateClicked = "\(thisMonth) \(thisDate), \(thisYear)"
             print(dateClicked)
             
-            let loadingView = Load.shared.showLoad()
-            self.present(loadingView, animated: true, completion: nil)
+//            let loadingView = Load.shared.showLoad()
+//            self.present(loadingView, animated: true, completion: nil)
             HistoryModel.shared.loadMedicalRecord(userRN: UserDefaults.standard.string(forKey: "userID")!, dateClicked: dateClicked) { (result) in
                 if result.count != 0 {
                     self.parseHistoryData(records: result, completion: { (status) in
@@ -329,8 +329,8 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
                     })
                 }
                 // dismis alert
-                loadingView.dismiss(animated: true, completion: nil)
-                loadingView.removeFromParent()
+//                loadingView.dismiss(animated: true, completion: nil)
+//                loadingView.removeFromParent()
                 //            print(result)
             }
         } else {
