@@ -16,11 +16,13 @@ class MedicineListViewController: UIViewController {
     @IBOutlet weak var medicineList: UITableView!
     var getCategory: String = ""
     var isFromAdd = Bool()
-    
+    let loadingView = Load.shared.showLoad()
     var medicineDataRutin = [MedicineData]()
     var medicineDataSewaktu = [MedicineData]()
     
     var deletedIndex: Int = 0
+    
+    var count = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,6 +62,7 @@ class MedicineListViewController: UIViewController {
             print("bukan dari add")
             getData()
         } else {
+            
             isFromAdd = false
             print("dari add")
             medicineList.reloadData()
@@ -95,15 +98,20 @@ class MedicineListViewController: UIViewController {
     }
     
     func getData(){
+        count = count + 1
         medicineDataRutin.removeAll()
         medicineDataSewaktu.removeAll()
         guard let userID = UserDefaults.standard.string(forKey: "userID") else{
             return
         }
         
-//        let loadingView = Load.shared.showLoad()
-//        self.present(loadingView, animated: true, completion: nil)
+        let loadingView = Load.shared.showLoad()
+        if count <= 1 {
+            self.present(loadingView, animated: true, completion: nil)
+        }
         MedicineModel.shared.loadMedicineData(userRN: userID) { (result) in
+            self.medicineDataRutin.removeAll()
+            self.medicineDataSewaktu.removeAll()
             for i in result {
                 guard
                     let id = i.recordID.recordName as? String,
@@ -130,9 +138,11 @@ class MedicineListViewController: UIViewController {
                     self.medicineList.reloadData()
                 }
             }
-//            loadingView.dismiss(animated: true, completion: nil)
-//            loadingView.removeFromParent()
+            self.loadingView.dismiss(animated: true, completion: nil)
+            self.loadingView.removeFromParent()
         }
+//        loadingView.dismiss(animated: true, completion: nil)
+//        loadingView.removeFromParent()
     }
     
 }

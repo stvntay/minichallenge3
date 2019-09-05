@@ -217,7 +217,7 @@
         <scene sceneID="Hd2-F8-eBP">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xdy-7l-rr1" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Riwayat" id="Ubg-F6-Pkv"/>
+                    <tabBarItem key="tabBarItem" title="Riwayat" image="Group 21" id="Ubg-F6-Pkv"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gwS-bL-Y47">
@@ -234,4 +234,7 @@
             <point key="canvasLocation" x="-1936.2318840579712" y="-128.57142857142856"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Group 21" width="15" height="13.5"/>
+    </resources>
 </document>

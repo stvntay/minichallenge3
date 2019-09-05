@@ -20,7 +20,7 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
     let Days = ["Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"]
     let activityQ = ["Membersihkan Diri", "Makan Dengan Rapi", "Membersihkan Pakaian", "Membersihkan Rumah", "Berkomunikasi Dengan Lingkungan"]
     var currentMonth = String()
-    
+    var indexCell = IndexPath()
     var recordData: [RecordData] = []
     
     var numberOfEmptyBox = Int()
@@ -38,6 +38,7 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        print(calendar)
 
         currentMonth = Months[month - 1]
         
@@ -86,15 +87,36 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
         navigationItem.rightBarButtonItem = addbutton
         navigationItem.title = "Riwayat"
         
-        print(date)
+        print("date: ", date)
         print(day)
         print(weekday)
         print(month)
         print(year)
-
-//        HistoryModel.shared.loadMedicalRecord(userRN: UserDefaults.standard.string(forKey: "userID")!, dateClicked: "Sep 03, 2019") { (result) in
-//            print("this data")
-//        }
+        
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM dd, yyyy"
+        
+        let dateCreated = dateFormatter.string(from: date)
+        
+        let loadingView = Load.shared.showLoad()
+        self.present(loadingView, animated: true, completion: nil)
+        HistoryModel.shared.loadMedicalRecord(userRN: UserDefaults.standard.string(forKey: "userID")!, dateClicked: dateCreated) { (result) in
+            if result.count != 0 {
+                self.parseHistoryData(records: result, completion: { (status) in
+                    print(status)
+                    if status {
+                        self.historyView.infoTableView.reloadData()
+                    } else {
+                        print(status)
+                    }
+                })
+            }
+            loadingView.dismiss(animated: true, completion: nil)
+            loadingView.removeFromParent()
+        }
 //        RecordModel.shared.saveMedicalRecord(namaObat: ["ana", "ani", "anu"], obat: ["1x", "2x", "3x"], membersihkanDiri: "Mandiri", makanDenganRapi: "Bersama", membersihkanPakaian: "Mandiri", membersihkanRumah: "Bersama", berkomunikasiDenganLingkungan: "Tergantung", tidurHariIni: "ff", catatan: "gg", pasienRN: UserDefaults.standard.string(forKey: "userID")!) { (result) in
 //            print(result)
 //        }
@@ -218,6 +240,7 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
     
     // Cell congfiguration
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        collectionView.isScrollEnabled = false
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Calendar", for: indexPath) as! DateCollectionViewCell
         cell.backgroundColor = .clear
         cell.isHidden = false
@@ -248,7 +271,13 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
         }
         
         if currentMonth == Months[calendar.component(.month, from: date) - 1] && year == calendar.component(.year, from: date) && day == calendar.component(.day, from: date) && indexPath.row + 1 == day{
-            cell.dateLabel.textColor = .red
+            collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .left)
+            print("indexPath: ", indexPath)
+            if indexPath[0] == 0 {
+                indexCell = indexPath
+                cell.dateLabel.textColor = .white
+                cell.backgroundColor = #colorLiteral(red: 0.9541211724, green: 0.4644083977, blue: 0.4005665183, alpha: 1)
+            }
         }
         
         return cell
@@ -259,6 +288,10 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
     var selectedDate: IndexPath?
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let prevCell = collectionView.cellForItem(at: indexCell) as? DateCollectionViewCell
+        prevCell?.dateLabel.textColor = .red
+        prevCell?.backgroundColor = .clear
+        print("indexCell: ", indexCell)
         let collectionViewCell = collectionView.cellForItem(at: indexPath) as? DateCollectionViewCell
         collectionViewCell?.backgroundColor = #colorLiteral(red: 0.9541211724, green: 0.4644083977, blue: 0.4005665183, alpha: 1)
         collectionViewCell?.sizeToFit()
@@ -282,15 +315,23 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
             let dateClicked = "\(thisMonth) \(thisDate), \(thisYear)"
             print(dateClicked)
             
+            let loadingView = Load.shared.showLoad()
+            self.present(loadingView, animated: true, completion: nil)
             HistoryModel.shared.loadMedicalRecord(userRN: UserDefaults.standard.string(forKey: "userID")!, dateClicked: dateClicked) { (result) in
                 if result.count != 0 {
-                    self.parseHistoryData(records: result)
+                    self.parseHistoryData(records: result, completion: { (status) in
+                        print(status)
+                        if status {
+                            self.historyView.infoTableView.reloadData()
+                        } else {
+                            print(status)
+                        }
+                    })
                 }
                 // dismis alert
-//                loadView.dismiss(animated: true, completion: nil)
-//                loadView.removeFromParent()
+                loadingView.dismiss(animated: true, completion: nil)
+                loadingView.removeFromParent()
                 //            print(result)
-                self.historyView.infoTableView.reloadData()
             }
         } else {
             historyView.currentDateLabel.text = "\(Days[(indexPath.row - 1) % 7]), \(String((collectionViewCell?.dateLabel.text!)!)) \(String(historyView.monthLabel.text!))"
@@ -308,11 +349,21 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
             let dateClicked = "\(thisMonth) \(thisDate), \(thisYear)"
             print(dateClicked)
             
+            let loadingView = Load.shared.showLoad()
+            self.present(loadingView, animated: true, completion: nil)
             HistoryModel.shared.loadMedicalRecord(userRN: UserDefaults.standard.string(forKey: "userID")!, dateClicked: dateClicked) { (result) in
                 print("executed")
                 print("result: ", result)
                 if result.count != 0 {
-                    self.parseHistoryData(records: result)
+                    self.parseHistoryData(records: result, completion: { (status) in
+                       print(status)
+                        if status {
+                            print("process done")
+                            self.historyView.infoTableView.reloadData()
+                        } else {
+                            
+                        }
+                    })
                 } else {
                     self.historyMedicine.removeAll()
                     self.historyActivity.removeAll()
@@ -320,8 +371,8 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
                     self.historyComplain.removeAll()
                 }
                 // dismis alert
-//                loadView.dismiss(animated: true, completion: nil)
-//                loadView.removeFromParent()
+                loadingView.dismiss(animated: true, completion: nil)
+                loadingView.removeFromParent()
                 //            print(result)
                 self.historyView.infoTableView.reloadData()
             }
@@ -330,7 +381,8 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
         // show alert
     }
     
-    func parseHistoryData(records: [CKRecord]) {
+    func parseHistoryData(records: [CKRecord],
+                          completion: @escaping(Bool) -> Void) {
         let data = records.last
         self.historyMedicine.removeAll()
         self.historyActivity.removeAll()
@@ -347,10 +399,10 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
         self.historySleep.append(data?["tidurHariIni"] as! String)
         self.historyComplain.append(data?["catatan"] as! String)
         
-        self.historyView.infoTableView.reloadData()
-
-        print(historyMedicine)
+//        self.historyView.infoTableView.reloadData()
         
+        print(historyMedicine)
+        completion(true)
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
@@ -360,7 +412,7 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
             collectionViewCell?.dateLabel.textColor = .gray
         } else if currentMonth == Months[calendar.component(.month, from: date) - 1] && year == calendar.component(.year, from: date) && day == calendar.component(.day, from: date) && indexPath.row + 1 == day {
             collectionViewCell?.backgroundColor = .clear
-            collectionViewCell?.dateLabel.textColor = .red
+            collectionViewCell?.dateLabel.textColor = .red // MARK: - this------------------
         } else {
             collectionViewCell?.backgroundColor = .clear
             collectionViewCell?.dateLabel.textColor = .black

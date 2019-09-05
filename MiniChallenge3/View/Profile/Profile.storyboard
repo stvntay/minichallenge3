@@ -123,7 +123,7 @@
         <scene sceneID="wIn-ta-qcS">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4C8-bj-YMG" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profil" id="jRe-c1-IA5"/>
+                    <tabBarItem key="tabBarItem" title="Profil" image="Group 29" id="jRe-c1-IA5"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HOY-mF-lFE">
@@ -140,4 +140,7 @@
             <point key="canvasLocation" x="-126.08695652173914" y="11.383928571428571"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Group 29" width="15.5" height="11.5"/>
+    </resources>
 </document>

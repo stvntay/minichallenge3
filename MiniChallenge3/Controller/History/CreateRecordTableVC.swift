@@ -142,6 +142,10 @@ class CreateRecordTableVC: UITableViewController {
         return rowsPerSection[section]
     }
     
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 60
+    }
+    
     override func tableView(
         _ tableView: UITableView,
         cellForRowAt
@@ -156,6 +160,7 @@ class CreateRecordTableVC: UITableViewController {
                 ) as! TwoLabelsCell
             cell.title.text = medicineValues[indexPath.row].medicineName
             cell.cellValue.text = medicineValues[indexPath.row].medicineConsumptionFrequency
+            cell.accessoryType = .disclosureIndicator
             return cell
         }
         

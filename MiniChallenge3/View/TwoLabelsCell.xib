@@ -25,14 +25,8 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xjH-PC-chX">
-                        <rect key="frame" x="285.5" y="8" width="14.5" height="28"/>
-                        <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="24"/>
-                        <color key="textColor" red="0.93725490199999995" green="0.4549019608" blue="0.37254901959999998" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eqx-Eu-TuR">
-                        <rect key="frame" x="233.5" y="11.5" width="42" height="21"/>
+                        <rect key="frame" x="276" y="11.5" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -40,11 +34,9 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="XY5-DR-yls" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="7jR-nN-F7m"/>
-                    <constraint firstItem="xjH-PC-chX" firstAttribute="leading" secondItem="Eqx-Eu-TuR" secondAttribute="trailing" constant="10" id="Rjp-YE-8s0"/>
-                    <constraint firstAttribute="trailing" secondItem="xjH-PC-chX" secondAttribute="trailing" constant="20" id="cWu-ab-Y4T"/>
+                    <constraint firstAttribute="trailing" secondItem="Eqx-Eu-TuR" secondAttribute="trailing" constant="2" id="dMS-ZG-Nyw"/>
                     <constraint firstItem="XY5-DR-yls" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="mg3-M7-5SK"/>
                     <constraint firstItem="Eqx-Eu-TuR" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="rza-Uq-imx"/>
-                    <constraint firstItem="xjH-PC-chX" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="yna-Wm-CrW"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
