@@ -38,11 +38,20 @@
                                     <constraint firstAttribute="height" constant="100" id="FLk-0X-2de"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data ini wajib diisi oleh pihak dokter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6RY-GH-1Ga">
+                                <rect key="frame" x="20" y="293" width="374" height="20.5"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="cfk-H3-UHC" firstAttribute="top" secondItem="vwd-VX-aW6" secondAttribute="top" constant="60" id="3aq-gl-KsR"/>
                             <constraint firstItem="vwd-VX-aW6" firstAttribute="trailing" secondItem="cfk-H3-UHC" secondAttribute="trailing" constant="20" id="F9D-a5-jyJ"/>
+                            <constraint firstItem="vwd-VX-aW6" firstAttribute="trailing" secondItem="6RY-GH-1Ga" secondAttribute="trailing" constant="20" id="FdP-Uj-CQ1"/>
+                            <constraint firstItem="6RY-GH-1Ga" firstAttribute="leading" secondItem="vwd-VX-aW6" secondAttribute="leading" constant="20" id="Ja4-Qs-tce"/>
+                            <constraint firstItem="6RY-GH-1Ga" firstAttribute="top" secondItem="cfk-H3-UHC" secondAttribute="bottom" constant="45" id="aGg-Kf-r9a"/>
                             <constraint firstItem="cfk-H3-UHC" firstAttribute="leading" secondItem="vwd-VX-aW6" secondAttribute="leading" constant="20" id="rEf-VA-gJu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vwd-VX-aW6"/>
@@ -106,12 +115,21 @@
                                     <constraint firstAttribute="height" constant="250" id="7kv-Y3-FAk"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data ini wajib diisi oleh pihak keluarga" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qYW-KN-cAn">
+                                <rect key="frame" x="20" y="443" width="374" height="20.5"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
+                                <color key="textColor" red="0.57264673710000003" green="0.58023411039999995" blue="0.59216409920000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Mwj-so-LjV" firstAttribute="leading" secondItem="OVK-yL-PtO" secondAttribute="leading" constant="20" id="AiX-gU-Ya7"/>
+                            <constraint firstItem="qYW-KN-cAn" firstAttribute="top" secondItem="Mwj-so-LjV" secondAttribute="bottom" constant="45" id="EBG-mX-RYf"/>
                             <constraint firstItem="OVK-yL-PtO" firstAttribute="trailing" secondItem="Mwj-so-LjV" secondAttribute="trailing" constant="20" id="LEU-PL-453"/>
                             <constraint firstItem="Mwj-so-LjV" firstAttribute="top" secondItem="OVK-yL-PtO" secondAttribute="top" constant="60" id="MTK-6Z-BzN"/>
+                            <constraint firstItem="OVK-yL-PtO" firstAttribute="trailing" secondItem="qYW-KN-cAn" secondAttribute="trailing" constant="20" id="WD8-lk-r1j"/>
+                            <constraint firstItem="qYW-KN-cAn" firstAttribute="leading" secondItem="OVK-yL-PtO" secondAttribute="leading" constant="20" id="aLS-NV-2fB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OVK-yL-PtO"/>
                         <connections>

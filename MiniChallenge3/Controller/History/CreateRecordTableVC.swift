@@ -79,9 +79,12 @@ class CreateRecordTableVC: UITableViewController {
         // MARK - VDL Setup picker's toolbar
         toolBar = UIToolbar.init(frame: CGRect.init(x: 0.0, y: UIScreen.main.bounds.size.height - 500, width: UIScreen.main.bounds.size.width, height: 50))
         toolBar.barStyle = .default
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         toolBar.items = [
-            UIBarButtonItem.init(title: "Done", style: .done, target: self, action: #selector(onDoneButtonTapped)),
-            UIBarButtonItem.init(title: "Cancel", style: .plain, target: self, action: #selector(onCancelButtonTapped))
+            
+            UIBarButtonItem.init(title: "Cancel", style: .plain, target: self, action: #selector(onCancelButtonTapped)),
+            spaceButton,
+            UIBarButtonItem.init(title: "Done", style: .done, target: self, action: #selector(onDoneButtonTapped))
         ]
         
         // MARK - VDL Load medicine list
@@ -228,6 +231,7 @@ class CreateRecordTableVC: UITableViewController {
     
     @objc func onDoneButtonTapped() {
         toolBar.removeFromSuperview()
+        
         picker.removeFromSuperview()
     }
     
