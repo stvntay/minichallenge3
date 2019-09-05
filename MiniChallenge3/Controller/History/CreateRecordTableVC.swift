@@ -98,7 +98,7 @@ class CreateRecordTableVC: UITableViewController {
         // MARK - VDL Setup navbar
         let addButton = UIBarButtonItem(title: "Selesai", style: .plain, target: self, action: #selector(submit))
         self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 0.4196078431, blue: 0.3411764706, alpha: 1)
-        navigationItem.rightBarButtonItem = addButton
+        navigationItem.rightBarButtonItem = addButton 
         
         // MARK - VDL Register custom nibs
         tableView.register(
