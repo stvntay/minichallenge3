@@ -20,16 +20,16 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vitamin 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ry-xG-FB7">
-                        <rect key="frame" x="20" y="10" width="130" height="33.5"/>
+                        <rect key="frame" x="20" y="10" width="280" height="34"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="130" id="ICU-Bt-9I3"/>
+                            <constraint firstAttribute="width" constant="280" id="ICU-Bt-9I3"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
                         <color key="textColor" red="0.93725490196078431" green="0.45490196078431372" blue="0.37254901960784315" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Untuk meredakan episode mania dan gangguan suasana hati" translatesAutoresizingMaskIntoConstraints="NO" id="aXN-hG-qnd">
-                        <rect key="frame" x="20" y="48" width="280" height="50"/>
+                        <rect key="frame" x="20" y="48.5" width="280" height="49.5"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class Load {
+final class Load {
     static var shared = Load()
     
     private init() {}
@@ -28,6 +28,7 @@ class Load {
     
     func dismissLoad() {
         alert.dismiss(animated: true, completion: nil)
+        alert.removeFromParent()
         
     }
     

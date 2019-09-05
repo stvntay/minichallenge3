@@ -32,17 +32,20 @@ class CreateRecordTableVC: UITableViewController {
     let labelCellIdentifier = "TwoLabelsCell"
     let textFieldCellIdentifier = "TextfieldCell"
     let activityPickerCellIdentifier = "ActivityPickerCell"
-
+    
+    var toolBar = UIToolbar()
+    var picker  = UIPickerView()
+    
     var valueToPass = -1
     var expandedRow = -1
     
     var medicineValues = [medicineValue]()
     var activityValues = [
-        activityValue(activityName: "Membersihkan diri", activityValue: ""),
-        activityValue(activityName: "Makan dengan rapi", activityValue: ""),
-        activityValue(activityName: "Membereskan pakaian", activityValue: ""),
-        activityValue(activityName: "Membersihkan rumah", activityValue: ""),
-        activityValue(activityName: "Komunikasi dengan baik", activityValue: ""),
+        activityValue(activityName: "Membersihkan diri", activityValue: "Pilih"),
+        activityValue(activityName: "Makan dengan rapi", activityValue: "Pilih"),
+        activityValue(activityName: "Membereskan pakaian", activityValue: "Pilih"),
+        activityValue(activityName: "Membersihkan rumah", activityValue: "Pilih"),
+        activityValue(activityName: "Komunikasi dengan baik", activityValue: "Pilih"),
     ]
     var commentValues = [
         commentValue(commentTitle: "Bagaimana tidur pasien?", commentBody: ""),
@@ -50,42 +53,55 @@ class CreateRecordTableVC: UITableViewController {
     ]
     
     var medicineFreq = [String]()
-    
+    var medicineNames = [String]()
+
+    let activityOptions = ["Mandiri", "Bantuan", "Tergantung"]
+    var selectedActivity = Int()
     var membersihkanDiri = ""
     var makanDenganRapi = ""
     var membersihkanPakaian = ""
     var membersihkanRumah = ""
     var berkomunikasiDenganLingkungan = ""
     
-    var CKMedicineData = [CKRecord]()
-    var medicineNames = [String]()
-    
     let getUserID = UserDefaults.standard.string(forKey: "userID") ?? ""
-    
+    let addButton = UIBarButtonItem(title: "Selesai", style: .plain, target: self, action: #selector(submit))
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        navigationController?.title = "Buat Catatan"
         
-        print("record model userID ->", getUserID as Any)
+        // MARK - VDL Setup picker
+        picker = UIPickerView.init()
+        picker.delegate = self
+        picker.backgroundColor = UIColor.white
+        picker.setValue(UIColor.black, forKey: "textColor")
+        picker.autoresizingMask = .flexibleWidth
+        picker.contentMode = .center
+        picker.frame = CGRect.init(x: 0.0, y: UIScreen.main.bounds.size.height - 500, width: UIScreen.main.bounds.size.width, height: 400)
+        
+        // MARK - VDL Setup picker's toolbar
+        toolBar = UIToolbar.init(frame: CGRect.init(x: 0.0, y: UIScreen.main.bounds.size.height - 500, width: UIScreen.main.bounds.size.width, height: 50))
+        toolBar.barStyle = .default
+        toolBar.items = [
+            UIBarButtonItem.init(title: "Done", style: .done, target: self, action: #selector(onDoneButtonTapped)),
+            UIBarButtonItem.init(title: "Cancel", style: .plain, target: self, action: #selector(onCancelButtonTapped))
+        ]
+        
+        // MARK - VDL Load medicine list
         RecordModel.shared.loadMedicineData(userRN: getUserID) { (result) in
-            self.CKMedicineData = result
+            if result.count > 0 {
+                self.medicineNames = RecordModel.shared.parseMedicineName(medicineData: result)
+                for name in self.medicineNames {
+                    self.medicineValues.append(medicineValue(medicineName: name, medicineConsumptionFrequency: "Pilih"))
+                }
+                self.tableView.reloadData()
+            }
         }
         
-        // populate local variable with medicine data
-        // medicine name
-        medicineNames = RecordModel.shared.parseMedicineName(medicineDatas: CKMedicineData)
-        
-        // medicine frequency
-        for name in medicineNames {
-            medicineValues.append(medicineValue(medicineName: name, medicineConsumptionFrequency: "Pilih"))
-        }
-        
-        let addButton = UIBarButtonItem(title: "Selesai", style: .plain, target: self, action: #selector(submit))
-        
+        // MARK - VDL Setup navbar
         self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 0.4196078431, blue: 0.3411764706, alpha: 1)
         navigationItem.rightBarButtonItem = addButton
         
+        // MARK - VDL Register custom nibs
         tableView.register(
             UINib(nibName: "TwoLabelsCell", bundle: nil),
             forCellReuseIdentifier: labelCellIdentifier
@@ -103,9 +119,9 @@ class CreateRecordTableVC: UITableViewController {
             forHeaderFooterViewReuseIdentifier: "sectionHeader"
         )
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 4
     }
@@ -125,12 +141,12 @@ class CreateRecordTableVC: UITableViewController {
         
         return rowsPerSection[section]
     }
-
+    
     override func tableView(
         _ tableView: UITableView,
         cellForRowAt
         indexPath: IndexPath
-    ) -> UITableViewCell {
+        ) -> UITableViewCell {
         
         // Medicine Section
         if indexPath.section == 0 {
@@ -149,10 +165,11 @@ class CreateRecordTableVC: UITableViewController {
                 withIdentifier: activityPickerCellIdentifier,
                 for: indexPath
                 ) as! ActivityPickerCell
+            let gestureRecognizer = desperatelyCustomGestureRecognizer(target: self, action: #selector(onActivityTapped))
+            gestureRecognizer.selectedRow = indexPath.row
+            cell.addGestureRecognizer(gestureRecognizer)
             cell.activityName.text = activityValues[indexPath.row].activityName
-            cell.activityValue.text = "Pilih"
-            
-            cell.activityPicker.isHidden = true
+            cell.activityValue.text = activityValues[indexPath.row].activityValue
             return cell
         }
         
@@ -162,7 +179,8 @@ class CreateRecordTableVC: UITableViewController {
                 withIdentifier: textFieldCellIdentifier,
                 for: indexPath
                 ) as! TextFieldCell
-            
+            cell.textInput.delegate = self
+            cell.textInput.tag = 0
             cell.question.text = commentValues[0].commentTitle
             cell.textInput.text = commentValues[0].commentBody
             
@@ -175,48 +193,51 @@ class CreateRecordTableVC: UITableViewController {
             for: indexPath
             ) as! TextFieldCell
         
+        cell.textInput.delegate = self
+        cell.textInput.tag = 1
         cell.question.text = commentValues[1].commentTitle
         cell.textInput.text = commentValues[1].commentBody
         
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 ||
+            indexPath.section == 1 {
+            return 50
+        }
+        // text field cell's height
+        return 200
+    }
+    
+    
     @objc func goToActivityGuide() {
         performSegue(withIdentifier: "toActivityGuide", sender: self)
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 0 {
-            return 50
-        }
-        
-        if indexPath.section == 1 {
-            if indexPath.row != expandedRow {
-                return 50
-            }
-            return 200
-        }
-        
-        // text field cell's height
-        return 200
+    // Picker's interaction
+    @IBAction func onActivityTapped(_ sender: desperatelyCustomGestureRecognizer) {
+        selectedActivity = sender.selectedRow
+        self.view.addSubview(picker)
+        self.view.addSubview(toolBar)
     }
-
+    
+    @objc func onDoneButtonTapped() {
+        toolBar.removeFromSuperview()
+        picker.removeFromSuperview()
+    }
+    
+    @objc func onCancelButtonTapped() {
+        toolBar.removeFromSuperview()
+        picker.removeFromSuperview()
+    }
+    
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if indexPath.section == 0 {
             valueToPass = indexPath.row
             performSegue(withIdentifier: "segueToOptions", sender: self)
-        }
-        
-        if indexPath.section == 1 {
-            guard let cell = tableView.cellForRow(at: indexPath) as? ActivityPickerCell else {return}
-            if expandedRow == indexPath.row {
-                cell.activityPicker.isHidden = true
-                expandedRow = -1
-            } else {
-                expandedRow = indexPath.row
-                cell.activityPicker.isHidden = false
-            }
         }
         
         tableView.beginUpdates()
@@ -233,7 +254,6 @@ class CreateRecordTableVC: UITableViewController {
             view.image.layer.cornerRadius = 11
             view.addGestureRecognizer(gestureRecognizer)
         }
-        
         return view
     }
     
@@ -252,48 +272,14 @@ class CreateRecordTableVC: UITableViewController {
     }
     
     @IBAction func submit(_ sender: Any) {
-        if medicineValues.count > 0 {
-            for x in 0...medicineValues.count - 1 {
-                medicineNames.append(medicineValues[x].medicineName)
-                medicineFreq.append(medicineValues[x].medicineConsumptionFrequency)
-            }
-        }
-        
-        for x in 0...activityValues.count - 1 {
-            let indexes = IndexPath.init(row: x, section: 1)
-            let cell = tableView.cellForRow(at: indexes) as! ActivityPickerCell
-            
-            if x == 0 {
-                membersihkanDiri = cell.activityValue.text ?? "Belum dipilih"
-            } else if x == 1 {
-                makanDenganRapi = cell.activityValue.text ?? "Belum dipilih"
-            } else if x == 2 {
-                membersihkanPakaian = cell.activityValue.text ?? "Belum dipilih"
-            } else if x == 3 {
-                membersihkanRumah = cell.activityValue.text ?? "Belum dipilih"
-            } else {
-                berkomunikasiDenganLingkungan = cell.activityValue.text ?? "Belum dipilih"
-            }
-        }
-        
-        for x in 2...3 {
-            let indexes = IndexPath.init(row: 0, section: x)
-            let cell = tableView.cellForRow(at: indexes) as! TextFieldCell
-            if x == 2 {
-                commentValues[0].commentBody = cell.textInput.text
-            } else {
-                commentValues[1].commentBody = cell.textInput.text
-            }
-        }
-        
         RecordModel.shared.saveMedicalRecord(
             namaObat: medicineNames,
             obat: medicineFreq,
-            membersihkanDiri: membersihkanDiri,
-            makanDenganRapi: makanDenganRapi,
-            membersihkanPakaian: membersihkanPakaian,
-            membersihkanRumah: membersihkanPakaian,
-            berkomunikasiDenganLingkungan: berkomunikasiDenganLingkungan,
+            membersihkanDiri: activityValues[0].activityValue,
+            makanDenganRapi: activityValues[1].activityValue,
+            membersihkanPakaian: activityValues[2].activityValue,
+            membersihkanRumah: activityValues[3].activityValue,
+            berkomunikasiDenganLingkungan: activityValues[4].activityValue,
             tidurHariIni: commentValues[0].commentBody,
             catatan: commentValues[1].commentBody,
             pasienRN: getUserID, completion:{ (rec) in
@@ -301,4 +287,33 @@ class CreateRecordTableVC: UITableViewController {
         })
         navigationController?.popToRootViewController(animated: true)
     }
+}
+
+extension CreateRecordTableVC: UIPickerViewDataSource, UIPickerViewDelegate {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return activityOptions.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return activityOptions[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        activityValues[selectedActivity].activityValue = activityOptions[row]
+        tableView.reloadData()
+    }
+}
+
+extension CreateRecordTableVC: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        commentValues[textView.tag].commentBody = textView.text
+    }
+}
+
+class desperatelyCustomGestureRecognizer: UITapGestureRecognizer {
+    var selectedRow = Int()
 }

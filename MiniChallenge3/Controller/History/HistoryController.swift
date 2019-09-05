@@ -79,10 +79,12 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
         historyView.previousBtn.setImage(UIImage(named: "Previous"), for: .normal)
         historyView.previousBtn.tintColor = #colorLiteral(red: 1, green: 0.4196078431, blue: 0.3411764706, alpha: 1)
         
-        let addImg = UIImage(named: "plusRiwayat")
-        let addButton = UIBarButtonItem(image: addImg, style: .plain, target: self, action: #selector(createRecordPage))
-        
-        navigationItem.rightBarButtonItem = addButton
+//        let addImg = UIImage(named: "plusRiwayat")
+
+        let addbutton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(createRecordPage))
+        addbutton.tintColor = #colorLiteral(red: 1, green: 0.4196078431, blue: 0.3411764706, alpha: 1)
+        navigationItem.rightBarButtonItem = addbutton
+        navigationItem.title = "Riwayat"
         
         print(date)
         print(day)
@@ -90,12 +92,12 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
         print(month)
         print(year)
 
-        HistoryModel.shared.loadMedicalRecord(userRN: UserDefaults.standard.string(forKey: "userID")!, dateClicked: "Sep 03, 2019") { (result) in
-            print("this data")
-        }
-        RecordModel.shared.saveMedicalRecord(namaObat: ["ana", "ani", "anu"], obat: ["1x", "2x", "3x"], membersihkanDiri: "Mandiri", makanDenganRapi: "Bersama", membersihkanPakaian: "Mandiri", membersihkanRumah: "Bersama", berkomunikasiDenganLingkungan: "Tergantung", tidurHariIni: "ff", catatan: "gg", pasienRN: UserDefaults.standard.string(forKey: "userID")!) { (result) in
-            print(result)
-        }
+//        HistoryModel.shared.loadMedicalRecord(userRN: UserDefaults.standard.string(forKey: "userID")!, dateClicked: "Sep 03, 2019") { (result) in
+//            print("this data")
+//        }
+//        RecordModel.shared.saveMedicalRecord(namaObat: ["ana", "ani", "anu"], obat: ["1x", "2x", "3x"], membersihkanDiri: "Mandiri", makanDenganRapi: "Bersama", membersihkanPakaian: "Mandiri", membersihkanRumah: "Bersama", berkomunikasiDenganLingkungan: "Tergantung", tidurHariIni: "ff", catatan: "gg", pasienRN: UserDefaults.standard.string(forKey: "userID")!) { (result) in
+//            print(result)
+//        }
     }
     
     // go to create record
@@ -262,8 +264,8 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
         collectionViewCell?.sizeToFit()
         collectionViewCell?.dateLabel.textColor = .white
         
-        let loadView = Load.shared.showLoad()
-        self.present(loadView, animated: true, completion: nil)
+//        let loadView = Load.shared.showLoad()
+//        self.present(loadView, animated: true, completion: nil)
         if indexPath.row - 1 == -1 {
             historyView.currentDateLabel.text = "\(Days[(indexPath.row) % 7]), \(String((collectionViewCell?.dateLabel.text!)!)) \(String(historyView.monthLabel.text!))"
             
@@ -285,9 +287,10 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
                     self.parseHistoryData(records: result)
                 }
                 // dismis alert
-                self.dismiss(animated: true, completion: nil)
+//                loadView.dismiss(animated: true, completion: nil)
+//                loadView.removeFromParent()
                 //            print(result)
-                //            self.historyView.infoTableView.reloadData()
+                self.historyView.infoTableView.reloadData()
             }
         } else {
             historyView.currentDateLabel.text = "\(Days[(indexPath.row - 1) % 7]), \(String((collectionViewCell?.dateLabel.text!)!)) \(String(historyView.monthLabel.text!))"
@@ -307,24 +310,33 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
             
             HistoryModel.shared.loadMedicalRecord(userRN: UserDefaults.standard.string(forKey: "userID")!, dateClicked: dateClicked) { (result) in
                 print("executed")
+                print("result: ", result)
                 if result.count != 0 {
                     self.parseHistoryData(records: result)
+                } else {
+                    self.historyMedicine.removeAll()
+                    self.historyActivity.removeAll()
+                    self.historySleep.removeAll()
+                    self.historyComplain.removeAll()
                 }
                 // dismis alert
-                self.dismiss(animated: true, completion: nil)
+//                loadView.dismiss(animated: true, completion: nil)
+//                loadView.removeFromParent()
                 //            print(result)
-                //            self.historyView.infoTableView.reloadData()
+                self.historyView.infoTableView.reloadData()
             }
         }
 
         // show alert
-
-
     }
     
     func parseHistoryData(records: [CKRecord]) {
         let data = records.last
-
+        self.historyMedicine.removeAll()
+        self.historyActivity.removeAll()
+        self.historySleep.removeAll()
+        self.historyComplain.removeAll()
+        
         self.historyMedicine.append(data?["namaObat"] as! [String])
         self.historyMedicine.append(data?["obat"] as! [String])
         self.historyActivity.append(data?["membersihkanDiri"] as! String)
@@ -421,7 +433,7 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
                 cell.medicineNameLabel.text = historyMedicine[0][indexPath.row]
                 cell.doseLabel.text = historyMedicine[1][indexPath.row]
             } else {
-                cell.medicineNameLabel.text = "No data"
+                cell.medicineNameLabel.text = "Belum ada catatan"
                 cell.doseLabel.text = ""
             }
             return cell
@@ -429,9 +441,10 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
             let cell = (tableView.dequeueReusableCell(withIdentifier: "ActivityID") as? ActivityTableViewCell)!
             if historyActivity.count > 0 {
                 cell.activityLabel.text = activityQ[indexPath.row]
+                print(historyActivity[indexPath.row])
                 cell.statusImage.image = UIImage.init(named: historyActivity[indexPath.row] )
             } else {
-                cell.activityLabel.text = "No data"
+                cell.activityLabel.text = "Belum ada catatan"
 //                cell.statusImage.image = UIImage.init(named: historyActivity[indexPath.row] )
             }
             return cell
@@ -440,7 +453,7 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
             if historySleep.count > 0 {
                 cell.sleepLabel.text = historySleep[indexPath.row]
             } else {
-                cell.sleepLabel.text = "No data"
+                cell.sleepLabel.text = "Belum ada catatan"
             }
             return cell
         case 3:
@@ -448,7 +461,7 @@ class HistoryController: UIViewController, UICollectionViewDelegate, UICollectio
             if historyComplain.count > 0 {
                 cell.complainLabel.text = historyComplain[indexPath.row]
             } else {
-                cell.complainLabel.text = "No data"
+                cell.complainLabel.text = "Belum ada catatan"
             }
             return cell
         default:
